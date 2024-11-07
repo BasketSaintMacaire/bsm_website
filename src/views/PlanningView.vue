@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { parseISO, format } from 'date-fns'
-import { fr } from 'date-fns/locale'
 import planningDataJson from '@/assets/planning/PlanningEventsData.json' // Import JSON directly
 
 interface PlanningEvent {
@@ -37,80 +35,85 @@ const uniqueDates = computed(() =>
 const uniqueTeams = computed(() =>
   Array.from(new Set(planningData.value.map((event) => event.team))),
 )
-
-const formatDate = (dateString: string) => {
-  const [day, date] = dateString.split('\n')
-  return `${day.trim()} ${format(parseISO(date.trim().replace('/', '-')), 'd MMMM', { locale: fr })}`
-}
 </script>
 
 <template>
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-6 text-center">Planning BSM St Macaire en Mauges</h1>
+  <div class="min-h-screen bg-black text-white py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-8">Planning BSM St Macaire en Mauges</h1>
 
-    <div class="mb-6 flex flex-wrap gap-4">
-      <div class="w-full md:w-auto">
-        <label for="date-filter" class="block text-sm font-medium text-gray-700 mb-1"
-          >Filtrer par date</label
-        >
-        <select
-          id="date-filter"
-          v-model="filterDate"
-          class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        >
-          <option value="">Toutes les dates</option>
-          <option v-for="date in uniqueDates" :key="date" :value="date">
-            {{ date }}
-          </option>
-        </select>
-      </div>
-
-      <div class="w-full md:w-auto">
-        <label for="team-filter" class="block text-sm font-medium text-gray-700 mb-1"
-          >Filtrer par équipe</label
-        >
-        <select
-          id="team-filter"
-          v-model="filterTeam"
-          class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        >
-          <option value="">Toutes les équipes</option>
-          <option v-for="team in uniqueTeams" :key="team" :value="team">{{ team }}</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <div
-        v-for="(event, index) in filteredEvents"
-        :key="index"
-        class="bg-white rounded-lg shadow-md overflow-hidden"
-      >
-        <div :class="event.isDomicile ? 'bg-green-600' : 'bg-blue-600' + ' text-white px-4 py-2'">
-          <h2 class="text-xl font-semibold">{{ event.date }}</h2>
-          <p class="text-sm">{{ event.time_start }} (RDV: {{ event.time_meetup }})</p>
+      <div class="mb-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div class="w-full sm:w-64">
+          <label for="date-filter" class="block text-sm font-medium text-gray-300 mb-1"
+            >Filtrer par date</label
+          >
+          <select
+            id="date-filter"
+            v-model="filterDate"
+            class="w-full bg-[#1A1A1A] border border-[#1A1A1A] rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+          >
+            <option value="">Toutes les dates</option>
+            <option v-for="date in uniqueDates" :key="date" :value="date">
+              {{ date }}
+            </option>
+          </select>
         </div>
-        <div class="p-4">
-          <p class="font-bold text-lg mb-2">{{ event.team }} - {{ event.group }}</p>
-          <p class="mb-1">
-            <span class="font-semibold">Match:</span>
-            {{ event.isDomicile ? 'Domicile' : 'Extérieur' }}
-          </p>
-          <p v-if="event.opponent" class="mb-1">
-            <span class="font-semibold">Adversaire:</span> {{ event.opponent }}
-          </p>
-          <p v-if="event.location" class="mb-1">
-            <span class="font-semibold">Lieu:</span> {{ event.location }}
-          </p>
-          <p v-if="event.referees.length > 0" class="mb-1">
-            <span class="font-semibold">Arbitres:</span> {{ event.referees.join(', ') }}
-          </p>
-          <p v-if="event.bar" class="mb-1">
-            <span class="font-semibold">Bar:</span> {{ event.bar }}
-          </p>
-          <p v-if="event.result.length === 2" class="mt-2 text-indigo-600 font-bold">
-            Résultat: {{ event.result[0] }} - {{ event.result[1] }}
-          </p>
+        <div class="w-full sm:w-64">
+          <label for="team-filter" class="block text-sm font-medium text-gray-300 mb-1"
+            >Filtrer par équipe</label
+          >
+          <select
+            id="team-filter"
+            v-model="filterTeam"
+            class="w-full bg-[#1A1A1A] border border-[#1A1A1A] rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+          >
+            <option value="">Toutes les équipes</option>
+            <option v-for="team in uniqueTeams" :key="team" :value="team">
+              {{ team }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          v-for="event in filteredEvents"
+          :key="`${event.date}-${event.time_start}-${event.team}`"
+          class="bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+        >
+          <div
+            :class="[
+              'px-4 py-3 text-lg font-semibold',
+              event.isDomicile ? 'bg-green-700' : 'bg-blue-700',
+            ]"
+          >
+            {{ event.date }} - {{ event.time_start }}
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-bold">{{ event.team }} - {{ event.group }}</h3>
+            <p class="text-gray-300">
+              <span class="font-semibold">Match:</span>
+              {{ event.isDomicile ? 'Domicile' : 'Extérieur' }}
+            </p>
+            <p v-if="event.opponent" class="text-gray-300">
+              <span class="font-semibold">Adversaire:</span> {{ event.opponent }}
+            </p>
+            <p v-if="event.location" class="text-gray-300">
+              <span class="font-semibold">Lieu:</span> {{ event.location }}
+            </p>
+            <p v-if="event.time_meetup" class="text-gray-300">
+              <span class="font-semibold">RDV:</span> {{ event.time_meetup }}
+            </p>
+            <p v-if="event.referees.length" class="text-gray-300">
+              <span class="font-semibold">Arbitres:</span> {{ event.referees.join(', ') }}
+            </p>
+            <p v-if="event.bar" class="text-gray-300">
+              <span class="font-semibold">Bar:</span> {{ event.bar }}
+            </p>
+            <p v-if="event.result.length === 2" class="text-lg font-bold text-purple-400">
+              Résultat: {{ event.result[0] }} - {{ event.result[1] }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -118,5 +121,9 @@ const formatDate = (dateString: string) => {
 </template>
 
 <style scoped>
-/* Add any additional styling here */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+div {
+  font-family: 'Inter', sans-serif;
+}
 </style>

@@ -9,7 +9,7 @@ const currentYear = ref(new Date().getFullYear())
   <header class="bg-[#1A1A1A] px-6 py-4">
     <div class="max-w-7xl mx-auto flex items-center justify-around">
       <RouterLink to="/" class="flex-shrink-0">
-        <img alt="Vue logo" class="w-16 h-16" src="@/assets/logo.png" />
+        <img alt="Vue logo" class="w-16 h-16" src="/logo.png" />
       </RouterLink>
 
       <nav class="flex items-center gap-8">
@@ -45,7 +45,7 @@ const currentYear = ref(new Date().getFullYear())
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Logo and Tagline -->
         <div class="space-y-4">
-          <img src="@/assets/logo.png" alt="BSM Logo" class="w-20 h-20" />
+          <img src="/logo.png" alt="BSM Logo" class="w-20 h-20" />
           <p class="text-sm text-gray-400">La force des loups est dans la meute</p>
         </div>
 
