@@ -1,6 +1,6 @@
-# bsm_website
+# vue-project
 
-website of BSM
+This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
