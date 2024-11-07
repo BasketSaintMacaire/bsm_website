@@ -17,7 +17,6 @@ const currentYear = ref(new Date().getFullYear())
           v-for="(link, index) in [
             { to: '/leclub', text: 'LE CLUB' },
             { to: '/planning', text: 'PLANNINGS' },
-            { to: '/emarque', text: 'E-MARQUE' },
             { to: '/boutique', text: 'BOUTIQUE' },
             { to: '/actualites', text: 'ACTUALITÉS' },
           ]"
@@ -65,7 +64,6 @@ const currentYear = ref(new Date().getFullYear())
           <ul class="space-y-2 text-sm">
             <li><a href="#" class="hover:text-purple-400 transition-colors">Le Club</a></li>
             <li><a href="#" class="hover:text-purple-400 transition-colors">Plannings</a></li>
-            <li><a href="#" class="hover:text-purple-400 transition-colors">E-Marque</a></li>
             <li><a href="#" class="hover:text-purple-400 transition-colors">Boutique</a></li>
             <li><a href="#" class="hover:text-purple-400 transition-colors">Actualités</a></li>
             <li>

@@ -11,17 +11,12 @@ const router = createRouter({
     {
       path: '/leclub',
       name: 'leclub',
-      component: () => import('../views/ClubView.vue'),
+      component: () => import('../views/TeamView.vue'),
     },
     {
       path: '/planning',
       name: 'planning',
       component: () => import('../views/PlanningView.vue'),
-    },
-    {
-      path: '/emarque',
-      name: 'emarque',
-      component: () => import('../views/EmarqueView.vue'),
     },
     {
       path: '/boutique',
