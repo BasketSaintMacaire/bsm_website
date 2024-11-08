@@ -18,11 +18,17 @@ const container = ref<HTMLDivElement | null>(null)
 let animationFrameId: number | null = null
 
 // Load images using a static path and filter by gallery name
-function loadImages() {
-  const allImages = import.meta.glob('/src/assets/gallery/*/*.{png,jpg,jpeg,gif,webp,bmp,svg}')
-  images.value = Object.keys(allImages).filter((path) =>
-    path.includes(`/gallery/${props.galleryName}/`),
-  )
+async function loadImages() {
+  try {
+    const response = await fetch('/gallery-images.json')
+    const allImages: string[] = await response.json()
+
+    console.log(allImages)
+
+    images.value = allImages.filter((path) => path.includes(`/gallery/${props.galleryName}/`))
+  } catch (error) {
+    console.error('Failed to load images:', error)
+  }
 }
 
 // Mouse events for drag scrolling
