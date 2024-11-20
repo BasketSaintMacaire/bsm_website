@@ -122,10 +122,10 @@ const currentYear = ref(new Date().getFullYear())
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&display=swap');
 
-header {
-  font-family: 'Inter', sans-serif;
+body {
+  font-family: 'Antonio', sans-serif;
 }
 
 .router-link-active:not(.bg-purple-600) {
