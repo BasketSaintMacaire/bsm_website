@@ -172,12 +172,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&display=swap');
-
-body {
-  font-family: 'Antonio', sans-serif;
-}
-
 .news-text {
   min-width: 200%;
 }

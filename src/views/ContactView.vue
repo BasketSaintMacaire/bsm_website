@@ -225,15 +225,9 @@ const handleSubmit = async () => {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
 :root {
   --form-bg: #1e2536;
   --input-bg: #2a3142;
-}
-
-* {
-  font-family: 'Poppins', sans-serif;
 }
 
 input:-webkit-autofill,

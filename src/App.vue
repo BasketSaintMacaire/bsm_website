@@ -159,12 +159,6 @@ const closeMenu = () => {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&display=swap');
-
-body {
-  font-family: 'Antonio', sans-serif;
-}
-
 .router-link-active:not(.bg-purple-600) {
   color: theme('colors.purple.600');
 }

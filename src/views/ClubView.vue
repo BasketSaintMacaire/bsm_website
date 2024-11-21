@@ -136,11 +136,4 @@ const navigateTo = (route: string) => {
   background-color: #1a1a1a;
   transition: background-color 0.3s ease;
 }
-
-/* Typography */
-h1,
-h2 {
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.05em;
-}
 </style>
