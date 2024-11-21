@@ -42,16 +42,17 @@ const navigateTo = (route: string) => {
   <div class="min-h-screen bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="club-grid">
-        <!-- Header Section -->
-        <div class="header-section relative">
+        <!--Header Section -->
+        <div class="header-section relative rounded-xl overflow-hidden mb-16 group">
           <img
-            src="https://placehold.co/400x800"
+            src="@/assets/club_plan_large.jpg"
             alt="Basketball action"
-            class="w-full h-full object-cover brightness-75"
+            class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div class="absolute top-4 left-4 z-10">
             <img src="/logo.png" alt="BSM Logo" class="w-24 h-24" />
           </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
           <h1 class="absolute bottom-8 left-8 text-4xl font-bold text-white">
             DÉCOUVREZ<br />NOTRE CLUB
           </h1>
@@ -96,9 +97,6 @@ const navigateTo = (route: string) => {
 
 .header-section {
   grid-area: header;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 0.5rem;
 }
 
 .section-history {

@@ -18,7 +18,8 @@
     "gsap": "^3.12.5",
     "lucide-vue-next": "^0.454.0",
     "vue": "^3.5.12",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vue3-instagram-feed": "^0.1.4"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
