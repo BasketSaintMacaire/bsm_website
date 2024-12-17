@@ -1,114 +1,79 @@
 [
   {
-    "id": 1,
-    "name": "SM1",
-    "image": "https://placehold.co/600x400",
-    "category": "men",
-    "players": [
-      { "id": 1, "name": "Alex Dubois", "position": "Meneur", "number": 5 },
-      { "id": 2, "name": "Thomas Martin", "position": "Arrière", "number": 7 },
-      { "id": 3, "name": "Lucas Petit", "position": "Ailier", "number": 10 },
-      { "id": 4, "name": "Maxime Leroy", "position": "Ailier fort", "number": 12 },
-      { "id": 5, "name": "Nicolas Roux", "position": "Pivot", "number": 15 },
-      { "id": 6, "name": "Antoine Girard", "position": "Meneur", "number": 3 },
-      { "id": 7, "name": "Julien Moreau", "position": "Arrière", "number": 8 },
-      { "id": 8, "name": "Étienne Lefebvre", "position": "Ailier", "number": 14 }
-    ]
-  },
-  {
     "id": 2,
     "name": "SM2",
-    "image": "https://placehold.co/600x400",
+    "image": "/gallery/team_men/SG2.jpg",
     "category": "men",
     "players": [
-      { "id": 9, "name": "Paul Dupuis", "position": "Meneur", "number": 2 },
-      { "id": 10, "name": "Jean Fournier", "position": "Arrière", "number": 9 },
-      { "id": 11, "name": "Louis Bernard", "position": "Ailier", "number": 11 },
-      { "id": 12, "name": "Gabriel Chevalier", "position": "Ailier fort", "number": 13 },
-      { "id": 13, "name": "Victor Lambert", "position": "Pivot", "number": 17 },
-      { "id": 14, "name": "Philippe Rousseau", "position": "Meneur", "number": 6 },
-      { "id": 15, "name": "Hugo Mercier", "position": "Arrière", "number": 4 },
-      { "id": 16, "name": "Théo Gauthier", "position": "Ailier", "number": 15 }
+      { "id": 9, "name": "Charles Moreau", "position": "Meneur", "number": 15 },
+      { "id": 10, "name": "Elian Verdier", "position": "Pivot", "number": 11 },
+      { "id": 11, "name": "Antoine Thibault", "position": "Pivot", "number": 12 },
+      { "id": 12, "name": "Noah Colin", "position": "Meneur", "number": 5 },
+      { "id": 13, "name": "Pablo Roy", "position": "Ailier", "number": 8 },
+      { "id": 14, "name": "Noa Brevet", "position": "Ailier", "number": 14 },
+      { "id": 15, "name": "Robin Sautejeau", "position": "Ailier", "number": 7 },
+      { "id": 16, "name": "Fabien Bouin", "position": "Pivot", "number": 13 },
+      { "id": 16, "name": "Fabien Bouin", "position": "Pivot", "number": 13 },
+      { "id": 16, "name": "Elliot Thomas", "position": "Meneur", "number": 9 },
+      { "id": 16, "name": "Loris Blanchard", "position": "Ailier", "number": 6 },
+      { "id": 16, "name": "Hugo Auriche", "position": "Pivot", "number": 4 },
+      { "id": 16, "name": "Justin Landreau", "position": "Coach", "number": 0 }
     ]
   },
   {
-    "id": 3,
-    "name": "SF1",
-    "image": "https://placehold.co/600x400",
-    "category": "women",
-    "players": [
-      { "id": 17, "name": "Sophie Dupont", "position": "Meneuse", "number": 4 },
-      { "id": 18, "name": "Emma Bernard", "position": "Arrière", "number": 6 },
-      { "id": 19, "name": "Chloé Lambert", "position": "Ailière", "number": 9 },
-      { "id": 20, "name": "Léa Rousseau", "position": "Ailière forte", "number": 11 },
-      { "id": 21, "name": "Camille Fournier", "position": "Pivot", "number": 13 },
-      { "id": 22, "name": "Manon Garnier", "position": "Meneuse", "number": 2 },
-      { "id": 23, "name": "Inès Mercier", "position": "Arrière", "number": 7 },
-      { "id": 24, "name": "Zoé Lemoine", "position": "Ailière", "number": 15 }
-    ]
+    "id": 1,
+    "name": "U13M2",
+    "image": "/gallery/team_men/U13M2.jpg",
+    "category": "men",
+    "players": []
   },
   {
     "id": 4,
-    "name": "SF2",
-    "image": "https://placehold.co/600x400",
+    "name": "U11M1",
+    "image": "/gallery/team_men/U11M1.jpg",
+    "category": "men",
+    "players": []
+  },
+  {
+    "id": 5,
+    "name": "U11M2",
+    "image": "/gallery/team_men/U11M2.jpg",
+    "category": "men",
+    "players": []
+  },
+  {
+    "id": 5,
+    "name": "U11M3",
+    "image": "/gallery/team_men/U11M3.jpg",
+    "category": "men",
+    "players": []
+  },
+  {
+    "id": 5,
+    "name": "U9M1",
+    "image": "/gallery/team_men/U9M1.jpg",
+    "category": "men",
+    "players": []
+  },
+  {
+    "id": 5,
+    "name": "U11F1",
+    "image": "/gallery/team_women/U11F1.jpg",
     "category": "women",
-    "players": [
-      { "id": 25, "name": "Julie Renard", "position": "Meneuse", "number": 1 },
-      { "id": 26, "name": "Mathilde Perrin", "position": "Arrière", "number": 8 },
-      { "id": 27, "name": "Élise Caron", "position": "Ailière", "number": 10 },
-      { "id": 28, "name": "Adèle Lemaire", "position": "Ailière forte", "number": 14 },
-      { "id": 29, "name": "Thea Noël", "position": "Pivot", "number": 12 },
-      { "id": 30, "name": "Lucie Masson", "position": "Meneuse", "number": 3 },
-      { "id": 31, "name": "Nora Meunier", "position": "Arrière", "number": 5 },
-      { "id": 32, "name": "Alice Moreau", "position": "Ailière", "number": 7 }
-    ]
+    "players": []
   },
   {
     "id": 5,
-    "name": "U15 M1",
-    "image": "https://placehold.co/600x400",
-    "category": "men",
-    "players": [
-      { "id": 33, "name": "Hugo Durand", "position": "Meneur", "number": 1 },
-      { "id": 34, "name": "Théo Bonnet", "position": "Arrière", "number": 6 },
-      { "id": 35, "name": "Nathan Roussel", "position": "Ailier", "number": 8 },
-      { "id": 36, "name": "Gabriel Marchand", "position": "Ailier fort", "number": 11 },
-      { "id": 37, "name": "Raphaël Dumas", "position": "Pivot", "number": 14 },
-      { "id": 38, "name": "Louis Guerin", "position": "Meneur", "number": 3 },
-      { "id": 39, "name": "Arthur Fontaine", "position": "Arrière", "number": 9 },
-      { "id": 40, "name": "Paul Chevalier", "position": "Ailier", "number": 12 }
-    ]
+    "name": "U11F2",
+    "image": "/gallery/team_women/U11F2.jpg",
+    "category": "women",
+    "players": []
   },
   {
     "id": 5,
-    "name": "U15 M2",
-    "image": "https://placehold.co/600x400",
-    "category": "men",
-    "players": [
-      { "id": 33, "name": "Hugo Durand", "position": "Meneur", "number": 1 },
-      { "id": 34, "name": "Théo Bonnet", "position": "Arrière", "number": 6 },
-      { "id": 35, "name": "Nathan Roussel", "position": "Ailier", "number": 8 },
-      { "id": 36, "name": "Gabriel Marchand", "position": "Ailier fort", "number": 11 },
-      { "id": 37, "name": "Raphaël Dumas", "position": "Pivot", "number": 14 },
-      { "id": 38, "name": "Louis Guerin", "position": "Meneur", "number": 3 },
-      { "id": 39, "name": "Arthur Fontaine", "position": "Arrière", "number": 9 },
-      { "id": 40, "name": "Paul Chevalier", "position": "Ailier", "number": 12 }
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Pleasure F",
-    "image": "https://placehold.co/600x400",
-    "category": "pleasure",
-    "players": [
-      { "id": 41, "name": "Jade Lefevre", "position": "Meneur", "number": 3 },
-      { "id": 42, "name": "Lina Mercier", "position": "Arrière", "number": 6 },
-      { "id": 43, "name": "Eva Roux", "position": "Ailier", "number": 9 },
-      { "id": 44, "name": "Léna Faure", "position": "Ailier fort", "number": 12 },
-      { "id": 45, "name": "Alice Dubois", "position": "Pivot", "number": 15 },
-      { "id": 46, "name": "Chloé Lemoine", "position": "Meneur", "number": 1 },
-      { "id": 47, "name": "Sarah Moreau", "position": "Arrière", "number": 7 },
-      { "id": 48, "name": "Maëlle Girard", "position": "Ailier", "number": 10 }
-    ]
+    "name": "U9F1",
+    "image": "/gallery/team_women/U9F1.jpg",
+    "category": "women",
+    "players": []
   }
 ]

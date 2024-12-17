@@ -1,0 +1,188 @@
+[
+  {
+    "id": 1,
+    "name": "Doudoune sans manche",
+    "category": "Vêtements",
+    "imageFolder": "/gallery/shop/doudoune_sans_manche/",
+    "description": "Doudoune sans manche avec logo BSM brodé",
+    "variants": [
+      { "size": "6/8 ans", "price": 40.0 },
+      { "size": "8/10 ans", "price": 40.0 },
+      { "size": "10/12 ans", "price": 40.0 },
+      { "size": "12/14 ans", "price": 40.0 },
+      { "size": "S", "price": 45.0 },
+      { "size": "M", "price": 45.0 },
+      { "size": "L", "price": 45.0 },
+      { "size": "XL", "price": 45.0 },
+      { "size": "XXL", "price": 45.0 },
+      { "size": "3XL", "price": 45.0 },
+      { "size": "4XL", "price": 45.0 }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Veste zippée",
+    "category": "Vêtements",
+    "imageFolder": "/gallery/shop/veste_zippée/",
+    "description": "Veste zippée avec logo BSM",
+    "variants": [
+      { "size": "6/8 ans", "price": 35.5 },
+      { "size": "8/10 ans", "price": 35.5 },
+      { "size": "10/12 ans", "price": 35.5 },
+      { "size": "12/13 ans", "price": 35.5 },
+      { "size": "14/15 ans", "price": 35.5 },
+      { "size": "S", "price": 39.0 },
+      { "size": "M", "price": 39.0 },
+      { "size": "L", "price": 39.0 },
+      { "size": "XL", "price": 39.0 },
+      { "size": "XXL", "price": 39.0 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Sac de sport",
+    "category": "Sac",
+    "imageFolder": "/gallery/shop/sac_de_sport/",
+    "description": "Sac de sport",
+    "variants": [{ "size": "Unique", "price": 29.5 }]
+  },
+  {
+    "id": 4,
+    "name": "Chaussettes",
+    "category": "Accessoires",
+    "imageFolder": "/gallery/shop/chaussettes/",
+    "description": "Chaussettes",
+    "variants": [
+      { "size": "25/27", "price": 8.5 },
+      { "size": "28/32", "price": 8.5 },
+      { "size": "33/36", "price": 8.5 },
+      { "size": "37/40", "price": 8.5 },
+      { "size": "41/44", "price": 8.5 },
+      { "size": "45/48", "price": 8.5 },
+      { "size": "49/52", "price": 8.5 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Echarpe",
+    "category": "Accessoires",
+    "imageFolder": "/gallery/shop/echarpe/",
+    "description": "Echarpe Basket Saint Macaire",
+    "variants": [{ "size": "Unique", "price": 15.0 }]
+  },
+  {
+    "id": 6,
+    "name": "T-shirt Nike",
+    "category": "Vêtements",
+    "imageFolder": "/gallery/shop/tshirt_nike/",
+    "description": "T-shirt Nike brodé avec le logo BSM",
+    "variants": [
+      { "size": "6/8 ans", "price": 18.5 },
+      { "size": "8/10 ans", "price": 18.5 },
+      { "size": "10/12 ans", "price": 18.5 },
+      { "size": "12/13 ans", "price": 18.5 },
+      { "size": "14/15 ans", "price": 18.5 },
+      { "size": "S", "price": 20.0 },
+      { "size": "M", "price": 20.0 },
+      { "size": "L", "price": 20.0 },
+      { "size": "XL", "price": 20.0 },
+      { "size": "XXL", "price": 20.0 }
+    ],
+    "flocking": { "price": 4.0, "maxSize": 20 }
+  },
+  {
+    "id": 7,
+    "name": "Trousse de toilette",
+    "category": "Accessoires",
+    "imageFolder": "/gallery/shop/trousse_de_toilette/",
+    "description": "Trousse de toilette avec le logo BSM",
+    "variants": [{ "size": "Unique", "price": 10.0 }]
+  },
+  {
+    "id": 8,
+    "name": "Pantalon Nike Park20",
+    "category": "Vêtements",
+    "imageFolder": "/gallery/shop/pantalon_nike/",
+    "description": "Pantalon Nike avec logo BSM",
+    "variants": [
+      { "size": "6/8 ans", "price": 27.0 },
+      { "size": "8/10 ans", "price": 27.0 },
+      { "size": "10/12 ans", "price": 27.0 },
+      { "size": "12/13 ans", "price": 27.0 },
+      { "size": "14/15 ans", "price": 27.0 },
+      { "size": "S", "price": 30.5 },
+      { "size": "M", "price": 30.5 },
+      { "size": "L", "price": 30.5 },
+      { "size": "XL", "price": 30.5 },
+      { "size": "XXL", "price": 30.5 }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Pantalon Survêtement",
+    "category": "Vêtements",
+    "imageFolder": "/gallery/shop/pantalon_survetement/",
+    "description": "Pantalon survêtement avec logo BSM",
+    "variants": [
+      { "size": "Enfant 128cm", "price": 26.0 },
+      { "size": "Enfant 140cm", "price": 26.0 },
+      { "size": "Enfant 152cm", "price": 26.0 },
+      { "size": "Enfant 164cm", "price": 26.0 },
+      { "size": "S", "price": 30.5 },
+      { "size": "M", "price": 30.5 },
+      { "size": "L", "price": 30.5 },
+      { "size": "XL", "price": 30.5 },
+      { "size": "XXL", "price": 30.5 },
+      { "size": "3XL", "price": 30.5 }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Sweat à Capuche",
+    "category": "Vêtements",
+    "imageFolder": "/gallery/shop/sweatshirt/",
+    "description": "Sweat avec logo BSM",
+    "variants": [
+      { "size": "5/6 ans", "color": "Noir", "price": 27.0 },
+      { "size": "7/8 ans", "color": "Noir", "price": 27.0 },
+      { "size": "9/11 ans", "color": "Noir", "price": 27.0 },
+      { "size": "12/14 ans", "color": "Noir", "price": 27.0 },
+      { "size": "S", "color": "Noir", "price": 30.0 },
+      { "size": "M", "color": "Noir", "price": 30.0 },
+      { "size": "L", "color": "Noir", "price": 30.0 },
+      { "size": "XL", "color": "Noir", "price": 30.0 },
+      { "size": "XXL", "color": "Noir", "price": 30.0 },
+      { "size": "3XL", "color": "Noir", "price": 30.0 },
+      { "size": "5/6 ans", "color": "Gris", "price": 27.0 },
+      { "size": "7/8 ans", "color": "Gris", "price": 27.0 },
+      { "size": "9/11 ans", "color": "Gris", "price": 27.0 },
+      { "size": "12/14 ans", "color": "Gris", "price": 27.0 },
+      { "size": "S", "color": "Gris", "price": 30.0 },
+      { "size": "M", "color": "Gris", "price": 30.0 },
+      { "size": "L", "color": "Gris", "price": 30.0 },
+      { "size": "XL", "color": "Gris", "price": 30.0 },
+      { "size": "XXL", "color": "Gris", "price": 30.0 },
+      { "size": "3XL", "color": "Gris", "price": 30.0 }
+    ],
+    "flocking": { "price": 4.0, "maxSize": 20 }
+  },
+  {
+    "id": 11,
+    "name": "Sweat zippé à capuche",
+    "category": "Vêtements",
+    "imageFolder": "/gallery/shop/sweat_zippe/",
+    "description": "Sweat zippé à capuche avec logo BSM",
+    "variants": [
+      { "size": "6/8 ans", "price": 31.0 },
+      { "size": "10/12 ans", "price": 31.0 },
+      { "size": "12/14 ans", "price": 31.0 },
+      { "size": "S", "price": 40.0 },
+      { "size": "M", "price": 40.0 },
+      { "size": "L", "price": 40.0 },
+      { "size": "XL", "price": 40.0 },
+      { "size": "XXL", "price": 40.0 },
+      { "size": "3XL", "price": 40.0 },
+      { "size": "4XL", "price": 40.0 }
+    ]
+  }
+]
