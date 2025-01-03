@@ -60,7 +60,7 @@ const scrollToTop = () => {
       >
         NOTRE FLUX INSTAGRAM
       </h2>
-      <ImageCarrousel gallery-name="homeimg" :item-height="400" :item-width="400" />
+      <ImageCarrousel gallery-name="homeimg" :item-height="400" :item-width="400" :zoomed="true" />
     </section>
 
     <!-- Partners Section -->
@@ -70,7 +70,7 @@ const scrollToTop = () => {
       >
         MERCI AU SOUTIEN DE NOS PARTENAIRES
       </h2>
-      <ImageCarrousel gallery-name="partner" :item-height="200" :item-width="200" />
+      <ImageCarrousel gallery-name="partner" :item-height="200" :item-width="200" :zoomed="false" />
     </section>
 
     <!-- Events Section -->

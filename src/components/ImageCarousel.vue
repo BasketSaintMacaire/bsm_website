@@ -5,6 +5,7 @@ interface Props {
   galleryName: string
   itemWidth: number
   itemHeight: number
+  zoomed: boolean
 }
 
 const props = defineProps<Props>()
@@ -110,7 +111,11 @@ onBeforeUnmount(() => {
         <img
           :src="image"
           :alt="`Image ${index + 1}`"
-          class="w-full h-full rounded-lg object-cover"
+          :class="[
+            props.zoomed === false
+              ? 'w-full h-full rounded-lg object-contain'
+              : 'w-full h-full rounded-lg object-cover',
+          ]"
           @mousedown.prevent
           draggable="false"
         />

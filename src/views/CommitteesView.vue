@@ -68,7 +68,7 @@ const committees = ref<Committee[]>([
     description: 'Gestion de la communication interne et externe',
     icon: Megaphone,
     members: [
-      'Laureen Hayé',
+      'Laureen HAYE',
       'Jeanne MOREAU',
       'Ilona DANET',
       'Loris BLANCHARD',

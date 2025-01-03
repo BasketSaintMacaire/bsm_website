@@ -138,7 +138,7 @@ onMounted(() => {
               v-if="productImages[product.id] && productImages[product.id].length > 0"
               :src="productImages[product.id][currentImageIndex[product.id]]"
               :alt="product.name"
-              class="w-full h-[600px] object-cover"
+              class="w-full h-[500px] object-cover"
             />
             <div v-else class="w-full h-[600px] bg-gray-700 flex items-center justify-center">
               <p class="text-gray-400">No image available</p>
