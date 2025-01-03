@@ -129,12 +129,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-* {
-  font-family: 'Poppins', sans-serif;
-}
-
 .timeline-card {
   transform: perspective(1000px) rotateY(0deg);
   transition: transform 0.3s ease-in-out;
