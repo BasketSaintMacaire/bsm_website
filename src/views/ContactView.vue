@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+// 1) Import EmailJS
+import emailjs from '@emailjs/browser'
 
 interface FormData {
   lastName: string
@@ -32,11 +34,14 @@ const errors = ref<FormErrors>({})
 
 const aboutOptions = [
   { value: 'planning', label: 'Planning' },
-  { value: 'entrainement', label: 'Entrainement' },
-  { value: 'evenement', label: 'Evenement' },
-  { value: 'emarque', label: 'Emarque' },
-  { value: 'inscription', label: 'Inscription' },
-  { value: 'autre', label: 'Autre' },
+  { value: 'tournoi', label: 'Tournoi' },
+  { value: 'boutique', label: 'Boutique' },
+  { value: 'sponsoring', label: 'Sponsoring' },
+  { value: 'planning', label: 'Planning' },
+  { value: 'bar', label: 'Bar' },
+  { value: 'technique', label: 'Equipe/Entrainement' },
+  { value: 'secretariat', label: 'Inscription' },
+  { value: 'website', label: 'Autre' },
 ]
 
 const recipientEmail = computed(() => {
@@ -83,14 +88,34 @@ const validateForm = (): boolean => {
   return isValid
 }
 
+// 2) Send email using EmailJS within handleSubmit
 const handleSubmit = async () => {
   if (!validateForm()) return
 
   try {
     console.log('Form submitted:', formData.value)
     console.log('Recipient email:', recipientEmail.value)
-    // Here you would typically send the form data to your backend
-    // along with the recipientEmail
+
+    // Prepare parameters for your EmailJS template
+    const templateParams = {
+      firstName: formData.value.firstName,
+      lastName: formData.value.lastName,
+      email: formData.value.email,
+      about: formData.value.about,
+      message: formData.value.message,
+      recipientEmail: recipientEmail.value,
+    }
+
+    // Send email using EmailJS
+    const response = await emailjs.send(
+      'website_service',
+      'template_contact_form', // e.g. "template_xxx"
+      templateParams,
+      'AcTLkGWdcMa1-WcWM', // e.g. "user_xxx"
+    )
+    console.log('EmailJS response:', response.status, response.text)
+
+    // Clear form after successful submission
     formData.value = {
       lastName: '',
       firstName: '',
