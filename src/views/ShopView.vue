@@ -3,17 +3,19 @@ import { ref, computed, onMounted } from 'vue'
 import { ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import shopItemDataJson from '@/assets/shop_item/shop_item.json'
 
+// 1) Import EmailJS
+import emailjs from '@emailjs/browser'
+
+// ------------ Existing Interfaces ------------
 interface ProductVariant {
   size?: string
   color?: string
   price: number
 }
-
 interface Flocking {
   price: number
   maxSize: number
 }
-
 interface Product {
   id: number
   name: string
@@ -23,6 +25,7 @@ interface Product {
   variants: ProductVariant[]
   flocking?: Flocking
 }
+// ---------------------------------------------
 
 const showCart = ref(false)
 const cart = ref<{ product: Product; variant: ProductVariant; quantity: number }[]>([])
@@ -36,11 +39,11 @@ const cartTotal = computed(() => {
   return cart.value.reduce((total, item) => total + item.variant.price * item.quantity, 0)
 })
 
+// Add an item to the cart
 const addToCart = (product: Product, variant: ProductVariant) => {
   const existingItem = cart.value.find(
     (item) => item.product.id === product.id && item.variant.size === variant.size,
   )
-
   if (existingItem) {
     existingItem.quantity++
   } else {
@@ -48,14 +51,11 @@ const addToCart = (product: Product, variant: ProductVariant) => {
   }
 }
 
+// Load images for each product (from gallery-images.json)
 const getProductImages = async (product: Product) => {
   try {
     const response = await fetch('/gallery-images.json')
     const allImages: string[] = await response.json()
-
-    console.log(product.imageFolder)
-    console.log(allImages)
-
     return allImages.filter((path) => path.includes(product.imageFolder))
   } catch (err) {
     console.error('Error fetching product images:', err)
@@ -63,11 +63,9 @@ const getProductImages = async (product: Product) => {
     return []
   }
 }
-
 const loadProductImages = async () => {
   loading.value = true
   error.value = null
-
   try {
     for (const product of products.value) {
       productImages.value[product.id] = await getProductImages(product)
@@ -81,13 +79,13 @@ const loadProductImages = async () => {
   }
 }
 
+// Image carousel controls
 const nextImage = (productId: number) => {
   const images = productImages.value[productId]
   if (images && images.length > 0) {
     currentImageIndex.value[productId] = (currentImageIndex.value[productId] + 1) % images.length
   }
 }
-
 const prevImage = (productId: number) => {
   const images = productImages.value[productId]
   if (images && images.length > 0) {
@@ -99,11 +97,78 @@ const prevImage = (productId: number) => {
 onMounted(() => {
   loadProductImages()
 })
+
+// 2) Build the items table as HTML for EmailJS
+function generateItemsTable() {
+  let rows = ''
+  cart.value.forEach((item) => {
+    rows += `
+      <tr>
+        <td>${item.product.name}</td>
+        <td>${item.quantity}</td>
+        <td>${(item.variant.price * item.quantity).toFixed(2)}€</td>
+      </tr>
+    `
+  })
+  return rows
+}
+
+// 3) Handle the order process (send the “Bon de Commande” email)
+async function handleOrder() {
+  try {
+    // Example: build the items table
+    const itemsHtml = generateItemsTable()
+
+    // You could generate an orderNumber, get today's date, or ask the user for billing details
+    const orderNumber = 'BSM-' + Date.now().toString().slice(-6) // simplistic example
+    const orderDate = new Date().toLocaleDateString('fr-FR')
+
+    // You can also build subTotal / total differently if you have shipping, taxes, etc.
+    const subTotalValue = cartTotal.value.toFixed(2) + '€'
+    const totalValue = cartTotal.value.toFixed(2) + '€'
+
+    // Dummy billing info (you might get this from a checkout form)
+    const billingName = 'Sherlock Holmes'
+    const billingAddress = '221B Baker Street, London'
+    const billingPhone = '02073004382'
+    const billingEmail = 'sherlock@holmes.co.uk'
+
+    // Construct template params matching your EmailJS template placeholders
+    const templateParams = {
+      orderNumber,
+      orderDate,
+      itemsTable: itemsHtml,
+      subTotal: subTotalValue,
+      total: totalValue,
+      billingName,
+      billingAddress,
+      billingPhone,
+      billingEmail,
+    }
+
+    // 4) Send the email using EmailJS
+    const response = await emailjs.send(
+      'website_service', // e.g. "service_xyz"
+      'template_bon_de_commande', // e.g. "template_abc"
+      templateParams,
+      'AcTLkGWdcMa1-WcWM', // e.g. "xxxxx"
+    )
+    console.log('Email sent:', response.status, response.text)
+
+    // Optionally clear the cart or show a success message
+    cart.value = []
+    alert('Commande envoyée avec succès !')
+    showCart.value = false
+  } catch (error) {
+    console.error('Error sending order email:', error)
+    alert('Erreur lors de l’envoi de la commande. Veuillez réessayer.')
+  }
+}
 </script>
 
 <template>
   <div class="min-h-screen bg-black text-white">
-    <!-- Cart Icon (Fixed position) -->
+    <!-- Cart Icon -->
     <div class="fixed top-4 right-4 z-50">
       <button
         class="relative p-2 bg-[#1A1A1A] hover:bg-gray-700 rounded-full transition-colors"
@@ -143,6 +208,8 @@ onMounted(() => {
             <div v-else class="w-full h-[600px] bg-gray-700 flex items-center justify-center">
               <p class="text-gray-400">No image available</p>
             </div>
+
+            <!-- Carousel Controls -->
             <button
               v-if="productImages[product.id] && productImages[product.id].length > 1"
               @click="prevImage(product.id)"
@@ -158,6 +225,7 @@ onMounted(() => {
               <ChevronRight class="w-6 h-6" />
             </button>
           </div>
+
           <div class="p-4">
             <h3 class="text-lg font-semibold">{{ product.name }}</h3>
             <p class="text-gray-400 text-sm mt-1">{{ product.description }}</p>
@@ -233,7 +301,7 @@ onMounted(() => {
               <div class="flex items-center gap-2 mt-2">
                 <button
                   class="text-gray-400 hover:text-white"
-                  @click="item.quantity = Math.max(0, item.quantity - 1)"
+                  @click="item.quantity = Math.max(1, item.quantity - 1)"
                 >
                   -
                 </button>
@@ -251,8 +319,10 @@ onMounted(() => {
               <span>Total</span>
               <span>{{ cartTotal.toFixed(2) }}€</span>
             </div>
+            <!-- Trigger the handleOrder() function here -->
             <button
               class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md mt-4 transition-colors"
+              @click="handleOrder"
             >
               Passer la commande
             </button>

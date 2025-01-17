@@ -81,12 +81,7 @@ const uniqueTeams = computed(() =>
           :key="`${event.date}-${event.time_start}-${event.team}`"
           class="bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
         >
-          <div
-            :class="[
-              'px-4 py-3 text-lg font-semibold',
-              event.isDomicile ? 'bg-green-700' : 'bg-blue-700',
-            ]"
-          >
+          <div class="px-4 py-3 text-lg font-semibold">
             {{ event.date }} - {{ event.time_start }}
           </div>
           <div class="p-4 space-y-2">
