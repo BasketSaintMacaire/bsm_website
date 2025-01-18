@@ -27,7 +27,7 @@ const scrollToTop = () => {
       <div class="absolute inset-0 bg-black bg-opacity-40">
         <div class="container mx-auto px-6 h-full flex flex-col justify-end pb-24">
           <h1
-            class="text-5xl md:text-7xl font-extrabold max-w-2xl leading-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+            class="text-5xl md:text-7xl font-extrabold max-w-2xl leading-tight bg-clip-text text-transparent bg-purple-600"
           >
             LA FORCE DES LOUPS EST DANS LA MEUTE
           </h1>
@@ -56,7 +56,7 @@ const scrollToTop = () => {
     <!-- Photo Grid -->
     <section class="py-16">
       <h2
-        class="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+        class="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-purple-600"
       >
         NOTRE FLUX INSTAGRAM
       </h2>
@@ -66,7 +66,7 @@ const scrollToTop = () => {
     <!-- Partners Section -->
     <section class="py-16 bg-black">
       <h2
-        class="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+        class="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-purple-600"
       >
         MERCI AU SOUTIEN DE NOS PARTENAIRES
       </h2>
@@ -77,7 +77,7 @@ const scrollToTop = () => {
     <section class="py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+          class="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-purple-600"
         >
           NOS ÉVÉNEMENTS DE LA SAISON
         </h2>

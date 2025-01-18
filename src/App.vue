@@ -25,11 +25,7 @@ const closeMenu = () => {
 <template>
   <div class="flex flex-col min-h-screen">
     <header class="bg-[#1A1A1A] px-4 sm:px-6 py-4 fixed top-0 left-0 right-0 z-50">
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <RouterLink to="/" class="flex-shrink-0" @click="closeMenu">
-          <img alt="Vue logo" class="w-16 h-16" src="/logo.png" />
-        </RouterLink>
-
+      <div class="w-full mx-auto flex items-center">
         <button @click="toggleMenu" class="md:hidden text-white">
           <Menu v-if="!isMenuOpen" class="w-6 h-6" />
           <X v-else class="w-6 h-6" />
@@ -39,7 +35,9 @@ const closeMenu = () => {
           :class="[
             'md:flex',
             'items-center',
+            'justify-around',
             'gap-8',
+            'w-full',
             {
               hidden: !isMenuOpen,
               'flex flex-col absolute top-full left-0 right-0 bg-[#1A1A1A] p-4 md:p-0 md:static md:flex-row':
@@ -47,11 +45,15 @@ const closeMenu = () => {
             },
           ]"
         >
+          <RouterLink to="/" class="flex-shrink-0" @click="closeMenu">
+            <img alt="Vue logo" class="w-16 h-16" src="/logo.png" />
+          </RouterLink>
+
           <RouterLink
             v-for="(link, index) in links"
             :key="index"
             :to="link.to"
-            class="text-white font-bold text-sm uppercase tracking-wider hover:text-gray-300 transition-colors py-2 md:py-0"
+            class="text-white font-bold text-xl uppercase tracking-wider hover:text-gray-300 transition-colors py-2 md:py-0"
             @click="closeMenu"
           >
             {{ link.text }}

@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { X, Calendar, User, Tag } from 'lucide-vue-next'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -9,6 +10,7 @@ interface NewsArticle {
   id: number
   title: string
   excerpt: string
+  content: string
   author: string
   date: string
   image: string
@@ -18,63 +20,59 @@ interface NewsArticle {
 const articles = ref<NewsArticle[]>([
   {
     id: 1,
-    title: "L'équipe BSM remporte le championnat régional",
-    excerpt: 'Une victoire écrasante qui propulse notre équipe vers de nouveaux sommets.',
-    author: 'Jean Dupont',
-    date: '2024-03-15',
-    image: 'https://placehold.co/600x400',
-    category: 'Victoires',
+    title: 'Direction la Région pour nos U13 M1 et U15 M1',
+    excerpt:
+      'Félicitations à nos équipes qui ont brillamment décroché leur place en Région lors de la première phase !',
+    content:
+      'Un grand bravo à nos U13 M1 et nos U15 M1 qui accèdent désormais à la Région grâce à leurs remarquables performances lors de cette première phase. Nos U15 M1 ont réalisé un sans-faute avec 10 victoires en 10 matchs, tandis que nos U13 M1 s’imposent avec 7 victoires sur 8 matchs disputés. Nous comptons sur vous pour continuer à les encourager et les soutenir afin qu’ils poursuivent leur ascension. #laforcedesloups',
+    author: 'Jeanne Moreau',
+    date: '2025-01-06',
+    image: '/gallery/news/img_region.jpg',
+    category: 'Compétitions',
   },
   {
     id: 2,
-    title: 'Nouveau partenariat avec EquipSport',
-    excerpt: "BSM s'associe à EquipSport pour fournir le meilleur équipement à nos joueurs.",
-    author: 'Marie Curie',
-    date: '2024-03-10',
-    image: 'https://placehold.co/600x400',
-    category: 'Partenariats',
-  },
-  {
-    id: 3,
-    title: "Stage d'été BSM : les inscriptions sont ouvertes",
-    excerpt: 'Perfectionnez vos compétences cet été avec nos entraîneurs professionnels.',
-    author: 'Pierre Martin',
-    date: '2024-03-05',
-    image: 'https://placehold.co/600x400',
+    title: 'Remise du Label Départemental MiniBasket',
+    excerpt:
+      'Le Basket Saint-Macaire reçoit le Label MiniBasket autour d’une journée de matchs et de festivités.',
+    content:
+      'Ce samedi, le Basket Saint-Macaire a officiellement reçu le Label Départemental MiniBasket lors d’une cérémonie ponctuée de rencontres MiniBasket. Le label or a été remis par Nathalie BOURRY, responsable du Pôle Développement et Vivre Ensemble, à Céline GRASSET (présidente), Jérémy POILANE (référent MiniBasket) et Julien BEAUDOUIN (entraîneur des U7), en présence de Chantal GOURDON, adjointe territoriale de Saint-Macaire-en-Mauges, et Vincent BLANCHARD, adjoint aux sports. Un grand merci également à @intersport_clubscoentreprises et au @creditmutuel, partenaires de ce label. #B49',
+    author: 'Ilona Danet',
+    date: '2024-12-04',
+    image: 'gallery/news/remise_label_mini_basket.jpg',
     category: 'Événements',
   },
   {
-    id: 4,
-    title: 'Interview exclusive avec notre capitaine',
-    excerpt: 'Découvrez les secrets de notre succès avec une interview inédite de notre capitaine.',
-    author: 'Sophie Dubois',
-    date: '2024-02-28',
-    image: 'https://placehold.co/600x400',
-    category: 'Interviews',
-  },
-  {
-    id: 5,
-    title: 'Bilan de mi-saison : BSM en tête du classement',
-    excerpt: 'Analyse des performances exceptionnelles de notre équipe à mi-parcours.',
-    author: 'Luc Girard',
-    date: '2024-02-20',
-    image: 'https://placehold.co/600x400',
-    category: 'Analyses',
-  },
-  {
-    id: 6,
-    title: 'Journée portes ouvertes : venez découvrir le BSM',
-    excerpt: 'Une occasion unique de rencontrer nos joueurs et de visiter nos installations.',
-    author: 'Émilie Rousseau',
-    date: '2024-02-15',
-    image: 'https://placehold.co/600x400',
+    id: 1,
+    title: 'TOUS EN ROSE : BSM s’engage pour Octobre Rose',
+    excerpt:
+      'Le BSM organise une bourriche et une vente de crêpes au profit de la lutte contre le cancer du sein.',
+    content:
+      'Samedi 12 octobre, le Basket Saint-Macaire se mobilise pour Octobre Rose ! Le bureau des jeunes organise une bourriche et une vente de crêpes dès 16h15 à la salle Georges Raymond. Les participants pourront tenter de deviner le nombre de bonbons roses, tout en soutenant une bonne cause. L’intégralité des fonds récoltés sera reversée à la Ligue contre le cancer du sein. Venez nombreux participer et soutenir cette belle initiative !',
+    author: 'Bureau des jeunes',
+    date: '2024-10-08',
+    image: 'gallery/news/octobre_rose.jpg',
     category: 'Événements',
   },
 ])
 
+const selectedArticle = ref<NewsArticle | null>(null)
+const showModal = ref(false)
+
 const formatDate = (dateString: string): string => {
   const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' }
   return new Date(dateString).toLocaleDateString('fr-FR', options)
+}
+
+const openModal = (article: NewsArticle) => {
+  selectedArticle.value = article
+  showModal.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+const closeModal = () => {
+  showModal.value = false
+  document.body.style.overflow = 'auto'
 }
 
 let scrollTween: gsap.core.Tween
@@ -118,7 +116,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-black">
+  <div class="min-h-screen bg-black text-gray-100">
     <div class="bg-purple-700 text-white py-4 w-full overflow-hidden">
       <div class="container mx-auto px-4">
         <div class="relative overflow-hidden h-32">
@@ -138,28 +136,22 @@ onUnmounted(() => {
         <article
           v-for="article in articles"
           :key="article.id"
-          class="news-card bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+          class="news-card bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer"
+          @click="openModal(article)"
         >
           <img :src="article.image" :alt="article.title" class="w-full h-48 object-cover" />
           <div class="p-6">
-            <span class="text-xs font-semibold text-purple-600 uppercase tracking-wider">{{
+            <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">{{
               article.category
             }}</span>
-            <h2 class="mt-2 text-xl font-semibold text-gray-800 leading-tight">
+            <h2 class="mt-2 text-xl font-semibold text-gray-100 leading-tight">
               {{ article.title }}
             </h2>
-            <p class="mt-3 text-gray-600">{{ article.excerpt }}</p>
+            <p class="mt-3 text-gray-300">{{ article.excerpt }}</p>
             <div class="mt-4 flex items-center">
-              <div class="flex-shrink-0">
-                <img
-                  class="h-10 w-10 rounded-full"
-                  src="https://placeholder.co/40x40"
-                  :alt="article.author"
-                />
-              </div>
               <div class="ml-3">
-                <p class="text-sm font-medium text-gray-900">{{ article.author }}</p>
-                <div class="flex space-x-1 text-sm text-gray-500">
+                <p class="text-sm font-medium text-gray-200">{{ article.author }}</p>
+                <div class="flex space-x-1 text-sm text-gray-400">
                   <time :datetime="article.date">{{ formatDate(article.date) }}</time>
                 </div>
               </div>
@@ -168,6 +160,77 @@ onUnmounted(() => {
         </article>
       </div>
     </main>
+
+    <!-- Enhanced Modal -->
+    <div
+      v-if="showModal"
+      class="fixed inset-0 z-50 overflow-y-auto"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
+      >
+        <div
+          class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity"
+          aria-hidden="true"
+          @click="closeModal"
+        ></div>
+
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true"
+          >&#8203;</span
+        >
+
+        <div
+          class="inline-block align-bottom bg-[#1A1A1A] rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full"
+        >
+          <div class="absolute top-0 right-0 pt-4 pr-4">
+            <button
+              @click="closeModal"
+              class="text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150"
+              aria-label="Close"
+            >
+              <X class="h-6 w-6" />
+            </button>
+          </div>
+
+          <div class="bg-[#1A1A1A] px-4 pt-5 pb-4 sm:p-6 sm:pb-4 max-h-[90vh] overflow-y-auto">
+            <div class="sm:flex sm:items-start">
+              <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+                <h3 class="text-3xl leading-6 font-bold text-gray-100 mb-4" id="modal-title">
+                  {{ selectedArticle?.title }}
+                </h3>
+                <div class="flex items-center justify-between mb-6 text-sm text-gray-400">
+                  <div class="flex items-center">
+                    <Calendar class="w-4 h-4 mr-2" />
+                    <span>{{ formatDate(selectedArticle?.date || '') }}</span>
+                  </div>
+                  <div class="flex items-center">
+                    <User class="w-4 h-4 mr-2" />
+                    <span>{{ selectedArticle?.author }}</span>
+                  </div>
+                  <div class="flex items-center">
+                    <Tag class="w-4 h-4 mr-2" />
+                    <span>{{ selectedArticle?.category }}</span>
+                  </div>
+                </div>
+                <div class="relative overflow-hidden mb-6">
+                  <img
+                    :src="selectedArticle?.image"
+                    :alt="selectedArticle?.title"
+                    class="w-full h-auto object-cover"
+                  />
+                </div>
+                <div class="text-base text-gray-300 mb-8">
+                  {{ selectedArticle?.content }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

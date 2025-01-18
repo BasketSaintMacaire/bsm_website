@@ -40,7 +40,9 @@ const uniqueTeams = computed(() =>
 <template>
   <div class="min-h-screen bg-black text-white py-8 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <h1 class="text-4xl font-bold text-center mb-8">Planning BSM St Macaire en Mauges</h1>
+      <h1 class="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-purple-600">
+        Planning BSM St Macaire en Mauges
+      </h1>
 
       <div class="mb-8 flex flex-col sm:flex-row justify-center items-center gap-4">
         <div class="w-full sm:w-64">
@@ -81,7 +83,7 @@ const uniqueTeams = computed(() =>
           :key="`${event.date}-${event.time_start}-${event.team}`"
           class="bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
         >
-          <div class="px-4 py-3 text-lg font-semibold">
+          <div class="bg-gray-700 px-4 py-3 text-lg font-semibold">
             {{ event.date }} - {{ event.time_start }}
           </div>
           <div class="p-4 space-y-2">

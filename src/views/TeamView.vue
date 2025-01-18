@@ -77,7 +77,7 @@ onUnmounted(() => {
   <div class="min-h-screen bg-black text-white pb-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1
-        class="text-5xl font-extrabold text-center py-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+        class="text-5xl font-extrabold text-center py-16 bg-clip-text text-transparent bg-purple-600"
       >
         Nos Équipes BSM
       </h1>
