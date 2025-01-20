@@ -89,7 +89,7 @@ const closeMenu = () => {
             <ul class="space-y-2 text-sm text-gray-400">
               <li>Stade Georges Raymond</li>
               <li>06 84 41 53 02</li>
-              <li>basket.stmacaire@yahoo.fr</li>
+              <li>contact@bsmbasket.fr</li>
             </ul>
           </div>
 
