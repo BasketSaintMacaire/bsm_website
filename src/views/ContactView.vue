@@ -41,7 +41,7 @@ const aboutOptions = [
   { value: 'bar', label: 'Bar' },
   { value: 'technique', label: 'Equipe/Entrainement' },
   { value: 'secretariat', label: 'Inscription' },
-  { value: 'website', label: 'Autre' },
+  { value: 'contact', label: 'Autre' },
 ]
 
 const recipientEmail = computed(() => {

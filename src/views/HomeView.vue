@@ -3,11 +3,11 @@ import ImageCarrousel from '@/components/ImageCarousel.vue'
 import { ref } from 'vue'
 
 const events = ref([
-  { name: 'Tournoi du fairplay', day: '21', month: 'AVRIL', year: '2024' },
-  { name: 'Tournoi de palais', day: '14', month: 'AVRIL', year: '2024' },
-  { name: 'Gallete du bsm', day: '29', month: 'MARS', year: '2024' },
-  { name: 'Assemblé générale', day: '24', month: 'MARS', year: '2024' },
-  { name: 'Fin de saison', day: '20', month: 'MARS', year: '2024' },
+  { name: 'Assemblé Générale', day: '7', month: 'SEPTEMBRE', year: '2024' },
+  { name: 'Plateau baby', day: '5', month: 'AVRIL', year: '2025' },
+  { name: 'Tournoi du fairplay', day: '6', month: 'AVRIL', year: '2025' },
+  { name: 'Tournoi de palais', day: '11', month: 'AVRIL', year: '2025' },
+  { name: 'Soirée du basket', day: '22', month: 'MARS', year: '2025' },
 ])
 
 const scrollToTop = () => {
@@ -53,7 +53,7 @@ const scrollToTop = () => {
       </div>
     </section>
 
-    <!-- Photo Grid -->
+    <!-- Photo Grid
     <section class="py-16">
       <h2
         class="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-purple-600"
@@ -61,7 +61,7 @@ const scrollToTop = () => {
         NOTRE FLUX INSTAGRAM
       </h2>
       <ImageCarrousel gallery-name="homeimg" :item-height="400" :item-width="400" :zoomed="true" />
-    </section>
+    </section> -->
 
     <!-- Partners Section -->
     <section class="py-16 bg-black">

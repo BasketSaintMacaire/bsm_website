@@ -43,7 +43,7 @@ const articles = ref<NewsArticle[]>([
     category: 'Événements',
   },
   {
-    id: 1,
+    id: 3,
     title: 'TOUS EN ROSE : BSM s’engage pour Octobre Rose',
     excerpt:
       'Le BSM organise une bourriche et une vente de crêpes au profit de la lutte contre le cancer du sein.',
@@ -52,6 +52,30 @@ const articles = ref<NewsArticle[]>([
     author: 'Bureau des jeunes',
     date: '2024-10-08',
     image: 'gallery/news/octobre_rose.jpg',
+    category: 'Événements',
+  },
+  {
+    id: 4,
+    title: 'Tournoi du Fair-Play 2025 : Respect et Convivialité au Rendez-vous',
+    excerpt:
+      'Le célèbre tournoi du Fair-play revient le dimanche 06 avril 2025 pour les catégories U09 et U11.',
+    content:
+      'Notre célèbre Tournoi du Fair-play fait son grand retour le dimanche 06 avril 2025 ! Destiné aux U09 et U11, cet événement mythique se déroulera autour de la thématique du respect. Pour vous inscrire, rendez-vous sur le lien suivant : https://www.tournify.fr/live/tournoi-fairplay2025-bsm?fbclid=PAZXh0bgNhZW0CMTEAAaZlj62Yc6hgEqV4P5GroIEvKe0QoXGOHt1jqI4eO-ZFZPEnkb8YXOk6GWg_aem_GXu0hgnPg2512x5k0NmytQ. Nous comptons sur vous pour faire de cette journée un moment inoubliable, placé sous le signe de la convivialité et du fair-play !',
+    author: 'Jeanne Moreau',
+    date: '2025-01-18',
+    image: '/gallery/news/tournoi_fair_play.jpg',
+    category: 'Tournois',
+  },
+  {
+    id: 1,
+    title: 'Le BSM Déraille : Soirée Basket Édition 2025',
+    excerpt:
+      'Découvrez l’affiche officielle de la soirée basket 2025 du BSM, sous le thème “Le BSM Déraille”.',
+    content:
+      "Chers abonnés du BSM, préparez-vous pour un événement hors du commun ! Nous avons l'honneur de vous dévoiler l’affiche officielle de la soirée du basket édition 2025, placée sous le thème « Le BSM Déraille ». Nous comptons sur vous pour arborer une tenue choc, pleine de couleurs et de folie. Bloquez d’ores et déjà la date dans vos agendas : rendez-vous en mars pour célébrer ensemble cette soirée inoubliable !",
+    author: 'Le Bureau',
+    date: '2025-01-18',
+    image: '/gallery/news/soiree_basket.jpg',
     category: 'Événements',
   },
 ])
@@ -134,7 +158,9 @@ onUnmounted(() => {
     <main class="container mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <article
-          v-for="article in articles"
+          v-for="article in articles.sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+          )"
           :key="article.id"
           class="news-card bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer"
           @click="openModal(article)"

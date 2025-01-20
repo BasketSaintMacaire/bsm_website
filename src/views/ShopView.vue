@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { ShoppingCart, ChevronLeft, ChevronRight, X } from 'lucide-vue-next'
 import shopItemDataJson from '@/assets/shop_item/shop_item.json'
-
-// 1) Import EmailJS
 import emailjs from '@emailjs/browser'
 
-// ------------ Existing Interfaces ------------
 interface ProductVariant {
   size?: string
   color?: string
   price: number
 }
+
 interface Flocking {
   price: number
   maxSize: number
 }
+
 interface Product {
   id: number
   name: string
@@ -25,21 +24,33 @@ interface Product {
   variants: ProductVariant[]
   flocking?: Flocking
 }
-// ---------------------------------------------
+
+interface BillingInfo {
+  name: string
+  address: string
+  phone: string
+  email: string
+}
 
 const showCart = ref(false)
+const showBillingModal = ref(false)
 const cart = ref<{ product: Product; variant: ProductVariant; quantity: number }[]>([])
 const products = ref<Product[]>(shopItemDataJson as Product[])
 const productImages = ref<{ [key: number]: string[] }>({})
 const currentImageIndex = ref<{ [key: number]: number }>({})
 const loading = ref(true)
 const error = ref<string | null>(null)
+const billingInfo = ref<BillingInfo>({
+  name: '',
+  address: '',
+  phone: '',
+  email: '',
+})
 
 const cartTotal = computed(() => {
   return cart.value.reduce((total, item) => total + item.variant.price * item.quantity, 0)
 })
 
-// Add an item to the cart
 const addToCart = (product: Product, variant: ProductVariant) => {
   const existingItem = cart.value.find(
     (item) => item.product.id === product.id && item.variant.size === variant.size,
@@ -51,7 +62,6 @@ const addToCart = (product: Product, variant: ProductVariant) => {
   }
 }
 
-// Load images for each product (from gallery-images.json)
 const getProductImages = async (product: Product) => {
   try {
     const response = await fetch('/gallery-images.json')
@@ -63,6 +73,7 @@ const getProductImages = async (product: Product) => {
     return []
   }
 }
+
 const loadProductImages = async () => {
   loading.value = true
   error.value = null
@@ -79,13 +90,13 @@ const loadProductImages = async () => {
   }
 }
 
-// Image carousel controls
 const nextImage = (productId: number) => {
   const images = productImages.value[productId]
   if (images && images.length > 0) {
     currentImageIndex.value[productId] = (currentImageIndex.value[productId] + 1) % images.length
   }
 }
+
 const prevImage = (productId: number) => {
   const images = productImages.value[productId]
   if (images && images.length > 0) {
@@ -98,7 +109,6 @@ onMounted(() => {
   loadProductImages()
 })
 
-// 2) Build the items table as HTML for EmailJS
 function generateItemsTable() {
   let rows = ''
   cart.value.forEach((item) => {
@@ -113,56 +123,81 @@ function generateItemsTable() {
   return rows
 }
 
-// 3) Handle the order process (send the “Bon de Commande” email)
 async function handleOrder() {
   try {
-    // Example: build the items table
     const itemsHtml = generateItemsTable()
-
-    // You could generate an orderNumber, get today's date, or ask the user for billing details
-    const orderNumber = 'BSM-' + Date.now().toString().slice(-6) // simplistic example
+    const orderNumber = 'BSM-' + Date.now().toString().slice(-6)
     const orderDate = new Date().toLocaleDateString('fr-FR')
-
-    // You can also build subTotal / total differently if you have shipping, taxes, etc.
     const subTotalValue = cartTotal.value.toFixed(2) + '€'
     const totalValue = cartTotal.value.toFixed(2) + '€'
 
-    // Dummy billing info (you might get this from a checkout form)
-    const billingName = 'Sherlock Holmes'
-    const billingAddress = '221B Baker Street, London'
-    const billingPhone = '02073004382'
-    const billingEmail = 'sherlock@holmes.co.uk'
-
-    // Construct template params matching your EmailJS template placeholders
-    const templateParams = {
+    const clientTemplateParams = {
       orderNumber,
       orderDate,
       itemsTable: itemsHtml,
       subTotal: subTotalValue,
       total: totalValue,
-      billingName,
-      billingAddress,
-      billingPhone,
-      billingEmail,
+      billingName: billingInfo.value.name,
+      billingAddress: billingInfo.value.address,
+      billingPhone: billingInfo.value.phone,
+      billingEmail: billingInfo.value.email,
+      recipientEmail: billingInfo.value.email,
     }
 
-    // 4) Send the email using EmailJS
-    const response = await emailjs.send(
-      'website_service', // e.g. "service_xyz"
-      'template_bon_de_commande', // e.g. "template_abc"
-      templateParams,
-      'AcTLkGWdcMa1-WcWM', // e.g. "xxxxx"
+    const clientResponse = await emailjs.send(
+      'website_service',
+      'template_bon_de_commande',
+      clientTemplateParams,
+      'AcTLkGWdcMa1-WcWM',
     )
-    console.log('Email sent:', response.status, response.text)
+    console.log('Client email sent:', clientResponse.status, clientResponse.text)
 
-    // Optionally clear the cart or show a success message
+    const adminTemplateParams = {
+      orderNumber,
+      orderDate,
+      itemsTable: itemsHtml,
+      subTotal: subTotalValue,
+      total: totalValue,
+      billingName: billingInfo.value.name,
+      billingAddress: billingInfo.value.address,
+      billingPhone: billingInfo.value.phone,
+      billingEmail: billingInfo.value.email,
+      recipientEmail: 'website@bsmbasket.fr',
+    }
+
+    const adminResponse = await emailjs.send(
+      'website_service',
+      'template_bon_de_commande',
+      adminTemplateParams,
+      'AcTLkGWdcMa1-WcWM',
+    )
+    console.log('Admin email sent:', adminResponse.status, adminResponse.text)
+
     cart.value = []
     alert('Commande envoyée avec succès !')
+    showBillingModal.value = false
     showCart.value = false
   } catch (error) {
     console.error('Error sending order email:', error)
-    alert('Erreur lors de l’envoi de la commande. Veuillez réessayer.')
+    alert("Erreur lors de l'envoi de la commande. Veuillez réessayer.")
   }
+}
+
+function decrementItem(item: { product: Product; variant: ProductVariant; quantity: number }) {
+  if (item.quantity > 1) {
+    item.quantity--
+  } else {
+    // If quantity is 1 and the user clicks minus, remove the item from the cart
+    cart.value = cart.value.filter((cartItem) => cartItem !== item)
+  }
+}
+
+const openBillingModal = () => {
+  showBillingModal.value = true
+}
+
+const closeBillingModal = () => {
+  showBillingModal.value = false
 }
 </script>
 
@@ -270,67 +305,160 @@ async function handleOrder() {
       class="fixed inset-0 bg-black bg-opacity-50 z-50"
       @click="showCart = false"
     >
-      <div class="absolute right-0 top-0 h-full w-96 bg-gray-800 p-6" @click.stop>
-        <div class="flex justify-between items-center mb-6">
-          <h2 class="text-xl font-bold">Panier</h2>
-          <button class="text-gray-400 hover:text-white" @click="showCart = false">✕</button>
-        </div>
-
-        <div v-if="cart.length === 0" class="text-center text-gray-400 py-8">
-          Votre panier est vide
-        </div>
-
-        <div v-else class="space-y-4">
-          <div
-            v-for="item in cart"
-            :key="`${item.product.id}-${item.variant.size}`"
-            class="flex items-center gap-4 bg-gray-700 p-4 rounded-lg"
-          >
-            <img
-              v-if="productImages[item.product.id] && productImages[item.product.id].length > 0"
-              :src="productImages[item.product.id][0]"
-              :alt="item.product.name"
-              class="w-16 h-16 object-cover rounded"
-            />
-            <div v-else class="w-16 h-16 bg-gray-600 rounded flex items-center justify-center">
-              <p class="text-xs text-gray-400">No image</p>
-            </div>
-            <div class="flex-1">
-              <h3 class="font-semibold">{{ item.product.name }}</h3>
-              <p class="text-sm text-gray-400">Taille: {{ item.variant.size }}</p>
-              <div class="flex items-center gap-2 mt-2">
-                <button
-                  class="text-gray-400 hover:text-white"
-                  @click="item.quantity = Math.max(1, item.quantity - 1)"
-                >
-                  -
-                </button>
-                <span>{{ item.quantity }}</span>
-                <button class="text-gray-400 hover:text-white" @click="item.quantity++">+</button>
-              </div>
-            </div>
-            <div class="text-right">
-              <p class="font-semibold">{{ (item.variant.price * item.quantity).toFixed(2) }}€</p>
-            </div>
-          </div>
-
-          <div class="border-t border-gray-700 pt-4 mt-4">
-            <div class="flex justify-between text-lg font-bold">
-              <span>Total</span>
-              <span>{{ cartTotal.toFixed(2) }}€</span>
-            </div>
-            <!-- Trigger the handleOrder() function here -->
-            <button
-              class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md mt-4 transition-colors"
-              @click="handleOrder"
-            >
-              Passer la commande
+      <div class="absolute right-0 top-0 h-full w-96 bg-[#1A1A1A] flex flex-col" @click.stop>
+        <!-- Cart Header -->
+        <div class="p-6 border-b border-gray-700">
+          <div class="flex justify-between items-center">
+            <h2 class="text-xl font-bold">Panier</h2>
+            <button class="text-gray-400 hover:text-white" @click="showCart = false">
+              <X class="w-6 h-6" />
             </button>
           </div>
         </div>
+
+        <!-- Cart Items (Scrollable) -->
+        <div class="flex-grow overflow-y-auto p-6">
+          <div v-if="cart.length === 0" class="text-center text-gray-400 py-8">
+            Votre panier est vide
+          </div>
+
+          <div v-else class="space-y-4">
+            <div
+              v-for="item in cart"
+              :key="`${item.product.id}-${item.variant.size}`"
+              class="flex items-center gap-4 bg-gray-700 p-4 rounded-lg"
+            >
+              <img
+                v-if="productImages[item.product.id] && productImages[item.product.id].length > 0"
+                :src="productImages[item.product.id][0]"
+                :alt="item.product.name"
+                class="w-16 h-16 object-cover rounded"
+              />
+              <div v-else class="w-16 h-16 bg-gray-600 rounded flex items-center justify-center">
+                <p class="text-xs text-gray-400">No image</p>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold">{{ item.product.name }}</h3>
+                <p class="text-sm text-gray-400">Taille: {{ item.variant.size }}</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <button class="text-gray-400 hover:text-white" @click="decrementItem(item)">
+                    -
+                  </button>
+                  <span>{{ item.quantity }}</span>
+                  <button class="text-gray-400 hover:text-white" @click="item.quantity++">+</button>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-semibold">{{ (item.variant.price * item.quantity).toFixed(2) }}€</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Footer (Always visible) -->
+        <div class="p-6 border-t border-gray-700 bg-[#1A1A1A]">
+          <div class="flex justify-between text-lg font-bold mb-4">
+            <span>Total</span>
+            <span>{{ cartTotal.toFixed(2) }}€</span>
+          </div>
+          <button
+            class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md transition-colors"
+            @click="openBillingModal"
+          >
+            Passer la commande
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Billing Modal -->
+    <div
+      v-if="showBillingModal"
+      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+    >
+      <div class="bg-[#1A1A1A] p-8 rounded-lg max-w-md w-full">
+        <h2 class="text-2xl font-bold mb-4">Informations de facturation</h2>
+        <form @submit.prevent="handleOrder" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-300">Nom</label>
+            <input
+              type="text"
+              id="name"
+              v-model="billingInfo.name"
+              required
+              class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 text-white"
+            />
+          </div>
+          <div>
+            <label for="address" class="block text-sm font-medium text-gray-300">Adresse</label>
+            <input
+              type="text"
+              id="address"
+              v-model="billingInfo.address"
+              required
+              class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 text-white"
+            />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-300">Téléphone</label>
+            <input
+              type="tel"
+              id="phone"
+              v-model="billingInfo.phone"
+              required
+              class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 text-white"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+            <input
+              type="email"
+              id="email"
+              v-model="billingInfo.email"
+              required
+              class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 text-white"
+            />
+          </div>
+
+          <div class="mt-6">
+            <h3 class="text-lg font-semibold mb-2">Résumé de la commande</h3>
+            <div class="space-y-2">
+              <div
+                v-for="item in cart"
+                :key="`${item.product.id}-${item.variant.size}`"
+                class="flex justify-between"
+              >
+                <span>{{ item.product.name }} ({{ item.variant.size }}) x {{ item.quantity }}</span>
+                <span>{{ (item.variant.price * item.quantity).toFixed(2) }}€</span>
+              </div>
+              <div class="flex justify-between border-t border-gray-600 pt-2 font-bold">
+                <span>Total</span>
+                <span>{{ cartTotal.toFixed(2) }}€</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-end space-x-4 mt-6">
+            <button
+              type="button"
+              @click="closeBillingModal"
+              class="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
+            >
+              Annuler
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
+            >
+              Confirmer la commande
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* Add any scoped styles here if needed */
+</style>
