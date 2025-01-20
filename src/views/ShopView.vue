@@ -162,7 +162,7 @@ async function handleOrder() {
       billingAddress: billingInfo.value.address,
       billingPhone: billingInfo.value.phone,
       billingEmail: billingInfo.value.email,
-      recipientEmail: 'website@bsmbasket.fr',
+      recipientEmail: 'boutique@bsmbasket.fr',
     }
 
     const adminResponse = await emailjs.send(
