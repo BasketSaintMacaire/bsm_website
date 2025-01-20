@@ -162,7 +162,7 @@ onUnmounted(() => {
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
           )"
           :key="article.id"
-          class="news-card bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer"
+          class="news-card bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transform transition duration-300 md:hover:scale-105 cursor-pointer"
           @click="openModal(article)"
         >
           <img :src="article.image" :alt="article.title" class="w-full h-48 object-cover" />
@@ -214,7 +214,7 @@ onUnmounted(() => {
           <div class="absolute top-0 right-0 pt-4 pr-4">
             <button
               @click="closeModal"
-              class="text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150"
+              class="text-gray-400 md:hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150"
               aria-label="Close"
             >
               <X class="h-6 w-6" />

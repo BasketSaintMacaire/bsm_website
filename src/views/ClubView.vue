@@ -47,7 +47,7 @@ const navigateTo = (route: string) => {
           <img
             src="@/assets/club_plan_large.jpg"
             alt="Basketball action"
-            class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+            class="w-full h-[400px] object-cover transition-transform duration-700 md:group-hover:scale-105"
           />
           <div class="absolute top-4 left-4 z-10">
             <img src="/logo.png" alt="BSM Logo" class="w-24 h-24" />
@@ -71,7 +71,7 @@ const navigateTo = (route: string) => {
 
             <!-- Arrow for all sections -->
             <div
-              class="absolute bottom-4 right-4 bg-purple-600 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity"
+              class="absolute bottom-4 right-4 bg-purple-600 rounded-full p-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
             >
               <ChevronRight class="w-6 h-6 text-white" />
             </div>
@@ -127,13 +127,13 @@ const navigateTo = (route: string) => {
       'header header header'
       'history teams board';
   }
-}
 
-/* Hover Effects */
-.section-history:hover,
-.section-teams:hover,
-.section-board:hover {
-  background-color: #1a1a1a;
-  transition: background-color 0.3s ease;
+  /* Hover Effects */
+  .section-history:hover,
+  .section-teams:hover,
+  .section-board:hover {
+    background-color: #1a1a1a;
+    transition: background-color 0.3s ease;
+  }
 }
 </style>

@@ -238,7 +238,7 @@ const handleSubmit = async () => {
           <div class="flex justify-end">
             <button
               type="submit"
-              class="px-8 py-3 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transform transition-all duration-200 uppercase tracking-wider"
+              class="px-8 py-3 bg-purple-600 text-white font-semibold rounded-md md:hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transform transition-all duration-200 uppercase tracking-wider"
             >
               Envoyer
             </button>

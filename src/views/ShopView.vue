@@ -206,7 +206,7 @@ const closeBillingModal = () => {
     <!-- Cart Icon -->
     <div class="fixed top-4 right-4 z-50">
       <button
-        class="relative p-2 bg-[#1A1A1A] hover:bg-gray-700 rounded-full transition-colors"
+        class="relative p-2 bg-[#1A1A1A] md:hover:bg-gray-700 rounded-full transition-colors"
         @click="showCart = !showCart"
       >
         <ShoppingCart class="w-6 h-6" />
@@ -231,7 +231,7 @@ const closeBillingModal = () => {
         <div
           v-for="product in products"
           :key="product.id"
-          class="bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"
+          class="bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg transition-transform md:hover:scale-105"
         >
           <div class="relative">
             <img
@@ -288,7 +288,7 @@ const closeBillingModal = () => {
               </select>
 
               <button
-                class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition-colors"
+                class="w-full bg-purple-600 md:hover:bg-purple-700 text-white py-2 rounded-md transition-colors"
                 @click="addToCart(product, product.variants[0])"
               >
                 Ajouter au panier
@@ -310,7 +310,7 @@ const closeBillingModal = () => {
         <div class="p-6 border-b border-gray-700">
           <div class="flex justify-between items-center">
             <h2 class="text-xl font-bold">Panier</h2>
-            <button class="text-gray-400 hover:text-white" @click="showCart = false">
+            <button class="text-gray-400 md:hover:text-white" @click="showCart = false">
               <X class="w-6 h-6" />
             </button>
           </div>
@@ -341,11 +341,13 @@ const closeBillingModal = () => {
                 <h3 class="font-semibold">{{ item.product.name }}</h3>
                 <p class="text-sm text-gray-400">Taille: {{ item.variant.size }}</p>
                 <div class="flex items-center gap-2 mt-2">
-                  <button class="text-gray-400 hover:text-white" @click="decrementItem(item)">
+                  <button class="text-gray-400 md:hover:text-white" @click="decrementItem(item)">
                     -
                   </button>
                   <span>{{ item.quantity }}</span>
-                  <button class="text-gray-400 hover:text-white" @click="item.quantity++">+</button>
+                  <button class="text-gray-400 md:hover:text-white" @click="item.quantity++">
+                    +
+                  </button>
                 </div>
               </div>
               <div class="text-right">
@@ -362,7 +364,7 @@ const closeBillingModal = () => {
             <span>{{ cartTotal.toFixed(2) }}€</span>
           </div>
           <button
-            class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md transition-colors"
+            class="w-full bg-purple-600 md:hover:bg-purple-700 text-white py-3 rounded-md transition-colors"
             @click="openBillingModal"
           >
             Passer la commande
@@ -442,13 +444,13 @@ const closeBillingModal = () => {
             <button
               type="button"
               @click="closeBillingModal"
-              class="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
+              class="px-4 py-2 bg-gray-600 text-white rounded-md md:hover:bg-gray-700 transition-colors"
             >
               Annuler
             </button>
             <button
               type="submit"
-              class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
+              class="px-4 py-2 bg-purple-600 text-white rounded-md md:hover:bg-purple-700 transition-colors"
             >
               Confirmer la commande
             </button>

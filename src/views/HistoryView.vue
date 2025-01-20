@@ -96,7 +96,7 @@ onMounted(() => {
             </div>
             <div
               :class="[index % 2 === 0 ? 'mr-16' : 'ml-16', 'timeline-card']"
-              class="bg-[#1A1A1A] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              class="bg-[#1A1A1A] p-6 rounded-lg shadow-lg md:hover:shadow-xl transition-shadow duration-300"
             >
               <h3 class="text-xl font-semibold mb-2">{{ event.title }}</h3>
               <p class="text-gray-300">{{ event.description }}</p>
@@ -142,7 +142,9 @@ onMounted(() => {
   transform: perspective(1000px) rotateY(15deg);
 }
 
-.timeline-item:hover .timeline-card {
-  transform: perspective(1000px) rotateY(0deg);
+@media (min-width: 768px) {
+  .timeline-item:hover .timeline-card {
+    transform: perspective(1000px) rotateY(0deg);
+  }
 }
 </style>

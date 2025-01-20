@@ -81,7 +81,7 @@ const uniqueTeams = computed(() =>
         <div
           v-for="event in filteredEvents"
           :key="`${event.date}-${event.time_start}-${event.team}`"
-          class="bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+          class="bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 md:hover:scale-105"
         >
           <div class="bg-gray-700 px-4 py-3 text-lg font-semibold">
             {{ event.date }} - {{ event.time_start }}

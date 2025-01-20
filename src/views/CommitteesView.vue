@@ -133,7 +133,7 @@ const committees = ref<Committee[]>([
         <img
           src="@/assets/committeesHeaderImg.png"
           alt="Réunion du bureau"
-          class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+          class="w-full h-[400px] object-cover transition-transform duration-700 md:group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
         <div class="absolute bottom-0 left-0 p-8">
@@ -151,7 +151,7 @@ const committees = ref<Committee[]>([
           <div
             v-for="role in keyRoles"
             :key="role.title"
-            class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300 shadow-lg"
+            class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-6 text-center transform md:hover:scale-105 transition-all duration-300 shadow-lg"
           >
             <component :is="role.icon" class="w-16 h-16 text-white mx-auto mb-4" />
             <h3 class="text-2xl font-bold text-white mb-2">{{ role.title }}</h3>
@@ -165,7 +165,7 @@ const committees = ref<Committee[]>([
         <div
           v-for="committee in committees"
           :key="committee.id"
-          class="bg-[#1A1A1A] rounded-xl p-6 transform hover:-translate-y-2 transition-all duration-300"
+          class="bg-[#1A1A1A] rounded-xl p-6 transform md:hover:-translate-y-2 transition-all duration-300"
         >
           <div class="flex items-center mb-4">
             <component :is="committee.icon" class="w-8 h-8 text-purple-500 mr-3" />

@@ -90,7 +90,7 @@ onUnmounted(() => {
           class="category-button relative group flex flex-col items-center"
         >
           <div
-            class="w-20 h-20 rounded-full flex items-center justify-center bg-gray-800 group-hover:bg-purple-600 transition-colors duration-300"
+            class="w-20 h-20 rounded-full flex items-center justify-center bg-gray-800 md:group-hover:bg-purple-600 transition-colors duration-300"
             :class="{ 'bg-purple-600': selectedCategory === category }"
           >
             <component
@@ -99,7 +99,7 @@ onUnmounted(() => {
               :class="
                 selectedCategory === category
                   ? 'text-white'
-                  : 'text-gray-400 group-hover:text-white'
+                  : 'text-gray-400 md:group-hover:text-white'
               "
             />
           </div>
@@ -108,7 +108,7 @@ onUnmounted(() => {
             :class="
               selectedCategory === category
                 ? 'text-purple-400'
-                : 'text-gray-400 group-hover:text-purple-400'
+                : 'text-gray-400 md:group-hover:text-purple-400'
             "
           >
             {{ category === 'men' ? 'Masculin' : category === 'women' ? 'Féminin' : 'Plaisir' }}
@@ -129,7 +129,7 @@ onUnmounted(() => {
           <img
             :src="team.image"
             :alt="team.name"
-            class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+            class="w-full h-80 object-cover transition-transform duration-500 md:group-hover:scale-110"
           />
           <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
             <h2 class="text-3xl font-bold text-white mb-2">{{ team.name }}</h2>
@@ -154,7 +154,7 @@ onUnmounted(() => {
       <div class="h-full overflow-y-auto p-6">
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-3xl font-bold text-purple-400">{{ selectedTeam?.name }}</h2>
-          <button @click.stop="closePanel" class="text-gray-400 hover:text-white">
+          <button @click.stop="closePanel" class="text-gray-400 md:hover:text-white">
             <X class="w-6 h-6" />
           </button>
         </div>
@@ -162,7 +162,7 @@ onUnmounted(() => {
           <div
             v-for="player in selectedTeam.players"
             :key="player.id"
-            class="player-card bg-gray-700 rounded-lg p-4 shadow transform transition duration-300 hover:scale-105 hover:bg-purple-700"
+            class="player-card bg-gray-700 rounded-lg p-4 shadow transform transition duration-300 md:hover:scale-105 md:hover:bg-purple-700"
           >
             <div class="flex items-center justify-between mb-2">
               <span class="text-3xl font-bold text-purple-400">{{ player.number }}</span>
@@ -191,16 +191,18 @@ onUnmounted(() => {
   transition: opacity 0.3s ease;
 }
 
-.team-card:hover::after {
-  opacity: 1;
+@media (min-width: 768px) {
+  .team-card:hover::after {
+    opacity: 1;
+  }
+
+  .player-card:hover {
+    transform: rotateY(10deg);
+  }
 }
 
 .player-card {
   backface-visibility: hidden;
   perspective: 1000px;
-}
-
-.player-card:hover {
-  transform: rotateY(10deg);
 }
 </style>

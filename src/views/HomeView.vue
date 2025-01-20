@@ -32,7 +32,7 @@ const scrollToTop = () => {
             LA FORCE DES LOUPS EST DANS LA MEUTE
           </h1>
           <div class="flex gap-4 mt-6">
-            <a href="#" class="text-white hover:text-purple-500">
+            <a href="#" class="text-white md:hover:text-purple-500">
               <span class="sr-only">Instagram</span>
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -40,7 +40,7 @@ const scrollToTop = () => {
                 />
               </svg>
             </a>
-            <a href="#" class="text-white hover:text-purple-500">
+            <a href="#" class="text-white md:hover:text-purple-500">
               <span class="sr-only">Facebook</span>
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -86,7 +86,7 @@ const scrollToTop = () => {
         >
           <div v-for="event in events" :key="event.day" class="w-full max-w-xs">
             <div
-              class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
+              class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 md:hover:scale-105"
             >
               <div class="bg-purple-600 p-4 text-center">
                 <div class="text-4xl font-bold text-white">{{ event.day }}</div>
@@ -105,7 +105,7 @@ const scrollToTop = () => {
     <!-- Scroll to Top Button -->
     <button
       @click="scrollToTop"
-      class="fixed bottom-8 right-8 bg-purple-600 rounded-full p-3 text-white hover:bg-purple-700 transition-colors"
+      class="fixed bottom-8 right-8 bg-purple-600 rounded-full p-3 text-white md:hover:bg-purple-700 transition-colors"
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
