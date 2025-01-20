@@ -70,7 +70,7 @@ const closeMenu = () => {
       </div>
     </header>
 
-    <main class="flex-grow mt-24">
+    <main class="flex-grow mt-12 md:mt-24">
       <RouterView />
     </main>
 
