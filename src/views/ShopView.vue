@@ -187,7 +187,7 @@ function decrementItem(item: { product: Product; variant: ProductVariant; quanti
   if (item.quantity > 1) {
     item.quantity--
   } else {
-    // If quantity is 1 and the user clicks minus, remove the item from the cart
+    // Remove item if quantity is 1 and user decrements
     cart.value = cart.value.filter((cartItem) => cartItem !== item)
   }
 }
@@ -202,11 +202,12 @@ const closeBillingModal = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-black text-white">
+  <!-- Main container uses theme tokens for background/text -->
+  <div class="min-h-screen bg-page text-mainText dark:bg-page-dark dark:text-mainText-dark">
     <!-- Cart Icon -->
     <div class="fixed top-4 right-4 z-50">
       <button
-        class="relative p-2 bg-[#1A1A1A] md:hover:bg-gray-700 rounded-full transition-colors"
+        class="relative p-2 bg-card hover:bg-gray-200 rounded-full transition-colors dark:bg-card-dark dark:hover:bg-gray-700"
         @click="showCart = !showCart"
       >
         <ShoppingCart class="w-6 h-6" />
@@ -231,7 +232,7 @@ const closeBillingModal = () => {
         <div
           v-for="product in products"
           :key="product.id"
-          class="bg-[#1A1A1A] rounded-lg overflow-hidden shadow-lg transition-transform md:hover:scale-105"
+          class="rounded-lg overflow-hidden shadow-lg transition-transform md:hover:scale-105 bg-card dark:bg-card-dark"
         >
           <div class="relative">
             <img
@@ -240,42 +241,49 @@ const closeBillingModal = () => {
               :alt="product.name"
               class="w-full h-[500px] object-cover"
             />
-            <div v-else class="w-full h-[600px] bg-gray-700 flex items-center justify-center">
-              <p class="text-gray-400">No image available</p>
+            <div
+              v-else
+              class="w-full h-[600px] bg-gray-200 dark:bg-gray-700 flex items-center justify-center"
+            >
+              <p class="text-mutedText dark:text-mutedText-dark">No image available</p>
             </div>
 
             <!-- Carousel Controls -->
             <button
               v-if="productImages[product.id] && productImages[product.id].length > 1"
               @click="prevImage(product.id)"
-              class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-1"
+              class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-1 dark:bg-white dark:bg-opacity-50"
             >
               <ChevronLeft class="w-6 h-6" />
             </button>
             <button
               v-if="productImages[product.id] && productImages[product.id].length > 1"
               @click="nextImage(product.id)"
-              class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-1"
+              class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-1 dark:bg-white dark:bg-opacity-50"
             >
               <ChevronRight class="w-6 h-6" />
             </button>
           </div>
 
+          <!-- Product Info -->
           <div class="p-4">
             <h3 class="text-lg font-semibold">{{ product.name }}</h3>
-            <p class="text-gray-400 text-sm mt-1">{{ product.description }}</p>
+            <p class="text-mutedText dark:text-mutedText-dark text-sm mt-1">
+              {{ product.description }}
+            </p>
 
             <div class="mt-4">
-              <p class="text-sm text-gray-400">Prix à partir de</p>
+              <p class="text-sm text-mutedText dark:text-mutedText-dark">Prix à partir de</p>
               <p class="text-xl font-bold">
                 {{ Math.min(...product.variants.map((v) => v.price)).toFixed(2) }}€
               </p>
             </div>
 
             <div class="mt-4 space-y-2">
+              <!-- Variation Select -->
               <select
                 v-if="product.variants.length > 1"
-                class="block w-full bg-gray-700 border-gray-600 rounded-md text-white px-4 py-2"
+                class="block w-full bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-md text-mainText dark:text-mainText-dark px-4 py-2"
               >
                 <option
                   v-for="variant in product.variants"
@@ -287,8 +295,9 @@ const closeBillingModal = () => {
                 </option>
               </select>
 
+              <!-- Add to Cart -->
               <button
-                class="w-full bg-purple-600 md:hover:bg-purple-700 text-white py-2 rounded-md transition-colors"
+                class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition-colors"
                 @click="addToCart(product, product.variants[0])"
               >
                 Ajouter au panier
@@ -302,15 +311,21 @@ const closeBillingModal = () => {
     <!-- Shopping Cart Sidebar -->
     <div
       v-if="showCart"
-      class="fixed inset-0 bg-black bg-opacity-50 z-50"
+      class="fixed inset-0 bg-black bg-opacity-50 dark:bg-white dark:bg-opacity-20 z-50"
       @click="showCart = false"
     >
-      <div class="absolute right-0 top-0 h-full w-96 bg-[#1A1A1A] flex flex-col" @click.stop>
+      <div
+        class="absolute right-0 top-0 h-full w-96 bg-card dark:bg-card-dark flex flex-col"
+        @click.stop
+      >
         <!-- Cart Header -->
-        <div class="p-6 border-b border-gray-700">
+        <div class="p-6 border-b border-borderColor dark:border-borderColor-dark">
           <div class="flex justify-between items-center">
             <h2 class="text-xl font-bold">Panier</h2>
-            <button class="text-gray-400 md:hover:text-white" @click="showCart = false">
+            <button
+              class="text-mutedText dark:text-mutedText-dark hover:text-mainText dark:hover:text-mainText-dark"
+              @click="showCart = false"
+            >
               <X class="w-6 h-6" />
             </button>
           </div>
@@ -318,7 +333,10 @@ const closeBillingModal = () => {
 
         <!-- Cart Items (Scrollable) -->
         <div class="flex-grow overflow-y-auto p-6">
-          <div v-if="cart.length === 0" class="text-center text-gray-400 py-8">
+          <div
+            v-if="cart.length === 0"
+            class="text-center text-mutedText dark:text-mutedText-dark py-8"
+          >
             Votre panier est vide
           </div>
 
@@ -326,7 +344,7 @@ const closeBillingModal = () => {
             <div
               v-for="item in cart"
               :key="`${item.product.id}-${item.variant.size}`"
-              class="flex items-center gap-4 bg-gray-700 p-4 rounded-lg"
+              class="flex items-center gap-4 p-4 rounded-lg bg-gray-200 dark:bg-gray-700"
             >
               <img
                 v-if="productImages[item.product.id] && productImages[item.product.id].length > 0"
@@ -334,18 +352,23 @@ const closeBillingModal = () => {
                 :alt="item.product.name"
                 class="w-16 h-16 object-cover rounded"
               />
-              <div v-else class="w-16 h-16 bg-gray-600 rounded flex items-center justify-center">
-                <p class="text-xs text-gray-400">No image</p>
-              </div>
               <div class="flex-1">
                 <h3 class="font-semibold">{{ item.product.name }}</h3>
-                <p class="text-sm text-gray-400">Taille: {{ item.variant.size }}</p>
+                <p class="text-sm text-mutedText dark:text-mutedText-dark">
+                  Taille: {{ item.variant.size }}
+                </p>
                 <div class="flex items-center gap-2 mt-2">
-                  <button class="text-gray-400 md:hover:text-white" @click="decrementItem(item)">
+                  <button
+                    class="text-mutedText dark:text-mutedText-dark hover:text-mainText dark:hover:text-mainText-dark"
+                    @click="decrementItem(item)"
+                  >
                     -
                   </button>
                   <span>{{ item.quantity }}</span>
-                  <button class="text-gray-400 md:hover:text-white" @click="item.quantity++">
+                  <button
+                    class="text-mutedText dark:text-mutedText-dark hover:text-mainText dark:hover:text-mainText-dark"
+                    @click="item.quantity++"
+                  >
                     +
                   </button>
                 </div>
@@ -357,14 +380,16 @@ const closeBillingModal = () => {
           </div>
         </div>
 
-        <!-- Cart Footer (Always visible) -->
-        <div class="p-6 border-t border-gray-700 bg-[#1A1A1A]">
+        <!-- Cart Footer -->
+        <div
+          class="p-6 border-t border-borderColor dark:border-borderColor-dark bg-card dark:bg-card-dark"
+        >
           <div class="flex justify-between text-lg font-bold mb-4">
             <span>Total</span>
             <span>{{ cartTotal.toFixed(2) }}€</span>
           </div>
           <button
-            class="w-full bg-purple-600 md:hover:bg-purple-700 text-white py-3 rounded-md transition-colors"
+            class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-md transition-colors"
             @click="openBillingModal"
           >
             Passer la commande
@@ -376,52 +401,77 @@ const closeBillingModal = () => {
     <!-- Billing Modal -->
     <div
       v-if="showBillingModal"
-      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+      class="fixed inset-0 bg-black bg-opacity-75 dark:bg-white dark:bg-opacity-10 flex items-center justify-center z-50"
     >
-      <div class="bg-[#1A1A1A] p-8 rounded-lg max-w-md w-full">
+      <div class="bg-card dark:bg-card-dark p-8 rounded-lg max-w-md w-full">
         <h2 class="text-2xl font-bold mb-4">Informations de facturation</h2>
         <form @submit.prevent="handleOrder" class="space-y-4">
+          <!-- Name -->
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-300">Nom</label>
+            <label
+              for="name"
+              class="block text-sm font-medium text-mutedText dark:text-mutedText-dark"
+            >
+              Nom
+            </label>
             <input
               type="text"
               id="name"
               v-model="billingInfo.name"
               required
-              class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 text-white"
+              class="mt-1 block w-full bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-mainText dark:text-mainText-dark focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
             />
           </div>
+          <!-- Address -->
           <div>
-            <label for="address" class="block text-sm font-medium text-gray-300">Adresse</label>
+            <label
+              for="address"
+              class="block text-sm font-medium text-mutedText dark:text-mutedText-dark"
+            >
+              Adresse
+            </label>
             <input
               type="text"
               id="address"
               v-model="billingInfo.address"
               required
-              class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 text-white"
+              class="mt-1 block w-full bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-mainText dark:text-mainText-dark focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
             />
           </div>
+          <!-- Phone -->
           <div>
-            <label for="phone" class="block text-sm font-medium text-gray-300">Téléphone</label>
+            <label
+              for="phone"
+              class="block text-sm font-medium text-mutedText dark:text-mutedText-dark"
+            >
+              Téléphone
+            </label>
             <input
               type="tel"
               id="phone"
               v-model="billingInfo.phone"
               required
-              class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 text-white"
+              class="mt-1 block w-full bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-mainText dark:text-mainText-dark focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
             />
           </div>
+          <!-- Email -->
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+            <label
+              for="email"
+              class="block text-sm font-medium text-mutedText dark:text-mutedText-dark"
+            >
+              Email
+            </label>
             <input
               type="email"
               id="email"
               v-model="billingInfo.email"
               required
-              class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 text-white"
+              class="mt-1 block w-full bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-mainText dark:text-mainText-dark focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
             />
           </div>
 
+          <!-- Order Summary -->
           <div class="mt-6">
             <h3 class="text-lg font-semibold mb-2">Résumé de la commande</h3>
             <div class="space-y-2">
@@ -433,24 +483,27 @@ const closeBillingModal = () => {
                 <span>{{ item.product.name }} ({{ item.variant.size }}) x {{ item.quantity }}</span>
                 <span>{{ (item.variant.price * item.quantity).toFixed(2) }}€</span>
               </div>
-              <div class="flex justify-between border-t border-gray-600 pt-2 font-bold">
+              <div
+                class="flex justify-between border-t border-borderColor dark:border-borderColor-dark pt-2 font-bold"
+              >
                 <span>Total</span>
                 <span>{{ cartTotal.toFixed(2) }}€</span>
               </div>
             </div>
           </div>
 
+          <!-- Buttons -->
           <div class="flex justify-end space-x-4 mt-6">
             <button
               type="button"
               @click="closeBillingModal"
-              class="px-4 py-2 bg-gray-600 text-white rounded-md md:hover:bg-gray-700 transition-colors"
+              class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-mainText dark:text-mainText-dark rounded-md hover:bg-gray-400 dark:hover:bg-gray-700 transition-colors"
             >
               Annuler
             </button>
             <button
               type="submit"
-              class="px-4 py-2 bg-purple-600 text-white rounded-md md:hover:bg-purple-700 transition-colors"
+              class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
             >
               Confirmer la commande
             </button>
@@ -462,5 +515,5 @@ const closeBillingModal = () => {
 </template>
 
 <style scoped>
-/* Add any scoped styles here if needed */
+/* Any local overrides if needed */
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 
 interface Props {
   galleryName: string
@@ -72,10 +72,17 @@ function startInertiaScroll() {
 
   animationFrameId = requestAnimationFrame(inertia) // Start the animation
 }
+
+watch(
+  () => props.galleryName,
+  () => {
+    console.log('Gallery name changed:', props.galleryName)
+    loadImages()
+  },
+)
+
 onMounted(() => {
   loadImages()
-  // Clone images to achieve infinite effect
-  images.value = [...images.value, ...images.value, ...images.value]
 
   if (container.value) {
     container.value.addEventListener('mousedown', onMouseDown)

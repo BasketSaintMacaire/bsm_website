@@ -38,21 +38,29 @@ const uniqueTeams = computed(() =>
 </script>
 
 <template>
-  <div class="min-h-screen bg-black text-white py-8 px-4 sm:px-6 lg:px-8">
+  <!-- Use theme tokens for background and text -->
+  <div
+    class="min-h-screen bg-page dark:bg-page-dark text-mainText dark:text-mainText-dark py-8 px-4 sm:px-6 lg:px-8"
+  >
     <div class="max-w-7xl mx-auto">
+      <!-- Heading with purple accent -->
       <h1 class="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-purple-600">
         Planning BSM St Macaire en Mauges
       </h1>
 
+      <!-- Filters -->
       <div class="mb-8 flex flex-col sm:flex-row justify-center items-center gap-4">
         <div class="w-full sm:w-64">
-          <label for="date-filter" class="block text-sm font-medium text-gray-300 mb-1"
-            >Filtrer par date</label
+          <label
+            for="date-filter"
+            class="block text-sm font-medium text-mutedText dark:text-mutedText-dark mb-1"
           >
+            Filtrer par date
+          </label>
           <select
             id="date-filter"
             v-model="filterDate"
-            class="w-full bg-[#1A1A1A] border border-[#1A1A1A] rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            class="w-full bg-card dark:bg-card-dark border border-card dark:border-card-dark rounded-md py-2 px-3 text-mainText dark:text-mainText-dark focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors"
           >
             <option value="">Toutes les dates</option>
             <option v-for="date in uniqueDates" :key="date" :value="date">
@@ -60,14 +68,18 @@ const uniqueTeams = computed(() =>
             </option>
           </select>
         </div>
+
         <div class="w-full sm:w-64">
-          <label for="team-filter" class="block text-sm font-medium text-gray-300 mb-1"
-            >Filtrer par équipe</label
+          <label
+            for="team-filter"
+            class="block text-sm font-medium text-mutedText dark:text-mutedText-dark mb-1"
           >
+            Filtrer par équipe
+          </label>
           <select
             id="team-filter"
             v-model="filterTeam"
-            class="w-full bg-[#1A1A1A] border border-[#1A1A1A] rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            class="w-full bg-card dark:bg-card-dark border border-card dark:border-card-dark rounded-md py-2 px-3 text-mainText dark:text-mainText-dark focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors"
           >
             <option value="">Toutes les équipes</option>
             <option v-for="team in uniqueTeams" :key="team" :value="team">
@@ -77,38 +89,44 @@ const uniqueTeams = computed(() =>
         </div>
       </div>
 
+      <!-- Event Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="event in filteredEvents"
           :key="`${event.date}-${event.time_start}-${event.team}`"
-          class="bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden transition-transform duration-300 md:hover:scale-105"
+          class="bg-card dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transition-transform duration-300 md:hover:scale-105"
         >
-          <div class="bg-gray-700 px-4 py-3 text-lg font-semibold">
+          <!-- Top bar with date/time using a gray or accent color -->
+          <div
+            class="bg-mutedText dark:bg-mutedText-dark px-4 py-3 text-lg font-semibold text-mainText dark:text-mainText-dark"
+          >
             {{ event.date }} - {{ event.time_start }}
           </div>
           <div class="p-4 space-y-2">
-            <h3 class="text-xl font-bold">{{ event.team }} - {{ event.group }}</h3>
-            <p class="text-gray-300">
-              <span class="font-semibold">Match:</span>
+            <h3 class="text-xl font-bold text-mainText dark:text-mainText-dark">
+              {{ event.team }} - {{ event.group }}
+            </h3>
+            <p class="text-mutedText dark:text-mutedText-dark">
+              <span class="font-semibold">Match :</span>
               {{ event.isDomicile ? 'Domicile' : 'Extérieur' }}
             </p>
-            <p v-if="event.opponent" class="text-gray-300">
-              <span class="font-semibold">Adversaire:</span> {{ event.opponent }}
+            <p v-if="event.opponent" class="text-mutedText dark:text-mutedText-dark">
+              <span class="font-semibold">Adversaire :</span> {{ event.opponent }}
             </p>
-            <p v-if="event.location" class="text-gray-300">
-              <span class="font-semibold">Lieu:</span> {{ event.location }}
+            <p v-if="event.location" class="text-mutedText dark:text-mutedText-dark">
+              <span class="font-semibold">Lieu :</span> {{ event.location }}
             </p>
-            <p v-if="event.time_meetup" class="text-gray-300">
-              <span class="font-semibold">RDV:</span> {{ event.time_meetup }}
+            <p v-if="event.time_meetup" class="text-mutedText dark:text-mutedText-dark">
+              <span class="font-semibold">RDV :</span> {{ event.time_meetup }}
             </p>
-            <p v-if="event.referees.length" class="text-gray-300">
-              <span class="font-semibold">Arbitres:</span> {{ event.referees.join(', ') }}
+            <p v-if="event.referees.length" class="text-mutedText dark:text-mutedText-dark">
+              <span class="font-semibold">Arbitres :</span> {{ event.referees.join(', ') }}
             </p>
-            <p v-if="event.bar" class="text-gray-300">
-              <span class="font-semibold">Bar:</span> {{ event.bar }}
+            <p v-if="event.bar" class="text-mutedText dark:text-mutedText-dark">
+              <span class="font-semibold">Bar :</span> {{ event.bar }}
             </p>
             <p v-if="event.result.length === 2" class="text-lg font-bold text-purple-400">
-              Résultat: {{ event.result[0] }} - {{ event.result[1] }}
+              Résultat : {{ event.result[0] }} - {{ event.result[1] }}
             </p>
           </div>
         </div>
@@ -117,4 +135,6 @@ const uniqueTeams = computed(() =>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* Keep any local style overrides if needed */
+</style>

@@ -74,7 +74,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-black text-white pb-20">
+  <!-- Wrapper with token-based background & text -->
+  <div class="min-h-screen bg-page dark:bg-page-dark text-mainText dark:text-mainText-dark pb-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1
         class="text-5xl font-extrabold text-center py-16 bg-clip-text text-transparent bg-purple-600"
@@ -82,6 +83,7 @@ onUnmounted(() => {
         Nos Équipes BSM
       </h1>
 
+      <!-- Category Buttons -->
       <div class="flex justify-center space-x-6 mb-16">
         <button
           v-for="(category, index) in ['men', 'women', 'pleasure']"
@@ -90,7 +92,7 @@ onUnmounted(() => {
           class="category-button relative group flex flex-col items-center"
         >
           <div
-            class="w-20 h-20 rounded-full flex items-center justify-center bg-gray-800 md:group-hover:bg-purple-600 transition-colors duration-300"
+            class="w-20 h-20 rounded-full flex items-center justify-center bg-card dark:bg-card-dark md:group-hover:bg-purple-600 transition-colors duration-300"
             :class="{ 'bg-purple-600': selectedCategory === category }"
           >
             <component
@@ -99,16 +101,16 @@ onUnmounted(() => {
               :class="
                 selectedCategory === category
                   ? 'text-white'
-                  : 'text-gray-400 md:group-hover:text-white'
+                  : 'text-mutedText dark:text-mutedText-dark md:group-hover:text-white'
               "
             />
           </div>
           <span
-            class="mt-2 text-lg font-medium"
+            class="mt-2 text-lg font-medium transition-colors"
             :class="
               selectedCategory === category
                 ? 'text-purple-400'
-                : 'text-gray-400 md:group-hover:text-purple-400'
+                : 'text-mutedText dark:text-mutedText-dark md:group-hover:text-purple-400'
             "
           >
             {{ category === 'men' ? 'Masculin' : category === 'women' ? 'Féminin' : 'Plaisir' }}
@@ -116,6 +118,7 @@ onUnmounted(() => {
         </button>
       </div>
 
+      <!-- Teams Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
           v-for="team in filteredTeams"
@@ -133,7 +136,9 @@ onUnmounted(() => {
           />
           <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
             <h2 class="text-3xl font-bold text-white mb-2">{{ team.name }}</h2>
-            <p class="text-gray-300 text-lg">{{ team.players.length }} joueurs</p>
+            <p class="text-mutedText dark:text-mutedText-dark text-lg">
+              {{ team.players.length }} joueurs
+            </p>
           </div>
         </div>
       </div>
@@ -142,35 +147,45 @@ onUnmounted(() => {
     <!-- Modal Overlay -->
     <div
       v-if="isPanelOpen"
-      class="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out z-40"
+      class="fixed inset-0 bg-black bg-opacity-50 dark:bg-white dark:bg-opacity-10 transition-opacity duration-300 ease-in-out z-40"
     ></div>
 
     <!-- Sliding Right Panel -->
     <div
       v-if="isPanelOpen"
-      class="sliding-panel fixed inset-y-0 right-0 w-full sm:w-96 bg-[#1A1A1A] shadow-2xl transform transition-transform duration-300 ease-in-out z-50"
+      class="sliding-panel fixed inset-y-0 right-0 w-full sm:w-96 bg-card dark:bg-card-dark shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
       :class="isPanelOpen ? 'translate-x-0' : 'translate-x-full'"
     >
-      <div class="h-full overflow-y-auto p-6">
+      <div class="h-full p-6">
+        <!-- Panel Header -->
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-3xl font-bold text-purple-400">{{ selectedTeam?.name }}</h2>
-          <button @click.stop="closePanel" class="text-gray-400 md:hover:text-white">
+          <button
+            @click.stop="closePanel"
+            class="text-mutedText dark:text-mutedText-dark hover:text-mainText dark:hover:text-mainText-dark"
+          >
             <X class="w-6 h-6" />
           </button>
         </div>
+
+        <!-- Players List -->
         <div v-if="selectedTeam" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div
             v-for="player in selectedTeam.players"
             :key="player.id"
-            class="player-card bg-gray-700 rounded-lg p-4 shadow transform transition duration-300 md:hover:scale-105 md:hover:bg-purple-700"
+            class="player-card bg-gray-200 dark:bg-gray-700 rounded-lg p-4 shadow transform transition duration-300 md:hover:scale-105 md:hover:bg-purple-700"
           >
             <div class="flex items-center justify-between mb-2">
               <span class="text-3xl font-bold text-purple-400">{{ player.number }}</span>
-              <span class="text-sm font-semibold text-gray-300 bg-gray-600 px-2 py-1 rounded">{{
-                player.position
-              }}</span>
+              <span
+                class="text-sm font-semibold bg-gray-300 dark:bg-gray-600 text-mainText dark:text-mainText-dark px-2 py-1 rounded"
+              >
+                {{ player.position }}
+              </span>
             </div>
-            <h3 class="text-lg font-semibold text-white">{{ player.name }}</h3>
+            <h3 class="text-lg font-semibold text-mainText dark:text-mainText-dark">
+              {{ player.name }}
+            </h3>
           </div>
         </div>
       </div>

@@ -132,38 +132,55 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-black p-4">
-    <div class="w-full max-w-4xl bg-[#1A1A1A] rounded-lg shadow-2xl">
+  <!-- Outer container uses theme tokens for background/text -->
+  <div
+    class="min-h-screen flex items-center justify-center bg-page dark:bg-page-dark text-mainText dark:text-mainText-dark p-4"
+  >
+    <!-- Card container for the form -->
+    <div class="w-full max-w-4xl bg-card dark:bg-card-dark rounded-lg shadow-2xl">
       <div class="p-8">
+        <!-- Form header -->
         <div class="text-center mb-8">
-          <h1 class="text-3xl font-bold text-white mb-2">VOUS AVEZ UNE DEMANDE ?</h1>
-          <h2 class="text-2xl font-bold text-white">CONTACTEZ-NOUS !</h2>
+          <h1 class="text-3xl font-bold text-mainText dark:text-mainText-dark mb-2">
+            VOUS AVEZ UNE DEMANDE ?
+          </h1>
+          <h2 class="text-2xl font-bold text-mainText dark:text-mainText-dark">CONTACTEZ-NOUS !</h2>
         </div>
 
+        <!-- Form -->
         <form @submit.prevent="handleSubmit" class="space-y-6">
+          <!-- Name Fields -->
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <!-- Last Name -->
             <div>
-              <label for="lastName" class="block text-sm font-medium text-white mb-1"> Nom* </label>
+              <label
+                for="lastName"
+                class="block text-sm font-medium mb-1 text-mainText dark:text-mainText-dark"
+                >Nom*</label
+              >
               <input
                 id="lastName"
                 v-model="formData.lastName"
                 type="text"
                 required
-                class="block w-full rounded-md bg-gray-700 border-gray-600 text-white shadow-sm ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
+                class="block w-full rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-mainText dark:text-mainText-dark shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
               />
               <p v-if="errors.lastName" class="mt-1 text-sm text-red-500">{{ errors.lastName }}</p>
             </div>
 
+            <!-- First Name -->
             <div>
-              <label for="firstName" class="block text-sm font-medium text-white mb-1">
-                Prénom*
-              </label>
+              <label
+                for="firstName"
+                class="block text-sm font-medium mb-1 text-mainText dark:text-mainText-dark"
+                >Prénom*</label
+              >
               <input
                 id="firstName"
                 v-model="formData.firstName"
                 type="text"
                 required
-                class="block w-full rounded-md bg-gray-700 border-gray-600 text-white shadow-sm ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
+                class="block w-full rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-mainText dark:text-mainText-dark shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
               />
               <p v-if="errors.firstName" class="mt-1 text-sm text-red-500">
                 {{ errors.firstName }}
@@ -171,28 +188,37 @@ const handleSubmit = async () => {
             </div>
           </div>
 
+          <!-- Email & About -->
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <!-- Email -->
             <div>
-              <label for="email" class="block text-sm font-medium text-white mb-1"> E-Mail* </label>
+              <label
+                for="email"
+                class="block text-sm font-medium mb-1 text-mainText dark:text-mainText-dark"
+                >E-Mail*</label
+              >
               <input
                 id="email"
                 v-model="formData.email"
                 type="email"
                 required
-                class="block w-full rounded-md bg-gray-700 border-gray-600 text-white shadow-sm ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
+                class="block w-full rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-mainText dark:text-mainText-dark shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
               />
               <p v-if="errors.email" class="mt-1 text-sm text-red-500">{{ errors.email }}</p>
             </div>
 
+            <!-- Subject/About -->
             <div>
-              <label for="about" class="block text-sm font-medium text-white mb-1">
-                A propos de*
-              </label>
+              <label
+                for="about"
+                class="block text-sm font-medium mb-1 text-mainText dark:text-mainText-dark"
+                >À propos de*</label
+              >
               <select
                 id="about"
                 v-model="formData.about"
                 required
-                class="block w-full rounded-md bg-gray-700 border-gray-600 text-white shadow-sm ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
+                class="block w-full rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-mainText dark:text-mainText-dark shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
               >
                 <option value="" disabled selected>Choisissez un sujet</option>
                 <option v-for="option in aboutOptions" :key="option.value" :value="option.value">
@@ -203,38 +229,46 @@ const handleSubmit = async () => {
             </div>
           </div>
 
+          <!-- Message -->
           <div>
-            <label for="message" class="block text-sm font-medium text-white mb-1">
-              Message*
-            </label>
+            <label
+              for="message"
+              class="block text-sm font-medium mb-1 text-mainText dark:text-mainText-dark"
+              >Message*</label
+            >
             <textarea
               id="message"
               v-model="formData.message"
               rows="6"
               required
-              class="block w-full rounded-md bg-gray-700 border-gray-600 text-white shadow-sm ring-1 ring-inset ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
+              class="block w-full rounded-md bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-mainText dark:text-mainText-dark shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 focus:ring-2 focus:ring-purple-500 sm:text-sm sm:leading-6 p-3"
             ></textarea>
             <p v-if="errors.message" class="mt-1 text-sm text-red-500">{{ errors.message }}</p>
           </div>
 
-          <div class="flex items-start space-x-3">
-            <div class="flex items-center h-6">
-              <input
-                id="consent"
-                v-model="formData.consent"
-                type="checkbox"
-                required
-                class="h-4 w-4 rounded border-gray-600 bg-[#2a3142] text-purple-600 focus:ring-purple-500"
-              />
+          <!-- Consent Checkbox -->
+          <div>
+            <div class="flex items-start space-x-3">
+              <div class="flex items-center h-6">
+                <input
+                  id="consent"
+                  v-model="formData.consent"
+                  type="checkbox"
+                  required
+                  class="h-4 w-4 rounded border-gray-300 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 text-purple-600 focus:ring-purple-500"
+                />
+              </div>
+              <label for="consent" class="text-sm text-mutedText dark:text-mutedText-dark">
+                En cochant cette case et en soumettant ce formulaire, j'accepte que mes données
+                personnelles soient utilisées pour me recontacter dans le cadre de ma demande
+                indiquée dans ce formulaire. Aucun autre traitement ne sera effectué avec mes
+                informations.
+              </label>
             </div>
-            <label for="consent" class="text-sm text-gray-300">
-              En cochant cette case et en soumettant ce formulaire, j'accepte que mes données
-              personnelles soient utilisées pour me recontacter dans le cadre de ma demande indiquée
-              dans ce formulaire. aucun autre traitement ne sera effectué avec mes informations.
-            </label>
+            <p v-if="errors.consent" class="mt-1 text-sm text-red-500">{{ errors.consent }}</p>
           </div>
-          <p v-if="errors.consent" class="mt-1 text-sm text-red-500">{{ errors.consent }}</p>
 
+          <!-- Submit Button -->
           <div class="flex justify-end">
             <button
               type="submit"
@@ -250,20 +284,14 @@ const handleSubmit = async () => {
 </template>
 
 <style scoped>
+/* You can keep the custom CSS for autofill backgrounds if desired. */
 :root {
-  --form-bg: #1e2536;
   --input-bg: #2a3142;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
+select:-webkit-autofill {
   -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px var(--input-bg) inset;
   transition: background-color 5000s ease-in-out 0s;
