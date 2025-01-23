@@ -1,23 +1,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import planningDataJson from '@/assets/planning/PlanningEventsData.json' // Import JSON directly
+import type { Match } from '@/models/Match'
 
-interface PlanningEvent {
-  date: string
-  team: string
-  group: string
-  isDomicile: boolean
-  time_start: string
-  time_meetup: string | null
-  opponent: string | null
-  location: string | null
-  family_duety: string[]
-  referees: string[]
-  bar: string | null
-  result: number[]
-}
-
-const planningData = ref<PlanningEvent[]>(planningDataJson) // Use the imported JSON data directly
+const planningData = ref<Match[]>(planningDataJson) // Use the imported JSON data directly
 const filterDate = ref('')
 const filterTeam = ref('')
 

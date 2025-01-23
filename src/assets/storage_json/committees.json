@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Commission Technique",
+    "description": "Gestion des équipes et de la politique sportive du club",
+    "icon": "Trophy",
+    "members": [
+      "Thibault HUTEAU",
+      "Maxime COTTENCEAU",
+      "Flavien MAILET",
+      "Jérémie JOREAU",
+      "Antoine GALLARD",
+      "Jérémy POILANE",
+      "Axel NAUD",
+      "Julien BEAUDOUIN",
+      "Florent PAVAGEAU",
+      "Jason BIOTTEAU"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Commission Bar et Animation",
+    "description": "Organisation des événements et de la vie du club",
+    "icon": "Beer",
+    "members": ["Basile BOUMARD", "Nathanael CERQUEUX", "Anthony HERVE", "Julien MORINIERE"]
+  },
+  {
+    "id": 3,
+    "name": "Commission Communication",
+    "description": "Gestion de la communication interne et externe",
+    "icon": "Megaphone",
+    "members": [
+      "Laureen HAYE",
+      "Jeanne MOREAU",
+      "Ilona DANET",
+      "Loris BLANCHARD",
+      "Simon GRASSET",
+      "Claire CHARPENTIER",
+      "Simon GRASSET",
+      "Noa BREVET",
+      "Camille BLANC"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Commission Sponsoring",
+    "description": "Recherche et relation avec les partenaires",
+    "icon": "PiggyBank",
+    "members": ["Martin BIOTTEAU", "Justin LANDREAU"]
+  },
+  {
+    "id": 5,
+    "name": "Commission Planning",
+    "description": "Gestion des plannings et des feuilles de match",
+    "icon": "Calendar",
+    "members": ["Olivier BARON", "Emmanuelle"]
+  },
+  {
+    "id": 6,
+    "name": "Commission Ressources Humaines",
+    "description": "Gestion des recrutements",
+    "icon": "UserPlus",
+    "members": ["Martin BIOTTEAU", "Céline GRASSET", "Yasmine HUMEAU", "Valentin DEVANNE"]
+  },
+  {
+    "id": 7,
+    "name": "Commission Boutique",
+    "description": "Gestion de la boutique et des stocks",
+    "icon": "Store",
+    "members": ["Emmanuelle"]
+  }
+]

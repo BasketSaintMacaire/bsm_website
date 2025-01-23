@@ -1,112 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import {
-  Calendar,
-  Trophy,
-  Megaphone,
-  PiggyBank,
-  Beer,
-  UserPlus,
-  Store,
-  Crown,
-  Coins,
-  FileText,
-} from 'lucide-vue-next'
+import * as lucideIcons from 'lucide-vue-next'
 
-interface Committee {
-  id: number
-  name: string
-  description: string
-  icon: any
-  members: string[]
-}
+import type { Committee } from '@/models/Commitee'
+import type { KeyRole } from '@/models/KeyRole'
+import keyRolesDataJson from '@/assets/storage_json/key_roles.json'
+import committeesDataJson from '@/assets/storage_json/committees.json'
 
-interface KeyRole {
-  title: string
-  name: string
-  icon: any
-}
+const iconsMap = lucideIcons as Record<string, any>
 
 // Key roles
-const keyRoles = ref<KeyRole[]>([
-  { title: 'Président', name: 'Céline GRASSET', icon: Crown },
-  { title: 'Trésorier', name: 'Valentin DEVANNE', icon: Coins },
-  { title: 'Secrétaire', name: 'Yasmine HUMEAU', icon: FileText },
-])
+const keyRoles = ref<KeyRole[]>(keyRolesDataJson as KeyRole[])
 
 // Committees
-const committees = ref<Committee[]>([
-  {
-    id: 1,
-    name: 'Commission Technique',
-    description: 'Gestion des équipes et de la politique sportive du club',
-    icon: Trophy,
-    members: [
-      'Thibault HUTEAU',
-      'Maxime COTTENCEAU',
-      'Flavien MAILET',
-      'Jérémie JOREAU',
-      'Antoine GALLARD',
-      'Jérémy POILANE',
-      'Axel NAUD',
-      'Julien BEAUDOUIN',
-      'Florent PAVAGEAU',
-      'Jason BIOTTEAU',
-    ],
-  },
-  {
-    id: 2,
-    name: 'Commission Bar et Animation',
-    description: 'Organisation des événements et de la vie du club',
-    icon: Beer,
-    members: ['Basile BOUMARD', 'Nathanael CERQUEUX', 'Anthony HERVE', 'Julien MORINIERE'],
-  },
-  {
-    id: 3,
-    name: 'Commission Communication',
-    description: 'Gestion de la communication interne et externe',
-    icon: Megaphone,
-    members: [
-      'Laureen HAYE',
-      'Jeanne MOREAU',
-      'Ilona DANET',
-      'Loris BLANCHARD',
-      'Simon GRASSET',
-      'Claire CHARPENTIER',
-      'Simon GRASSET',
-      'Noa BREVET',
-      'Camille BLANC',
-    ],
-  },
-  {
-    id: 4,
-    name: 'Commission Sponsoring',
-    description: 'Recherche et relation avec les partenaires',
-    icon: PiggyBank,
-    members: ['Martin BIOTTEAU', 'Justin LANDREAU'],
-  },
-  {
-    id: 5,
-    name: 'Commission Planning',
-    description: 'Gestion des plannings et des feuilles de match',
-    icon: Calendar,
-    members: ['Olivier BARON', 'Emmanuelle'],
-  },
-  {
-    id: 6,
-    name: 'Commission Ressources Humaines',
-    description: 'Gestion des recrutements',
-    icon: UserPlus,
-    members: ['Martin BIOTTEAU', 'Céline GRASSET', 'Yasmine HUMEAU', 'Valentin DEVANNE'],
-  },
-  {
-    id: 7,
-    name: 'Commission Boutique',
-    description: 'Gestion de la boutique et des stocks',
-    icon: Store,
-    members: ['Emmanuelle'],
-  },
-])
+const committees = ref<Committee[]>(committeesDataJson as Committee[])
 </script>
 
 <template>
@@ -171,7 +78,7 @@ const committees = ref<Committee[]>([
             class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-6 text-center transform md:hover:scale-105 transition-all duration-300 shadow-lg"
           >
             <!-- Icon in white for contrast on purple gradient -->
-            <component :is="role.icon" class="w-16 h-16 text-white mx-auto mb-4" />
+            <component :is="iconsMap[role.icon]" class="w-16 h-16 text-white mx-auto mb-4" />
             <h3 class="text-2xl font-bold text-white mb-2">
               {{ role.title }}
             </h3>
@@ -191,7 +98,7 @@ const committees = ref<Committee[]>([
         >
           <div class="flex items-center mb-4">
             <!-- Keep icon color or switch to theme token -->
-            <component :is="committee.icon" class="w-8 h-8 text-purple-500 mr-3" />
+            <component :is="iconsMap[committee.icon]" class="w-8 h-8 text-purple-500 mr-3" />
             <h3 class="text-xl font-semibold text-mainText dark:text-mainText-dark">
               {{ committee.name }}
             </h3>

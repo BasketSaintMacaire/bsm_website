@@ -1,29 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { ShoppingCart, ChevronLeft, ChevronRight, X } from 'lucide-vue-next'
-import shopItemDataJson from '@/assets/shop_item/shop_item.json'
+import shopItemDataJson from '@/assets/storage_json/products.json'
 import emailjs from '@emailjs/browser'
-
-interface ProductVariant {
-  size?: string
-  color?: string
-  price: number
-}
-
-interface Flocking {
-  price: number
-  maxSize: number
-}
-
-interface Product {
-  id: number
-  name: string
-  category: string
-  imageFolder: string
-  description: string
-  variants: ProductVariant[]
-  flocking?: Flocking
-}
+import type { Product, ProductVariant } from '@/models/Product'
 
 interface BillingInfo {
   name: string

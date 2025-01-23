@@ -2,56 +2,12 @@
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import HistoryEventsDataJson from '@/assets/storage_json/history_events.json'
+import type { HistoryEvent } from '@/models/HistoryEvent'
 
 gsap.registerPlugin(ScrollTrigger)
 
-interface HistoryEvent {
-  year: number
-  title: string
-  description: string
-}
-
-const historyEvents = ref<HistoryEvent[]>([
-  {
-    year: 1981,
-    title: 'Fondation du BSM',
-    description:
-      "Fondé par un groupe de passionnés de basket de Saint Macaire, le BSM devient l'emblème sportif de Sevremoine.",
-  },
-  {
-    year: 1998,
-    title: "Victoire en Coupe de l'Anjou",
-    description:
-      "L'équipe phare remporte la Coupe de l'Anjou, marquant le début d'une ascension fulgurante.",
-  },
-  {
-    year: 1998,
-    title: 'Accession au championnat régional',
-    description: 'Le club progresse rapidement et accède au championnat régional.',
-  },
-  {
-    year: 2004,
-    title: 'Niveau national atteint',
-    description: 'Le BSM atteint le niveau national, démontrant sa progression constante.',
-  },
-  {
-    year: 2007,
-    title: 'Victoire en Coupe des Pays de la Loire',
-    description: 'Le club remporte la Coupe des Pays de la Loire, confirmant son statut régional.',
-  },
-  {
-    year: 2009,
-    title: 'Rétrogradation administrative',
-    description:
-      "Une décision administrative entraîne la rétrogradation de l'équipe phare en RM2, marquant le début d'une période difficile.",
-  },
-  {
-    year: 2023,
-    title: 'Retour en RM2',
-    description:
-      "Après quatre montées successives en quatre ans, l'équipe phare regagne la RM2, réaffirmant sa place dans le basket régional.",
-  },
-])
+const historyEvents = ref<HistoryEvent[]>(HistoryEventsDataJson as HistoryEvent[])
 
 onMounted(() => {
   gsap.from('.history-title', {

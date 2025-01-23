@@ -2,83 +2,13 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { X, Calendar, User, Tag } from 'lucide-vue-next'
+import { X, Calendar, Tag } from 'lucide-vue-next'
+import type { NewsArticle } from '@/models/NewsArticle'
+import newsArticleDataJson from '@/assets/storage_json/news_article.json'
 
 gsap.registerPlugin(ScrollTrigger)
 
-interface NewsArticle {
-  id: number
-  title: string
-  excerpt: string
-  content: string
-  author: string
-  date: string
-  image: string
-  category: string
-}
-
-const articles = ref<NewsArticle[]>([
-  {
-    id: 1,
-    title: 'Direction la Région pour nos U13 M1 et U15 M1',
-    excerpt:
-      'Félicitations à nos équipes qui ont brillamment décroché leur place en Région lors de la première phase !',
-    content:
-      'Un grand bravo à nos U13 M1 et nos U15 M1 qui accèdent désormais à la Région grâce à leurs remarquables performances lors de cette première phase. Nos U15 M1 ont réalisé un sans-faute avec 10 victoires en 10 matchs, tandis que nos U13 M1 s’imposent avec 7 victoires sur 8 matchs disputés. Nous comptons sur vous pour continuer à les encourager et les soutenir afin qu’ils poursuivent leur ascension. #laforcedesloups',
-    author: 'Jeanne Moreau',
-    date: '2025-01-06',
-    image: '/gallery/news/img_region.jpg',
-    category: 'Compétitions',
-  },
-  {
-    id: 2,
-    title: 'Remise du Label Départemental MiniBasket',
-    excerpt:
-      'Le Basket Saint-Macaire reçoit le Label MiniBasket autour d’une journée de matchs et de festivités.',
-    content:
-      'Ce samedi, le Basket Saint-Macaire a officiellement reçu le Label Départemental MiniBasket lors d’une cérémonie ponctuée de rencontres MiniBasket. Le label or a été remis par Nathalie BOURRY, responsable du Pôle Développement et Vivre Ensemble, à Céline GRASSET (présidente), Jérémy POILANE (référent MiniBasket) et Julien BEAUDOUIN (entraîneur des U7), en présence de Chantal GOURDON, adjointe territoriale de Saint-Macaire-en-Mauges, et Vincent BLANCHARD, adjoint aux sports. Un grand merci également à @intersport_clubscoentreprises et au @creditmutuel, partenaires de ce label. #B49',
-    author: 'Ilona Danet',
-    date: '2024-12-04',
-    image: 'gallery/news/remise_label_mini_basket.jpg',
-    category: 'Événements',
-  },
-  {
-    id: 3,
-    title: 'TOUS EN ROSE : BSM s’engage pour Octobre Rose',
-    excerpt:
-      'Le BSM organise une bourriche et une vente de crêpes au profit de la lutte contre le cancer du sein.',
-    content:
-      'Samedi 12 octobre, le Basket Saint-Macaire se mobilise pour Octobre Rose ! Le bureau des jeunes organise une bourriche et une vente de crêpes dès 16h15 à la salle Georges Raymond. Les participants pourront tenter de deviner le nombre de bonbons roses, tout en soutenant une bonne cause. L’intégralité des fonds récoltés sera reversée à la Ligue contre le cancer du sein. Venez nombreux participer et soutenir cette belle initiative !',
-    author: 'Bureau des jeunes',
-    date: '2024-10-08',
-    image: 'gallery/news/octobre_rose.jpg',
-    category: 'Événements',
-  },
-  {
-    id: 4,
-    title: 'Tournoi du Fair-Play 2025 : Respect et Convivialité au Rendez-vous',
-    excerpt:
-      'Le célèbre tournoi du Fair-play revient le dimanche 06 avril 2025 pour les catégories U09 et U11.',
-    content:
-      'Notre célèbre Tournoi du Fair-play fait son grand retour le dimanche 06 avril 2025 ! Destiné aux U09 et U11, cet événement mythique se déroulera autour de la thématique du respect. Pour vous inscrire, rendez-vous sur le lien suivant : https://www.tournify.fr/live/tournoi-fairplay2025-bsm?fbclid=PAZXh0bgNhZW0CMTEAAaZlj62Yc6hgEqV4P5GroIEvKe0QoXGOHt1jqI4eO-ZFZPEnkb8YXOk6GWg_aem_GXu0hgnPg2512x5k0NmytQ. Nous comptons sur vous pour faire de cette journée un moment inoubliable, placé sous le signe de la convivialité et du fair-play !',
-    author: 'Jeanne Moreau',
-    date: '2025-01-18',
-    image: '/gallery/news/tournoi_fair_play.jpg',
-    category: 'Tournois',
-  },
-  {
-    id: 1,
-    title: 'Le BSM Déraille : Soirée Basket Édition 2025',
-    excerpt:
-      'Découvrez l’affiche officielle de la soirée basket 2025 du BSM, sous le thème “Le BSM Déraille”.',
-    content:
-      "Chers abonnés du BSM, préparez-vous pour un événement hors du commun ! Nous avons l'honneur de vous dévoiler l’affiche officielle de la soirée du basket édition 2025, placée sous le thème « Le BSM Déraille ». Nous comptons sur vous pour arborer une tenue choc, pleine de couleurs et de folie. Bloquez d’ores et déjà la date dans vos agendas : rendez-vous en mars pour célébrer ensemble cette soirée inoubliable !",
-    author: 'Le Bureau',
-    date: '2025-01-18',
-    image: '/gallery/news/soiree_basket.jpg',
-    category: 'Événements',
-  },
-])
+const articles = ref<NewsArticle[]>(newsArticleDataJson as NewsArticle[])
 
 const selectedArticle = ref<NewsArticle | null>(null)
 const showModal = ref(false)
@@ -193,9 +123,6 @@ onUnmounted(() => {
             <!-- Author & Date -->
             <div class="mt-4 flex items-center">
               <div class="ml-3">
-                <p class="text-sm font-medium text-mainText dark:text-mainText-dark">
-                  {{ article.author }}
-                </p>
                 <div class="flex space-x-1 text-sm text-mutedText dark:text-mutedText-dark">
                   <time :datetime="article.date">
                     {{ formatDate(article.date) }}
@@ -264,10 +191,6 @@ onUnmounted(() => {
                   <div class="flex items-center">
                     <Calendar class="w-4 h-4 mr-2" />
                     <span>{{ formatDate(selectedArticle?.date || '') }}</span>
-                  </div>
-                  <div class="flex items-center">
-                    <User class="w-4 h-4 mr-2" />
-                    <span>{{ selectedArticle?.author }}</span>
                   </div>
                   <div class="flex items-center">
                     <Tag class="w-4 h-4 mr-2" />

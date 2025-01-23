@@ -3,21 +3,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { X, Users, Trophy, Smile } from 'lucide-vue-next'
 import teamDataJson from '@/assets/team/team.json'
-
-interface Player {
-  id: number
-  name: string
-  position: string
-  number: number
-}
-
-interface Team {
-  id: number
-  name: string
-  image: string
-  players: Player[]
-  category: 'men' | 'women' | 'pleasure'
-}
+import type { Team } from '@/models/Team'
 
 const teams = ref<Team[]>(teamDataJson as Team[])
 const selectedCategory = ref<'men' | 'women' | 'pleasure'>('men')

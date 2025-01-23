@@ -1,26 +1,15 @@
 <script setup lang="ts">
 import ImageCarrousel from '@/components/ImageCarousel.vue'
+import type { SeasonEvent } from '@/models/SeasonEvent'
 import { ref } from 'vue'
+import SeasonEventsDataJson from '@/assets/storage_json/season_events.json'
 
 // Example corrected scrollToTop function
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-interface EventItem {
-  name: string
-  day: string
-  month: string
-  year: string
-}
-
-const events = ref<EventItem[]>([
-  { name: 'Galette du BSM', day: '2', month: 'FEVRIER', year: '2025' },
-  { name: 'Plateau baby', day: '5', month: 'AVRIL', year: '2025' },
-  { name: 'Tournoi du fairplay', day: '6', month: 'AVRIL', year: '2025' },
-  { name: 'Tournoi de palet', day: '11', month: 'AVRIL', year: '2025' },
-  { name: 'Soirée du basket', day: '22', month: 'MARS', year: '2025' },
-])
+const events = ref<SeasonEvent[]>(SeasonEventsDataJson as SeasonEvent[])
 </script>
 
 <template>
