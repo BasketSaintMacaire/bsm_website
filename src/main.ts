@@ -12,6 +12,8 @@ import '@fontsource/antonio/500.css'
 import '@fontsource/antonio/600.css'
 import '@fontsource/antonio/700.css'
 
+document.documentElement.classList.add('dark')
+
 const app = createApp(App)
 
 app.use(router)
