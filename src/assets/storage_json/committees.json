@@ -22,7 +22,7 @@
     "name": "Commission Bar et Animation",
     "description": "Organisation des événements et de la vie du club",
     "icon": "Beer",
-    "members": ["Basile BOUMARD", "Nathanael CERQUEUX", "Anthony HERVE", "Julien MORINIERE"]
+    "members": ["Basile BOUMARD", "Nathanael CERQUEUS", "Anthony HERVE", "Julien MORINIERE"]
   },
   {
     "id": 3,
@@ -36,7 +36,6 @@
       "Loris BLANCHARD",
       "Simon GRASSET",
       "Claire CHARPENTIER",
-      "Simon GRASSET",
       "Noa BREVET",
       "Camille BLANC"
     ]

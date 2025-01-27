@@ -42,7 +42,7 @@
   {
     "id": 2,
     "name": "U21M1",
-    "image": "https://placehold.co/400",
+    "image": "/gallery/team_men/U21M1.jpg",
     "category": "men",
     "players": [
       { "id": 9, "name": "Enzo Baron", "position": "Pivot", "number": 1 },
@@ -331,7 +331,7 @@
       { "id": 5, "name": "Océane Beaumier", "position": "Meneuse", "number": 0 },
       { "id": 6, "name": "Claire Charpentier", "position": "Ailiere", "number": 11 },
       { "id": 7, "name": "Ilona Danet", "position": "Ailiere", "number": 6 },
-      { "id": 8, "name": "Loan Boisiaud", "position": "Meneuse", "number": 4 },
+      { "id": 8, "name": "Loan Boisiaud", "position": "Ailiere", "number": 4 },
       { "id": 9, "name": "Jeanne Moreau", "position": "Meneuse", "number": 5 },
       { "id": 10, "name": "Laureen Hayée", "position": "Ailiere", "number": 9 },
       { "id": 11, "name": "Antoine Gallard", "position": "Coach", "number": 0 }

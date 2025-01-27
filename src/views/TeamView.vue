@@ -79,7 +79,7 @@ onUnmounted(() => {
         >
           <div
             class="w-20 h-20 rounded-full flex items-center justify-center bg-card dark:bg-card-dark md:group-hover:bg-purple-600 transition-colors duration-300"
-            :class="{ 'bg-purple-600': selectedCategory === category }"
+            :class="{ 'bg-purple-600 dark:bg-purple-600': selectedCategory === category }"
           >
             <component
               :is="index === 0 ? Users : index === 1 ? Trophy : Smile"
