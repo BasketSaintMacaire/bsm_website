@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import planningDataJson from '@/assets/planning/PlanningEventsData.json'
+import planningDataJson from '@/assets/storage_json/matchs.json'
 import type { Match } from '@/models/Match'
 
 /* --------------------------------------------------
@@ -240,7 +240,9 @@ const badgesByEvent = computed(() => {
   const badgeMap = new WeakMap<Match, string>()
 
   // 1) Filter the events again to only home matches (but we use your final filtered list).
-  const homeEvents = filteredEvents.value.filter((e) => e.isDomicile && e.location)
+  const homeEvents = filteredEvents.value.filter(
+    (e) => e.isDomicile && e.location && !e.location.includes('Saint André'),
+  )
 
   // 2) Group them by (date, location)
   //    We'll use an object-of-arrays structure: { [date_location_key]: Match[] }
