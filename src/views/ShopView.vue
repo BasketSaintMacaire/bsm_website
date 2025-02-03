@@ -14,12 +14,23 @@ interface BillingInfo {
 
 const showCart = ref(false)
 const showBillingModal = ref(false)
+
+// The cart items, each referencing a product, a chosen variant, and quantity
 const cart = ref<{ product: Product; variant: ProductVariant; quantity: number }[]>([])
+
+// Load products from JSON
 const products = ref<Product[]>(shopItemDataJson as Product[])
+
+// For each product, store its array of image paths (after filtering)
 const productImages = ref<{ [key: number]: string[] }>({})
+
+// For each product, track which image index we are on in the carousel
 const currentImageIndex = ref<{ [key: number]: number }>({})
+
 const loading = ref(true)
 const error = ref<string | null>(null)
+
+// Track user’s billing info
 const billingInfo = ref<BillingInfo>({
   name: '',
   address: '',
@@ -27,13 +38,25 @@ const billingInfo = ref<BillingInfo>({
   email: '',
 })
 
+// **1) Selected variants by product ID.**
+//    Key: productId, Value: the currently chosen ProductVariant
+const selectedVariants = ref<Record<number, ProductVariant | null>>({})
+
 const cartTotal = computed(() => {
   return cart.value.reduce((total, item) => total + item.variant.price * item.quantity, 0)
 })
 
+/**
+ * Add item to cart or increment if it already exists (matching product + color + size)
+ */
 const addToCart = (product: Product, variant: ProductVariant) => {
+  if (!variant) return // Guard if somehow no variant is selected
+
   const existingItem = cart.value.find(
-    (item) => item.product.id === product.id && item.variant.size === variant.size,
+    (item) =>
+      item.product.id === product.id &&
+      item.variant.size === variant.size &&
+      item.variant.color === variant.color,
   )
   if (existingItem) {
     existingItem.quantity++
@@ -42,10 +65,14 @@ const addToCart = (product: Product, variant: ProductVariant) => {
   }
 }
 
+/**
+ * Fetch the images for a single product based on `imageFolder`
+ */
 const getProductImages = async (product: Product) => {
   try {
     const response = await fetch('/gallery-images.json')
     const allImages: string[] = await response.json()
+    // Filter only those images that belong to this product’s folder
     return allImages.filter((path) => path.includes(product.imageFolder))
   } catch (err) {
     console.error('Error fetching product images:', err)
@@ -54,6 +81,10 @@ const getProductImages = async (product: Product) => {
   }
 }
 
+/**
+ * Load images for each product, and set up initial `currentImageIndex`.
+ * Also optionally initialize the first selected variant for each product.
+ */
 const loadProductImages = async () => {
   loading.value = true
   error.value = null
@@ -61,6 +92,13 @@ const loadProductImages = async () => {
     for (const product of products.value) {
       productImages.value[product.id] = await getProductImages(product)
       currentImageIndex.value[product.id] = 0
+
+      // **2) Initialize a default variant** (e.g., the first variant)
+      if (product.variants && product.variants.length) {
+        selectedVariants.value[product.id] = product.variants[0]
+      } else {
+        selectedVariants.value[product.id] = null
+      }
     }
   } catch (err) {
     console.error('Error loading product images:', err)
@@ -94,7 +132,7 @@ function generateItemsTable() {
   cart.value.forEach((item) => {
     rows += `
       <tr>
-        <td>${item.product.name}</td>
+        <td>${item.product.name} (${item.variant.color || ''} - ${item.variant.size || ''})</td>
         <td>${item.quantity}</td>
         <td>${(item.variant.price * item.quantity).toFixed(2)}€</td>
       </tr>
@@ -142,7 +180,7 @@ async function handleOrder() {
       billingAddress: billingInfo.value.address,
       billingPhone: billingInfo.value.phone,
       billingEmail: billingInfo.value.email,
-      recipientEmail: 'boutique@bsmbasket.fr',
+      recipientEmail: 'boutique@bsmbasket.fr', // Admin email
     }
 
     const adminResponse = await emailjs.send(
@@ -153,6 +191,7 @@ async function handleOrder() {
     )
     console.log('Admin email sent:', adminResponse.status, adminResponse.text)
 
+    // Clear cart on success
     cart.value = []
     alert('Commande envoyée avec succès !')
     showBillingModal.value = false
@@ -167,7 +206,6 @@ function decrementItem(item: { product: Product; variant: ProductVariant; quanti
   if (item.quantity > 1) {
     item.quantity--
   } else {
-    // Remove item if quantity is 1 and user decrements
     cart.value = cart.value.filter((cartItem) => cartItem !== item)
   }
 }
@@ -182,7 +220,6 @@ const closeBillingModal = () => {
 </script>
 
 <template>
-  <!-- Main container uses theme tokens for background/text -->
   <div class="min-h-screen bg-page text-mainText dark:bg-page-dark dark:text-mainText-dark">
     <!-- Cart Icon -->
     <div class="fixed top-4 right-4 z-50">
@@ -214,6 +251,7 @@ const closeBillingModal = () => {
           :key="product.id"
           class="rounded-lg overflow-hidden shadow-lg transition-transform md:hover:scale-105 bg-card dark:bg-card-dark"
         >
+          <!-- Image Carousel -->
           <div class="relative">
             <img
               v-if="productImages[product.id] && productImages[product.id].length > 0"
@@ -260,25 +298,27 @@ const closeBillingModal = () => {
             </div>
 
             <div class="mt-4 space-y-2">
-              <!-- Variation Select -->
+              <!-- Variation Select (color + size) -->
               <select
                 v-if="product.variants.length > 1"
+                v-model="selectedVariants[product.id]"
                 class="block w-full bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-md text-mainText dark:text-mainText-dark px-4 py-2"
               >
                 <option
                   v-for="variant in product.variants"
-                  :key="variant.size"
-                  :value="variant.size"
+                  :key="(variant.color || '') + '-' + (variant.size || '')"
+                  :value="variant"
                 >
-                  {{ variant.color ? variant.color + ' - ' : '' }}{{ variant.size }} -
-                  {{ variant.price.toFixed(2) }}€
+                  <!-- Display color - size - price -->
+                  {{ variant.color ? variant.color + ' - ' : '' }}
+                  {{ variant.size }} - {{ variant.price.toFixed(2) }}€
                 </option>
               </select>
 
               <!-- Add to Cart -->
               <button
                 class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition-colors"
-                @click="addToCart(product, product.variants[0])"
+                @click="addToCart(product, selectedVariants[product.id] ?? product.variants[0])"
               >
                 Ajouter au panier
               </button>
@@ -323,7 +363,7 @@ const closeBillingModal = () => {
           <div v-else class="space-y-4">
             <div
               v-for="item in cart"
-              :key="`${item.product.id}-${item.variant.size}`"
+              :key="`${item.product.id}-${item.variant.color || ''}-${item.variant.size || ''}`"
               class="flex items-center gap-4 p-4 rounded-lg bg-gray-200 dark:bg-gray-700"
             >
               <img
@@ -335,7 +375,9 @@ const closeBillingModal = () => {
               <div class="flex-1">
                 <h3 class="font-semibold">{{ item.product.name }}</h3>
                 <p class="text-sm text-mutedText dark:text-mutedText-dark">
-                  Taille: {{ item.variant.size }}
+                  <!-- Show color + size -->
+                  {{ item.variant.color ? item.variant.color + ' - ' : '' }}
+                  {{ item.variant.size }}
                 </p>
                 <div class="flex items-center gap-2 mt-2">
                   <button
@@ -457,10 +499,14 @@ const closeBillingModal = () => {
             <div class="space-y-2">
               <div
                 v-for="item in cart"
-                :key="`${item.product.id}-${item.variant.size}`"
+                :key="`${item.product.id}-${item.variant.color || ''}-${item.variant.size || ''}`"
                 class="flex justify-between"
               >
-                <span>{{ item.product.name }} ({{ item.variant.size }}) x {{ item.quantity }}</span>
+                <span>
+                  {{ item.product.name }} ({{ item.variant.color ? item.variant.color + ' - ' : ''
+                  }}{{ item.variant.size }}) x
+                  {{ item.quantity }}
+                </span>
                 <span>{{ (item.variant.price * item.quantity).toFixed(2) }}€</span>
               </div>
               <div
