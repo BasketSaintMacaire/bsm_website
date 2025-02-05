@@ -6,47 +6,57 @@ const router = createRouter({
     {
       path: '/',
       name: 'acceuil',
-      component: () => import('../views/HomeView.vue'),
+      component: () => import('@/views/HomeView.vue'),
     },
     {
       path: '/leclub',
       name: 'leclub',
-      component: () => import('../views/ClubView.vue'),
+      component: () => import('@/views/ClubView.vue'),
     },
     {
       path: '/planning',
       name: 'planning',
-      component: () => import('../views/PlanningView.vue'),
+      component: () => import('@/views/PlanningView.vue'),
     },
     {
       path: '/boutique',
       name: 'boutique',
-      component: () => import('../views/ShopView.vue'),
+      component: () => import('@/views/ShopView.vue'),
     },
     {
       path: '/actualites',
       name: 'actualites',
-      component: () => import('../views/NewsView.vue'),
+      component: () => import('@/views/NewsView.vue'),
     },
     {
       path: '/contact',
       name: 'contact',
-      component: () => import('../views/ContactView.vue'),
+      component: () => import('@/views/ContactView.vue'),
     },
     {
       path: '/equipes',
       name: 'equipes',
-      component: () => import('../views/TeamView.vue'),
+      component: () => import('@/views/TeamView.vue'),
     },
     {
       path: '/histoire',
       name: 'histoire',
-      component: () => import('../views/HistoryView.vue'),
+      component: () => import('@/views/HistoryView.vue'),
     },
     {
       path: '/bureau',
       name: 'bureau',
-      component: () => import('../views/CommitteesView.vue'),
+      component: () => import('@/views/CommitteesView.vue'),
+    },
+    {
+      path: '/mentions-legales',
+      name: 'MentionsLegales',
+      component: import('@/views/LegalNoticesView.vue'),
+    },
+    {
+      path: '/politique-de-confidentialite',
+      name: 'PolitiqueDeConfidentialite',
+      component: import('@/views/PrivacyPolicyView.vue'),
     },
   ],
 })

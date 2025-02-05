@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ImageCarrousel from '@/components/ImageCarousel.vue'
 import type { SeasonEvent } from '@/models/SeasonEvent'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import SeasonEventsDataJson from '@/assets/storage_json/season_events.json'
 
 // Example corrected scrollToTop function
@@ -10,6 +10,28 @@ const scrollToTop = () => {
 }
 
 const events = ref<SeasonEvent[]>(SeasonEventsDataJson as SeasonEvent[])
+
+const sortedEvents = computed(() => {
+  return [...events.value].sort((a, b) => {
+    // Convert the day, month, year to numbers
+    const aYear = parseInt(a.year, 10)
+    const aMonth = parseInt(a.month, 10)
+    const aDay = parseInt(a.day, 10)
+
+    const bYear = parseInt(b.year, 10)
+    const bMonth = parseInt(b.month, 10)
+    const bDay = parseInt(b.day, 10)
+
+    // Option 1: Compare by difference (year, then month, then day)
+    if (aYear !== bYear) {
+      return aYear - bYear
+    }
+    if (aMonth !== bMonth) {
+      return aMonth - bMonth
+    }
+    return aDay - bDay
+  })
+})
 </script>
 
 <template>
@@ -125,7 +147,7 @@ const events = ref<SeasonEvent[]>(SeasonEventsDataJson as SeasonEvent[])
         <div
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 justify-items-center"
         >
-          <div v-for="event in events" :key="event.day" class="w-full max-w-xs">
+          <div v-for="event in sortedEvents" :key="event.day" class="w-full max-w-xs">
             <!-- Replace bg-gray-800 with a token-based background for dark mode -->
             <div
               class="bg-card dark:bg-card-dark rounded-lg overflow-hidden shadow-lg transition-transform duration-300 md:hover:scale-105"

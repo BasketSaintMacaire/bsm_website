@@ -202,11 +202,20 @@ watch(isDark, (value) => {
         >
           <p>&copy; {{ currentYear }} BASKET SAINT MACAIRE. Tous droits réservés.</p>
           <div class="mt-4 sm:mt-0">
-            <a href="#" class="hover:text-purple-400 transition-colors">Mentions légales</a>
+            <RouterLink
+              to="/mentions-legales"
+              class="hover:text-purple-400 transition-colors text-mainText dark:text-mainText-dark"
+            >
+              Mentions légales
+            </RouterLink>
             <span class="mx-2">|</span>
-            <a href="#" class="hover:text-purple-400 transition-colors">
+            <RouterLink
+              to="/politique-de-confidentialite"
+              class="hover:text-purple-400 transition-colors text-mainText dark:text-mainText-dark"
+            >
               Politique de confidentialité
-            </a>
+            </RouterLink>
+            <a href="/" class="hover:text-purple-400 transition-colors"> </a>
           </div>
         </div>
       </div>
