@@ -4,7 +4,7 @@ import { parse } from 'csv-parse/sync'
 // ------------------- CONFIG -------------------
 
 // Example file paths. Adjust to your actual file names/locations:
-const BASE_JSON_FILE = './src/assets/storage_json/matchs.csv'
+const BASE_JSON_FILE = './src/assets/storage_json/matchs.json'
 const NEW_CSV_FILE = './src/scripts/planning.csv'
 const OUTPUT_JSON_FILE = BASE_JSON_FILE
 // We'll overwrite the existing base.json, but if you prefer you can change OUTPUT_JSON_FILE
@@ -184,15 +184,16 @@ try {
     }
   }
 
-  // 2. Parse the new CSV file
-  const newMatches = parseNewCSVFile(NEW_CSV_FILE)
-
-  // 3. Convert baseMatches to a Map for easy lookup by key
+  // 2. Convert baseMatches to a Map for easy lookup by key
   const baseMap = new Map()
   for (const bm of baseMatches) {
     const key = buildMatchKey(bm)
     baseMap.set(key, bm)
   }
+  console.log('Base Matches:', baseMatches.length)
+
+  // 3. Parse the new CSV file
+  const newMatches = parseNewCSVFile(NEW_CSV_FILE)
 
   // 4. For each new match:
   //    - build the key
@@ -206,6 +207,7 @@ try {
   // 5. Convert the map back into an array
   const updatedMatches = Array.from(baseMap.values())
 
+  console.log('Updated Matches:', updatedMatches.length)
   // 6. Write to the base JSON file (overwriting it)
   writeFileSync(OUTPUT_JSON_FILE, JSON.stringify(updatedMatches, null, 2), 'utf8')
   console.log(
