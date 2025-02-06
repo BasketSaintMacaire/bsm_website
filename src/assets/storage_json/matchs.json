@@ -820,14 +820,8 @@
     "time_meetup": "19:30",
     "opponent": "PUY SAINT BONNET BASKET -",
     "location": "",
-    "family_duety": [
-      "LENA VERDIER",
-      "MAELLE PACAUD"
-    ],
-    "referees": [
-      "JEANNE MOREAU",
-      "LENY BRETAUDEAU"
-    ],
+    "family_duety": ["LENA VERDIER", "MAELLE PACAUD"],
+    "referees": ["JEANNE MOREAU", "LENY BRETAUDEAU"],
     "bar": null,
     "result": []
   },
@@ -869,10 +863,7 @@
     "opponent": "IE - CTC REZE BOUAYE",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -942,10 +933,7 @@
     "opponent": "MAULEVRIER - 2",
     "location": "Salle GeorgesRaymond",
     "family_duety": [],
-    "referees": [
-      "ELOUAN CHALLET",
-      "EVAN LECOMTE"
-    ],
+    "referees": ["ELOUAN CHALLET", "EVAN LECOMTE"],
     "bar": null,
     "result": []
   },
@@ -973,10 +961,7 @@
     "opponent": "SEGUINIERE (LA) ST LOUIS BASKET - 1",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "EVAN JOYER",
-      "MAXENCE GOURAUD"
-    ],
+    "referees": ["EVAN JOYER", "MAXENCE GOURAUD"],
     "bar": null,
     "result": []
   },
@@ -1004,10 +989,7 @@
     "opponent": "SAINT MACAIRE EN MAUGES - 3",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "GASPARD BELLANGER",
-      "GABIN GICQUIAUD"
-    ],
+    "referees": ["GASPARD BELLANGER", "GABIN GICQUIAUD"],
     "bar": null,
     "result": []
   },
@@ -1091,10 +1073,7 @@
     "opponent": "ROUSSAY VILLEDIEU",
     "location": "Salle GeorgesRaymond",
     "family_duety": [],
-    "referees": [
-      "MAELIE DOUIN",
-      "LALIE SAUTEJEAU"
-    ],
+    "referees": ["MAELIE DOUIN", "LALIE SAUTEJEAU"],
     "bar": null,
     "result": []
   },
@@ -1108,10 +1087,7 @@
     "opponent": "SAINT CHRISTOPHE DU BOIS - 1",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "YAELLE BEAUFRETON",
-      "BASTIEN PACAUD"
-    ],
+    "referees": ["YAELLE BEAUFRETON", "BASTIEN PACAUD"],
     "bar": null,
     "result": []
   },
@@ -1153,10 +1129,7 @@
     "opponent": "SAINT LEGER SOUS CHOLET",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "LALY THOMAS",
-      "LYA BEUFRETON"
-    ],
+    "referees": ["LALY THOMAS", "LYA BEUFRETON"],
     "bar": null,
     "result": []
   },
@@ -1184,10 +1157,7 @@
     "opponent": "SAINT ANDRE DE LA MARCHE",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "CLARISSE PICHERIT",
-      "KEVIN BLOUT"
-    ],
+    "referees": ["CLARISSE PICHERIT", "KEVIN BLOUT"],
     "bar": null,
     "result": []
   },
@@ -1215,10 +1185,7 @@
     "opponent": "SAINT ANDRE DE LA MARCHE",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "TIMEO TERRIEN",
-      "TOM BLANCHARD"
-    ],
+    "referees": ["TIMEO TERRIEN", "TOM BLANCHARD"],
     "bar": null,
     "result": []
   },
@@ -1231,14 +1198,8 @@
     "time_meetup": "14:30",
     "opponent": "MONTAIGU VENDEE BASKET",
     "location": "Salle Pierre deCoubertin",
-    "family_duety": [
-      "CLARA BARON",
-      "CHAUVAT ZIA"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["CLARA BARON", "CHAUVAT ZIA"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -1251,10 +1212,7 @@
     "time_meetup": "12:30",
     "opponent": "MOINE BASKET CLUB - 2",
     "location": "Salle Pierre deCoubertin",
-    "family_duety": [
-      "GAETAN LEFRICHE",
-      "CLAIRE CHARPENTIER"
-    ],
+    "family_duety": ["GAETAN LEFRICHE", "CLAIRE CHARPENTIER"],
     "referees": [],
     "bar": null,
     "result": []
@@ -1316,6 +1274,20 @@
     "result": []
   },
   {
+    "date": "08/02/2025",
+    "team": "U18-M2",
+    "group": "D3F",
+    "isDomicile": false,
+    "time_start": "18:30",
+    "time_meetup": "#N/A",
+    "opponent": "ELAN DES MAUGES",
+    "location": "Salle Omnisport Bel Air à Saint Laurent des Autels",
+    "family_duety": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
     "date": "09/02/2025",
     "team": "Séniors M2",
     "group": "B",
@@ -1338,14 +1310,8 @@
     "time_meetup": "14:30",
     "opponent": "BOURNEZEAU - 1",
     "location": "Salle Pierre de\n Coubertin",
-    "family_duety": [
-      "YORIS PAVAGEAU",
-      "CAMILLE BEAUMIER"
-    ],
-    "referees": [
-      "off",
-      "off"
-    ],
+    "family_duety": ["YORIS PAVAGEAU", "CAMILLE BEAUMIER"],
+    "referees": ["off", "off"],
     "bar": null,
     "result": []
   },
