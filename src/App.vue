@@ -10,6 +10,7 @@ const isMenuOpen = ref(false)
 const links = [
   { to: '/leclub', text: 'LE CLUB' },
   { to: '/planning', text: 'PLANNINGS' },
+  { to: '/planning-entrainement', text: 'ENTRAINEMENT' },
   { to: '/boutique', text: 'BOUTIQUE' },
   { to: '/actualites', text: 'ACTUALITÉS' },
 ]
