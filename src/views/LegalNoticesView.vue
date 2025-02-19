@@ -7,7 +7,7 @@ const sections = ref([
     title: 'Éditeur du Site',
     content: `
       <p class="mb-4">Le présent site est édité par l'association <strong>BSM : Basket Saint Macaire</strong>, association loi 1901, dont le siège social est situé à :</p>
-      <div class="bg-gray-800 p-4 rounded-lg mb-4">
+      <div class="bg-gray-800 p-4 rounded-lg mb-4 text-[#FFFFFF]">
         <p><strong>BSM : Basket Saint Macaire</strong><br>
         Stade Georges Raymond<br>
         49450 Saint-Macaire (France)<br>
@@ -29,7 +29,7 @@ const sections = ref([
     title: 'Hébergement du site',
     content: `
       <p>Le site <strong>bsmbasket.fr</strong> est hébergé par :</p>
-      <div class="bg-gray-800 p-4 rounded-lg mt-2">
+      <div class="bg-gray-800 p-4 rounded-lg mt-2 text-[#FFFFFF]">
         <p><strong>o2switch</strong><br>
         Chem. des Pardiaux, 63000 Clermont-Ferrand<br>
         Tél : 04 44 44 60 40</p>

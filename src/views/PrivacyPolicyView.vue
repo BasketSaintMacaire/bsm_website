@@ -100,7 +100,7 @@ const sections = ref([
     title: 'Nous contacter',
     content: `
       <p>Si vous avez des questions concernant cette politique de confidentialité ou nos pratiques en matière de protection des données, veuillez nous contacter :</p>
-      <div class="bg-card dark:bg-card-dark p-4 rounded-lg mt-2">
+      <div class="bg-gray-800 p-4 rounded-lg mt-2 text-[#FFFFFF]">
         <p><strong>BSM : Basket Saint Macaire</strong><br>
         Stade Georges Raymond<br>
         49450 Saint-Macaire (France)<br>
