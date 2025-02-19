@@ -130,13 +130,4 @@ const toggleSection = (index: number) => {
   </div>
 </template>
 
-<style scoped>
-.prose :deep(a) {
-  @apply text-blue-600 dark:text-blue-400 hover:underline;
-}
-
-.prose :deep(strong) {
-  @apply font-semibold;
-  @apply text-purple-600;
-}
-</style>
+<style scoped></style>
