@@ -55,12 +55,12 @@ const router = createRouter({
     },
     {
       path: '/mentions-legales',
-      name: 'MentionsLegales',
+      name: 'mentions-legales',
       component: import('@/views/LegalNoticesView.vue'),
     },
     {
       path: '/politique-de-confidentialite',
-      name: 'PolitiqueDeConfidentialite',
+      name: 'politique-de-confidentialite',
       component: import('@/views/PrivacyPolicyView.vue'),
     },
   ],

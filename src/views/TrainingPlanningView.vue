@@ -5,6 +5,7 @@ interface TrainingSession {
   time: string
   groups: string[]
   location: string
+  trainer: string
 }
 
 interface DaySchedule {
@@ -14,72 +15,142 @@ interface DaySchedule {
 
 const weekSchedule = ref<DaySchedule[]>([
   {
-    date: 'LUNDI 17',
+    date: 'LUNDI',
     sessions: [
       {
-        time: '13H00 à 16H00',
-        groups: ['U09 & U11'],
+        time: '17H30 à 18H45',
+        groups: ['U07 F/G'],
         location: 'S. GEORGES RAYMOND',
+        trainer: 'Julien',
       },
       {
-        time: '16H00 à 17H30',
-        groups: ['U18G'],
-        location: 'S. GEORGES RAYMOND',
+        time: '17H00 à 18H15',
+        groups: ['U09 G1', 'U09 G2'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy',
+      },
+      {
+        time: '18H15 à 19H30',
+        groups: ['U18 F1 CTC', 'U18 F2 CTC', 'U15 F1 CTC'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy',
+      },
+      {
+        time: '19H30 à 20H45',
+        groups: ['U18 G1', 'U18 G2', 'U15 G1 CTC'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy',
+      },
+      {
+        time: '20H45 à 22H30',
+        groups: ['DETENTE F'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: '',
       },
     ],
   },
   {
-    date: 'MARDI 18',
+    date: 'MARDI',
     sessions: [
       {
-        time: '13H00 à 16H00',
-        groups: ['U13 G', 'U15G CTC', 'U15F CTC', 'U13F1', 'U13F CTC'],
-        location: 'S. GEORGES RAYMOND',
+        time: '17H00 à 18H15',
+        groups: ['U09 F1', 'U09 G3'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy',
       },
       {
-        time: '16H00 à 17H30',
-        groups: ['U18F', 'U18F CTC'],
+        time: '18H15 à 19H30',
+        groups: ['U11 F1', 'U11 F2', 'U11 F3'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy',
+      },
+      {
+        time: '17H45 à 19H15',
+        groups: ['U13 F1', 'U13 F2 CTC'],
+        location: 'S. SAINT ANDRE DE LA MARCHE',
+        trainer: 'Jerome',
+      },
+      {
+        time: '19H15 à 20H45',
+        groups: ['U15 G2 CTC', 'U15 G3 CTC'],
+        location: 'S. SAINT ANDRE DE LA MARCHE',
+        trainer: 'Jerome',
+      },
+      {
+        time: '20H15 à 21H45',
+        groups: ['SG1', 'SG2', 'U21 G1'],
         location: 'S. GEORGES RAYMOND',
+        trainer: 'Emmanuel',
       },
     ],
   },
   {
-    date: 'MERCREDI 19',
+    date: 'MERCREDI',
     sessions: [
       {
-        time: '10H00 à 12H00',
-        groups: ['U7'],
+        time: '10H45 à 12H00',
+        groups: ['U7 G/F'],
         location: 'S. GEORGES RAYMOND',
+        trainer: 'Jeremy & Axel',
       },
       {
-        time: '10H00 à 16H00',
-        groups: ['U09 & U11 (Sauf U11G1 et U11F1)'],
-        location: 'S. GEORGES RAYMOND (Prévoir picnic)',
+        time: '14H30 à 16H00',
+        groups: ['U11 G3', 'U11 G4', 'U11 F2', 'U11 F3'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: 'Jeremy & Axel',
       },
       {
         time: '16H00 à 17H30',
-        groups: ['U18G'],
+        groups: ['U13 G3', 'U11 G1', 'U11 G2'],
         location: 'S. GEORGES RAYMOND',
+        trainer: 'Jeremy & Axel',
       },
       {
-        time: '17H-19H',
-        groups: ['U13F CTC'],
-        location: 'S. SAINT ANDRE DE LA MARCHE',
+        time: '18H00 à 19H30',
+        groups: ['U13 G1', 'U13 G2'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy & Axel',
+      },
+      {
+        time: '19H30 à 21H00',
+        groups: ['SF1', 'SF2'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Antoine',
       },
     ],
   },
   {
-    date: 'JEUDI 20',
+    date: 'JEUDI',
     sessions: [
       {
-        time: '17H-18H30',
-        groups: ['U15G CTC'],
-        location: 'S. SAINT ANDRE DE LA MARCHE',
+        time: '17H15 à 18H30',
+        groups: ['U13 F1', 'U13 F2 CTC', 'U11 F1'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy & Axel',
       },
       {
-        time: '18H45-20H15',
-        groups: ['U18F2 CTC', 'U15F CTC'],
+        time: '18H30 à 19H45',
+        groups: ['U13 G2', 'U13 G3'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy & Axel',
+      },
+      {
+        time: '18H45 à 20H15',
+        groups: ['U18 F2 CTC', 'U15 F1 CTC'],
         location: 'S. SAINT ANDRE DE LA MARCHE',
+        trainer: 'Enzo',
+      },
+      {
+        time: '19H45 à 21H00',
+        groups: ['U18 G1', 'U18 G2'],
+        location: 'S. PIERRE DE COUBERTIN',
+        trainer: 'Jeremy & Axel',
+      },
+      {
+        time: '21H00 à 23H00',
+        groups: ['DETENTE G'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
       },
     ],
   },
@@ -87,9 +158,28 @@ const weekSchedule = ref<DaySchedule[]>([
     date: 'VENDREDI 21',
     sessions: [
       {
-        time: '10H00 à 16H00',
-        groups: ['U13 G', 'U13F1', 'U11G1', 'U11F1'],
-        location: 'S. GEORGES RAYMOND (Prévoir picnic)',
+        time: '17H00 à 18H15',
+        groups: ['U11 G1', 'U11 G2', 'U11 G3', 'U11 G4'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: 'Jeremy & Axel',
+      },
+      {
+        time: '18H15 à 19H30',
+        groups: ['U15 G1 CTC', 'U15 G2 CTC', 'U15 G3 CTC', 'U13 G1'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: 'Jeremy & Axel',
+      },
+      {
+        time: '19H30 à 21H00',
+        groups: ['SF1', 'SF2'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: 'Antoine & Axel',
+      },
+      {
+        time: '21H00 à 22H30',
+        groups: ['SG1', 'SG2', 'U21 G1'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: 'Emmanuel & Justin',
       },
     ],
   },
@@ -106,7 +196,7 @@ const weekSchedule = ref<DaySchedule[]>([
       >
         Planning d'entraînement
       </h1>
-      <h2 class="text-xl font-bold text-center mb-8">VACANCES FEVRIER 2025</h2>
+      <h2 class="text-xl font-bold text-center mb-8">SAISON 2024/2025</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
         <div
@@ -142,7 +232,7 @@ const weekSchedule = ref<DaySchedule[]>([
       </div>
 
       <div class="mt-8 text-center text-sm text-mutedText dark:text-mutedText-dark">
-        <p>Dernière mise à jour : <strong>13/02/2025</strong></p>
+        <p>Dernière mise à jour : <strong>26/02/2025</strong></p>
       </div>
     </div>
   </div>
