@@ -56,12 +56,12 @@ const router = createRouter({
     {
       path: '/mentions-legales',
       name: 'mentions-legales',
-      component: import('@/views/LegalNoticesView.vue'),
+      component: () => import('@/views/LegalNoticesView.vue'),
     },
     {
       path: '/politique-de-confidentialite',
       name: 'politique-de-confidentialite',
-      component: import('@/views/PrivacyPolicyView.vue'),
+      component: () => import('@/views/PrivacyPolicyView.vue'),
     },
   ],
 })
