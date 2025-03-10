@@ -68,11 +68,12 @@ const sortedEvents = computed(() => {
       <div class="absolute inset-0 bg-black bg-opacity-40">
         <div class="container mx-auto px-6 h-full flex flex-col justify-end pb-24">
           <!-- Hero Text -->
-          <h1
+          <h2
             class="text-5xl md:text-7xl font-extrabold max-w-2xl leading-tight bg-clip-text text-transparent bg-purple-600"
           >
-            LA FORCE DES LOUPS EST DANS LA MEUTE
-          </h1>
+            « La force de la meute est dans le loup. La Force des loups est dans la meute. » :
+            Rudyard Kipling
+          </h2>
 
           <!-- Social Icons -->
           <div class="flex gap-4 mt-6">
