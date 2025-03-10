@@ -11,17 +11,36 @@ const scrollToTop = () => {
 
 const events = ref<SeasonEvent[]>(SeasonEventsDataJson as SeasonEvent[])
 
+const monthOrder = [
+  'JANVIER',
+  'FEVRIER',
+  'MARS',
+  'AVRIL',
+  'MAI',
+  'JUIN',
+  'JUILLET',
+  'AOUT',
+  'SEPTEMBRE',
+  'OCTOBRE',
+  'NOVEMBRE',
+  'DECEMBRE',
+]
+
 const sortedEvents = computed(() => {
   return [...events.value].sort((a, b) => {
+    console.log(a, b)
     // Convert the day, month, year to numbers
     const aYear = parseInt(a.year, 10)
-    const aMonth = parseInt(a.month, 10)
+    const aMonth = monthOrder.indexOf(a.month.toUpperCase())
     const aDay = parseInt(a.day, 10)
 
+    console.log(aYear, aMonth, aDay)
+
     const bYear = parseInt(b.year, 10)
-    const bMonth = parseInt(b.month, 10)
+    const bMonth = monthOrder.indexOf(b.month.toUpperCase())
     const bDay = parseInt(b.day, 10)
 
+    console.log(bYear, bMonth, bDay)
     // Option 1: Compare by difference (year, then month, then day)
     if (aYear !== bYear) {
       return aYear - bYear
