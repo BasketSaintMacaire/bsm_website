@@ -43,5 +43,23 @@
     "date": "2025-01-18",
     "image": "/gallery/news/soiree_basket.jpg",
     "category": "Événements"
+  },
+  {
+    "id": 6,
+    "title": "Le BSM Déraille : Annulation de la soirée du basket",
+    "excerpt": "L'événement de basket du 22 mars est annulé faute de participants, les personnes inscrites seront remboursées selon les instructions envoyées par email",
+    "content": "Chers macairois, Nous sommes dans le regret de vous annoncer l'annulation de notre mythique soirée du basket. Celle-ci devait avoir lieu le samedi 22 mars prochain. Le nombre d'inscriptions étant trop peu élevé, le maintient de l'évènement est impossible. Nous remercions toutes les personnes ayant pris leur place pour fêter notre club ainsi que l'ensemble de la commission animation pour son investissement. Concernant le remboursement, nous vous prions de vous rendre sur votre boîte mail afin d'y retrouver plus d'informations. Le BSM",
+    "date": "2025-03-10",
+    "image": "/gallery/news/soiree_basket_annulation.jpg",
+    "category": "Événements"
+  },
+  {
+    "id": 6,
+    "title": "Summer Camp : Ouverture des inscriptions",
+    "excerpt": "Ouverture des inscriptions dimanche 23 mars pour le Summer Camp",
+    "content": "📣 Ouverture des inscriptions dimanche 23 mars pour le Summer Camp @basket_st_macaire 🐺/ @saintandredelamarche.basket 🦁 Juillet 2025 ! 🙌🏀 📩 Vérifiez votre boîte mail pour recevoir le lien d'inscription. Réservez vos places à 19h00 pour les U9/U11 et 20h00 pour les U13/U15 pour des vacances inoubliables! 🤩",
+    "date": "2025-03-20",
+    "image": "/gallery/news/summer_camp.jpeg",
+    "category": "Événements"
   }
 ]

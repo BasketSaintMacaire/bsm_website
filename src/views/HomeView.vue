@@ -34,13 +34,10 @@ const sortedEvents = computed(() => {
     const aMonth = monthOrder.indexOf(a.month.toUpperCase())
     const aDay = parseInt(a.day, 10)
 
-    console.log(aYear, aMonth, aDay)
-
     const bYear = parseInt(b.year, 10)
     const bMonth = monthOrder.indexOf(b.month.toUpperCase())
     const bDay = parseInt(b.day, 10)
 
-    console.log(bYear, bMonth, bDay)
     // Option 1: Compare by difference (year, then month, then day)
     if (aYear !== bYear) {
       return aYear - bYear
