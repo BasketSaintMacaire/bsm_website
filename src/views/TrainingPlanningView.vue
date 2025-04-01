@@ -15,6 +15,102 @@ interface DaySchedule {
 
 const weekSchedule = ref<DaySchedule[]>([
   {
+    date: 'MARDI 15',
+    sessions: [
+      {
+        time: '10H00 à 16H00 (Prévoir picnic)',
+        groups: ['U13 G', 'U15 G CTC', 'U15F CTC', 'U13 F1', 'U13F CTC'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+      {
+        time: '16H00 à 17H30',
+        groups: ['U18 G1', 'U18 G2'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+    ],
+  },
+  {
+    date: 'MERCREDI 16',
+    sessions: [
+      {
+        time: '10H00 à 12H00',
+        groups: ['U7 G/F'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+      {
+        time: '10H00 à 16H00 (Prévoir picnic)',
+        groups: ['U09 G/F', 'U11 G/F'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+      {
+        time: '16H00 à 17H30',
+        groups: ['U18 F'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+    ],
+  },
+  {
+    date: 'JEUDI 17',
+    sessions: [
+      {
+        time: '10H00 à 16H00 (Prévoir picnic)',
+        groups: ['U13 G', 'U13 F1', 'U11 F1', 'U11 G1'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+      {
+        time: '16H00 à 17H30',
+        groups: ['U18 G1', 'U18 G2'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+      {
+        time: '17H00 à 18H30',
+        groups: ['U13F CTC'],
+        location: 'S. SAINT ANDRE DE LA MARCHE',
+        trainer: '',
+      },
+      {
+        time: '18H45 à 20H15',
+        groups: ['U18 F2 CTC', 'U15 F1 CTC'],
+        location: 'S. SAINT ANDRE DE LA MARCHE',
+        trainer: '',
+      },
+    ],
+  },
+  {
+    date: 'VENDREDI 18',
+    sessions: [
+      {
+        time: '10H00 à 12H00',
+        groups: ['U7 G/F'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+      {
+        time: '10H00 à 16H00 (Prévoir picnic)',
+        groups: ['U09 G/F', 'U11 G/F (Sauf U11 G1 et U11 F1)'],
+        location: 'S. GEORGES RAYMOND',
+        trainer: '',
+      },
+      {
+        time: '17H30 à 19H00',
+        groups: ['U15G CTC'],
+        location: 'S. SAINT ANDRE DE LA MARCHE',
+        trainer: '',
+      },
+    ],
+  },
+])
+
+/*
+const weekSchedule = ref<DaySchedule[]>([
+  {
     date: 'LUNDI',
     sessions: [
       {
@@ -184,6 +280,7 @@ const weekSchedule = ref<DaySchedule[]>([
     ],
   },
 ])
+*/
 </script>
 
 <template>
@@ -196,7 +293,7 @@ const weekSchedule = ref<DaySchedule[]>([
       >
         Planning d'entraînement
       </h1>
-      <h2 class="text-xl font-bold text-center mb-8">SAISON 2024/2025</h2>
+      <h2 class="text-xl font-bold text-center mb-8">VACANCES AVRIL 2025</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
         <div
