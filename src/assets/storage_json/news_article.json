@@ -61,5 +61,14 @@
     "date": "2025-03-20",
     "image": "/gallery/news/summer_camp.jpeg",
     "category": "Événements"
+  },
+  {
+    "id": 7,
+    "title": "Tournoi de basket 3x3 entreprise",
+    "excerpt": "Invitation à notre tournoi de basket 3x3 entreprise se déroulant le vendredi 23 mai à 19h30",
+    "content": "Madame, Monsieur, Nous avons le plaisir d’organiser un tournoi de basket 3x3 entreprise, qui se tiendra le vendredi 23 mai à 19h30 à la salle Georges Raymond de Saint-Macaire en Mauges. Cet événement rassemblera les différents partenaires engagés au sein du club mais aussi d’autres entreprises dans une ambiance conviviale. En tant qu’entreprise, vous aurez l'opportunité de vous faire connaître, de promouvoir vos valeurs et de renforcer votre image dans un cadre sportif. Il vous faudra constituer une équipe de 3 à 5 joueurs sans niveaux requis. L’entrée pour chaque équipe est de 20 euros. Lors de cet évènement vous trouverez sur place bar et restauration. Nous vous remercions d’avance pour l’attention que vous porterez à cette invitation et espérons pouvoir compter sur votre soutien en tant que partenaire précieux pour contribuer au succès de cette manifestation. N'hésitez pas à nous contacter pour toute information complémentaire. Dans l’attente de votre réponse, nous vous adressons nos plus sincères remerciements et restons à votre disposition pour toute question. Sportivement,",
+    "date": "2025-05-23",
+    "image": "/gallery/news/tournoi_3x3.png",
+    "category": "Événements"
   }
 ]
