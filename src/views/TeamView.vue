@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { X, Users, Trophy, Smile } from 'lucide-vue-next'
-import teamDataJson from '@/assets/team/team.json'
+import teamDataJson from '@/assets/storage_json/team.json'
 import type { Team } from '@/models/Team'
 
 const teams = ref<Team[]>(teamDataJson as Team[])

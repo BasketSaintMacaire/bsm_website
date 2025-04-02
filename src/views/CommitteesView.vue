@@ -46,7 +46,7 @@ const committees = ref<Committee[]>(committeesDataJson as Committee[])
       <!-- Main Image Section with gradient overlay -->
       <div class="relative rounded-xl overflow-hidden mb-16 group">
         <img
-          src="@/assets/committeesHeaderImg.png"
+          src="@/assets/committeesHeaderImg.webp"
           alt="Réunion du bureau"
           class="w-full h-[400px] object-cover transition-transform duration-700 md:group-hover:scale-105"
         />

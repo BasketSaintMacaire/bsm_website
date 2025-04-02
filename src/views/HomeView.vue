@@ -53,14 +53,14 @@ const sortedEvents = computed(() => {
 <template>
   <!-- Main wrapper using theme tokens for background/text -->
   <main class="min-h-screen bg-page dark:bg-page-dark text-mainText dark:text-mainText-dark">
+    <!--<VideoPlayer video-src="@/assets/VideoHomeView.webm" video-type="video/quicktime"></VideoPlayer> -->
+
     <!-- Hero Section -->
     <section class="relative h-screen">
-      <img
-        src="@/assets/ImageHomeView.png"
-        alt="Basketball players in action"
-        class="w-full h-full object-cover"
-      />
-
+      <video autoplay loop muted class="w-full h-full object-cover">
+        <source src="@/assets/VideoHomeView.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
       <!-- Overlay: keep black or use a token, your choice -->
       <div class="absolute inset-0 bg-black bg-opacity-40">
         <div class="container mx-auto px-6 h-full flex flex-col justify-end pb-24">

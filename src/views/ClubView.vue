@@ -66,12 +66,12 @@ const navigateTo = (route: string) => {
         <!-- Header Section -->
         <div class="header-section relative rounded-xl overflow-hidden mb-16 group">
           <img
-            src="@/assets/club_plan_large.jpg"
+            src="@/assets/club_plan_large.webp"
             alt="Basketball action"
             class="w-full h-[400px] object-cover transition-transform duration-700 md:group-hover:scale-105"
           />
           <div class="absolute top-4 left-4 z-10">
-            <img src="/logo.png" alt="BSM Logo" class="w-24 h-24" />
+            <img src="/logo.webp" alt="BSM Logo" class="w-24 h-24" />
           </div>
           <!-- Gradient overlay -->
           <div
@@ -173,7 +173,7 @@ const navigateTo = (route: string) => {
                 <div class="absolute -inset-0.5 bg-white rounded-full opacity-20 blur"></div>
                 <div class="relative bg-amber-600 rounded-full p-6 shadow-lg">
                   <img
-                    src="@/assets/minibasketlabel.png"
+                    src="@/assets/minibasketlabel.webp"
                     alt="Label Mini Basket Or"
                     class="w-64 h-64 object-contain"
                   />
@@ -199,7 +199,7 @@ const navigateTo = (route: string) => {
                 <div class="absolute -inset-0.5 bg-white rounded-full opacity-20 blur"></div>
                 <div class="relative bg-indigo-600 rounded-full p-6 shadow-lg">
                   <img
-                    src="@/assets/baskettoniklabel.png"
+                    src="@/assets/baskettoniklabel.webp"
                     alt="Label Basket Fit"
                     class="w-64 h-64 object-contain"
                     onerror="this.src='/placeholder.svg?height=256&width=256'; this.onerror=null;"

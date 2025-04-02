@@ -79,7 +79,7 @@ watch(isDark, (value) => {
         >
           <!-- Logo -->
           <RouterLink to="/" class="flex-shrink-0" @click="closeMenu">
-            <img alt="BSM logo" class="w-16 h-16" src="/logo.png" />
+            <img alt="BSM logo" class="w-16 h-16" src="/logo.webp" />
           </RouterLink>
 
           <!-- Main nav links -->
@@ -125,7 +125,7 @@ watch(isDark, (value) => {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Logo & Tagline -->
           <div class="space-y-4">
-            <img src="/logo.png" alt="BSM Logo" class="w-20 h-20" />
+            <img src="/logo.webp" alt="BSM Logo" class="w-20 h-20" />
             <!-- Subtle text: text-mutedText token -->
             <p class="text-sm text-mutedText dark:text-mutedText-dark">
               La force des loups est dans la meute
