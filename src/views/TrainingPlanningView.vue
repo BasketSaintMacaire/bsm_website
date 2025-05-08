@@ -15,132 +15,42 @@ interface DaySchedule {
 
 const weekSchedule = ref<DaySchedule[]>([
   {
-    date: 'MARDI 15',
-    sessions: [
-      {
-        time: '10H00 à 16H00 (Prévoir picnic)',
-        groups: ['U13 G', 'U15 G CTC', 'U15F CTC', 'U13 F1', 'U13F CTC'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-      {
-        time: '16H00 à 17H30',
-        groups: ['U18 G1', 'U18 G2'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-    ],
-  },
-  {
-    date: 'MERCREDI 16',
-    sessions: [
-      {
-        time: '10H00 à 12H00',
-        groups: ['U7 G/F'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-      {
-        time: '10H00 à 16H00 (Prévoir picnic)',
-        groups: ['U09 G/F', 'U11 G/F'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-      {
-        time: '16H00 à 17H30',
-        groups: ['U18 F'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-    ],
-  },
-  {
-    date: 'JEUDI 17',
-    sessions: [
-      {
-        time: '10H00 à 16H00 (Prévoir picnic)',
-        groups: ['U13 G', 'U13 F1', 'U11 F1', 'U11 G1'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-      {
-        time: '16H00 à 17H30',
-        groups: ['U18 G1', 'U18 G2'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-      {
-        time: '17H00 à 18H30',
-        groups: ['U13F CTC'],
-        location: 'S. SAINT ANDRE DE LA MARCHE',
-        trainer: '',
-      },
-      {
-        time: '18H45 à 20H15',
-        groups: ['U18 F2 CTC', 'U15 F1 CTC'],
-        location: 'S. SAINT ANDRE DE LA MARCHE',
-        trainer: '',
-      },
-    ],
-  },
-  {
-    date: 'VENDREDI 18',
-    sessions: [
-      {
-        time: '10H00 à 12H00',
-        groups: ['U7 G/F'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-      {
-        time: '10H00 à 16H00 (Prévoir picnic)',
-        groups: ['U09 G/F', 'U11 G/F (Sauf U11 G1 et U11 F1)'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: '',
-      },
-      {
-        time: '17H30 à 19H00',
-        groups: ['U15G CTC'],
-        location: 'S. SAINT ANDRE DE LA MARCHE',
-        trainer: '',
-      },
-    ],
-  },
-])
-
-/*
-const weekSchedule = ref<DaySchedule[]>([
-  {
     date: 'LUNDI',
     sessions: [
       {
-        time: '17H30 à 18H45',
-        groups: ['U07 F/G'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Julien',
+        time: '17H15 à 18H45',
+        groups: ['U11 G', '2015', '2016'],
+        location: 'GEORGES RAYMOND (Pas de séance le 12/05, 16/06, 23/06)',
+        trainer: 'Jérémy',
       },
       {
         time: '17H00 à 18H15',
-        groups: ['U09 G1', 'U09 G2'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy',
+        groups: ['U7 G', 'U7 F', '2019', '2020'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Julien',
       },
       {
         time: '18H15 à 19H30',
-        groups: ['U18 F1 CTC', 'U18 F2 CTC', 'U15 F1 CTC'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy',
+        groups: ['U9 G', '2017', '2018'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Julien / Jérémy',
       },
       {
         time: '19H30 à 20H45',
-        groups: ['U18 G1', 'U18 G2', 'U15 G1 CTC'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy',
+        groups: ['U18 G', 'U18 F', '2008', '2009', '2010'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Jérémy',
+      },
+      {
+        time: '18H30 à 20H00',
+        groups: ['U13 G', '2013', '2014'],
+        location: 'ST ANDRÉ (SAM)',
+        trainer: 'Timothée / Jérôme',
       },
       {
         time: '20H45 à 22H30',
-        groups: ['DETENTE F'],
-        location: 'S. PIERRE DE COUBERTIN',
+        groups: ['Détente F'],
+        location: 'GEORGES RAYMOND',
         trainer: '',
       },
     ],
@@ -150,33 +60,27 @@ const weekSchedule = ref<DaySchedule[]>([
     sessions: [
       {
         time: '17H00 à 18H15',
-        groups: ['U09 F1', 'U09 G3'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy',
+        groups: ['U9 F', '2017', '2018'],
+        location: 'COUBERTIN',
+        trainer: 'Jérémy',
       },
       {
         time: '18H15 à 19H30',
-        groups: ['U11 F1', 'U11 F2', 'U11 F3'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy',
+        groups: ['U11 F', '2015', '2016'],
+        location: 'COUBERTIN',
+        trainer: 'Jérémy',
       },
       {
-        time: '17H45 à 19H15',
-        groups: ['U13 F1', 'U13 F2 CTC'],
-        location: 'S. SAINT ANDRE DE LA MARCHE',
-        trainer: 'Jerome',
+        time: '18H30 à 20H00',
+        groups: ['U18 F', '2008', '2009', '2010'],
+        location: 'ST ANDRÉ (SAM)',
+        trainer: 'Enzo / Noa',
       },
       {
-        time: '19H15 à 20H45',
-        groups: ['U15 G2 CTC', 'U15 G3 CTC'],
-        location: 'S. SAINT ANDRE DE LA MARCHE',
-        trainer: 'Jerome',
-      },
-      {
-        time: '20H15 à 21H45',
-        groups: ['SG1', 'SG2', 'U21 G1'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Emmanuel',
+        time: '20H30 à 22H00',
+        groups: ['SG1', 'SG2', '2007 G'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Antoine',
       },
     ],
   },
@@ -185,32 +89,32 @@ const weekSchedule = ref<DaySchedule[]>([
     sessions: [
       {
         time: '10H45 à 12H00',
-        groups: ['U7 G/F'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Jeremy & Axel',
+        groups: ['U7 G', 'U7 F', '2019', '2020'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Julien',
+      },
+      {
+        time: '13H00 à 14H30',
+        groups: ['U9 G', 'U9 F', '2017', '2018'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Jérémy / Axel',
       },
       {
         time: '14H30 à 16H00',
-        groups: ['U11 G3', 'U11 G4', 'U11 F2', 'U11 F3'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Jeremy & Axel',
+        groups: ['U13 F', 'U15 F', '2013', '2014', '2011', '2012'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Jérémy / Axel',
       },
       {
         time: '16H00 à 17H30',
-        groups: ['U13 G3', 'U11 G1', 'U11 G2'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Jeremy & Axel',
+        groups: ['U13 G', '2013', '2014'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Jérémy / Axel',
       },
       {
-        time: '18H00 à 19H30',
-        groups: ['U13 G1', 'U13 G2'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy & Axel',
-      },
-      {
-        time: '19H30 à 21H00',
+        time: '20H00 à 21H30',
         groups: ['SF1', 'SF2'],
-        location: 'S. PIERRE DE COUBERTIN',
+        location: 'COUBERTIN',
         trainer: 'Antoine',
       },
     ],
@@ -220,67 +124,72 @@ const weekSchedule = ref<DaySchedule[]>([
     sessions: [
       {
         time: '17H15 à 18H30',
-        groups: ['U13 F1', 'U13 F2 CTC', 'U11 F1'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy & Axel',
+        groups: ['U11 F', '2015', '2016'],
+        location: 'COUBERTIN',
+        trainer: 'Jérémy / Axel',
       },
       {
         time: '18H30 à 19H45',
-        groups: ['U13 G2', 'U13 G3'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy & Axel',
-      },
-      {
-        time: '18H45 à 20H15',
-        groups: ['U18 F2 CTC', 'U15 F1 CTC'],
-        location: 'S. SAINT ANDRE DE LA MARCHE',
-        trainer: 'Enzo',
+        groups: ['U18 F', '2008', '2009', '2010'],
+        location: 'COUBERTIN',
+        trainer: 'Jérémy / Axel',
       },
       {
         time: '19H45 à 21H00',
-        groups: ['U18 G1', 'U18 G2'],
-        location: 'S. PIERRE DE COUBERTIN',
-        trainer: 'Jeremy & Axel',
+        groups: ['U18 G', '2008', '2009', '2010'],
+        location: 'COUBERTIN',
+        trainer: 'Jérémy / Axel',
+      },
+      {
+        time: '17H45 à 19H00',
+        groups: ['U13 F', 'U15 F', '2013', '2014', '2011', '2012'],
+        location: 'ST ANDRÉ (SAM)',
+        trainer: 'Timothée / Jérôme',
+      },
+      {
+        time: '19H00 à 20H30',
+        groups: ['U15 G', '2011', '2012'],
+        location: 'ST ANDRÉ (SAM)',
+        trainer: 'Timothée / Jérôme',
       },
       {
         time: '21H00 à 23H00',
-        groups: ['DETENTE G'],
-        location: 'S. GEORGES RAYMOND',
+        groups: ['Détente G'],
+        location: 'GEORGES RAYMOND',
         trainer: '',
       },
     ],
   },
   {
-    date: 'VENDREDI 21',
+    date: 'VENDREDI',
     sessions: [
       {
         time: '17H00 à 18H15',
-        groups: ['U11 G1', 'U11 G2', 'U11 G3', 'U11 G4'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Jeremy & Axel',
+        groups: ['U11 G', '2015', '2016'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Jérémy / Axel',
       },
       {
         time: '18H15 à 19H30',
-        groups: ['U15 G1 CTC', 'U15 G2 CTC', 'U15 G3 CTC', 'U13 G1'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Jeremy & Axel',
+        groups: ['U15 G', '2011', '2012'],
+        location: 'GEORGES RAYMOND (Pas de séance les 13/06, 20/06)',
+        trainer: 'Jérémy / Axel',
       },
       {
         time: '19H30 à 21H00',
-        groups: ['SF1', 'SF2'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Antoine & Axel',
+        groups: ['SF1', 'SF2', '2007 F'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Antoine / Axel',
       },
       {
         time: '21H00 à 22H30',
-        groups: ['SG1', 'SG2', 'U21 G1'],
-        location: 'S. GEORGES RAYMOND',
-        trainer: 'Emmanuel & Justin',
+        groups: ['SG1', 'SG2', '2007 G'],
+        location: 'GEORGES RAYMOND',
+        trainer: 'Antoine / Justin',
       },
     ],
   },
 ])
-*/
 </script>
 
 <template>
@@ -293,7 +202,7 @@ const weekSchedule = ref<DaySchedule[]>([
       >
         Planning d'entraînement
       </h1>
-      <h2 class="text-xl font-bold text-center mb-8">VACANCES AVRIL 2025</h2>
+      <h2 class="text-xl font-bold text-center mb-8">DU 12 MAI AU 20 JUIN 2025</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
         <div

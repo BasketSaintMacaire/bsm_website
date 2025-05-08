@@ -820,14 +820,8 @@
     "time_meetup": "19:30",
     "opponent": "PUY SAINT BONNET BASKET -",
     "location": "",
-    "family_duety": [
-      "LENA VERDIER",
-      "MAELLE PACAUD"
-    ],
-    "referees": [
-      "JEANNE MOREAU",
-      "LENY BRETAUDEAU"
-    ],
+    "family_duety": ["LENA VERDIER", "MAELLE PACAUD"],
+    "referees": ["JEANNE MOREAU", "LENY BRETAUDEAU"],
     "bar": null,
     "result": []
   },
@@ -869,10 +863,7 @@
     "opponent": "IE - CTC REZE BOUAYE",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -942,10 +933,7 @@
     "opponent": "MAULEVRIER - 2",
     "location": "Salle GeorgesRaymond",
     "family_duety": [],
-    "referees": [
-      "ELOUAN CHALLET",
-      "EVAN LECOMTE"
-    ],
+    "referees": ["ELOUAN CHALLET", "EVAN LECOMTE"],
     "bar": null,
     "result": []
   },
@@ -973,10 +961,7 @@
     "opponent": "SEGUINIERE (LA) ST LOUIS BASKET - 1",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "EVAN JOYER",
-      "MAXENCE GOURAUD"
-    ],
+    "referees": ["EVAN JOYER", "MAXENCE GOURAUD"],
     "bar": null,
     "result": []
   },
@@ -1004,10 +989,7 @@
     "opponent": "SAINT MACAIRE EN MAUGES - 3",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "GASPARD BELLANGER",
-      "GABIN GICQUIAUD"
-    ],
+    "referees": ["GASPARD BELLANGER", "GABIN GICQUIAUD"],
     "bar": null,
     "result": []
   },
@@ -1091,10 +1073,7 @@
     "opponent": "ROUSSAY VILLEDIEU",
     "location": "Salle GeorgesRaymond",
     "family_duety": [],
-    "referees": [
-      "MAELIE DOUIN",
-      "LALIE SAUTEJEAU"
-    ],
+    "referees": ["MAELIE DOUIN", "LALIE SAUTEJEAU"],
     "bar": null,
     "result": []
   },
@@ -1108,10 +1087,7 @@
     "opponent": "SAINT CHRISTOPHE DU BOIS - 1",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "YAELLE BEAUFRETON",
-      "BASTIEN PACAUD"
-    ],
+    "referees": ["YAELLE BEAUFRETON", "BASTIEN PACAUD"],
     "bar": null,
     "result": []
   },
@@ -1153,10 +1129,7 @@
     "opponent": "SAINT LEGER SOUS CHOLET",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "LALY THOMAS",
-      "LYA BEUFRETON"
-    ],
+    "referees": ["LALY THOMAS", "LYA BEUFRETON"],
     "bar": null,
     "result": []
   },
@@ -1184,10 +1157,7 @@
     "opponent": "SAINT ANDRE DE LA MARCHE",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "CLARISSE PICHERIT",
-      "KEVIN BLOUT"
-    ],
+    "referees": ["CLARISSE PICHERIT", "KEVIN BLOUT"],
     "bar": null,
     "result": []
   },
@@ -1215,10 +1185,7 @@
     "opponent": "SAINT ANDRE DE LA MARCHE",
     "location": "Salle Pierre deCoubertin",
     "family_duety": [],
-    "referees": [
-      "TIMEO TERRIEN",
-      "TOM BLANCHARD"
-    ],
+    "referees": ["TIMEO TERRIEN", "TOM BLANCHARD"],
     "bar": null,
     "result": []
   },
@@ -1231,14 +1198,8 @@
     "time_meetup": "14:30",
     "opponent": "MONTAIGU VENDEE BASKET",
     "location": "Salle Pierre deCoubertin",
-    "family_duety": [
-      "CLARA BARON",
-      "CHAUVAT ZIA"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["CLARA BARON", "CHAUVAT ZIA"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -1251,10 +1212,7 @@
     "time_meetup": "12:30",
     "opponent": "MOINE BASKET CLUB - 2",
     "location": "Salle Pierre deCoubertin",
-    "family_duety": [
-      "GAETAN LEFRICHE",
-      "CLAIRE CHARPENTIER"
-    ],
+    "family_duety": ["GAETAN LEFRICHE", "CLAIRE CHARPENTIER"],
     "referees": [],
     "bar": null,
     "result": []
@@ -1352,14 +1310,8 @@
     "time_meetup": "14:30",
     "opponent": "BOURNEZEAU - 1",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "YORIS PAVAGEAU",
-      "CAMILLE BEAUMIER"
-    ],
-    "referees": [
-      "off",
-      "off"
-    ],
+    "family_duety": ["YORIS PAVAGEAU", "CAMILLE BEAUMIER"],
+    "referees": ["off", "off"],
     "bar": null,
     "result": []
   },
@@ -1386,14 +1338,8 @@
     "time_meetup": "19:30",
     "opponent": "IE - CTC JALT-JCM - LE MANS J.C.M. - 1",
     "location": "Salle Georges Raymond",
-    "family_duety": [
-      "OCEANE BEAUMIER",
-      "CAMILLE BEAUMIER"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["OCEANE BEAUMIER", "CAMILLE BEAUMIER"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -1421,10 +1367,7 @@
     "opponent": "IE - CTC NANTES ERDRE CARQUEFOU BASKET - CARQUEFOU BASKET - 1",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -1480,10 +1423,7 @@
     "opponent": "SAUMUR LOIRE BASKET 49 - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "MARIO BREVET",
-      "ALESSANDRO CHIRON"
-    ],
+    "referees": ["MARIO BREVET", "ALESSANDRO CHIRON"],
     "bar": null,
     "result": []
   },
@@ -1511,10 +1451,7 @@
     "opponent": "AVENIR TREMENTINES BASKET - 4",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ANGELE THEZE",
-      "RACHEL BENETEAU"
-    ],
+    "referees": ["ANGELE THEZE", "RACHEL BENETEAU"],
     "bar": null,
     "result": []
   },
@@ -1556,10 +1493,7 @@
     "opponent": "JUB JALLAIS BASKET",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "THAO GAUTIER",
-      "LUCAS GUEDON"
-    ],
+    "referees": ["THAO GAUTIER", "LUCAS GUEDON"],
     "bar": null,
     "result": []
   },
@@ -1573,10 +1507,7 @@
     "opponent": "TESSOUALLE - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "LOUISON JOREAU",
-      "MATHY SAUNIER"
-    ],
+    "referees": ["LOUISON JOREAU", "MATHY SAUNIER"],
     "bar": null,
     "result": []
   },
@@ -1604,10 +1535,7 @@
     "opponent": "BEAUPREAU FIEF SAUVIN BASKET - 2",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "LOUIS HECK",
-      "SACHA BRETAUDEAU"
-    ],
+    "referees": ["LOUIS HECK", "SACHA BRETAUDEAU"],
     "bar": null,
     "result": []
   },
@@ -1635,10 +1563,7 @@
     "opponent": "MOINE BASKET CLUB - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "HUGO GABORIAU",
-      "TIMOTHE SAUTEJEAU"
-    ],
+    "referees": ["HUGO GABORIAU", "TIMOTHE SAUTEJEAU"],
     "bar": null,
     "result": []
   },
@@ -1652,10 +1577,7 @@
     "opponent": "CHEMILLE - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "MALON BEJIN",
-      "SOFIANE ADLI"
-    ],
+    "referees": ["MALON BEJIN", "SOFIANE ADLI"],
     "bar": null,
     "result": []
   },
@@ -1668,14 +1590,8 @@
     "time_meetup": "14:30",
     "opponent": "AVENIR TREMENTINES BASKET - 2",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "EVAN LECOMTE",
-      "AXEL CHEVRIER"
-    ],
-    "referees": [
-      "JASON BIOTTEAU",
-      "VALENTIN DEVANNE"
-    ],
+    "family_duety": ["EVAN LECOMTE", "AXEL CHEVRIER"],
+    "referees": ["JASON BIOTTEAU", "VALENTIN DEVANNE"],
     "bar": null,
     "result": []
   },
@@ -1703,10 +1619,7 @@
     "opponent": "MOINE BASKET CLUB - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "FABIEN BOUIN",
-      "ANTOINE THIBAULT"
-    ],
+    "referees": ["FABIEN BOUIN", "ANTOINE THIBAULT"],
     "bar": null,
     "result": []
   },
@@ -1748,10 +1661,7 @@
     "opponent": "LONGUENEE BASKET CLUB",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "THOMAS VERON",
-      "GABIN LAURAND"
-    ],
+    "referees": ["THOMAS VERON", "GABIN LAURAND"],
     "bar": null,
     "result": []
   },
@@ -1765,10 +1675,7 @@
     "opponent": "MOINE BASKET CLUB - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "LOUIS BARON",
-      "ELLIOT DAUDET"
-    ],
+    "referees": ["LOUIS BARON", "ELLIOT DAUDET"],
     "bar": null,
     "result": []
   },
@@ -1810,10 +1717,7 @@
     "opponent": "SAINT LEGER SOUS CHOLET - 1",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "ROBIN SAUTEJEAU",
-      "FLORENT PAVAGEAU"
-    ],
+    "referees": ["ROBIN SAUTEJEAU", "FLORENT PAVAGEAU"],
     "bar": null,
     "result": []
   },
@@ -1841,10 +1745,7 @@
     "opponent": "IE - CTC BASSE GOULAINE - SAINT SEBASTIEN VERTOU - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -1872,10 +1773,7 @@
     "opponent": "MOINE BASKET CLUB",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "LOUKA MARAIS",
-      "NOLAN PELTANCHE"
-    ],
+    "referees": ["LOUKA MARAIS", "NOLAN PELTANCHE"],
     "bar": null,
     "result": []
   },
@@ -1903,10 +1801,7 @@
     "opponent": "EVRE BASKET CLUB",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "SIMON CHARRIER",
-      "ABEL LEMARIE"
-    ],
+    "referees": ["SIMON CHARRIER", "ABEL LEMARIE"],
     "bar": null,
     "result": []
   },
@@ -1934,10 +1829,7 @@
     "opponent": "CHOLET JF - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "SAMUEL TEULE",
-      "TOM BLANCHARD"
-    ],
+    "referees": ["SAMUEL TEULE", "TOM BLANCHARD"],
     "bar": null,
     "result": []
   },
@@ -2007,10 +1899,7 @@
     "opponent": "BMB - BEGROLLES LE MAY BASKET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "THAIS COUTANT",
-      "MATHILDE COEURET"
-    ],
+    "referees": ["THAIS COUTANT", "MATHILDE COEURET"],
     "bar": null,
     "result": []
   },
@@ -2052,10 +1941,7 @@
     "opponent": "BEAUPREAU FIEF SAUVIN BASKET - 3",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "SOLINE AUDEBERT",
-      "JEANNE GABORIEAU"
-    ],
+    "referees": ["SOLINE AUDEBERT", "JEANNE GABORIEAU"],
     "bar": null,
     "result": []
   },
@@ -2068,14 +1954,8 @@
     "time_meetup": "12:30",
     "opponent": "VIHIERS BASKET - 1",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "LENA VERDIER",
-      "ALICE DIET"
-    ],
-    "referees": [
-      "EDOUARD BARRE",
-      "MAUD COADIC"
-    ],
+    "family_duety": ["LENA VERDIER", "ALICE DIET"],
+    "referees": ["EDOUARD BARRE", "MAUD COADIC"],
     "bar": null,
     "result": []
   },
@@ -2089,10 +1969,7 @@
     "opponent": "TESSOUALLE",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "NOA BREVET",
-      "RODRIGUE MAILET"
-    ],
+    "referees": ["NOA BREVET", "RODRIGUE MAILET"],
     "bar": null,
     "result": []
   },
@@ -2120,10 +1997,7 @@
     "opponent": "CHOLET JF - 5",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "GABRIEL GUERIN",
-      "TYRON BONNET"
-    ],
+    "referees": ["GABRIEL GUERIN", "TYRON BONNET"],
     "bar": null,
     "result": []
   },
@@ -2150,14 +2024,8 @@
     "time_meetup": "14:30",
     "opponent": "IE - CTC REZE BOUAYE BOUGUENAIS BASKET (R3B) - 1",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "CLARISSE AIRAUD",
-      "LAURYN JOREAU"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["CLARISSE AIRAUD", "LAURYN JOREAU"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -2198,14 +2066,8 @@
     "time_meetup": "19:30",
     "opponent": "EVRE BASKET CLUB - 1",
     "location": "Salle Georges Raymond",
-    "family_duety": [
-      "CLARA BARON",
-      "AUDE CHARPENTIER"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["CLARA BARON", "AUDE CHARPENTIER"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -2247,10 +2109,7 @@
     "opponent": "AL GARENNES NANTES - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -2334,10 +2193,7 @@
     "opponent": "JUB JALLAIS BASKET - 3",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "ENZO BARON",
-      "COLINE PERDRIEAU"
-    ],
+    "referees": ["ENZO BARON", "COLINE PERDRIEAU"],
     "bar": null,
     "result": []
   },
@@ -2351,10 +2207,7 @@
     "opponent": "RUAUDIN JEUNESSES SPORTIVE - 1",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -2382,10 +2235,7 @@
     "opponent": "SAINT LEGER SOUS CHOLET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ELOUAN CHALLET",
-      "LORENZO LACROIX"
-    ],
+    "referees": ["ELOUAN CHALLET", "LORENZO LACROIX"],
     "bar": null,
     "result": []
   },
@@ -2455,10 +2305,7 @@
     "opponent": "CHOLET JF - 4",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ALEXIS FROGER",
-      "FLORIAN TEULE"
-    ],
+    "referees": ["ALEXIS FROGER", "FLORIAN TEULE"],
     "bar": null,
     "result": []
   },
@@ -2472,10 +2319,7 @@
     "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 4",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "MATHIS CHENE BOSSARD",
-      "ARTHUR BENETEAU"
-    ],
+    "referees": ["MATHIS CHENE BOSSARD", "ARTHUR BENETEAU"],
     "bar": null,
     "result": []
   },
@@ -2503,10 +2347,7 @@
     "opponent": "CHOLET BASKET - 2",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "MAELIE DOUIN",
-      "EVAN JOYER"
-    ],
+    "referees": ["MAELIE DOUIN", "EVAN JOYER"],
     "bar": null,
     "result": []
   },
@@ -2548,10 +2389,7 @@
     "opponent": "EVRE BASKET CLUB - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "LALY THOMAS",
-      "LOUISA GRASSET"
-    ],
+    "referees": ["LALY THOMAS", "LOUISA GRASSET"],
     "bar": null,
     "result": []
   },
@@ -2565,10 +2403,7 @@
     "opponent": "MAULEVRIER - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "MELINA GUILLET",
-      "LANA BOISIAUD"
-    ],
+    "referees": ["MELINA GUILLET", "LANA BOISIAUD"],
     "bar": null,
     "result": []
   },
@@ -2596,10 +2431,7 @@
     "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "MAXENCE GOURAUD",
-      "AMAURY PAVAGEAU"
-    ],
+    "referees": ["MAXENCE GOURAUD", "AMAURY PAVAGEAU"],
     "bar": null,
     "result": []
   },
@@ -2612,14 +2444,8 @@
     "time_meetup": "14:30",
     "opponent": "BASKET VIE ET BOULOGNE - 1",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "MELINE HAYAULT",
-      "LALIE SAUTEJEAU"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["MELINE HAYAULT", "LALIE SAUTEJEAU"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -2632,14 +2458,8 @@
     "time_meetup": "12:30",
     "opponent": "CORON/SALLE DE VIHIERS",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "CLARISSE PICHERIT",
-      "EMMA BAHUAUD"
-    ],
-    "referees": [
-      "LAUREEN HAYEE",
-      "THIBAULT HUTEAU"
-    ],
+    "family_duety": ["CLARISSE PICHERIT", "EMMA BAHUAUD"],
+    "referees": ["LAUREEN HAYEE", "THIBAULT HUTEAU"],
     "bar": null,
     "result": []
   },
@@ -2652,14 +2472,8 @@
     "time_meetup": "19:30",
     "opponent": "ABC DES TROIS RIVIERES - 1",
     "location": "Salle Georges Raymond",
-    "family_duety": [
-      "LOAN BOISIAUD",
-      "LUCAS LERICHE"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["LOAN BOISIAUD", "LUCAS LERICHE"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -2701,10 +2515,7 @@
     "opponent": "ES PORNICHET - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -2718,10 +2529,7 @@
     "opponent": "CHOLET BASKET - 5",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "AMAURY FORT",
-      "HUGO GABORIAU"
-    ],
+    "referees": ["AMAURY FORT", "HUGO GABORIAU"],
     "bar": null,
     "result": []
   },
@@ -2749,10 +2557,7 @@
     "opponent": "AVENIR TREMENTINES BASKET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "GASPARD BELLANGER",
-      "GABIN GICQUIAUD"
-    ],
+    "referees": ["GASPARD BELLANGER", "GABIN GICQUIAUD"],
     "bar": null,
     "result": []
   },
@@ -2780,10 +2585,7 @@
     "opponent": "AVENIR TREMENTINES BASKET - 4",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "AXEL GUINAUDEAU",
-      "LOUISON JOREAU"
-    ],
+    "referees": ["AXEL GUINAUDEAU", "LOUISON JOREAU"],
     "bar": null,
     "result": []
   },
@@ -2797,10 +2599,7 @@
     "opponent": "AVRILLE BASKET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "NINO BOUYER",
-      "SACHA BRETAUDEAU"
-    ],
+    "referees": ["NINO BOUYER", "SACHA BRETAUDEAU"],
     "bar": null,
     "result": []
   },
@@ -2842,10 +2641,7 @@
     "opponent": "POITEVINIERE LE PIN",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "ELLIOT THOMAS",
-      "BAPTISTE CHUPIN"
-    ],
+    "referees": ["ELLIOT THOMAS", "BAPTISTE CHUPIN"],
     "bar": null,
     "result": []
   },
@@ -2873,10 +2669,7 @@
     "opponent": "MAULEVRIER - 2",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "CELESTINE HAMARD",
-      "FANTINE DUPONT"
-    ],
+    "referees": ["CELESTINE HAMARD", "FANTINE DUPONT"],
     "bar": null,
     "result": []
   },
@@ -2918,10 +2711,7 @@
     "opponent": "CHOLET JF",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ELI VINET",
-      "LINA VERGER"
-    ],
+    "referees": ["ELI VINET", "LINA VERGER"],
     "bar": null,
     "result": []
   },
@@ -2934,14 +2724,8 @@
     "time_meetup": "14:30",
     "opponent": "POITEVINIERE LE PIN - 1",
     "location": "Salle Georges Raymond",
-    "family_duety": [
-      "GAETAN LEFRICHE",
-      "THOMAS VERON"
-    ],
-    "referees": [
-      "MAXENCE DIET",
-      "MAXIME COTTENCEAU"
-    ],
+    "family_duety": ["GAETAN LEFRICHE", "THOMAS VERON"],
+    "referees": ["MAXENCE DIET", "MAXIME COTTENCEAU"],
     "bar": null,
     "result": []
   },
@@ -2955,10 +2739,7 @@
     "opponent": "CHAPELLE ROUSSELIN",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "PABLO ROY",
-      "CHARLES MOREAU"
-    ],
+    "referees": ["PABLO ROY", "CHARLES MOREAU"],
     "bar": null,
     "result": []
   },
@@ -2972,10 +2753,7 @@
     "opponent": "SEVRE BASKET A.S. - 2",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "GABIN CHAROZE",
-      "ANTOINE THIBAULT"
-    ],
+    "referees": ["GABIN CHAROZE", "ANTOINE THIBAULT"],
     "bar": null,
     "result": []
   },
@@ -3045,10 +2823,7 @@
     "opponent": "SEGUINIERE (LA) ST LOUIS BASKET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "LYA BEUFRETON",
-      "YAELLE BEAUFRETON"
-    ],
+    "referees": ["LYA BEUFRETON", "YAELLE BEAUFRETON"],
     "bar": null,
     "result": []
   },
@@ -3061,14 +2836,8 @@
     "time_meetup": "14:30",
     "opponent": "IE - CTC VAL DE SEVRE - ETOILE DE CLISSON BASKET - 1",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "JEANNE ROLANDEAU",
-      "THAIS BETOUX"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["JEANNE ROLANDEAU", "THAIS BETOUX"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -3094,15 +2863,9 @@
     "time_start": "20:30",
     "time_meetup": "19:30",
     "opponent": "LE MANS C.S.S.G. - 1",
-    "location": "Salle Georges Raymond",
-    "family_duety": [
-      "NOA BREVET",
-      "YORIS PAVAGEAU"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "location": "Salle Georges\n Raymond",
+    "family_duety": ["NOA BREVET", "YORIS PAVAGEAU"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -3128,12 +2891,9 @@
     "time_start": "16:30",
     "time_meetup": "15:45",
     "opponent": "IE - CTC LE MANS NORD BASKET - LE MANS SAINT PAVIN - 1",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -3145,12 +2905,9 @@
     "time_start": "14:30",
     "time_meetup": "13:45",
     "opponent": "BASKET CLUB LES ESSARTS BOULOGNE LA MERLATIERE - 1",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -3162,12 +2919,9 @@
     "time_start": "18:15",
     "time_meetup": "17:30",
     "opponent": "SEVRE BASKET A.S. - 2",
-    "location": "Salle Georges Raymond",
+    "location": "Salle Georges\n Raymond",
     "family_duety": [],
-    "referees": [
-      "ELLIOT DAUDET",
-      "MALON BEJIN"
-    ],
+    "referees": ["ELLIOT DAUDET", "MALON BEJIN"],
     "bar": null,
     "result": []
   },
@@ -3193,26 +2947,9 @@
     "time_start": "11:30",
     "time_meetup": "11:00",
     "opponent": "ETOILE ANGERS BASKET - 1",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "MARIO BREVET",
-      "ALESSANDRO CHIRON"
-    ],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "26/04/2025",
-    "team": "U11-M2",
-    "group": "D2E",
-    "isDomicile": false,
-    "time_start": "13:00",
-    "time_meetup": "12:15",
-    "opponent": "SEGUINIERE (LA) ST LOUIS BASKET - 1",
-    "location": "SALLE DE L'ARCEAU N 2",
-    "family_duety": [],
-    "referees": [],
+    "referees": ["MARIO BREVET", "ALESSANDRO CHIRON"],
     "bar": null,
     "result": []
   },
@@ -3224,26 +2961,9 @@
     "time_start": "13:00",
     "time_meetup": "12:30",
     "opponent": "SAINT MACAIRE EN MAUGES - 4",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "LUCAS GUEDON",
-      "MATHY SAUNIER"
-    ],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "26/04/2025",
-    "team": "U18-F2 CTC",
-    "group": "D3D",
-    "isDomicile": false,
-    "time_start": "14:15",
-    "time_meetup": "13:35",
-    "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 1",
-    "location": "SALLE N 01 DE ST ANDRE",
-    "family_duety": [],
-    "referees": [],
+    "referees": ["LUCAS GUEDON", "MATHY SAUNIER"],
     "bar": null,
     "result": []
   },
@@ -3255,12 +2975,9 @@
     "time_start": "8:30",
     "time_meetup": "8:00",
     "opponent": "TOURMELAY BASKET - 1",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "TIMOTHE SAUTEJEAU",
-      "LOUIS BARON"
-    ],
+    "referees": ["TIMOTHE SAUTEJEAU", "LOUIS BARON"],
     "bar": null,
     "result": []
   },
@@ -3272,26 +2989,9 @@
     "time_start": "10:00",
     "time_meetup": "9:30",
     "opponent": "SEVRE BASKET A.S.",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "NATHAN BILLAUD",
-      "TOM BLANCHARD"
-    ],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "26/04/2025",
-    "team": "U18-F1 CTC",
-    "group": "D3C",
-    "isDomicile": true,
-    "time_start": "20:15",
-    "time_meetup": "19:30",
-    "opponent": "PUY SAINT BONNET BASKET -",
-    "location": "Salle Pierre deCoubertin",
-    "family_duety": [],
-    "referees": [],
+    "referees": ["NATHAN BILLAUD", "TOM BLANCHARD"],
     "bar": null,
     "result": []
   },
@@ -3331,12 +3031,9 @@
     "time_start": "18:30",
     "time_meetup": "18:00",
     "opponent": "POITEVINIERE LE PIN - 2",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "MATHILDE COEURET",
-      "ALICE DIET"
-    ],
+    "referees": ["MATHILDE COEURET", "ALICE DIET"],
     "bar": null,
     "result": []
   },
@@ -3348,26 +3045,9 @@
     "time_start": "16:15",
     "time_meetup": "15:45",
     "opponent": "BEAUPREAU FIEF SAUVIN BASKET - 2",
-    "location": "Salle Georges Raymond",
+    "location": "Salle Georges\n Raymond",
     "family_duety": [],
-    "referees": [
-      "SOFIANE ADLI",
-      "TIMEO TERRIEN"
-    ],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "26/04/2025",
-    "team": "U9-F1",
-    "group": "D3E",
-    "isDomicile": false,
-    "time_start": "09:00",
-    "time_meetup": "08:15",
-    "opponent": "SAINT LEGER SOUS CHOLET",
-    "location": "SALLE DES SPORTS ( VERTE )",
-    "family_duety": [],
-    "referees": [],
+    "referees": ["SOFIANE ADLI", "TIMEO TERRIEN"],
     "bar": null,
     "result": []
   },
@@ -3404,15 +3084,12 @@
     "team": "U18-M2",
     "group": "D3F",
     "isDomicile": true,
-    "time_start": "14:30",
-    "time_meetup": "14:15",
+    "time_start": "15:00",
+    "time_meetup": "14:00",
     "opponent": "ELAN DES MAUGES",
-    "location": "Salle Georges Raymond",
+    "location": "Salle Georges\n Raymond",
     "family_duety": [],
-    "referees": [
-      "EDOUARD BARRE",
-      "SIMON GRASSET"
-    ],
+    "referees": ["EDOUARD BARRE", "SIMON GRASSET"],
     "bar": null,
     "result": []
   },
@@ -3438,15 +3115,9 @@
     "time_start": "14:30",
     "time_meetup": "13:30",
     "opponent": "PUY SAINT BONNET BASKET - 1",
-    "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "LAURYN JOREAU",
-      "MANON GUEDON"
-    ],
-    "referees": [
-      "KEVIN BLOUT",
-      "JASON BIOTTEAU"
-    ],
+    "location": "Salle Pierre de\n Coubertin",
+    "family_duety": ["LAURYN JOREAU", "MANON GUEDON"],
+    "referees": ["KEVIN BLOUT", "JASON BIOTTEAU"],
     "bar": null,
     "result": []
   },
@@ -3458,12 +3129,9 @@
     "time_start": "12:30",
     "time_meetup": "11:45",
     "opponent": "CHALONNES SUR LOIRE BASKET - 2",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "HERMANCE CHEVRIER",
-      "MAELLE PACAUD"
-    ],
+    "referees": ["HERMANCE CHEVRIER", "MAELLE PACAUD"],
     "bar": null,
     "result": []
   },
@@ -3475,12 +3143,9 @@
     "time_start": "10:30",
     "time_meetup": "9:45",
     "opponent": "NEUVY EN MAUGES",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "MAELIE DOUIN",
-      "LILIAN AUGEREAU"
-    ],
+    "referees": ["MAELIE DOUIN", "LILIAN AUGEREAU"],
     "bar": null,
     "result": []
   },
@@ -3493,34 +3158,6 @@
     "time_meetup": "14:40",
     "opponent": "MOINE BASKET CLUB - 2",
     "location": "SALLE N 1 DE ST GERMAIN",
-    "family_duety": [],
-    "referees": [],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "03/05/2025",
-    "team": "U13-M2",
-    "group": "D3F",
-    "isDomicile": false,
-    "time_start": "16:00",
-    "time_meetup": "14:55",
-    "opponent": "CHOLET BASKET - 4",
-    "location": "SALLE JOACHIM DU BELLAY",
-    "family_duety": [],
-    "referees": [],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "03/05/2025",
-    "team": "U13-M3",
-    "group": "D4F",
-    "isDomicile": true,
-    "time_start": "14:30",
-    "time_meetup": "13:45",
-    "opponent": "AVENIR TREMENTINES",
-    "location": "Salle Pierre deCoubertin",
     "family_duety": [],
     "referees": [],
     "bar": null,
@@ -3548,12 +3185,9 @@
     "time_start": "10:00",
     "time_meetup": "9:30",
     "opponent": "CHOLET BASKET - 2",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "THEO LECOMTE",
-      "FLORIAN TEULE"
-    ],
+    "referees": ["THEO LECOMTE", "FLORIAN TEULE"],
     "bar": null,
     "result": []
   },
@@ -3579,26 +3213,9 @@
     "time_start": "8:30",
     "time_meetup": "8:00",
     "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 3",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "SACHA BOUCHET",
-      "ENZO CAILLEAU"
-    ],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "03/05/2025",
-    "team": "U9-M1",
-    "group": "D4G",
-    "isDomicile": true,
-    "time_start": "11:30",
-    "time_meetup": "11:00",
-    "opponent": "AVENIR TREMENTINES",
-    "location": "Salle Pierre deCoubertin",
-    "family_duety": [],
-    "referees": [],
+    "referees": ["SACHA BOUCHET", "ENZO CAILLEAU"],
     "bar": null,
     "result": []
   },
@@ -3646,20 +3263,6 @@
   },
   {
     "date": "03/05/2025",
-    "team": "U18-F2 CTC",
-    "group": "D3D",
-    "isDomicile": false,
-    "time_start": "16:00",
-    "time_meetup": "14:25",
-    "opponent": "VAL HYROME BASKET - 1",
-    "location": "SALLE DE ST LAMBERT DU LATTAY",
-    "family_duety": [],
-    "referees": [],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "03/05/2025",
     "team": "U13-F1",
     "group": "D2C",
     "isDomicile": false,
@@ -3694,12 +3297,9 @@
     "time_start": "13:00",
     "time_meetup": "12:30",
     "opponent": "TESSOUALLE - 2",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "GABRIEL MARTIN",
-      "LIAM GAUDET"
-    ],
+    "referees": ["GABRIEL MARTIN", "LIAM GAUDET"],
     "bar": null,
     "result": []
   },
@@ -3739,12 +3339,9 @@
     "time_start": "13:30",
     "time_meetup": "12:30",
     "opponent": "CHOLET JF - 1",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "RODRIGUE MAILET",
-      "OCEANE BEAUMIER"
-    ],
+    "referees": ["RODRIGUE MAILET", "OCEANE BEAUMIER"],
     "bar": null,
     "result": []
   },
@@ -3756,26 +3353,9 @@
     "time_start": "11:30",
     "time_meetup": "10:45",
     "opponent": "SAINT ANDRE DE LA MARCHE BASKET",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "ARTHUR BEDUNEAU",
-      "MAUD COADIC"
-    ],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "04/05/2025",
-    "team": "U9-F1",
-    "group": "D3E",
-    "isDomicile": false,
-    "time_start": "",
-    "time_meetup": null,
-    "opponent": null,
-    "location": null,
-    "family_duety": [],
-    "referees": [],
+    "referees": ["ARTHUR BEDUNEAU", "MAUD COADIC"],
     "bar": null,
     "result": []
   },
@@ -3787,7 +3367,7 @@
     "time_start": "16:00",
     "time_meetup": "14:30",
     "opponent": "IE - CTC NANTES ERDRE CARQUEFOU BASKET - CARQUEFOU BASKET - 1",
-    "location": "GYMNASE DU COUDRAY",
+    "location": "HALL DES SPORTS DE MAZAIRE",
     "family_duety": [],
     "referees": [],
     "bar": null,
@@ -3829,29 +3409,9 @@
     "time_start": "15:30",
     "time_meetup": "14:30",
     "opponent": "I.B.C. - Indre Basket Club - 1",
-    "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "CAMILLE BEAUMIER",
-      "CLARISSE AIRAUD"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
-    "bar": null,
-    "result": []
-  },
-  {
-    "date": "11/05/2025",
-    "team": "#N/A",
-    "group": "#N/A",
-    "isDomicile": false,
-    "time_start": "",
-    "time_meetup": null,
-    "opponent": "SAINT LEGER SOUS CHOLET",
-    "location": "SALLE DES SPORTS ( VERTE )",
-    "family_duety": [],
-    "referees": [],
+    "location": "Salle Pierre de\n Coubertin",
+    "family_duety": ["CAMILLE BEAUMIER", "CLARISSE AIRAUD"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -3864,14 +3424,8 @@
     "time_meetup": "19:30",
     "opponent": "IE - CTC HAVRE ET LOIRE BASKET - OUDON BASKET - 1",
     "location": "Salle Georges Raymond",
-    "family_duety": [
-      "LAUREEN HAYEE",
-      "AUDE CHARPENTIER"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["LAUREEN HAYEE", "AUDE CHARPENTIER"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -3913,10 +3467,7 @@
     "opponent": "CHEMILLE - 3",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ROBIN SAUTEJEAU",
-      "CHARLES MOREAU"
-    ],
+    "referees": ["ROBIN SAUTEJEAU", "CHARLES MOREAU"],
     "bar": null,
     "result": []
   },
@@ -3930,10 +3481,7 @@
     "opponent": "IE - CTC LES MAUGES - 1",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -3947,10 +3495,7 @@
     "opponent": "SEGUINIERE (LA) ST LOUIS BASKET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "EVAN LECOMTE",
-      "LOUIS HECK"
-    ],
+    "referees": ["EVAN LECOMTE", "LOUIS HECK"],
     "bar": null,
     "result": []
   },
@@ -3978,10 +3523,7 @@
     "opponent": "CHOLET JF - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ABEL LEMARIE",
-      "LORENZO LACROIX"
-    ],
+    "referees": ["ABEL LEMARIE", "LORENZO LACROIX"],
     "bar": null,
     "result": []
   },
@@ -4009,10 +3551,7 @@
     "opponent": "BEAUPREAU FIEF SAUVIN BASKET - 4",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "TIMEO LANDREAU",
-      "LOUIS TOURNEUX"
-    ],
+    "referees": ["TIMEO LANDREAU", "LOUIS TOURNEUX"],
     "bar": null,
     "result": []
   },
@@ -4054,10 +3593,7 @@
     "opponent": "AVENIR TREMENTINES BASKET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ALEXIS FROGER",
-      "SAMUEL TEULE"
-    ],
+    "referees": ["ALEXIS FROGER", "SAMUEL TEULE"],
     "bar": null,
     "result": []
   },
@@ -4071,10 +3607,7 @@
     "opponent": "PUY SAINT BONNET BASKET - 2",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "MAXENCE GOURAUD",
-      "BASTIEN PACAUD"
-    ],
+    "referees": ["MAXENCE GOURAUD", "BASTIEN PACAUD"],
     "bar": null,
     "result": []
   },
@@ -4088,10 +3621,7 @@
     "opponent": "TESSOUALLE - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ANGELE THEZE",
-      "ELOUAN CHALLET"
-    ],
+    "referees": ["ANGELE THEZE", "ELOUAN CHALLET"],
     "bar": null,
     "result": []
   },
@@ -4119,10 +3649,7 @@
     "opponent": "BOTZ LA CHAPELLE - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "CLARA THARREAU",
-      "SOLINE AUDEBERT"
-    ],
+    "referees": ["CLARA THARREAU", "SOLINE AUDEBERT"],
     "bar": null,
     "result": []
   },
@@ -4136,10 +3663,7 @@
     "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "JEANNE GABORIEAU",
-      "MELINA GUILLET"
-    ],
+    "referees": ["JEANNE GABORIEAU", "MELINA GUILLET"],
     "bar": null,
     "result": []
   },
@@ -4209,10 +3733,7 @@
     "opponent": "LAMBOISIERES-MARTIN BASKET - 3",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "TIMOTHEE SIMON",
-      "LOUKA MARAIS"
-    ],
+    "referees": ["TIMOTHEE SIMON", "LOUKA MARAIS"],
     "bar": null,
     "result": []
   },
@@ -4239,14 +3760,8 @@
     "time_meetup": "14:30",
     "opponent": "JAM BASKET CLUB - 1",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "MELINE HAYAULT",
-      "CLARA BARON"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["MELINE HAYAULT", "CLARA BARON"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -4274,10 +3789,7 @@
     "opponent": "CHAPELLE ROUSSELIN",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "ELIAN VERDIER",
-      "PABLO ROY"
-    ],
+    "referees": ["ELIAN VERDIER", "PABLO ROY"],
     "bar": null,
     "result": []
   },
@@ -4291,10 +3803,7 @@
     "opponent": "BASKET CLUB REZE - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -4308,10 +3817,7 @@
     "opponent": "TRELAZE BASKET - 2",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "COLINE PERDRIEAU",
-      "ELLIOT THOMAS"
-    ],
+    "referees": ["COLINE PERDRIEAU", "ELLIOT THOMAS"],
     "bar": null,
     "result": []
   },
@@ -4324,14 +3830,8 @@
     "time_meetup": "14:30",
     "opponent": "REZE BASKET 44 - 3",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [
-      "JEANNE MOREAU",
-      "ILONA DANET"
-    ],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "family_duety": ["JEANNE MOREAU", "ILONA DANET"],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -4373,10 +3873,7 @@
     "opponent": "CHOLET BASKET - 4",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "LENA HAYAULT",
-      "LINA VERGER"
-    ],
+    "referees": ["LENA HAYAULT", "LINA VERGER"],
     "bar": null,
     "result": []
   },
@@ -4544,10 +4041,7 @@
     "opponent": "VAL HYROME BASKET - 1",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "TIMOTHEE SIMON",
-      "MARTIN DIXNEUF"
-    ],
+    "referees": ["TIMOTHEE SIMON", "MARTIN DIXNEUF"],
     "bar": null,
     "result": []
   },
@@ -4575,10 +4069,7 @@
     "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 3",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "SACHA BOUCHET",
-      "LOUIS TOURNEUX"
-    ],
+    "referees": ["SACHA BOUCHET", "LOUIS TOURNEUX"],
     "bar": null,
     "result": []
   },
@@ -4676,10 +4167,7 @@
     "opponent": "SEVRE BASKET A.S. - 2",
     "location": "Salle Georges Raymond",
     "family_duety": [],
-    "referees": [
-      "JEANNE MOREAU",
-      "ILONA DANET"
-    ],
+    "referees": ["JEANNE MOREAU", "ILONA DANET"],
     "bar": null,
     "result": []
   },
@@ -4775,12 +4263,9 @@
     "time_start": "20:15",
     "time_meetup": "19:30",
     "opponent": "PUY SAINT BONNET BASKET - 2",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "CLAIRE CHARPENTIER",
-      "CHAUVAT ZIA"
-    ],
+    "referees": ["CLAIRE CHARPENTIER", "CHAUVAT ZIA"],
     "bar": null,
     "result": []
   },
@@ -4834,7 +4319,7 @@
     "time_start": "16:00",
     "time_meetup": "14:55",
     "opponent": "CHOLET BASKET - 4",
-    "location": "SALLE JOACHIM DU BELLAY",
+    "location": "SALLE CHAMBORD",
     "family_duety": [],
     "referees": [],
     "bar": null,
@@ -4848,12 +4333,9 @@
     "time_start": "14:30",
     "time_meetup": "13:45",
     "opponent": "AVENIR TREMENTINES BASKET - 3",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "ARTHUR BENETEAU",
-      "THAO GAUTIER"
-    ],
+    "referees": ["ARTHUR BENETEAU", "THAO GAUTIER"],
     "bar": null,
     "result": []
   },
@@ -4865,12 +4347,9 @@
     "time_start": "11:30",
     "time_meetup": "11:00",
     "opponent": "AVENIR TREMENTINES BASKET - 1",
-    "location": "Salle Pierre de Coubertin",
+    "location": "Salle Pierre de\n Coubertin",
     "family_duety": [],
-    "referees": [
-      "AMAURY PAVAGEAU",
-      "PAUL ROLANDEAU"
-    ],
+    "referees": ["AMAURY PAVAGEAU", "PAUL ROLANDEAU"],
     "bar": null,
     "result": []
   },
@@ -4968,10 +4447,7 @@
     "opponent": "CHOLET JF",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "COLINE PERDRIEAU",
-      "LENA VERDIER"
-    ],
+    "referees": ["COLINE PERDRIEAU", "LENA VERDIER"],
     "bar": null,
     "result": []
   },
@@ -4985,9 +4461,7 @@
     "opponent": "ELAN LIGERIEN",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "Julien BAUDOUIN"
-    ],
+    "referees": ["Julien BAUDOUIN"],
     "bar": null,
     "result": []
   },
@@ -5015,10 +4489,7 @@
     "opponent": "CHAMPIGNE",
     "location": "Salle N°1 Saint André",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
     "bar": null,
     "result": []
   },
@@ -5032,10 +4503,63 @@
     "opponent": "ROUSSAY VILLEDIEU",
     "location": "Salle Pierre de Coubertin",
     "family_duety": [],
-    "referees": [
-      "OFF",
-      "OFF"
-    ],
+    "referees": ["OFF", "OFF"],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "19/04/2025",
+    "team": "Séniors M1",
+    "group": "Coupe des Pays de Loire",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "18:30",
+    "opponent": "ANGESR ACCB BASKET 1",
+    "location": "SALLE JACQUES MILLOT",
+    "family_duety": [],
+    "referees": ["OFF", "OFF"],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "26/04/2025",
+    "team": "U11-M4",
+    "group": "D4F",
+    "isDomicile": false,
+    "time_start": "13:00",
+    "time_meetup": "12:30",
+    "opponent": "SAINT MACAIRE EN MAUGES - 3",
+    "location": "SALLE PIERRE DE COUBERTIN",
+    "family_duety": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "03/05/2025",
+    "team": "Séniors F2",
+    "group": "Challenge de l'Anjou",
+    "isDomicile": false,
+    "time_start": "14:30",
+    "time_meetup": "12:45",
+    "opponent": "PUY SAINT BONNET 1",
+    "location": "SALLE DE MONTJEAN SUR LOIRE",
+    "family_duety": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "10/05/2025",
+    "team": "U11-F3",
+    "group": "D4F",
+    "isDomicile": false,
+    "time_start": "11:00",
+    "time_meetup": "10:15",
+    "opponent": "JF CHOLET",
+    "location": "SALLE DARMAILLAC",
+    "family_duety": [],
+    "referees": [],
     "bar": null,
     "result": []
   }
