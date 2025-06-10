@@ -63,6 +63,11 @@ const router = createRouter({
       name: 'politique-de-confidentialite',
       component: () => import('@/views/PrivacyPolicyView.vue'),
     },
+    {
+      path: '/inscription',
+      name: 'inscription',
+      component: () => import('@/views/RegistrationView.vue'),
+    },
   ],
 })
 
