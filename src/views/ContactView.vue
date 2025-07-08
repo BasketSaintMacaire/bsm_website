@@ -40,7 +40,7 @@ const aboutOptions = [
   { value: 'planning', label: 'Planning' },
   { value: 'bar', label: 'Bar' },
   { value: 'technique', label: 'Equipe/Entrainement' },
-  { value: 'secretariat', label: 'Inscription' },
+  { value: 'secretaire', label: 'Inscription' },
   { value: 'contact', label: 'Autre' },
 ]
 

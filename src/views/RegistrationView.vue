@@ -133,7 +133,7 @@ const downloadFile = (url: string, fileName: string) => {
       <div class="mt-8 text-center text-sm text-mutedText dark:text-mutedText-dark">
         <p>
           Pour toute question, contactez le secrétariat :
-          <strong>secretariat@basket-saint-macaire.fr</strong>
+          <strong>secretaire@bsmbasket.fr</strong>
         </p>
       </div>
     </div>

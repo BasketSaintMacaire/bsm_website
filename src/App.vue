@@ -138,7 +138,6 @@ watch(isDark, (value) => {
             <h3 class="text-lg font-semibold mb-4">Contact</h3>
             <ul class="space-y-2 text-sm text-mutedText dark:text-mutedText-dark">
               <li>Stade Georges Raymond</li>
-              <li>06 84 41 53 02</li>
               <li>contact@bsmbasket.fr</li>
             </ul>
           </div>
