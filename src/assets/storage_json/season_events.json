@@ -1,6 +1,11 @@
 [
-  { "name": "Galette du BSM", "day": "2", "month": "FEVRIER", "year": "2025" },
-  { "name": "Plateau baby", "day": "5", "month": "AVRIL", "year": "2025" },
-  { "name": "Tournoi du fairplay", "day": "6", "month": "AVRIL", "year": "2025" },
-  { "name": "Tournoi de palet", "day": "11", "month": "AVRIL", "year": "2025" }
+  {
+    "name": "Portes ouvertes / Média day jeunes / Assemblée générale",
+    "day": "03",
+    "month": "AOUT",
+    "year": "2025"
+  },
+  { "name": "Média day Séniors", "day": "6", "month": "SEPTEMBRE", "year": "2025" },
+  { "name": "Tournoi du fairplay", "day": "26", "month": "AVRIL", "year": "2026" },
+  { "name": "Plateau baby", "day": "25", "month": "AVRIL", "year": "2026" }
 ]
