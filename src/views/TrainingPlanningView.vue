@@ -1,195 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import type { WeekSchedule } from '@/models/WeekSchedule'
+import { ref, computed } from 'vue'
+import trainingDataJson from '@/assets/storage_json/training.json'
 
-interface TrainingSession {
-  time: string
-  groups: string[]
-  location: string
-  trainer: string
-}
+const weekSchedule = ref<WeekSchedule[]>(trainingDataJson as WeekSchedule[])
 
-interface DaySchedule {
-  date: string
-  sessions: TrainingSession[]
-}
-
-const weekSchedule = ref<DaySchedule[]>([
-  {
-    date: 'LUNDI',
-    sessions: [
-      {
-        time: '17H15 à 18H45',
-        groups: ['U11 G', '2015', '2016'],
-        location: 'GEORGES RAYMOND (Pas de séance le 12/05, 16/06, 23/06)',
-        trainer: 'Jérémy',
-      },
-      {
-        time: '17H00 à 18H15',
-        groups: ['U7 G', 'U7 F', '2019', '2020'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Julien',
-      },
-      {
-        time: '18H15 à 19H30',
-        groups: ['U9 G', '2017', '2018'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Julien / Jérémy',
-      },
-      {
-        time: '19H30 à 20H45',
-        groups: ['U18 G', 'U18 F', '2008', '2009', '2010'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Jérémy',
-      },
-      {
-        time: '18H30 à 20H00',
-        groups: ['U13 G', '2013', '2014'],
-        location: 'ST ANDRÉ (SAM)',
-        trainer: 'Timothée / Jérôme',
-      },
-      {
-        time: '20H45 à 22H30',
-        groups: ['Détente F'],
-        location: 'GEORGES RAYMOND',
-        trainer: '',
-      },
-    ],
-  },
-  {
-    date: 'MARDI',
-    sessions: [
-      {
-        time: '17H00 à 18H15',
-        groups: ['U9 F', '2017', '2018'],
-        location: 'COUBERTIN',
-        trainer: 'Jérémy',
-      },
-      {
-        time: '18H15 à 19H30',
-        groups: ['U11 F', '2015', '2016'],
-        location: 'COUBERTIN',
-        trainer: 'Jérémy',
-      },
-      {
-        time: '18H30 à 20H00',
-        groups: ['U18 F', '2008', '2009', '2010'],
-        location: 'ST ANDRÉ (SAM)',
-        trainer: 'Enzo / Noa',
-      },
-      {
-        time: '20H30 à 22H00',
-        groups: ['SG1', 'SG2', '2007 G'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Antoine',
-      },
-    ],
-  },
-  {
-    date: 'MERCREDI',
-    sessions: [
-      {
-        time: '10H45 à 12H00',
-        groups: ['U7 G', 'U7 F', '2019', '2020'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Julien',
-      },
-      {
-        time: '13H00 à 14H30',
-        groups: ['U9 G', 'U9 F', '2017', '2018'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Jérémy / Axel',
-      },
-      {
-        time: '14H30 à 16H00',
-        groups: ['U13 F', 'U15 F', '2013', '2014', '2011', '2012'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Jérémy / Axel',
-      },
-      {
-        time: '16H00 à 17H30',
-        groups: ['U13 G', '2013', '2014'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Jérémy / Axel',
-      },
-      {
-        time: '20H00 à 21H30',
-        groups: ['SF1', 'SF2'],
-        location: 'COUBERTIN',
-        trainer: 'Antoine',
-      },
-    ],
-  },
-  {
-    date: 'JEUDI',
-    sessions: [
-      {
-        time: '17H15 à 18H30',
-        groups: ['U11 F', '2015', '2016'],
-        location: 'COUBERTIN',
-        trainer: 'Jérémy / Axel',
-      },
-      {
-        time: '18H30 à 19H45',
-        groups: ['U18 F', '2008', '2009', '2010'],
-        location: 'COUBERTIN',
-        trainer: 'Jérémy / Axel',
-      },
-      {
-        time: '19H45 à 21H00',
-        groups: ['U18 G', '2008', '2009', '2010'],
-        location: 'COUBERTIN',
-        trainer: 'Jérémy / Axel',
-      },
-      {
-        time: '17H45 à 19H00',
-        groups: ['U13 F', 'U15 F', '2013', '2014', '2011', '2012'],
-        location: 'ST ANDRÉ (SAM)',
-        trainer: 'Timothée / Jérôme',
-      },
-      {
-        time: '19H00 à 20H30',
-        groups: ['U15 G', '2011', '2012'],
-        location: 'ST ANDRÉ (SAM)',
-        trainer: 'Timothée / Jérôme',
-      },
-      {
-        time: '21H00 à 23H00',
-        groups: ['Détente G'],
-        location: 'GEORGES RAYMOND',
-        trainer: '',
-      },
-    ],
-  },
-  {
-    date: 'VENDREDI',
-    sessions: [
-      {
-        time: '17H00 à 18H15',
-        groups: ['U11 G', '2015', '2016'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Jérémy / Axel',
-      },
-      {
-        time: '18H15 à 19H30',
-        groups: ['U15 G', '2011', '2012'],
-        location: 'GEORGES RAYMOND (Pas de séance les 13/06, 20/06)',
-        trainer: 'Jérémy / Axel',
-      },
-      {
-        time: '19H30 à 21H00',
-        groups: ['SF1', 'SF2', '2007 F'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Antoine / Axel',
-      },
-      {
-        time: '21H00 à 22H30',
-        groups: ['SG1', 'SG2', '2007 G'],
-        location: 'GEORGES RAYMOND',
-        trainer: 'Antoine / Justin',
-      },
-    ],
-  },
-])
+const weekKeys = computed(() => weekSchedule.value.map((week) => week.name))
+const selectedWeekIndex = ref(0)
+const selectedWeek = computed(() => weekSchedule.value[selectedWeekIndex.value]?.days ?? [])
 </script>
 
 <template>
@@ -198,22 +16,41 @@ const weekSchedule = ref<DaySchedule[]>([
   >
     <div class="max-w-7xl mx-auto">
       <h1
-        class="text-4xl font-extrabold text-center mb-8 bg-clip-text text-transparent bg-purple-600"
+        class="text-4xl font-extrabold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-fuchsia-500"
       >
         Planning d'entraînement
       </h1>
-      <h2 class="text-xl font-bold text-center mb-8">DU 12 MAI AU 20 JUIN 2025</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div
-          v-for="day in weekSchedule"
-          :key="day.date"
-          class="bg-card dark:bg-card-dark rounded-lg shadow-md overflow-hidden"
+      <!-- Tabs for each week -->
+      <div class="flex justify-center mb-8 gap-2 flex-wrap">
+        <button
+          v-for="(week, i) in weekKeys"
+          :key="week"
+          @click="selectedWeekIndex = i"
+          class="px-4 py-2 rounded-t font-semibold transition-colors duration-150"
+          :class="
+            selectedWeekIndex === i
+              ? 'bg-purple-600 text-white shadow'
+              : 'bg-card dark:bg-card-dark text-mainText dark:text-mainText-dark border border-borderColor dark:border-borderColor-dark'
+          "
         >
-          <div class="bg-purple-600 dark:bg-purple-600 text-white p-2 text-center font-semibold">
+          {{ week }}
+        </button>
+      </div>
+
+      <!-- Days grid for selected week -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div
+          v-for="day in selectedWeek"
+          :key="day.date"
+          class="bg-card dark:bg-card-dark rounded-xl shadow-lg overflow-hidden flex flex-col"
+        >
+          <div
+            class="bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white p-3 text-center font-semibold text-lg tracking-wide"
+          >
             {{ day.date }}
           </div>
-          <div class="p-4 space-y-4">
+          <div class="p-4 flex-1 flex flex-col gap-4">
             <div
               v-if="day.sessions.length === 0"
               class="text-mutedText dark:text-mutedText-dark text-center italic"
@@ -223,27 +60,85 @@ const weekSchedule = ref<DaySchedule[]>([
             <div
               v-for="(session, index) in day.sessions"
               :key="index"
-              class="border-b border-borderColor dark:border-borderColor-dark pb-2 last:border-b-0 last:pb-0"
+              class="border-b border-borderColor dark:border-borderColor-dark pb-3 last:border-b-0 last:pb-0"
             >
-              <p class="font-semibold">{{ session.time }}</p>
-              <ul class="list-disc list-inside text-sm">
-                <li v-for="group in session.groups" :key="group">{{ group }}</li>
-              </ul>
-              <p class="text-sm text-mutedText dark:text-mutedText-dark mt-1">
-                {{ session.location }}
-              </p>
+              <div class="flex items-center gap-2 mb-1">
+                <span
+                  class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-200 px-2 py-0.5 rounded text-xs font-semibold"
+                >
+                  {{ session.time }}
+                </span>
+              </div>
+              <div class="flex flex-wrap gap-1 mb-1">
+                <span
+                  v-for="group in session.groups"
+                  :key="group"
+                  class="inline-block bg-fuchsia-100 dark:bg-fuchsia-900 text-fuchsia-700 dark:text-fuchsia-200 px-2 py-0.5 rounded text-xs"
+                >
+                  {{ group }}
+                </span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-mutedText dark:text-mutedText-dark">
+                <svg
+                  class="w-4 h-4 text-purple-400"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="10" r="3" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                  />
+                </svg>
+                <span>{{ session.location }}</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mt-1">
+                <svg
+                  class="w-4 h-4 text-purple-400"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span v-if="session.trainer && session.trainer !== '-'">{{ session.trainer }}</span>
+                <span v-else class="italic text-xs">Non renseigné</span>
+              </div>
+              <div
+                v-if="session.notes"
+                class="flex items-center gap-2 mt-2 text-xs text-yellow-800 dark:text-yellow-200 bg-yellow-100 dark:bg-yellow-900 rounded px-2 py-1"
+              >
+                <svg
+                  class="w-4 h-4 text-yellow-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 9v2m0 4h.01M21 12A9 9 0 113 12a9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>{{ session.notes }}</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="mt-8 text-center text-sm text-mutedText dark:text-mutedText-dark">
-        <p>Dernière mise à jour : <strong>26/02/2025</strong></p>
+        <p>Dernière mise à jour : <strong>28/07/2025</strong></p>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Add any additional styles here if needed */
-</style>
