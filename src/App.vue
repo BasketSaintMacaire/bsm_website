@@ -12,7 +12,6 @@ const links = [
   //{ to: '/planning', text: 'PLANNINGS' },
   { to: '/inscription', text: 'INSCRIPTION' },
   { to: '/planning-entrainement', text: 'ENTRAINEMENT' },
-  { to: '/boutique', text: 'BOUTIQUE' },
   { to: '/actualites', text: 'ACTUALITÉS' },
 ]
 
@@ -94,6 +93,12 @@ watch(isDark, (value) => {
             {{ link.text }}
           </RouterLink>
 
+          <a
+            class="font-bold text-xl uppercase tracking-wider py-2 md:py-0 text-mainText dark:text-mainText-dark hover:text-mutedText dark:hover:text-mutedText-dark transition-colors"
+            href="https://mister-school.fr/615-49450-basket-saint-macaire"
+            target="_blank"
+            >BOUTIQUE</a
+          >
           <!-- Contact button -->
           <RouterLink
             to="/contact"
