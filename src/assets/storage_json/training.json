@@ -1,77 +1,12 @@
 [
   {
-    "name": "VACANCES AOUT",
-    "days": [
-      {
-        "date": "LUNDI 25",
-        "sessions": [
-          {
-            "time": "10H00-16H00",
-            "groups": ["U13F&G", "U15F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin",
-            "notes": "Prévoir un pique-nique"
-          },
-          {
-            "time": "16H00-17H30",
-            "groups": ["U18F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin"
-          }
-        ]
-      },
-      {
-        "date": "MARDI 26",
-        "sessions": [
-          {
-            "time": "10H00-16H00",
-            "groups": ["U09F&G", "U11F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin",
-            "notes": "Prévoir un pique-nique"
-          }
-        ]
-      },
-      {
-        "date": "MERCREDI 27",
-        "sessions": [
-          {
-            "time": "10H00-16H00",
-            "groups": ["U13F&G", "U15F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin",
-            "notes": "Prévoir un pique-nique"
-          },
-          {
-            "time": "16H00-17H30",
-            "groups": ["U18F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin"
-          }
-        ]
-      },
-      {
-        "date": "JEUDI 28",
-        "sessions": [
-          {
-            "time": "10H00-16H00",
-            "groups": ["U09F&G", "U11F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin",
-            "notes": "Prévoir un pique-nique"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "SAISON 2025/2026",
     "days": [
       {
         "date": "LUNDI",
         "sessions": [
           {
-            "time": "17H15-18H45",
+            "time": "17H15-18H30",
             "groups": ["U07 F&G"],
             "location": "Salle Georges Raymond",
             "trainer": "Julien"
