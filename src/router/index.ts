@@ -68,6 +68,11 @@ const router = createRouter({
       name: 'inscription',
       component: () => import('@/views/RegistrationView.vue'),
     },
+    {
+      path: '/basketfit',
+      name: 'basketfit',
+      component: () => import('@/views/BasketFitView.vue'),
+    },
   ],
 })
 

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "generate-images": "node src/scripts/generate_image_list.js",
+    "generate-planning": "node src/scripts/merge-csv-into-base.js",
     "dev": "npm run generate-images && vite",
     "build": "npm run generate-images && run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",

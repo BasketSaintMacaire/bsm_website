@@ -9,8 +9,8 @@ const isMenuOpen = ref(false)
 
 const links = [
   { to: '/leclub', text: 'LE CLUB' },
-  //{ to: '/planning', text: 'PLANNINGS' },
-  { to: '/inscription', text: 'INSCRIPTION' },
+  { to: '/planning', text: 'PLANNINGS' },
+  //{ to: '/basketfit', text: "BASKET'FIT" },
   { to: '/planning-entrainement', text: 'ENTRAINEMENT' },
   { to: '/actualites', text: 'ACTUALITÉS' },
 ]

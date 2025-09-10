@@ -165,10 +165,10 @@ function parseNewCSVFile(csvFile) {
 }
 
 /**
- * Build a unique key from date + team + group (as you requested).
+ * Build a unique key from date + team.
  */
 function buildMatchKey(match) {
-  return `${match.date}__${match.team}__${match.group}`
+  return `${match.date}__${match.team}`
 }
 
 // ------------------- MAIN LOGIC -------------------
