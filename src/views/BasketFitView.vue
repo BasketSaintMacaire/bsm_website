@@ -1,242 +1,244 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+import { Calendar, Clock, MapPin, Zap, Heart, Users, Target, Sparkles } from 'lucide-vue-next'
 
-type Session = {
-  weekday: 'Lundi' | 'Mardi' | 'Mercredi' | 'Jeudi' | 'Vendredi' | 'Samedi' | 'Dimanche'
-  start: string
-  end: string
-}
-
-const activityName = 'Basket’Fit'
-
-// Saison issue de l’affiche (01/09/2025 → 30/06/2026)
-const seasonStart = '2025-09-01'
-const seasonEnd = '2026-06-30'
-
-// Données lieu issues de l’affiche + comité 49
-const venue = {
-  name: 'Salle G. Raymond - St Macaire',
-  street: 'Rue Georges Raymond',
-  postalCode: '49450',
-  city: 'Saint-Macaire-en-Mauges',
-  commune: 'Sèvremoine',
-  region: 'Pays de la Loire',
-  country: 'FR',
-  gmapsQuery: encodeURIComponent(
-    'Salle Georges Raymond, Rue Georges Raymond, 49450 Saint-Macaire-en-Mauges',
-  ),
-}
-
-const clubLinks = {
-  contacts: 'https://www.bsmbasket.fr/contacts/',
-  site: 'https://www.bsmbasket.fr/',
-}
-
-// Créneaux (affiche)
-const sessions = ref<Session[]>([
-  { weekday: 'Mercredi', start: '20:00', end: '21:15' },
-  { weekday: 'Samedi', start: '20:00', end: '21:15' },
-])
-
-// Âge: le site BSM annonce “section basket fit ouverte à partir de 14 ans”
-const minAge = ref<number>(14)
-const ageText = computed(() => `À partir de ${minAge.value} ans`)
-
-const benefits = [
-  'Activité dynamique, ludique et non compétitive',
-  'Circuit training inspiré des fondamentaux du basket',
-  'Cardio + renforcement musculaire + mobilité + respiration',
-  'Dépense énergétique individualisée, accessible à tous',
-  'Bien-être, gestion du stress, plaisir et partage',
-  'Élan individuel renforcé par la pratique collective',
+const sessions = [
+  { day: 'Mercredi', time: '20h00 – 21h15', icon: Calendar },
+  { day: 'Samedi', time: '11h30 – 12h45', icon: Clock },
 ]
 
-const requirements = [
-  'Licence FFBB Basket’Fit ou licence loisir en règle',
-  'Certificat médical selon la réglementation en vigueur',
-  'Tenue de sport, bouteille d’eau, baskets propres',
+const venue = 'Saint Macaire, Salle George Raymond'
+
+const features = [
+  {
+    text: 'Activité dynamique, ludique et non compétitive',
+    icon: Zap,
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    text: 'Circuit training inspiré des fondamentaux du basket',
+    icon: Target,
+    color: 'from-blue-500 to-purple-500',
+  },
+  {
+    text: 'Cardio + renforcement musculaire + mobilité + respiration',
+    icon: Heart,
+    color: 'from-red-500 to-orange-500',
+  },
+  {
+    text: 'Dépense énergétique individualisée, accessible à tous',
+    icon: Users,
+    color: 'from-green-500 to-blue-500',
+  },
+  {
+    text: 'Bien-être, gestion du stress, plaisir et partage',
+    icon: Sparkles,
+    color: 'from-yellow-500 to-pink-500',
+  },
+  {
+    text: 'Élan individuel renforcé par la pratique collective',
+    icon: Users,
+    color: 'from-indigo-500 to-purple-500',
+  },
 ]
 
-const jsonLd = computed(() => {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Event',
-    name: `BSM ${activityName}`,
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    startDate: seasonStart,
-    endDate: seasonEnd,
-    eventSchedule: sessions.value.map((s) => ({
-      '@type': 'Schedule',
-      byDay: s.weekday,
-      startTime: s.start,
-      endTime: s.end,
-    })),
-    location: {
-      '@type': 'SportsActivityLocation',
-      name: venue.name,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: venue.street,
-        postalCode: venue.postalCode,
-        addressLocality: venue.city,
-        addressRegion: venue.region,
-        addressCountry: venue.country,
-      },
-    },
-  }
-})
+const isVisible = ref(false)
 
 onMounted(() => {
-  const el = document.getElementById('basketfit-jsonld')
-  if (el) el.textContent = JSON.stringify(jsonLd.value)
+  setTimeout(() => {
+    isVisible.value = true
+  }, 100)
 })
 </script>
 
 <template>
-  <main class="bg-page text-mainText dark:bg-page-dark dark:text-mainText-dark">
-    <!-- HERO -->
-    <section
-      class="border-b border-borderColor dark:border-borderColor-dark bg-gradient-to-b from-card/80 to-transparent"
-    >
-      <div class="mx-auto max-w-5xl px-4 py-14 flex flex-col md:flex-row md:items-center gap-10">
-        <div class="flex-1">
-          <p class="uppercase tracking-widest text-xs text-mutedText dark:text-mutedText-dark mb-2">
-            BSM Basket • Bien-être & Performance
-          </p>
-          <h1
-            class="text-4xl md:text-5xl font-extrabold text-accent dark:text-accent-dark drop-shadow-sm"
-          >
-            Basket’Fit
-          </h1>
-          <p class="mt-4 text-lg text-mutedText dark:text-mutedText-dark max-w-xl">
-            Se dépenser, sculpter son corps, prendre du plaisir… ensemble.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a
-              :href="`https://www.google.com/maps/search/?q=${venue.gmapsQuery}`"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center justify-center rounded-xl px-5 py-2.5 font-semibold border border-borderColor dark:border-borderColor-dark bg-card text-mainText dark:bg-card-dark dark:text-mainText-dark hover:bg-accent/10 dark:hover:bg-accent-dark/10 transition"
+  <div class="min-h-screen bg-page dark:bg-page-dark relative overflow-hidden">
+    <!-- Light Mode Background Elements -->
+    <div class="absolute inset-0 overflow-hidden dark:hidden">
+      <div
+        class="absolute -top-40 -right-40 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-pulse"
+      ></div>
+      <div
+        class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-pulse animation-delay-2000"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse animation-delay-4000"
+      ></div>
+    </div>
+
+    <!-- Dark Mode Background Elements -->
+    <div class="absolute inset-0 overflow-hidden hidden dark:block">
+      <div
+        class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"
+      ></div>
+      <div
+        class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-4000"
+      ></div>
+    </div>
+
+    <div class="relative z-10 min-h-screen flex items-center justify-center py-12 px-4">
+      <div class="w-full max-w-6xl mx-auto">
+        <!-- Hero Section -->
+        <div class="text-center mb-16" :class="{ 'animate-fade-in-up': isVisible }">
+          <div class="relative inline-block">
+            <h1
+              class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 mb-4 tracking-tight"
             >
-              Voir l’accès salle
-            </a>
+              Basket'Fit
+            </h1>
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 dark:opacity-50"
+            ></div>
           </div>
-          <ul
-            class="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm text-mutedText dark:text-mutedText-dark"
+          <div
+            class="flex items-center justify-center text-mutedText dark:text-mutedText-dark text-xl mb-8"
           >
-            <li>
-              <span class="font-semibold text-mainText dark:text-mainText-dark">Période</span>
-              01/09/2025 → 30/06/2026
-            </li>
-            <li>
-              <span class="font-semibold text-mainText dark:text-mainText-dark">Âge</span>
-              {{ ageText }}
-            </li>
-            <li>
-              <span class="font-semibold text-mainText dark:text-mainText-dark">Lieu</span>
-              {{ venue.name }}
-            </li>
-          </ul>
-        </div>
-        <div class="flex-1 flex justify-center md:justify-end">
-          <img
-            src="https://placehold.co/400x500/png?text=Basket%27Fit%20BSM&font=roboto"
-            alt="Basket’Fit BSM"
-            class="rounded-2xl shadow-lg w-full max-w-xs object-cover border border-borderColor dark:border-borderColor-dark bg-card dark:bg-card-dark"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- SÉANCES -->
-    <section>
-      <div class="mx-auto max-w-5xl px-4 py-12">
-        <h2 class="text-2xl font-bold mb-6 text-accent dark:text-accent-dark">
-          Séances hebdomadaires
-        </h2>
-        <div class="grid gap-6 sm:grid-cols-2">
-          <article
-            v-for="s in sessions"
-            :key="s.weekday"
-            class="rounded-2xl border border-borderColor dark:border-borderColor-dark bg-card dark:bg-card-dark p-6 shadow-sm hover:shadow-lg transition"
+            <MapPin class="w-6 h-6 mr-2" />
+            <span>{{ venue }}</span>
+          </div>
+          <p
+            class="text-2xl text-mainText dark:text-mainText-dark font-light max-w-2xl mx-auto leading-relaxed"
           >
-            <h3 class="text-lg font-semibold text-mainText dark:text-mainText-dark">
-              {{ s.weekday }}
-            </h3>
-            <p class="text-mutedText dark:text-mutedText-dark">{{ s.start }} – {{ s.end }}</p>
-            <p class="text-mutedText dark:text-mutedText-dark">{{ venue.name }}</p>
-          </article>
+            Découvrez une nouvelle façon de faire du sport : dynamique, inclusive et passionnante !
+          </p>
         </div>
-        <p class="mt-4 text-sm text-mutedText dark:text-mutedText-dark italic">
-          Planning susceptible d’évoluer en fonction des vacances et événements du club.
-        </p>
-      </div>
-    </section>
 
-    <!-- CONCEPT -->
-    <section
-      class="border-y border-borderColor dark:border-borderColor-dark bg-card dark:bg-card-dark"
-    >
-      <div class="mx-auto max-w-5xl px-4 py-12">
-        <h2 class="text-2xl font-bold mb-6 text-accent dark:text-accent-dark">Le concept</h2>
-        <ul class="space-y-3">
-          <li v-for="b in benefits" :key="b" class="pl-6 relative">
-            <span
-              class="absolute left-0 top-2 h-2.5 w-2.5 rounded-full bg-accent dark:bg-accent-dark"
-            ></span>
-            {{ b }}
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PRÉPARER SA VENUE -->
-    <section>
-      <div class="mx-auto max-w-5xl px-4 py-12">
-        <h2 class="text-2xl font-bold mb-6 text-accent dark:text-accent-dark">Préparer sa venue</h2>
-        <ul class="space-y-3">
-          <li v-for="r in requirements" :key="r" class="pl-6 relative">
-            <span
-              class="absolute left-0 top-2 h-2.5 w-2.5 rounded-full bg-accent dark:bg-accent-dark"
-            ></span>
-            {{ r }}
-          </li>
-        </ul>
-        <p class="mt-4 text-sm text-mutedText dark:text-mutedText-dark">
-          Pour les questions licences/assurances, consulte notre page
-          <a
-            :href="clubLinks.contacts"
-            class="underline hover:text-accent dark:hover:text-accent-dark"
-            >Contacts</a
-          >.
-        </p>
-      </div>
-    </section>
-
-    <!-- LIEU -->
-    <section
-      class="border-y border-borderColor dark:border-borderColor-dark bg-gradient-to-t from-card/80 to-transparent"
-    >
-      <div class="mx-auto max-w-5xl px-4 py-12">
-        <h2 class="text-2xl font-bold mb-6 text-accent dark:text-accent-dark">Lieu & accès</h2>
-        <address class="not-italic mb-4">
-          <div class="font-semibold text-mainText dark:text-mainText-dark">{{ venue.name }}</div>
-          <div>{{ venue.street }}</div>
-          <div>{{ venue.postalCode }} – {{ venue.city }}</div>
-        </address>
+        <!-- Sessions Cards -->
         <div
-          class="overflow-hidden rounded-2xl border border-borderColor dark:border-borderColor-dark shadow-lg"
+          class="grid md:grid-cols-2 gap-8 mb-16"
+          :class="{ 'animate-fade-in-up animation-delay-300': isVisible }"
         >
-          <iframe
-            class="w-full h-[340px] block"
-            :src="`https://www.google.com/maps?q=${venue.gmapsQuery}&output=embed`"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Plan d’accès Basket’Fit - BSM"
-          ></iframe>
+          <div v-for="(session, index) in sessions" :key="session.day" class="group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-50 dark:group-hover:opacity-75 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-card dark:bg-card-dark backdrop-blur-lg rounded-2xl p-8 border border-borderColor dark:border-borderColor-dark hover:border-purple-300 dark:hover:border-white/40 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              <div class="flex items-center justify-between mb-6">
+                <component
+                  :is="session.icon"
+                  class="w-12 h-12 text-purple-600 dark:text-purple-400"
+                />
+                <div class="text-right">
+                  <div class="text-3xl font-bold text-mainText dark:text-mainText-dark">
+                    {{ session.day }}
+                  </div>
+                  <div class="text-purple-600 dark:text-purple-300 text-lg">{{ session.time }}</div>
+                </div>
+              </div>
+              <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="mb-16" :class="{ 'animate-fade-in-up animation-delay-600': isVisible }">
+          <h2 class="text-4xl font-bold text-center text-mainText dark:text-mainText-dark mb-12">
+            L'expérience Basket'Fit
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              v-for="(feature, index) in features"
+              :key="index"
+              class="group relative overflow-hidden"
+              :style="{ animationDelay: `${index * 100}ms` }"
+            >
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-r opacity-20 group-hover:opacity-40 dark:opacity-25 dark:group-hover:opacity-75 transition duration-1000 group-hover:duration-200 rounded-xl blur"
+                :class="feature.color"
+              ></div>
+              <div
+                class="relative bg-card dark:bg-card-dark backdrop-blur-sm rounded-xl p-6 border border-borderColor dark:border-borderColor-dark hover:border-purple-300 dark:hover:border-white/30 transition-all duration-300 transform hover:scale-105 hover:rotate-1 shadow-md"
+              >
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-12 h-12 rounded-full bg-gradient-to-r flex items-center justify-center shadow-lg"
+                      :class="feature.color"
+                    >
+                      <component :is="feature.icon" class="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <p class="text-mainText dark:text-mainText-dark leading-relaxed">
+                    {{ feature.text }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center" :class="{ 'animate-fade-in-up animation-delay-900': isVisible }">
+          <div class="relative inline-block">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-50"
+            ></div>
+            <button
+              class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-12 rounded-full text-xl hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 shadow-2xl"
+              @click="$router.push('/contact')"
+            >
+              Rejoignez l'aventure !
+            </button>
+          </div>
+          <p class="text-mutedText dark:text-mutedText-dark mt-4 text-lg">
+            Venez découvrir le Basket'Fit lors de nos séances d'essai gratuites tous les mercredis
+            et samedis de septembre !
+          </p>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 </template>
+
+<style scoped>
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Custom backdrop blur for better browser support */
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+</style>
