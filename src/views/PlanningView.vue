@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Trophy,
+  Home,
+  Plane,
+  Megaphone,
+  User,
+  Coffee,
+  Target,
+} from 'lucide-vue-next'
 import planningDataJson from '@/assets/storage_json/matchs.json'
 import type { Match } from '@/models/Match'
 
@@ -10,13 +23,12 @@ import type { Match } from '@/models/Match'
 // Convert "dd/mm/yyyy" to a real JavaScript Date
 function parseDate(dateStr: string): Date {
   const [day, month, year] = dateStr.split('/').map(Number)
-  // Note: month is 0-based in JS Date
   return new Date(year, month - 1, day)
 }
 
 // Check if a given JS Date is Saturday or Sunday
 function isWeekend(date: Date): boolean {
-  const day = date.getDay() // 0 = Sunday, 6 = Saturday
+  const day = date.getDay()
   return day === 6 || day === 0
 }
 
@@ -33,74 +45,45 @@ function formatDDMMYYYY(date: Date): string {
 -------------------------------------------------- */
 
 const planningData = ref<Match[]>(planningDataJson as Match[])
-
-// The user’s selected weekend-range or "" (All weeks)
 const filterWeekendRange = ref('')
-
-// The user’s selected team or "" (All teams)
 const filterTeam = ref('')
+const isVisible = ref(false)
 
 /* --------------------------------------------------
    3. GROUP SATURDAY & SUNDAY INTO SINGLE "WEEKEND" ENTRY
 -------------------------------------------------- */
 
-/**
- * We want to find all weekends for which we have events.
- * - A “weekend” is either Saturday, Sunday, or both.
- * - If both days exist in the data for the same weekend, group them as "Sat - Sun".
- * - If only Saturday or only Sunday exists, it's still a single "weekend" entry.
- *
- * We'll return an array of objects like:
- *   {
- *     label: "06/05/2025 - 07/05/2025",  // For the dropdown
- *     saturdaysDateStr: "06/05/2025",
- *     sundaysDateStr: "07/05/2025"
- *   }
- */
 const weekendRanges = computed(() => {
-  // Step A: Find all unique weekend dates from the planning data
   const allWeekendDates = planningData.value
     .map((e) => parseDate(e.date))
     .filter((dateObj) => isWeekend(dateObj))
 
-  // Step B: Group them by the "weekend" (Saturday + Sunday).
-  // One approach: For each found weekend date, figure out its "Saturday date".
-  //   - If it's Sunday, the "Saturday date" is day - 1
-  //   - If it's Saturday, the "Saturday date" is itself
-  // Then store them in a Map keyed by that "Saturday" date (in ms).
   const weekendMap = new Map<number, { sat?: Date; sun?: Date }>()
 
   allWeekendDates.forEach((dateObj) => {
-    const day = dateObj.getDay() // 0=Sun, 6=Sat
+    const day = dateObj.getDay()
     let saturdayDate: Date
 
     if (day === 6) {
-      // It's a Saturday
       saturdayDate = dateObj
     } else {
-      // It's Sunday, so the "Saturday" is one day before
       saturdayDate = new Date(dateObj)
       saturdayDate.setDate(saturdayDate.getDate() - 1)
     }
 
     const satKey = saturdayDate.getTime()
-
     const existing = weekendMap.get(satKey) || {}
     if (day === 6) {
-      // This date is Saturday
       existing.sat = dateObj
     } else {
-      // This date is Sunday
       existing.sun = dateObj
     }
     weekendMap.set(satKey, existing)
   })
 
-  // Step C: Build an array of "weekend" objects with a label
   const weekendEntries = Array.from(weekendMap.values()).map((obj) => {
     const { sat, sun } = obj
     if (sat && sun) {
-      // We have both days
       const label = `${formatDDMMYYYY(sat)} - ${formatDDMMYYYY(sun)}`
       return {
         label,
@@ -108,23 +91,20 @@ const weekendRanges = computed(() => {
         sundaysDateStr: formatDDMMYYYY(sun),
       }
     } else if (sat) {
-      // Only Saturday
       const label = formatDDMMYYYY(sat)
       return {
         label,
         saturdaysDateStr: formatDDMMYYYY(sat),
-        sundaysDateStr: '', // no Sunday
+        sundaysDateStr: '',
       }
     } else if (sun) {
-      // Only Sunday
       const label = formatDDMMYYYY(sun)
       return {
         label,
-        saturdaysDateStr: '', // no Saturday
+        saturdaysDateStr: '',
         sundaysDateStr: formatDDMMYYYY(sun),
       }
     } else {
-      // Shouldn't happen logically, but just in case
       return {
         label: '',
         saturdaysDateStr: '',
@@ -133,10 +113,7 @@ const weekendRanges = computed(() => {
     }
   })
 
-  // Step D: Sort by the first day (the Saturday if we have it, otherwise the Sunday).
   weekendEntries.sort((a, b) => {
-    // Convert the first day in each weekend range to a comparable date
-    // if the saturday is empty, we use the sunday
     const aDateStr = a.saturdaysDateStr || a.sundaysDateStr
     const bDateStr = b.saturdaysDateStr || b.sundaysDateStr
     const aDate = parseDate(aDateStr)
@@ -152,43 +129,36 @@ const weekendRanges = computed(() => {
 -------------------------------------------------- */
 onMounted(() => {
   const today = new Date()
-
-  // Find the first weekend whose Saturday or Sunday is >= today
-  // We'll check whichever date is earliest (Saturday if present, else Sunday).
   const nextWeekendEntry = weekendRanges.value.find((entry) => {
     const firstDayStr = entry.saturdaysDateStr || entry.sundaysDateStr
     const firstDayDate = parseDate(firstDayStr)
-    // If the first day is "before" today but there's a Sunday after today,
-    // you might want extra logic. But typically we only use the first day
-    // to decide if the entire weekend is upcoming or not.
     return firstDayDate >= today
   })
 
   if (nextWeekendEntry) {
     filterWeekendRange.value = nextWeekendEntry.label
   } else {
-    // If none found, default to "All weeks"
     filterWeekendRange.value = ''
   }
+
+  setTimeout(() => {
+    isVisible.value = true
+  }, 100)
 })
 
 /* --------------------------------------------------
    5. COMPUTED FILTERED EVENTS
 -------------------------------------------------- */
 const filteredEvents = computed(() => {
-  // 1) First apply the existing filters
   const events = planningData.value.filter((event) => {
-    // -- Team filter --
     if (filterTeam.value && event.team !== filterTeam.value) {
       return false
     }
 
-    // -- Weekend filter ("" means "All weeks") --
     if (!filterWeekendRange.value) {
       return true
     }
 
-    // If user selected a specific weekend, check if event matches the weekend’s days
     const selectedWeekend = weekendRanges.value.find((w) => w.label === filterWeekendRange.value)
     if (!selectedWeekend) {
       return false
@@ -202,50 +172,36 @@ const filteredEvents = computed(() => {
     return matchSat || matchSun
   })
 
-  // 2) Sort the filtered events by date, then time
   events.sort((a, b) => {
-    // Compare dates first
     const dateA = a.date
     const dateB = b.date
 
     if (dateA < dateB) return -1
     if (dateA > dateB) return 1
 
-    // If same date, compare time_start
     const timeA = parseTimeToMinutes(a.time_start)
     const timeB = parseTimeToMinutes(b.time_start)
     return timeA - timeB
   })
 
-  // Return the sorted list
   return events
 })
 
-/* --------------------------------------------------
-   6. EXTRACT UNIQUE TEAMS (unchanged from your original)
--------------------------------------------------- */
 const uniqueTeams = computed(() =>
   Array.from(new Set(planningData.value.map((event) => event.team))),
 )
 
-// Convert "HH:MM" to a comparable number of minutes, or just compare strings if zero-padded
 function parseTimeToMinutes(timeStr: string): number {
   const [hh, mm] = timeStr.split(':').map(Number)
   return hh * 60 + mm
 }
 
 const badgesByEvent = computed(() => {
-  // We'll store the badge text in a WeakMap for each event object
-  // (WeakMap is convenient for object keys, but a regular Map also works.)
   const badgeMap = new WeakMap<Match, string>()
-
-  // 1) Filter the events again to only home matches (but we use your final filtered list).
   const homeEvents = filteredEvents.value.filter(
     (e) => e.isDomicile && e.location && !e.location.includes('Saint André'),
   )
 
-  // 2) Group them by (date, location)
-  //    We'll use an object-of-arrays structure: { [date_location_key]: Match[] }
   const groups: Record<string, Match[]> = {}
   homeEvents.forEach((event) => {
     const key = `${event.date}__${event.location}`
@@ -253,21 +209,14 @@ const badgesByEvent = computed(() => {
     groups[key].push(event)
   })
 
-  // 3) For each group, sort by time_start and mark first/last
   Object.values(groups).forEach((eventsInGroup) => {
-    // Sort by time_start (earliest -> latest)
     eventsInGroup.sort((a, b) => {
-      // If your times are zero-padded, you can do a simple a.time_start < b.time_start
-      // but let's be safe and parse as minutes:
       return parseTimeToMinutes(a.time_start) - parseTimeToMinutes(b.time_start)
     })
 
-    // Mark the first as "OUVERTURE" and the last as "FERMETURE".
-    // If there's only one event, let's give it "OUVERTURE".
     if (eventsInGroup.length === 1) {
       badgeMap.set(eventsInGroup[0], 'OUVERTURE')
     } else {
-      // More than one match
       badgeMap.set(eventsInGroup[0], 'OUVERTURE')
       badgeMap.set(eventsInGroup[eventsInGroup.length - 1], 'FERMETURE')
     }
@@ -278,118 +227,303 @@ const badgesByEvent = computed(() => {
 </script>
 
 <template>
-  <div
-    class="min-h-screen bg-page dark:bg-page-dark text-mainText dark:text-mainText-dark py-8 px-4 sm:px-6 lg:px-8"
-  >
-    <div class="max-w-7xl mx-auto">
-      <h1 class="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-purple-600">
-        Planning BSM St Macaire en Mauges
-      </h1>
+  <div class="min-h-screen bg-page dark:bg-page-dark relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute -top-40 -right-40 w-80 h-80 bg-purple-100 dark:bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 dark:opacity-20 animate-pulse"
+      ></div>
+      <div
+        class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 dark:bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 dark:opacity-20 animate-pulse animation-delay-2000"
+      ></div>
+    </div>
 
-      <div class="flex justify-center items-center mb-6">
-        <p class="text-xs font-medium px-2 py-1 rounded-md bg-orange-500 text-white">
-          Merci de bien vouloir consulter l’ensemble des rencontres du week-end afin de vérifier que
-          ni vous, ni votre enfant, ni votre équipe ne soient désignés pour l’arbitrage, la table ou
-          le bar.
-        </p>
-      </div>
-
-      <!-- FILTERS WRAPPER -->
-      <div class="mb-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-        <!-- WEEKEND FILTER -->
-        <div class="w-full sm:w-64">
-          <label
-            for="weekend-filter"
-            class="block text-sm font-medium text-mutedText dark:text-mutedText-dark mb-1"
+    <div class="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <!-- Hero Section -->
+        <div class="text-center mb-12" :class="{ 'animate-fade-in-up': isVisible }">
+          <h1
+            class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-purple-600 mb-6 tracking-tight"
           >
-            Filtrer par week-end
-          </label>
-          <select
-            id="weekend-filter"
-            v-model="filterWeekendRange"
-            class="w-full bg-card dark:bg-card-dark border border-card dark:border-card-dark rounded-md py-2 px-3 text-mainText dark:text-mainText-dark focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors"
-          >
-            <!-- "All weeks" option -->
-            <option value="">Toutes les semaines</option>
+            Planning BSM
+          </h1>
 
-            <!-- Each weekend combined -->
-            <option v-for="(weekend, idx) in weekendRanges" :key="idx" :value="weekend.label">
-              {{ weekend.label }}
-            </option>
-          </select>
+          <!-- Important Notice -->
+          <div class="max-w-4xl mx-auto mb-8">
+            <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 shadow-lg">
+              <div class="flex items-start space-x-3">
+                <Target class="w-6 h-6 text-white flex-shrink-0 mt-1" />
+                <p class="text-white font-medium leading-relaxed">
+                  Merci de bien vouloir consulter l'ensemble des rencontres du week-end afin de
+                  vérifier que ni vous, ni votre enfant, ni votre équipe ne soient désignés pour
+                  l'arbitrage, la table ou le bar.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- TEAM FILTER -->
-        <div class="w-full sm:w-64">
-          <label
-            for="team-filter"
-            class="block text-sm font-medium text-mutedText dark:text-mutedText-dark mb-1"
+        <!-- Filters Section -->
+        <div class="mb-12" :class="{ 'animate-fade-in-up animation-delay-300': isVisible }">
+          <div
+            class="bg-card dark:bg-card-dark rounded-2xl shadow-xl border border-borderColor dark:border-borderColor-dark p-8"
           >
-            Filtrer par équipe
-          </label>
-          <select
-            id="team-filter"
-            v-model="filterTeam"
-            class="w-full bg-card dark:bg-card-dark border border-card dark:border-card-dark rounded-md py-2 px-3 text-mainText dark:text-mainText-dark focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors"
-          >
-            <option value="">Toutes les équipes</option>
-            <option v-for="team in uniqueTeams" :key="team" :value="team">
-              {{ team }}
-            </option>
-          </select>
-        </div>
-      </div>
+            <h2 class="text-2xl font-bold text-mainText dark:text-mainText-dark mb-6 text-center">
+              Filtres de recherche
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Weekend Filter -->
+              <div class="space-y-2">
+                <label
+                  class="flex items-center text-sm font-semibold text-mutedText dark:text-mutedText-dark mb-3"
+                >
+                  <Calendar class="w-5 h-5 mr-2" />
+                  Filtrer par week-end
+                </label>
+                <div class="relative">
+                  <select
+                    v-model="filterWeekendRange"
+                    class="w-full bg-page dark:bg-page-dark border-2 border-borderColor dark:border-borderColor-dark rounded-xl py-4 px-4 text-mainText dark:text-mainText-dark focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 appearance-none cursor-pointer"
+                  >
+                    <option value="">Toutes les semaines</option>
+                    <option
+                      v-for="(weekend, idx) in weekendRanges"
+                      :key="idx"
+                      :value="weekend.label"
+                    >
+                      {{ weekend.label }}
+                    </option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none"
+                  >
+                    <svg
+                      class="w-5 h-5 text-mutedText dark:text-mutedText-dark"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
 
-      <!-- EVENTS DISPLAY -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Team Filter -->
+              <div class="space-y-2">
+                <label
+                  class="flex items-center text-sm font-semibold text-mutedText dark:text-mutedText-dark mb-3"
+                >
+                  <Users class="w-5 h-5 mr-2" />
+                  Filtrer par équipe
+                </label>
+                <div class="relative">
+                  <select
+                    v-model="filterTeam"
+                    class="w-full bg-page dark:bg-page-dark border-2 border-borderColor dark:border-borderColor-dark rounded-xl py-4 px-4 text-mainText dark:text-mainText-dark focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 appearance-none cursor-pointer"
+                  >
+                    <option value="">Toutes les équipes</option>
+                    <option v-for="team in uniqueTeams" :key="team" :value="team">
+                      {{ team }}
+                    </option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none"
+                  >
+                    <svg
+                      class="w-5 h-5 text-mutedText dark:text-mutedText-dark"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Events Grid -->
         <div
-          v-for="event in filteredEvents"
-          :key="`${event.date}-${event.time_start}-${event.team}`"
-          class="bg-card dark:bg-card-dark rounded-lg shadow-lg overflow-hidden transition-transform duration-300 md:hover:scale-105"
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+          :class="{ 'animate-fade-in-up animation-delay-600': isVisible }"
         >
           <div
-            class="bg-mutedText dark:bg-mutedText-dark px-4 py-3 text-lg font-semibold text-mainText dark:text-mainText-dark flex items-center justify-between"
+            v-for="(event, index) in filteredEvents"
+            :key="`${event.date}-${event.time_start}-${event.team}`"
+            class="group relative"
+            :style="{ animationDelay: `${index * 50}ms` }"
           >
-            <span>{{ event.date }} - {{ event.time_start }}</span>
+            <!-- Glow Effect -->
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+            ></div>
 
-            <span
-              v-if="badgesByEvent.get(event)"
-              class="text-xs font-medium px-2 py-1 rounded-md bg-red-500 text-white"
+            <!-- Card -->
+            <div
+              class="relative bg-card dark:bg-card-dark rounded-2xl shadow-xl border border-borderColor dark:border-borderColor-dark overflow-hidden transform transition-all duration-300 hover:scale-105"
             >
-              {{ badgesByEvent.get(event) }}
-            </span>
-          </div>
-          <div class="p-4 space-y-2">
-            <h3 class="text-xl font-bold text-mainText dark:text-mainText-dark">
-              {{ event.team }} - {{ event.group }}
-            </h3>
-            <p class="text-mutedText dark:text-mutedText-dark">
-              <span class="font-semibold">Match :</span>
-              {{ event.isDomicile ? 'Domicile' : 'Extérieur' }}
-            </p>
-            <p v-if="event.opponent" class="text-mutedText dark:text-mutedText-dark">
-              <span class="font-semibold">Adversaire :</span> {{ event.opponent }}
-            </p>
-            <p v-if="event.location" class="text-mutedText dark:text-mutedText-dark">
-              <span class="font-semibold">Lieu :</span> {{ event.location }}
-            </p>
-            <p v-if="event.time_meetup" class="text-mutedText dark:text-mutedText-dark">
-              <span class="font-semibold">RDV :</span> {{ event.time_meetup }}
-            </p>
-            <p v-if="event.referees.length" class="text-mutedText dark:text-mutedText-dark">
-              <span class="font-semibold">Arbitres :</span>
-              {{ event.referees.join(', ') }}
-            </p>
-            <p v-if="event.board_official.length" class="text-mutedText dark:text-mutedText-dark">
-              <span class="font-semibold">Tables :</span>
-              {{ event.board_official.join(', ') }}
-            </p>
-            <p v-if="event.bar" class="text-mutedText dark:text-mutedText-dark">
-              <span class="font-semibold">Bar :</span> {{ event.bar }}
-            </p>
-            <p v-if="event.result.length === 2" class="text-lg font-bold text-purple-400">
-              Résultat : {{ event.result[0] }} - {{ event.result[1] }}
-            </p>
+              <!-- Header -->
+              <div
+                class="bg-gradient-to-r from-purple-600 to-blue-600 p-6 text-white relative overflow-hidden"
+              >
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                  <Trophy class="w-full h-full" />
+                </div>
+                <div class="relative z-10">
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center space-x-2">
+                      <Calendar class="w-5 h-5" />
+                      <span class="font-semibold">{{ event.date }}</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <Clock class="w-5 h-5" />
+                      <span class="font-semibold">{{ event.time_start }}</span>
+                    </div>
+                  </div>
+
+                  <!-- Badge -->
+                  <div v-if="badgesByEvent.get(event)" class="absolute top-4 right-4">
+                    <span
+                      class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
+                    >
+                      {{ badgesByEvent.get(event) }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6 space-y-4">
+                <!-- Team Info - Compact Row -->
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-mainText dark:text-mainText-dark">
+                      {{ event.team }}
+                    </h3>
+                    <p class="text-sm text-mutedText dark:text-mutedText-dark font-medium">
+                      {{ event.group }}
+                    </p>
+                  </div>
+                  <div
+                    class="flex items-center space-x-2 bg-page dark:bg-page-dark px-3 py-2 rounded-lg"
+                  >
+                    <component
+                      :is="event.isDomicile ? Home : Plane"
+                      class="w-4 h-4"
+                      :class="event.isDomicile ? 'text-green-500' : 'text-blue-500'"
+                    />
+                    <span
+                      class="text-sm font-semibold"
+                      :class="
+                        event.isDomicile
+                          ? 'text-green-600 dark:text-green-400'
+                          : 'text-blue-600 dark:text-blue-400'
+                      "
+                    >
+                      {{ event.isDomicile ? 'Domicile' : 'Extérieur' }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Details -->
+                <div class="space-y-3">
+                  <div v-if="event.opponent" class="flex items-start space-x-3">
+                    <Users class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
+                        >Adversaire</span
+                      >
+                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                        {{ event.opponent }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div v-if="event.location" class="flex items-start space-x-3">
+                    <MapPin class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
+                        >Lieu</span
+                      >
+                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                        {{ event.location }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div v-if="event.time_meetup" class="flex items-start space-x-3">
+                    <Clock class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
+                        >RDV</span
+                      >
+                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                        {{ event.time_meetup }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div v-if="event.referees.length" class="flex items-start space-x-3">
+                    <Megaphone class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
+                        >Arbitres</span
+                      >
+                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                        {{ event.referees.join(', ') }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div v-if="event.board_official.length" class="flex items-start space-x-3">
+                    <User class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
+                        >Tables</span
+                      >
+                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                        {{ event.board_official.join(', ') }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div v-if="event.bar" class="flex items-start space-x-3">
+                    <Coffee class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
+                        >Bar</span
+                      >
+                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                        {{ event.bar }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Result -->
+                <div
+                  v-if="event.result.length === 2"
+                  class="mt-6 p-4 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl text-center"
+                >
+                  <p class="text-white font-bold text-lg">
+                    Résultat : {{ event.result[0] }} - {{ event.result[1] }}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -398,5 +532,30 @@ const badgesByEvent = computed(() => {
 </template>
 
 <style scoped>
-/* Your custom styles if needed */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
 </style>
