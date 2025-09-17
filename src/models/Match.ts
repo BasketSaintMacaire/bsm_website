@@ -7,7 +7,7 @@ export interface Match {
   time_meetup: string | null
   opponent: string | null
   location: string | null
-  family_duety: string[]
+  board_official: string[]
   referees: string[]
   bar: string | null
   result: number[]

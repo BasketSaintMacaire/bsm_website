@@ -26,7 +26,7 @@ const CURRENT_YEAR = new Date().getFullYear()
  *   time_meetup: string | null
  *   opponent: string | null
  *   location: string | null
- *   family_duety: string[]
+ *   board_official: string[]
  *   referees: string[]
  *   bar: string | null
  *   result: number[]
@@ -82,7 +82,7 @@ function parseDateString(str) {
  *  - date in col[0] => transform "Sam 25/1" => "dd/mm/yyyy"
  *  - team = col[1], group = col[2]
  *  - time_start = col[5], time_meetup = col[6]
- *  - family_duety = col[9..11], referees = col[12..13], bar=col[14]
+ *  - board_official = col[9..11], referees = col[12..13], bar=col[14]
  *  - result = col[15] => split by "-"
  */
 function convertRowToMatch(columns) {
@@ -109,21 +109,19 @@ function convertRowToMatch(columns) {
   const time_start = safeCol(columns, 5)
   const time_meetup = safeCol(columns, 6) || null
 
-  // family_duety => col[9..11]
-  const family_duety = [safeCol(columns, 9), safeCol(columns, 10), safeCol(columns, 11)].filter(
-    (x) => x !== '',
-  )
+  // board_official => col[9..10]
+  const board_official = [safeCol(columns, 9), safeCol(columns, 10)].filter((x) => x !== '')
 
-  // referees => col[12..13]
-  const referees = [safeCol(columns, 12), safeCol(columns, 13)].filter((x) => x !== '')
+  // referees => col[11..12]
+  const referees = [safeCol(columns, 11), safeCol(columns, 12)].filter((x) => x !== '')
 
-  // bar => col[14]
-  const barValue = safeCol(columns, 14, null)
+  // bar => col[13]
+  const barValue = safeCol(columns, 13, null)
   const bar = barValue || null
 
-  // result => col[15], split by "-"
+  // result => col[14], split by "-"
   let result = []
-  const col15 = safeCol(columns, 15, '')
+  const col15 = safeCol(columns, 14, '')
   if (col15) {
     const parts = col15.split('-')
     result = parts.map((part) => parseInt(part, 10)).filter((num) => !isNaN(num))
@@ -138,7 +136,7 @@ function convertRowToMatch(columns) {
     time_meetup,
     opponent: opponent || null,
     location: location || null,
-    family_duety,
+    board_official,
     referees,
     bar,
     result,

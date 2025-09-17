@@ -380,9 +380,9 @@ const badgesByEvent = computed(() => {
               <span class="font-semibold">Arbitres :</span>
               {{ event.referees.join(', ') }}
             </p>
-            <p v-if="event.family_duety.length" class="text-mutedText dark:text-mutedText-dark">
+            <p v-if="event.board_official.length" class="text-mutedText dark:text-mutedText-dark">
               <span class="font-semibold">Tables :</span>
-              {{ event.family_duety.join(', ') }}
+              {{ event.board_official.join(', ') }}
             </p>
             <p v-if="event.bar" class="text-mutedText dark:text-mutedText-dark">
               <span class="font-semibold">Bar :</span> {{ event.bar }}

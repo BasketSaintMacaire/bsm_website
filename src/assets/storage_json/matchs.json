@@ -8,8 +8,12 @@
     "time_meetup": "19:30",
     "opponent": "ANDARD BRAIN - 1",
     "location": "Salle Georges Raymond",
-    "family_duety": ["OFF"],
-    "referees": ["OFF"],
+    "board_official": [
+      "OFF"
+    ],
+    "referees": [
+      "OFF"
+    ],
     "bar": null,
     "result": []
   },
@@ -22,8 +26,12 @@
     "time_meetup": "13:15",
     "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 1",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": ["OFF"],
-    "referees": ["OFF"],
+    "board_official": [
+      "OFF"
+    ],
+    "referees": [
+      "OFF"
+    ],
     "bar": null,
     "result": []
   },
@@ -36,7 +44,7 @@
     "time_meetup": null,
     "opponent": null,
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [],
+    "board_official": [],
     "referees": [],
     "bar": null,
     "result": []
@@ -50,7 +58,7 @@
     "time_meetup": null,
     "opponent": null,
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [],
+    "board_official": [],
     "referees": [],
     "bar": null,
     "result": []
@@ -64,8 +72,12 @@
     "time_meetup": "9:30",
     "opponent": "ANDARD BRAIN - 4",
     "location": "Salle Pierre de Coubertin",
-    "family_duety": ["Timothée"],
-    "referees": ["Maxime"],
+    "board_official": [
+      "Timothée"
+    ],
+    "referees": [
+      "Maxime"
+    ],
     "bar": null,
     "result": []
   },
@@ -78,7 +90,7 @@
     "time_meetup": null,
     "opponent": null,
     "location": "Salle Pierre de Coubertin",
-    "family_duety": [],
+    "board_official": [],
     "referees": [],
     "bar": null,
     "result": []
@@ -92,7 +104,7 @@
     "time_meetup": "14:55",
     "opponent": "MOINE BASKET CLUB - 1",
     "location": "SALLE N 1 DE ST GERMAIN",
-    "family_duety": [],
+    "board_official": [],
     "referees": [],
     "bar": null,
     "result": []
@@ -106,7 +118,458 @@
     "time_meetup": "13:30",
     "opponent": "BASKET VIE ET BOULOGNE - 1",
     "location": "SALLE SPORTS LUCS S/BOULOGNE",
-    "family_duety": [],
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U9-M2",
+    "group": "D2C",
+    "isDomicile": true,
+    "time_start": "9:00",
+    "time_meetup": "8:30",
+    "opponent": "AVENIR TREMENTINES BASKET - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "TIMEO LANDREAU",
+      "LEO COUTOLLEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U9-M1",
+    "group": "D1A",
+    "isDomicile": true,
+    "time_start": "10:30",
+    "time_meetup": "10:00",
+    "opponent": "CHOLET BASKET - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "EVAN JOYER",
+      "ABEL DIEUMEGARD"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U11-M3",
+    "group": "D4F",
+    "isDomicile": true,
+    "time_start": "12:00",
+    "time_meetup": "11:30",
+    "opponent": "CHOLET JF - 5",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "MATHY SAUNIER",
+      "TIMOTHE SAUTEJEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U11-M4",
+    "group": "D4G",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "13:00",
+    "opponent": "CHOLET BASKET - 4",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "AMAURY PAVAGEAU",
+      "PABLO MARTIN"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U11-F3",
+    "group": "D4G",
+    "isDomicile": true,
+    "time_start": "15:00",
+    "time_meetup": "14:30",
+    "opponent": "AVENIR TREMENTINES BASKET - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "LOUISE BRIN",
+      "CLARA THARREAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U11-F1",
+    "group": "D2D",
+    "isDomicile": true,
+    "time_start": "16:30",
+    "time_meetup": "16:00",
+    "opponent": "ROUSSAY VILLEDIEU - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "KEWEN MERA",
+      "GABRIEL GUERIN"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U15-M2",
+    "group": "D2A",
+    "isDomicile": true,
+    "time_start": "18:00",
+    "time_meetup": "17:15",
+    "opponent": "EVRE BASKET CLUB - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "FLORIAN TEULE",
+      "SAM CHALOPIN"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U18-M3 CTC",
+    "group": "D4A",
+    "isDomicile": true,
+    "time_start": "20:00",
+    "time_meetup": "19:15",
+    "opponent": "EVRE BASKET CLUB - 3",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "CLARISSE PICHERIT",
+      "JEANNE MOREAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U18-M2",
+    "group": "D3B",
+    "isDomicile": true,
+    "time_start": "16:15",
+    "time_meetup": "15:30",
+    "opponent": "AVENIR TREMENTINES BASKET - 2",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "THIBAULT HUTEAU",
+      "RODRIGUE MAILET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U18-M1",
+    "group": "D1A",
+    "isDomicile": true,
+    "time_start": "18:15",
+    "time_meetup": "17:30",
+    "opponent": "FUILETAIS REMYGEOIS BASKET - 1",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "NOA BREVET",
+      "ENZO BARON"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "21/09/2025",
+    "team": "U18-F1 CTC",
+    "group": "D2C",
+    "isDomicile": true,
+    "time_start": "11:30",
+    "time_meetup": "10:45",
+    "opponent": "CHOLET JF",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "MAUD AUBRON",
+      "LEILA GRIFFON"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "21/09/2025",
+    "team": "Séniors F2",
+    "group": "C",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "12:30",
+    "opponent": "PUY SAINT BONNET BASKET - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "LENA HAYAULT",
+      "ALICE DIET"
+    ],
+    "referees": [
+      "PABLO ROY",
+      "CLAIRE CHARPENTIER"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "21/09/2025",
+    "team": "Séniors F1",
+    "group": "B",
+    "isDomicile": true,
+    "time_start": "15:30",
+    "time_meetup": "14:30",
+    "opponent": "ROCHE VENDEE BC - 3",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "CLARISSE AIRAUD",
+      "MANON GUEDON"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": "SF2",
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "Séniors M1",
+    "group": "A",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "19:00",
+    "opponent": "CHEMILLE - 1",
+    "location": "SALLE BELLEVUE CHEMILLE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "Séniors M2",
+    "group": "B",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "19:20",
+    "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 1",
+    "location": "SALLE N 01 DE ST ANDRE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U15-M1 CTC",
+    "group": "R2A",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "13:45",
+    "opponent": "IE - CTC ENTENTE LA ROCHE BASKET - 1",
+    "location": "SALLE GAUDEL",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U15-M3",
+    "group": "D4A",
+    "isDomicile": false,
+    "time_start": "15:00",
+    "time_meetup": "14:05",
+    "opponent": "ROUSSAY VILLEDIEU",
+    "location": "SALLE VILLEDIEU J. LADOUMEGUE II",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U13-M1",
+    "group": "D1B",
+    "isDomicile": false,
+    "time_start": "16:00",
+    "time_meetup": "14:35",
+    "opponent": "IE - CTC DU JEU - JUMELLIERE - 1",
+    "location": "COMPLEXE FERDINAND SECHER",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U13-M2",
+    "group": "D2D",
+    "isDomicile": false,
+    "time_start": "14:30",
+    "time_meetup": "13:25",
+    "opponent": "POITEVINIERE LE PIN",
+    "location": "SALLE DES SPORTS L PIN EN MAUGES",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U11-M1",
+    "group": "D1B",
+    "isDomicile": false,
+    "time_start": "12:15",
+    "time_meetup": "11:25",
+    "opponent": "POITEVINIERE LE PIN - 1",
+    "location": "SALLE DES SPORTS L PIN EN MAUGES",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U11-M2",
+    "group": "D2D",
+    "isDomicile": false,
+    "time_start": "13:00",
+    "time_meetup": "12:20",
+    "opponent": "ROUSSAY VILLEDIEU",
+    "location": "SALLE VILLEDIEU J. LADOUMEGUE II",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U9-M3",
+    "group": "D3A",
+    "isDomicile": false,
+    "time_start": "11:30",
+    "time_meetup": "10:20",
+    "opponent": "ELAN DES MAUGES - 1",
+    "location": "SALLE DE LANDEMONT",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U13-F1",
+    "group": "D2C",
+    "isDomicile": false,
+    "time_start": "14:00",
+    "time_meetup": "13:05",
+    "opponent": "BMB - BEGROLLES LE MAY BASKET - 1",
+    "location": "SALLE DES SPORTS",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U13-F2",
+    "group": "D4G",
+    "isDomicile": false,
+    "time_start": "17:45",
+    "time_meetup": "16:35",
+    "opponent": "AUBRY CHAUDRON BASKET",
+    "location": "SALLE DE CHAUDRON",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U11-F2",
+    "group": "D3A",
+    "isDomicile": false,
+    "time_start": "11:00",
+    "time_meetup": "10:20",
+    "opponent": "ROUSSAY VILLEDIEU - 2",
+    "location": "SALLE VILLEDIEU J. LADOUMEGUE II",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "20/09/2025",
+    "team": "U9-F1",
+    "group": "D3C",
+    "isDomicile": false,
+    "time_start": "12:30",
+    "time_meetup": "11:40",
+    "opponent": "CHOLET BASKET - 2",
+    "location": "SALLE LAENNEC",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "21/09/2025",
+    "team": "Séniors M3",
+    "group": "D",
+    "isDomicile": false,
+    "time_start": "11:00",
+    "time_meetup": "9:50",
+    "opponent": "BMB - BEGROLLES LE MAY BASKET - 3",
+    "location": "SALLE DES SPORTS",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "21/09/2025",
+    "team": "U18-F2",
+    "group": "D4D",
+    "isDomicile": false,
+    "time_start": "13:30",
+    "time_meetup": "12:15",
+    "opponent": "CHEMILLE",
+    "location": "SALLE POLYVALENTE MELAY",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "21/09/2025",
+    "team": "U15-F",
+    "group": "D3E",
+    "isDomicile": false,
+    "time_start": "0:00",
+    "time_meetup": "0:00",
+    "opponent": null,
+    "location": null,
+    "board_official": [],
     "referees": [],
     "bar": null,
     "result": []
