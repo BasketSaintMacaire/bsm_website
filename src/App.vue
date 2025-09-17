@@ -3,7 +3,6 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import { Menu, X, Moon, Sun } from 'lucide-vue-next'
 
-// Existing code
 const currentYear = computed(() => new Date().getFullYear())
 const isMenuOpen = ref(false)
 
@@ -23,18 +22,30 @@ const closeMenu = () => {
   isMenuOpen.value = false
 }
 
-// NEW: Dark-mode state
+// --- THEME LOGIC FIXED ---
 const isDark = ref(false)
+const hasUserToggled = ref(false)
 
-// On mount, check localStorage for theme preference
+// Detect system preference
+function getSystemPref() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+}
+
+// On mount, set theme from localStorage or system
 onMounted(() => {
   if (localStorage.theme === 'dark') {
     isDark.value = true
+  } else if (localStorage.theme === 'light') {
+    isDark.value = false
+  } else {
+    isDark.value = getSystemPref()
   }
+  // Ensure the class is set on first load
+  updateHtmlClass(isDark.value)
 })
 
-// Whenever isDark changes, add/remove the .dark class and store preference
-watch(isDark, (value) => {
+// Update html class and localStorage
+function updateHtmlClass(value: boolean) {
   if (value) {
     document.documentElement.classList.add('dark')
     localStorage.theme = 'dark'
@@ -42,7 +53,29 @@ watch(isDark, (value) => {
     document.documentElement.classList.remove('dark')
     localStorage.theme = 'light'
   }
+}
+
+// Watch for changes and update html class/localStorage
+watch(isDark, (value) => {
+  updateHtmlClass(value)
 })
+
+// Also react to system changes if user hasn't set a preference
+onMounted(() => {
+  const media = window.matchMedia('(prefers-color-scheme: dark)')
+  const handler = (e: { matches: boolean }) => {
+    if (!hasUserToggled.value && !('theme' in localStorage)) {
+      isDark.value = e.matches
+    }
+  }
+  media.addEventListener('change', handler)
+})
+
+// When user clicks the theme button, mark as user-toggled
+function toggleTheme() {
+  isDark.value = !isDark.value
+  hasUserToggled.value = true
+}
 </script>
 
 <template>
@@ -109,7 +142,7 @@ watch(isDark, (value) => {
           </RouterLink>
 
           <!-- Theme Switch Button (right side) -->
-          <button @click="isDark = !isDark" class="text-mainText dark:text-mainText-dark ml-4">
+          <button @click="toggleTheme" class="text-mainText dark:text-mainText-dark ml-4">
             <!-- Show a Moon if currently light, or a Sun if currently dark -->
             <Moon v-if="!isDark" class="w-6 h-6" />
             <Sun v-else class="w-6 h-6" />
