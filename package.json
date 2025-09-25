@@ -7,7 +7,7 @@
     "generate-images": "node src/scripts/generate_image_list.js",
     "planning": "node src/scripts/merge-csv-into-base.js",
     "dev": "npm run generate-images && vite",
-    "build": "npm run generate-images && run-p type-check \"build-only {@}\" --",
+    "build": "npm run planning && npm run generate-images && run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
