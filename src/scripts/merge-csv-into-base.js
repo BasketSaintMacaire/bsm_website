@@ -41,7 +41,7 @@ const CURRENT_YEAR = new Date().getFullYear()
  */
 function isLikelyMatchRow(columns) {
   const firstCol = (columns[0] || '').trim()
-  return /^Sam\s|^Dim\s/i.test(firstCol)
+  return /^(?:sam|dim)\b/i.test(firstCol) 
 }
 
 /**
