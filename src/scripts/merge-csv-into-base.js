@@ -92,36 +92,27 @@ function convertRowToMatch(columns) {
   const team = safeCol(columns, 1)
   const group = safeCol(columns, 2)
 
-  const col3 = safeCol(columns, 3)
+  let isDomicile = safeCol(columns, 3) == "DOMICILE"
+  let location = safeCol(columns, 4)
+  let opponent = safeCol(columns, 5)
   let isDomicile, location, opponent
-  if (col3) {
-    // Home
-    isDomicile = true
-    location = col3
-    opponent = safeCol(columns, 4)
-  } else {
-    // Away
-    isDomicile = false
-    location = safeCol(columns, 8)
-    opponent = safeCol(columns, 7)
-  }
 
-  const time_start = safeCol(columns, 5)
-  const time_meetup = safeCol(columns, 6) || null
+  const time_start = safeCol(columns, 6)
+  const time_meetup = safeCol(columns, 7) || null
 
-  // board_official => col[9..10]
-  const board_official = [safeCol(columns, 9), safeCol(columns, 10)].filter((x) => x !== '')
+  // board_official => col[10..11]
+  const board_official = [safeCol(columns, 10), safeCol(columns, 11)].filter((x) => x !== '')
 
-  // referees => col[11..12]
-  const referees = [safeCol(columns, 11), safeCol(columns, 12)].filter((x) => x !== '')
+  // referees => col[12..13]
+  const referees = [safeCol(columns, 12), safeCol(columns, 13)].filter((x) => x !== '')
 
-  // bar => col[13]
-  const barValue = safeCol(columns, 13, null)
+  // bar => col[14]
+  const barValue = safeCol(columns, 14, null)
   const bar = barValue || null
 
-  // result => col[14], split by "-"
+  // result => col[15], split by "-"
   let result = []
-  const col15 = safeCol(columns, 14, '')
+  const col15 = safeCol(columns, 15, '')
   if (col15) {
     const parts = col15.split('-')
     result = parts.map((part) => parseInt(part, 10)).filter((num) => !isNaN(num))
