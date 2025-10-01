@@ -95,7 +95,6 @@ function convertRowToMatch(columns) {
   let isDomicile = safeCol(columns, 3) == "DOMICILE"
   let location = safeCol(columns, 4)
   let opponent = safeCol(columns, 5)
-  let isDomicile, location, opponent
 
   const time_start = safeCol(columns, 6)
   const time_meetup = safeCol(columns, 7) || null
