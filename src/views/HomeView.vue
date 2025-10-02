@@ -57,8 +57,9 @@ const sortedEvents = computed(() => {
 
     <!-- Hero Section -->
     <section class="relative h-screen">
-      <video autoplay loop muted class="w-full h-full object-cover">
+      <video autoplay playsinline loop muted preload="auto" class="w-full h-full object-cover">
         <source src="@/assets/VideoHomeView.webm" type="video/webm" />
+        <source src="@/assets/VideoHomeView.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <!-- Overlay: keep black or use a token, your choice -->
