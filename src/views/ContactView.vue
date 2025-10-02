@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-// 1) Import EmailJS
 import emailjs from '@emailjs/browser'
 
 interface FormData {
@@ -32,20 +31,33 @@ const formData = ref<FormData>({
 
 const errors = ref<FormErrors>({})
 
+// NOTE: supprimez le doublon "planning" dans vos options
 const aboutOptions = [
   { value: 'planning', label: 'Planning' },
   { value: 'tournoi', label: 'Tournoi' },
   { value: 'boutique', label: 'Boutique' },
   { value: 'sponsoring', label: 'Sponsoring' },
-  { value: 'planning', label: 'Planning' },
   { value: 'bar', label: 'Bar' },
   { value: 'technique', label: 'Equipe/Entrainement' },
   { value: 'secretaire', label: 'Inscription' },
   { value: 'contact', label: 'Autre' },
 ]
 
+// ————— NOUVEAU: documents à télécharger (remplacez les URLs par vos vrais fichiers)
+type DownloadDoc = { name: string; url: string }
+const registrationDocs: DownloadDoc[] = [
+  {
+    name: 'Fiche d’inscription BSM 2025-2026',
+    url: '/files/fiche-inscription-2025-2026.pdf',
+  },
+  { name: 'Modalites d’inscription 2025-2026', url: '/files/modalites-inscription-2025-2026.pdf' },
+]
+
+// ————— NOUVEAU: état pour “Inscription” et validation dédiée
+const isRegistration = computed(() => formData.value.about === 'secretaire')
+
 const recipientEmail = computed(() => {
-  return `${formData.value.about}@bsmbasket.fr`
+  return `${formData.value.about}@bsmbasket.fr` // => secretaire@bsmbasket.fr si “Inscription”
 })
 
 const validateForm = (): boolean => {
@@ -56,12 +68,10 @@ const validateForm = (): boolean => {
     errors.value.lastName = 'Le nom est requis'
     isValid = false
   }
-
   if (!formData.value.firstName) {
     errors.value.firstName = 'Le prénom est requis'
     isValid = false
   }
-
   if (!formData.value.email) {
     errors.value.email = "L'email est requis"
     isValid = false
@@ -69,17 +79,14 @@ const validateForm = (): boolean => {
     errors.value.email = "L'email n'est pas valide"
     isValid = false
   }
-
   if (!formData.value.about) {
     errors.value.about = 'Veuillez sélectionner un sujet'
     isValid = false
   }
-
   if (!formData.value.message) {
     errors.value.message = 'Le message est requis'
     isValid = false
   }
-
   if (!formData.value.consent) {
     errors.value.consent = 'Vous devez accepter les conditions'
     isValid = false
@@ -88,15 +95,9 @@ const validateForm = (): boolean => {
   return isValid
 }
 
-// 2) Send email using EmailJS within handleSubmit
 const handleSubmit = async () => {
   if (!validateForm()) return
-
   try {
-    console.log('Form submitted:', formData.value)
-    console.log('Recipient email:', recipientEmail.value)
-
-    // Prepare parameters for your EmailJS template
     const templateParams = {
       firstName: formData.value.firstName,
       lastName: formData.value.lastName,
@@ -106,16 +107,14 @@ const handleSubmit = async () => {
       recipientEmail: recipientEmail.value,
     }
 
-    // Send email using EmailJS
     const response = await emailjs.send(
       'website_service',
-      'template_contact_form', // e.g. "template_xxx"
+      'template_contact_form',
       templateParams,
-      'AcTLkGWdcMa1-WcWM', // e.g. "user_xxx"
+      'AcTLkGWdcMa1-WcWM',
     )
     console.log('EmailJS response:', response.status, response.text)
 
-    // Clear form after successful submission
     formData.value = {
       lastName: '',
       firstName: '',
@@ -229,6 +228,40 @@ const handleSubmit = async () => {
             </div>
           </div>
 
+          <!-- ————— Encart affiché uniquement pour “Inscription” -->
+          <div
+            v-if="isRegistration"
+            class="mt-4 rounded-md border border-yellow-300 bg-yellow-50 dark:bg-yellow-900/30 p-4 text-yellow-900 dark:text-yellow-100"
+          >
+            <p class="font-semibold mb-2">
+              Avant de nous contacter, merci de lire et de remplir les deux documents ci-dessous 👇
+            </p>
+            <ul class="list-disc ml-6 space-y-1">
+              <li v-for="doc in registrationDocs" :key="doc.url">
+                <a
+                  :href="doc.url"
+                  download
+                  class="text-purple-700 dark:text-purple-300 underline hover:no-underline"
+                >
+                  {{ doc.name }}
+                </a>
+              </li>
+            </ul>
+
+            <div class="mt-3">
+              <p>
+                Une fois complétés, vous pouvez nous les transmettre et/ou poser vos questions
+                directement par e‑mail à
+                <a
+                  href="mailto:secretaire@bsmbasket.fr"
+                  class="font-semibold text-purple-700 dark:text-purple-300 underline hover:no-underline"
+                >
+                  secretaire@bsmbasket.fr </a
+                >.
+              </p>
+            </div>
+          </div>
+
           <!-- Message -->
           <div>
             <label
@@ -268,7 +301,6 @@ const handleSubmit = async () => {
             <p v-if="errors.consent" class="mt-1 text-sm text-red-500">{{ errors.consent }}</p>
           </div>
 
-          <!-- Submit Button -->
           <div class="flex justify-end">
             <button
               type="submit"
