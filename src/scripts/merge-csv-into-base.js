@@ -41,7 +41,7 @@ const CURRENT_YEAR = new Date().getFullYear()
  */
 function isLikelyMatchRow(columns) {
   const firstCol = (columns[0] || '').trim()
-  return /^(?:sam|dim)\b/i.test(firstCol) 
+  return /^(?:sam|dim)\b/i.test(firstCol)
 }
 
 /**
@@ -92,7 +92,7 @@ function convertRowToMatch(columns) {
   const team = safeCol(columns, 1)
   const group = safeCol(columns, 2)
 
-  let isDomicile = safeCol(columns, 3) == "DOMICILE"
+  let isDomicile = safeCol(columns, 3) == 'DOMICILE'
   let location = safeCol(columns, 4)
   let opponent = safeCol(columns, 5)
 
