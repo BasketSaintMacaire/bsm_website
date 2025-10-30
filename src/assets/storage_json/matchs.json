@@ -2353,5 +2353,53 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "02/11/2025",
+    "team": "Séniors F1",
+    "group": "Coupe des pdl",
+    "isDomicile": true,
+    "time_start": "15:30",
+    "time_meetup": "14:30",
+    "opponent": "GARS D'HERBAUGES BOUAYE - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "CLARA BARON",
+      "LOUISA GRASSET"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "01/11/2025",
+    "team": "Séniors M1",
+    "group": "Coupe des pdl",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "19:10",
+    "opponent": "SALLE DU PUY ST BONNET",
+    "location": "PUY SAINT BONNET BASKET - 1",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "02/11/2025",
+    "team": "Séniors M2",
+    "group": "B",
+    "isDomicile": false,
+    "time_start": "11:00",
+    "time_meetup": "9:30",
+    "opponent": "SALLE BELLEVUE CHEMILLE",
+    "location": "CHEMILLE - 2",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
