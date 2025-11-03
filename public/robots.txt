@@ -1,0 +1,27 @@
+# robots.txt for BSM - Basket Saint Macaire
+
+# Allow all bots by default
+User-agent: *
+Allow: /
+
+# Disallow private/admin areas (if any)
+# Disallow: /admin
+# Disallow: /private
+
+# Disallow crawling of common spam paths
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /node_modules/
+
+# Allow crawling of specific static assets
+Allow: /*.js
+Allow: /*.css
+
+# Specify sitemap location
+Sitemap: https://basketsaintmacaire.fr/sitemap.xml
+
+# Crawl delay (optional - in seconds)
+Crawl-delay: 1
+
+# Request rate (pages per 10 seconds)
+Request-rate: 10/10s
