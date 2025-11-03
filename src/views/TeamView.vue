@@ -10,8 +10,28 @@ const selectedCategory = ref<'men' | 'women' | 'pleasure'>('men')
 const selectedTeam = ref<Team | null>(null)
 const isPanelOpen = ref(false)
 
+// derive available seasons from the data and pick the latest as default
+const seasons = computed(() => {
+  const list = teams.value.map((t) => t.season).filter((s): s is string => !!s)
+  // unique
+  const uniq = Array.from(new Set(list))
+  // sort by starting year descending if format is like "YYYY-YYYY"
+  uniq.sort((a, b) => {
+    const aYear = parseInt(a.split('-')[0] ?? '0', 10)
+    const bYear = parseInt(b.split('-')[0] ?? '0', 10)
+    return bYear - aYear
+  })
+  return uniq
+})
+
+const selectedSeason = ref<string>(seasons.value[0] ?? 'actuel')
+
 const filteredTeams = computed(() => {
-  return teams.value.filter((team) => team.category === selectedCategory.value)
+  return teams.value.filter((team) => {
+    if (team.category !== selectedCategory.value) return false
+    if (selectedSeason.value) return team.season === selectedSeason.value
+    return true
+  })
 })
 
 const selectTeam = (team: Team) => {
@@ -41,6 +61,13 @@ const changeCategory = (category: 'men' | 'women' | 'pleasure') => {
 
 const closePanel = () => {
   isPanelOpen.value = false
+}
+
+const handleImageError = (event: Event) => {
+  const img = event.target as HTMLImageElement
+  if (!img.src.includes('placehold.co')) {
+    img.src = `https://placehold.co/400?text=Team+Image`
+  }
 }
 
 const handleOutsideClick = (event: MouseEvent) => {
@@ -104,6 +131,17 @@ onUnmounted(() => {
         </button>
       </div>
 
+      <!-- Season selector -->
+      <div class="flex justify-center mb-8">
+        <label class="mr-4 self-center text-lg font-medium">Saison :</label>
+        <select
+          v-model="selectedSeason"
+          class="px-4 py-2 rounded-md bg-card dark:bg-card-dark text-mainText dark:text-mainText-dark"
+        >
+          <option v-for="s in seasons" :key="s" :value="s">{{ s }}</option>
+        </select>
+      </div>
+
       <!-- Teams Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
@@ -119,6 +157,7 @@ onUnmounted(() => {
             :src="team.image"
             :alt="team.name"
             class="w-full h-80 object-cover transition-transform duration-500 md:group-hover:scale-110"
+            @error="handleImageError"
           />
           <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
             <h2 class="text-3xl font-bold text-white mb-2">{{ team.name }}</h2>
@@ -139,7 +178,7 @@ onUnmounted(() => {
     <!-- Sliding Right Panel -->
     <div
       v-if="isPanelOpen"
-      class="sliding-panel fixed inset-y-0 right-0 w-full sm:w-96 bg-card dark:bg-card-dark shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
+      class="sliding-panel fixed inset-y-0 right-0 w-full sm:w-2/3 lg:w-1/2 bg-card dark:bg-card-dark shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
       :class="isPanelOpen ? 'translate-x-0' : 'translate-x-full'"
     >
       <div class="h-full p-6">
@@ -152,6 +191,23 @@ onUnmounted(() => {
           >
             <X class="w-6 h-6" />
           </button>
+        </div>
+
+        <div class="mb-4 text-lg text-mutedText dark:text-mutedText-dark">
+          Saison : {{ selectedTeam?.season || 'N/A' }}
+        </div>
+
+        <!-- Team Image -->
+        <div
+          v-if="selectedTeam"
+          class="mb-6 rounded-lg overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-800"
+        >
+          <img
+            :src="selectedTeam.image"
+            :alt="selectedTeam.name"
+            class="w-full h-auto object-contain"
+            @error="handleImageError"
+          />
         </div>
 
         <!-- Players List -->

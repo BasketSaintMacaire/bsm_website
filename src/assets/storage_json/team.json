@@ -2,7 +2,8 @@
   {
     "id": 1,
     "name": "SM1",
-    "image": "/gallery/team_men/SG1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/SG1.webp",
     "category": "men",
     "players": [
       { "id": 1, "name": "Thomas Veron", "position": "Pivot", "number": 4 },
@@ -22,7 +23,8 @@
   {
     "id": 2,
     "name": "SM2",
-    "image": "/gallery/team_men/SG2.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/SG2.webp",
     "category": "men",
     "players": [
       { "id": 9, "name": "Charles Moreau", "position": "Meneur", "number": 15 },
@@ -42,7 +44,8 @@
   {
     "id": 2,
     "name": "U21M1",
-    "image": "/gallery/team_men/U21M1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U21M1.webp",
     "category": "men",
     "players": [
       { "id": 9, "name": "Enzo Baron", "position": "Pivot", "number": 1 },
@@ -60,7 +63,8 @@
   {
     "id": 4,
     "name": "U18M1",
-    "image": "/gallery/team_men/U18M1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U18M1.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Martin Dixneuf", "position": "", "number": 6 },
@@ -78,7 +82,8 @@
   {
     "id": 5,
     "name": "U18M2",
-    "image": "/gallery/team_men/U18M2.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U18M2.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Elouan Challet", "position": "", "number": 5 },
@@ -96,7 +101,8 @@
   {
     "id": 6,
     "name": "U15M1 CTC",
-    "image": "/gallery/team_men/U15M1CTC.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U15M1CTC.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Ilan Martin", "position": "", "number": 11 },
@@ -115,7 +121,8 @@
   {
     "id": 7,
     "name": "U15M2 CTC",
-    "image": "/gallery/team_men/U15M2CTC.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U15M2CTC.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Louis Baron", "position": "", "number": 10 },
@@ -133,7 +140,8 @@
   {
     "id": 8,
     "name": "U15M3 CTC",
-    "image": "/gallery/team_men/U15M3CTC.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U15M3CTC.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Lucas Defontaine", "position": "", "number": 10 },
@@ -153,7 +161,8 @@
   {
     "id": 9,
     "name": "U13M1",
-    "image": "/gallery/team_men/U13M1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U13M1.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Samuel Teule", "position": "", "number": 13 },
@@ -170,7 +179,8 @@
   {
     "id": 10,
     "name": "U13M2",
-    "image": "/gallery/team_men/U13M2.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U13M2.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Sofiane Adli", "position": "", "number": 12 },
@@ -188,6 +198,7 @@
   {
     "id": 10,
     "name": "U13M3",
+    "season": "2024-2025",
     "image": "https://placehold.co/400",
     "category": "men",
     "players": [
@@ -206,7 +217,8 @@
   {
     "id": 11,
     "name": "U11M1",
-    "image": "/gallery/team_men/U11M1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U11M1.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Nolan Piveteau", "position": "", "number": 10 },
@@ -223,7 +235,8 @@
   {
     "id": 12,
     "name": "U11M2",
-    "image": "/gallery/team_men/U11M2.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U11M2.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Abel Dieumegard", "position": "", "number": 10 },
@@ -240,7 +253,8 @@
   {
     "id": 13,
     "name": "U11M3",
-    "image": "/gallery/team_men/U11M3.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U11M3.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Mylan Bonneau", "position": "", "number": 11 },
@@ -257,6 +271,7 @@
   {
     "id": 14,
     "name": "U11M4",
+    "season": "2024-2025",
     "image": "https://placehold.co/400",
     "category": "men",
     "players": [
@@ -274,7 +289,8 @@
   {
     "id": 14,
     "name": "U9M1",
-    "image": "/gallery/team_men/U9M1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U9M1.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Léo Blanchard", "position": "", "number": 11 },
@@ -290,7 +306,8 @@
   {
     "id": 15,
     "name": "U9M2",
-    "image": "/gallery/team_men/U9M2.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U9M2.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Eloi Bretin", "position": "", "number": 4 },
@@ -303,7 +320,8 @@
   {
     "id": 16,
     "name": "U9M3",
-    "image": "/gallery/team_men/U9M3.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_men/2024-2025/U9M3.webp",
     "category": "men",
     "players": [
       { "id": 10, "name": "Mathyss Gauthier", "position": "", "number": 11 },
@@ -320,7 +338,8 @@
   {
     "id": 20,
     "name": "SF1",
-    "image": "/gallery/team_women/SF1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/SF1.webp",
     "category": "women",
     "players": [
       { "id": 1, "name": "Maude Coadic", "position": "Pivot", "number": 14 },
@@ -340,7 +359,8 @@
   {
     "id": 21,
     "name": "SF2",
-    "image": "/gallery/team_women/SF2.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/SF2.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Maëlle Pacaud", "position": "", "number": 14 },
@@ -359,7 +379,8 @@
   {
     "id": 22,
     "name": "U18F1",
-    "image": "/gallery/team_women/U18F1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/U18F1.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Lya Beaufreton", "position": "", "number": 6 },
@@ -376,7 +397,8 @@
   {
     "id": 23,
     "name": "U18F2CTC",
-    "image": "/gallery/team_women/U18F2CTC.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/U18F2CTC.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Alice Piou", "position": "", "number": 10 },
@@ -393,7 +415,8 @@
   {
     "id": 24,
     "name": "U15F1",
-    "image": "/gallery/team_women/U15F1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/U15F1.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Louisa Grasset", "position": "", "number": 11 },
@@ -413,7 +436,8 @@
   {
     "id": 25,
     "name": "U13F1",
-    "image": "/gallery/team_women/U13F1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/U13F1.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Rachel Beneteau", "position": "", "number": 6 },
@@ -432,6 +456,7 @@
   {
     "id": 25,
     "name": "U13F2 CTC",
+    "season": "2024-2025",
     "image": "https://placehold.co/400",
     "category": "women",
     "players": [
@@ -449,7 +474,8 @@
   {
     "id": 26,
     "name": "U11F1",
-    "image": "/gallery/team_women/U11F1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/U11F1.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Lola Adli", "position": "", "number": 12 },
@@ -465,7 +491,8 @@
   {
     "id": 27,
     "name": "U11F2",
-    "image": "/gallery/team_women/U11F2.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/U11F2.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Elina Ménard", "position": "", "number": 8 },
@@ -481,7 +508,8 @@
   {
     "id": 28,
     "name": "U11F3",
-    "image": "/gallery/team_women/U11F3.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/U11F3.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Lilou Coutand", "position": "", "number": 11 },
@@ -498,7 +526,8 @@
   {
     "id": 29,
     "name": "U9F1",
-    "image": "/gallery/team_women/U9F1.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_women/2024-2025/U9F1.webp",
     "category": "women",
     "players": [
       { "id": 10, "name": "Juliette Biotteau", "position": "", "number": 13 },
@@ -515,14 +544,16 @@
   {
     "id": 40,
     "name": "DETENTE F",
-    "image": "/gallery/team_pleasure/DETENTEF.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_pleasure/2024-2025/DETENTEF.webp",
     "category": "pleasure",
     "players": []
   },
   {
     "id": 40,
     "name": "Basket Fit",
-    "image": "/gallery/team_pleasure/BASKETFIT.webp",
+    "season": "2024-2025",
+    "image": "/gallery/team_pleasure/2024-2025/BASKETFIT.webp",
     "category": "pleasure",
     "players": [
       { "id": 10, "name": "Sandrine Baron", "position": "", "number": 1 },
@@ -545,6 +576,7 @@
   {
     "id": 40,
     "name": "U7 MIXTE",
+    "season": "2024-2025",
     "image": "https://placehold.co/400",
     "category": "pleasure",
     "players": [
@@ -561,6 +593,612 @@
       { "id": 10, "name": "Aymeric Mady", "position": "", "number": 1 },
       { "id": 10, "name": "Elisa Moreau", "position": "", "number": 1 },
       { "id": 10, "name": "Faustin Pouleau", "position": "", "number": 1 }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "SENIORS-F1",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/SENIORS-F1.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "JEANNE MOREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ILONA DANET", "position": "", "number": 1 },
+      { "id": 10, "name": "LAUREEN HAYEE", "position": "", "number": 1 },
+      { "id": 10, "name": "OCEANE BEAUMIER", "position": "", "number": 1 },
+      { "id": 10, "name": "AUDE CHARPENTIER", "position": "", "number": 1 },
+      { "id": 10, "name": "CLAIRE CHARPENTIER", "position": "", "number": 1 },
+      { "id": 10, "name": "LOAN BOISIAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "MAUD COADIC", "position": "", "number": 1 },
+      { "id": 10, "name": "CLARISSE PICHERIT", "position": "", "number": 1 },
+      { "id": 10, "name": "LENA VERDIER", "position": "", "number": 1 },
+      { "id": 10, "name": "ANTOINE G.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "FLAVIEN M.", "position": "Assistant Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "SENIORS-F2",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/SENIORS-F2.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "CAMILLE BEAUMIER", "position": "", "number": 1 },
+      { "id": 10, "name": "JEANNE ROLANDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MELINE HAYAULT", "position": "", "number": 1 },
+      { "id": 10, "name": "THAIS BETOUX", "position": "", "number": 1 },
+      { "id": 10, "name": "ZIA CHAUVAT", "position": "", "number": 1 },
+      { "id": 10, "name": "CLARISSE AIRAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "LANA GAUTIER", "position": "", "number": 1 },
+      { "id": 10, "name": "LEILA GRIFFON", "position": "", "number": 1 },
+      { "id": 10, "name": "HERMANCE CHEVRIER", "position": "", "number": 1 },
+      { "id": 10, "name": "CLARA BARON", "position": "", "number": 1 },
+      { "id": 10, "name": "MAELLE PACAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "MAUD AUBRON", "position": "", "number": 1 },
+      { "id": 10, "name": "JULIE G.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "LAUREEN H.", "position": "Assistant Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "U18-F1 CTC",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U18-F1-CTC.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "LYA BEAUFRETON", "position": "", "number": 1 },
+      { "id": 10, "name": "LAURYN JOREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MAELIE DOUIN", "position": "", "number": 1 },
+      { "id": 10, "name": "ALICE DIET", "position": "", "number": 1 },
+      { "id": 10, "name": "LENA HAYAULT", "position": "", "number": 1 },
+      { "id": 10, "name": "TYA PASQUIER", "position": "", "number": 1 },
+      { "id": 10, "name": "MANON GUEDON", "position": "", "number": 1 },
+      { "id": 10, "name": "LINA VERGER", "position": "", "number": 1 },
+      { "id": 10, "name": "CAMILLE BEAUMIER", "position": "", "number": 1 },
+      { "id": 10, "name": "ZIA CHAUVAT", "position": "", "number": 1 },
+      { "id": 10, "name": "LANA GAUTIER", "position": "", "number": 1 },
+      { "id": 10, "name": "JEANNE R.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "MAUD C.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "U18-F2",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U18-F2.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "EMMA BAHUAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "MATHILDE COEURET", "position": "", "number": 1 },
+      { "id": 10, "name": "CELESTINE HAMARD", "position": "", "number": 1 },
+      { "id": 10, "name": "FANTINE DUPONT", "position": "", "number": 1 },
+      { "id": 10, "name": "LANA BOISIAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUISA GRASSET", "position": "", "number": 1 },
+      { "id": 10, "name": "ANGELE THEZE", "position": "", "number": 1 },
+      { "id": 10, "name": "NORA TUATAANE", "position": "", "number": 1 },
+      { "id": 10, "name": "JULIEN B.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "MALON B.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "U15-F",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U15-F.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "YAELLE BEAUFRETON", "position": "", "number": 1 },
+      { "id": 10, "name": "THAIS COUTANT", "position": "", "number": 1 },
+      { "id": 10, "name": "LALY THOMAS", "position": "", "number": 1 },
+      { "id": 10, "name": "CHANEL PENIGUEL", "position": "", "number": 1 },
+      { "id": 10, "name": "JEANNE GABORIEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ELI VINET", "position": "", "number": 1 },
+      { "id": 10, "name": "RACHEL BENETEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MELINA GUILLET", "position": "", "number": 1 },
+      { "id": 10, "name": "ANAEL CRAMOIS", "position": "", "number": 1 },
+      { "id": 10, "name": "LOAN B.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "HERMANCE C.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "U13-F1",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U13-F1.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "JADE MORINIERE", "position": "", "number": 1 },
+      { "id": 10, "name": "ASTRID TAPON", "position": "", "number": 1 },
+      { "id": 10, "name": "INES VERGER", "position": "", "number": 1 },
+      { "id": 10, "name": "ENEA CLEMENCEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LOLA ADLI", "position": "", "number": 1 },
+      { "id": 10, "name": "ELINA MENARD", "position": "", "number": 1 },
+      { "id": 10, "name": "EMMY GIRAULT", "position": "", "number": 1 },
+      { "id": 10, "name": "CONSTANCE LEFORT", "position": "", "number": 1 },
+      { "id": 10, "name": "SOLINE AUDEBERT", "position": "", "number": 1 },
+      { "id": 10, "name": "CAMILLE B.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "ALICE D.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "U13-F2",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U13-F2.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "JADE LEFORT", "position": "", "number": 1 },
+      { "id": 10, "name": "CALIE LAVENU", "position": "", "number": 1 },
+      { "id": 10, "name": "CLARA THARREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "CHLOE GUEDON", "position": "", "number": 1 },
+      { "id": 10, "name": "ZOE VENDEE", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUISE BRIN", "position": "", "number": 1 },
+      { "id": 10, "name": "ZIA CASSIN CESBRON", "position": "", "number": 1 },
+      { "id": 10, "name": "ELISA HERAULT", "position": "", "number": 1 },
+      { "id": 10, "name": "ZIA C.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "MANON G.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "U11-F1",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U11-F1.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "ELEA SAUDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "CAPUCINE VINCENT", "position": "", "number": 1 },
+      { "id": 10, "name": "CALIE CLEMENCEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MATHILDA COLIN", "position": "", "number": 1 },
+      { "id": 10, "name": "CAPUCINE TONDA ESSOLITO", "position": "", "number": 1 },
+      { "id": 10, "name": "CASSIE GENTY", "position": "", "number": 1 },
+      { "id": 10, "name": "FANTINE D.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "DAMIEN V.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "U11-F2",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U11-F2.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "CHLOE LEGEAY BOURIEL", "position": "", "number": 1 },
+      { "id": 10, "name": "LAINA OUSSEINI AHAMADA", "position": "", "number": 1 },
+      { "id": 10, "name": "AMBRE BENUREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LILOU COUTAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "SUZIE FOURRIERE BOURREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MELODIE VENDEE", "position": "", "number": 1 },
+      { "id": 10, "name": "MAELIE D.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "MATHILDE C.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "U11-F3",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U11-F3.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "MAELIE LANDREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LEANE LOISEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "HELOISE BOUSSICAULT", "position": "", "number": 1 },
+      { "id": 10, "name": "ROSE CHAUVAT", "position": "", "number": 1 },
+      { "id": 10, "name": "EMMA GUEDON", "position": "", "number": 1 },
+      { "id": 10, "name": "JULIETTE BIOTTEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUISA G.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "LINA V.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "U09-F1",
+    "season": "2025-2026",
+    "image": "/gallery/team_women/2025-2026/U09-F1.webp",
+    "category": "women",
+    "players": [
+      { "id": 10, "name": "CASTILLE DUPONT", "position": "", "number": 1 },
+      { "id": 10, "name": "THAIS LOETEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ISAE BRETAUDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "SOFIA CHAUVIN", "position": "", "number": 1 },
+      { "id": 10, "name": "VALENTIN DURAND", "position": "", "number": 1 },
+      { "id": 10, "name": "CAMILLE VENDEE", "position": "", "number": 1 },
+      { "id": 10, "name": "LOLA DURAND", "position": "", "number": 1 },
+      { "id": 10, "name": "SUZIE SAUTEJEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "RACHEL B.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "JEANNE G.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "U07 MIXTE G&F",
+    "season": "2025-2026",
+    "image": "/gallery/team_pleasure/2025-2026/U07-MIXTE-GF.webp",
+    "category": "pleasure",
+    "players": [
+      { "id": 10, "name": "SOAN ROBINEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LEMY HUBERT", "position": "", "number": 1 },
+      { "id": 10, "name": "LISON SAUTEJEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "JUNIOR COLIN", "position": "", "number": 1 },
+      { "id": 10, "name": "TIAGO CHAMPAIN", "position": "", "number": 1 },
+      { "id": 10, "name": "NOAH BONNEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ANDREA TONDA ESSOLITO", "position": "", "number": 1 },
+      { "id": 10, "name": "VICTOR LEFORT", "position": "", "number": 1 },
+      { "id": 10, "name": "LONNI PRIGENT", "position": "", "number": 1 },
+      { "id": 10, "name": "ALBA MARY", "position": "", "number": 1 },
+      { "id": 10, "name": "KAMYLIA HOPAWZESKI", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "LUCAS FEUILLATRE", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "SENIORS-G1",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/SENIORS-G1.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "THIBAULT HUTEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "PIERRE LOUIS BOISSIE", "position": "", "number": 1 },
+      { "id": 10, "name": "EDOUARD BARRE", "position": "", "number": 1 },
+      { "id": 10, "name": "FLAVIEN MAILET", "position": "", "number": 1 },
+      { "id": 10, "name": "SIMON GRASSET", "position": "", "number": 1 },
+      { "id": 10, "name": "SIMON THIBAUDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ELIAN VERDIER", "position": "", "number": 1 },
+      { "id": 10, "name": "THOMAS VERON", "position": "", "number": 1 },
+      { "id": 10, "name": "RODRIGUE FORNES", "position": "", "number": 1 },
+      { "id": 10, "name": "RODRIGUE MAILET", "position": "", "number": 1 },
+      { "id": 10, "name": "NOE GRASSET", "position": "", "number": 1 },
+      { "id": 10, "name": "FRANCK B.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "JUSTIN L.", "position": "Assistant Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "SENIORS-G2",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/SENIORS-G2.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "JASON BIOTTEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ELIOTT THOMAS", "position": "", "number": 1 },
+      { "id": 10, "name": "ARTHUR BEDUNEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ROBIN SAUTEJEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MAXIME COTTENCEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "TIMOTHEE SIMON", "position": "", "number": 1 },
+      { "id": 10, "name": "CHARLES MOREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "HUGO AURICHE", "position": "", "number": 1 },
+      { "id": 10, "name": "HUGO GABORIAU", "position": "", "number": 1 },
+      { "id": 10, "name": "BAPTISTE CHUPIN", "position": "", "number": 1 },
+      { "id": 10, "name": "MARTIN BIOTTEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "JEREMY P.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "EMMANUEL B.", "position": "Assistant Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "SENIORS-G3",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/SENIORS-G3.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "LORIS BLANCHARD", "position": "", "number": 1 },
+      { "id": 10, "name": "ANTOINE GALLARD", "position": "", "number": 1 },
+      { "id": 10, "name": "JUSTIN LANDREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "PABLO ROY", "position": "", "number": 1 },
+      { "id": 10, "name": "YORIS PAVAGEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MATHYS BOUCHAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "NOA BREVET", "position": "", "number": 1 },
+      { "id": 10, "name": "ANTOINE THIBAULT", "position": "", "number": 1 },
+      { "id": 10, "name": "ENZO BARON", "position": "", "number": 1 },
+      { "id": 10, "name": "FRANCK BONNELALBAY", "position": "", "number": 1 },
+      { "id": 10, "name": "COACH : ?", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "U21-CTC",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U21-CTC.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "MALON BEJIN", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUIS HECK", "position": "", "number": 1 },
+      { "id": 10, "name": "MATYS MENARD", "position": "", "number": 1 },
+      { "id": 10, "name": "QUENTIN DUFAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "SIMON MEUNIER", "position": "", "number": 1 },
+      { "id": 10, "name": "MARIUS PASQUIER", "position": "", "number": 1 },
+      { "id": 10, "name": "JOHAN BILLAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "ROMAIN FORNES", "position": "", "number": 1 },
+      { "id": 10, "name": "NATHAN NERRIERE", "position": "", "number": 1 },
+      { "id": 10, "name": "PIERRE LEFEBVRE", "position": "", "number": 1 },
+      { "id": 10, "name": "QUENTIN CHEVALIER", "position": "", "number": 1 },
+      { "id": 10, "name": "LUCAS SUPIOT", "position": "", "number": 1 },
+      { "id": 10, "name": "JULIEN BEAUDOUIN", "position": "", "number": 1 },
+      { "id": 10, "name": "COACH : SAM", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "U18-G1",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U18-G1.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "MAXIME TEULE", "position": "", "number": 1 },
+      { "id": 10, "name": "GABIN LAURAND", "position": "", "number": 1 },
+      { "id": 10, "name": "MARTIN DIXNEUF", "position": "", "number": 1 },
+      { "id": 10, "name": "LILIAN AUGEREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "AMAURY FORT", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUKA MARAIS", "position": "", "number": 1 },
+      { "id": 10, "name": "TOM BEGUE", "position": "", "number": 1 },
+      { "id": 10, "name": "HUGO GABORIAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LEO GODIER", "position": "", "number": 1 },
+      { "id": 10, "name": "SIMON G.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "FABIEN F.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 58,
+    "name": "U18-G2",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U18-G2.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "AXEL CHEVRIER", "position": "", "number": 1 },
+      { "id": 10, "name": "THEOTIME PAVAGEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "EVAN LECOMTE", "position": "", "number": 1 },
+      { "id": 10, "name": "ARTHUR BENETEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MAXENCE GOURAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "BASTIEN PACAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "SIMON OLIVIER", "position": "", "number": 1 },
+      { "id": 10, "name": "NOA GABORIT", "position": "", "number": 1 },
+      { "id": 10, "name": "COLIN M.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "ELIAN V.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 59,
+    "name": "U18-G3 CTC",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U18-G3-CTC.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "ALESSANDRO CHIRON", "position": "", "number": 1 },
+      { "id": 10, "name": "FLORIAN TEULE", "position": "", "number": 1 },
+      { "id": 10, "name": "THAO GAUTIER", "position": "", "number": 1 },
+      { "id": 10, "name": "PAUL ROLANDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ALEXIS FROGER", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUIS TOURNEUX", "position": "", "number": 1 },
+      { "id": 10, "name": "SAM CHALOPIN", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUKA BIOTTEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MATHYS BOUCHAUD", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "FLORENT et/ou NICOLAS (ref.)", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 60,
+    "name": "U15-G1 CTC",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U15-G1-CTC.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "EVAN JOYER", "position": "", "number": 1 },
+      { "id": 10, "name": "TOM BLANCHARD", "position": "", "number": 1 },
+      { "id": 10, "name": "SACHA BRETAUDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "ILAN MARTIN", "position": "", "number": 1 },
+      { "id": 10, "name": "VALENTIN FONTENEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "GABIN GICQUIAUD", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUISON JOREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MATHY SAUNIER", "position": "", "number": 1 },
+      { "id": 10, "name": "CLEMENT DROUIN", "position": "", "number": 1 },
+      { "id": 10, "name": "JEREMIE J.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "ANTHONY H.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 61,
+    "name": "U15-G2",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U15-G2.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "MYLAN MORINIERE", "position": "", "number": 1 },
+      { "id": 10, "name": "PABLO MARTIN", "position": "", "number": 1 },
+      { "id": 10, "name": "LORENZO LACROIX", "position": "", "number": 1 },
+      { "id": 10, "name": "TYRON BONNET", "position": "", "number": 1 },
+      { "id": 10, "name": "LUCAS GUEDON", "position": "", "number": 1 },
+      { "id": 10, "name": "AXEL GUINAUDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "HUGO OLIVIER", "position": "", "number": 1 },
+      { "id": 10, "name": "KEWEN MERA", "position": "", "number": 1 },
+      { "id": 10, "name": "GABRIEL GUERIN", "position": "", "number": 1 },
+      { "id": 10, "name": "MAXIME T.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "JULIEN M.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 62,
+    "name": "U15-G3",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U15-G3.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "THEO LECOMTE", "position": "", "number": 1 },
+      { "id": 10, "name": "TIMOTHEE GIRAULT", "position": "", "number": 1 },
+      { "id": 10, "name": "LOUIS LEFORT", "position": "", "number": 1 },
+      { "id": 10, "name": "SOFIANE ADLI", "position": "", "number": 1 },
+      { "id": 10, "name": "TIMEO TERRIEN", "position": "", "number": 1 },
+      { "id": 10, "name": "MARIO BREVET", "position": "", "number": 1 },
+      { "id": 10, "name": "GABRIEL MARTIN", "position": "", "number": 1 },
+      { "id": 10, "name": "ENZO CAILLEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "TIMEO LANDREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "SIMON CHARRIER", "position": "", "number": 1 },
+      { "id": 10, "name": "TOM B.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "EVAN L.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 63,
+    "name": "U13-G1",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U13-G1.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "VICTOR BIOTTEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "TIMOTHE SAUTEJEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "SACHA BOUCHET", "position": "", "number": 1 },
+      { "id": 10, "name": "NINO BOUYER", "position": "", "number": 1 },
+      { "id": 10, "name": "MATHIS CHENE BOSSARD", "position": "", "number": 1 },
+      { "id": 10, "name": "ROBIN BEGUE", "position": "", "number": 1 },
+      { "id": 10, "name": "NOLAN PIVETEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "YANIS CHAUVIN", "position": "", "number": 1 },
+      { "id": 10, "name": "NOE LORTEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "VALENTIN BOUTRIK", "position": "", "number": 1 },
+      {
+        "id": 10,
+        "name": "COACHS : GABIN L. & ROBIN S. & JEROME et NICOLAS (ref.)",
+        "position": "Coach",
+        "number": 0
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "name": "U13-G2",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U13-G2.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "ALEXIS COTELLE", "position": "", "number": 1 },
+      { "id": 10, "name": "GABRYEL CHOUTEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MANOE DOUILLARD", "position": "", "number": 1 },
+      { "id": 10, "name": "ELIO CASSIN CESBRON", "position": "", "number": 1 },
+      { "id": 10, "name": "ABEL DIEUMEGARD", "position": "", "number": 1 },
+      { "id": 10, "name": "LEO COUTOLLEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LILIAN CHAUVRIERE", "position": "", "number": 1 },
+      { "id": 10, "name": "MYLAN BONNEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "THYMEO MOSSET", "position": "", "number": 1 },
+      { "id": 10, "name": "BASTIEN P.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "THEOTIME P.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 65,
+    "name": "U11-G1",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U11-G1.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "LIAM HUBERT", "position": "", "number": 1 },
+      { "id": 10, "name": "MARIUS PAVAGEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "GABIN SAUNIER", "position": "", "number": 1 },
+      { "id": 10, "name": "NOLAN MARTIN", "position": "", "number": 1 },
+      { "id": 10, "name": "HUGO TEULE", "position": "", "number": 1 },
+      { "id": 10, "name": "MATHIS HURTAULT", "position": "", "number": 1 },
+      { "id": 10, "name": "AXEL C.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "PAUL R.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 66,
+    "name": "U11-G2",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U11-G2.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "NATHAN LAURENDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "TERENCE BONNET", "position": "", "number": 1 },
+      { "id": 10, "name": "PAUL HIVET", "position": "", "number": 1 },
+      { "id": 10, "name": "AMAURY MADY", "position": "", "number": 1 },
+      { "id": 10, "name": "NINO FAYS TERRIEN", "position": "", "number": 1 },
+      { "id": 10, "name": "MARIUS RENAUD GELINEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LORENZO CHIRON", "position": "", "number": 1 },
+      { "id": 10, "name": "ALESSANDRO C.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "LYA B.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 67,
+    "name": "U11-G3",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U11-G3.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "LUBIN JOREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "LEO BLANCHARD", "position": "", "number": 1 },
+      { "id": 10, "name": "LUCAS SIMON", "position": "", "number": 1 },
+      { "id": 10, "name": "NINO MENES", "position": "", "number": 1 },
+      { "id": 10, "name": "ISSAC NDOMBE", "position": "", "number": 1 },
+      { "id": 10, "name": "ELOI BRETIN", "position": "", "number": 1 },
+      { "id": 10, "name": "AMAURY P.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "GABRIEL G.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 68,
+    "name": "U11-G4",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U11-G4.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "MATYSS GAUTHIER", "position": "", "number": 1 },
+      { "id": 10, "name": "NATHAN FEILLET", "position": "", "number": 1 },
+      { "id": 10, "name": "ELIAS TOULME", "position": "", "number": 1 },
+      { "id": 10, "name": "CLEMENT THOMAS", "position": "", "number": 1 },
+      { "id": 10, "name": "MATHIS LIBEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "JEAN BAUDART", "position": "", "number": 1 },
+      { "id": 10, "name": "MYLAN M.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "LOUIS B.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 69,
+    "name": "U09-G1",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U09-G1.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "MALO MARAIS", "position": "", "number": 1 },
+      { "id": 10, "name": "ROBIN SABOUREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "NOE PIVETEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "MARCEAU HY", "position": "", "number": 1 },
+      { "id": 10, "name": "EZRA LAVENU", "position": "", "number": 1 },
+      { "id": 10, "name": "HUGO G.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "?", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 70,
+    "name": "U09-G2",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U09-G2.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "THIBAULT GABORIAU", "position": "", "number": 1 },
+      { "id": 10, "name": "NAEL NGOV", "position": "", "number": 1 },
+      { "id": 10, "name": "RUBEN AUMONT", "position": "", "number": 1 },
+      { "id": 10, "name": "SELMANE EL FARCI", "position": "", "number": 1 },
+      { "id": 10, "name": "NOE DOGAN GUYON", "position": "", "number": 1 },
+      { "id": 10, "name": "YANIS OUKAN", "position": "", "number": 1 },
+      { "id": 10, "name": "TIMOTHE G.", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "SAMUEL T.", "position": "Coach", "number": 0 }
+    ]
+  },
+  {
+    "id": 71,
+    "name": "U09-G3",
+    "season": "2025-2026",
+    "image": "/gallery/team_men/2025-2026/U09-G3.webp",
+    "category": "men",
+    "players": [
+      { "id": 10, "name": "LUBIN LE BODO", "position": "", "number": 1 },
+      { "id": 10, "name": "NATHAN VANHEE", "position": "", "number": 1 },
+      { "id": 10, "name": "AYMERIC MADY", "position": "", "number": 1 },
+      { "id": 10, "name": "ETHAN LAURENDEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "CLEMENT MADELEINEAU", "position": "", "number": 1 },
+      { "id": 10, "name": "BASILE BENUREAU", "position": "", "number": 1 },
+      { "id": 10, "name": "HUGO LAFOND", "position": "", "number": 1 },
+      { "id": 10, "name": "?", "position": "Coach", "number": 0 },
+      { "id": 10, "name": "?", "position": "Coach", "number": 0 }
     ]
   }
 ]

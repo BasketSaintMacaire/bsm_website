@@ -3,6 +3,7 @@ export interface Team {
   name: string
   image: string
   players: Player[]
+  season: string
   category: 'men' | 'women' | 'pleasure'
 }
 

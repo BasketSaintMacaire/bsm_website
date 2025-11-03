@@ -11,6 +11,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const images = ref<string[]>([])
+const imageErrors = ref<Set<number>>(new Set())
 const isDragging = ref(false)
 const startX = ref(0)
 const scrollLeft = ref(0)
@@ -73,6 +74,15 @@ function startInertiaScroll() {
   animationFrameId = requestAnimationFrame(inertia) // Start the animation
 }
 
+// Handle image load errors and fallback to placeholder
+function handleImageError(index: number, event: Event) {
+  const img = event.target as HTMLImageElement
+  if (!img.src.includes('placehold.co')) {
+    imageErrors.value.add(index)
+    img.src = `https://placehold.co/400?text=Image+${index + 1}`
+  }
+}
+
 watch(
   () => props.galleryName,
   () => {
@@ -124,6 +134,7 @@ onBeforeUnmount(() => {
               : 'w-full h-full rounded-lg object-cover',
           ]"
           @mousedown.prevent
+          @error="handleImageError(index, $event)"
           draggable="false"
         />
       </div>
