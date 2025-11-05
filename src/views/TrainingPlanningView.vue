@@ -135,10 +135,6 @@ const selectedWeek = computed(() => weekSchedule.value[selectedWeekIndex.value]?
           </div>
         </div>
       </div>
-
-      <div class="mt-8 text-center text-sm text-mutedText dark:text-mutedText-dark">
-        <p>Dernière mise à jour : <strong>28/07/2025</strong></p>
-      </div>
     </div>
   </div>
 </template>
