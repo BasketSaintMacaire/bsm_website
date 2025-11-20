@@ -3338,6 +3338,23 @@
   },
   {
     "date": "22/11/2025",
+    "team": "U11-F2",
+    "group": "D3B",
+    "isDomicile": true,
+    "time_start": "10:15",
+    "time_meetup": "9:45",
+    "opponent": "AVENIR TREMENTINE BASKET - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "GABRYEL CHOUTEAU",
+      "LOUISON JOREAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "22/11/2025",
     "team": "U9-M3",
     "group": "D4G",
     "isDomicile": true,
