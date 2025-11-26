@@ -3743,5 +3743,468 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U9-M2",
+    "group": "D2C",
+    "isDomicile": true,
+    "time_start": "8:45",
+    "time_meetup": "8:15",
+    "opponent": "MOINE BASKET CLUB - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "VICTOR BIOTTEAU",
+      "TIMEO TERRIEN"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U9-M3",
+    "group": "D4G",
+    "isDomicile": true,
+    "time_start": "10:15",
+    "time_meetup": "9:45",
+    "opponent": "SAINT CHRISTOPHE DU BOIS - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "NOLAN PIVETEAU",
+      "SOFIANE ADLI"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U9-F1",
+    "group": "D4D",
+    "isDomicile": true,
+    "time_start": "11:45",
+    "time_meetup": "11:15",
+    "opponent": "SEGUINIERE (LA) ST LOUIS BASKET",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "EMMY GIRAULT",
+      "ABEL LEMARIE LOVADINA"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U11-M4",
+    "group": "D3D",
+    "isDomicile": true,
+    "time_start": "13:15",
+    "time_meetup": "12:45",
+    "opponent": "BEAUPREAU FIEF SAUVIN",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "INES VERGER",
+      "TOM BLANCHARD"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U11-M2",
+    "group": "D2C",
+    "isDomicile": true,
+    "time_start": "14:45",
+    "time_meetup": "14:15",
+    "opponent": "MOINE BASKET CLUB - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "SACHA BOUCHET",
+      "LORENZO LACROIX"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U13-F1",
+    "group": "D2C",
+    "isDomicile": true,
+    "time_start": "16:15",
+    "time_meetup": "15:30",
+    "opponent": "BEAUPREAU FIEF SAUVIN BASKET",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "LAURYN JOREAU",
+      "LINA VERGER"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U13-M1",
+    "group": "D1B",
+    "isDomicile": true,
+    "time_start": "18:00",
+    "time_meetup": "17:15",
+    "opponent": "CHOLET BASKET - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "TYRON BONNET",
+      "HUGO OLIVIER"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U15-M2",
+    "group": "D2A",
+    "isDomicile": true,
+    "time_start": "20:00",
+    "time_meetup": "19:15",
+    "opponent": "SEGUINIERE (LA) ST LOUIS BASKET - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "GABIN GICQUIAUD",
+      "SAM CHALOPIN"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U15-M1 CTC",
+    "group": "R2A",
+    "isDomicile": true,
+    "time_start": "16:15",
+    "time_meetup": "15:30",
+    "opponent": "IE - CTC SNBC - ATLANTIQUE BC NAZAIRIEN - 1",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U18-M1",
+    "group": "D1A",
+    "isDomicile": true,
+    "time_start": "18:15",
+    "time_meetup": "17:30",
+    "opponent": "AVENIR TREMENTINES BASKET - 1",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "BAPTISTE CHUPIN",
+      "PABLO ROY"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U18-M2",
+    "group": "D3B",
+    "isDomicile": true,
+    "time_start": "20:15",
+    "time_meetup": "19:30",
+    "opponent": "BEAUPREAU FIEF SAUVIN BASKET - 2",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "TIMOTHEE SIMON",
+      "MATHYS BOUCHAUD"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "30/11/2025",
+    "team": "U13-M2",
+    "group": "D2D",
+    "isDomicile": true,
+    "time_start": "9:30",
+    "time_meetup": "8:45",
+    "opponent": "ROUSSAY VILLEDIEU",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "EVAN JOYER",
+      "AMAURY FORT"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "30/11/2025",
+    "team": "U15-F",
+    "group": "D3E",
+    "isDomicile": true,
+    "time_start": "11:30",
+    "time_meetup": "10:45",
+    "opponent": "SAINT CHRISTOPHE DU BOIS",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "ZIA CHAUVAT",
+      "MAELIE DOUIN"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "30/11/2025",
+    "team": "Séniors F2",
+    "group": "C",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "12:30",
+    "opponent": "VIHIERS BASKET - 3",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "LEO GODIER",
+      "LENA VERDIER"
+    ],
+    "referees": [
+      "JEANNE MOREAU",
+      "CLARISSE PICHERIT"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "30/11/2025",
+    "team": "Séniors F1",
+    "group": "B",
+    "isDomicile": true,
+    "time_start": "15:30",
+    "time_meetup": "14:30",
+    "opponent": "I.B.C. - Indre Basket Club - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "HUGO GABORIAU",
+      "CAMILLE BEAUMIER"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "30/11/2025",
+    "team": "Séniors M2",
+    "group": "B",
+    "isDomicile": true,
+    "time_start": "14:00",
+    "time_meetup": "13:00",
+    "opponent": "AVENIR TREMENTINES BASKET - 2",
+    "location": "Salle Georges Raymond",
+    "board_official": [
+      "EVAN LECOMTE",
+      "MAUD COADIC"
+    ],
+    "referees": [
+      "PIERRE LOUIS BOISSIE",
+      "NOE GRASSET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "Séniors M1",
+    "group": "A",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "#N/A",
+    "opponent": "LES SABLES VENDEE BASKET - 2",
+    "location": "SALLE BEAUSEJOUR",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U15-M3",
+    "group": "D4A",
+    "isDomicile": false,
+    "time_start": "15:00",
+    "time_meetup": "13:55",
+    "opponent": "SEVRE BASKET A.S.",
+    "location": "SALLE DE TORFOU",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U11-M1",
+    "group": "D1A",
+    "isDomicile": false,
+    "time_start": "16:00",
+    "time_meetup": "15:20",
+    "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 1",
+    "location": "SALLE N 01 DE ST ANDRE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U11-M3",
+    "group": "D3E",
+    "isDomicile": false,
+    "time_start": "11:00",
+    "time_meetup": "10:00",
+    "opponent": "CERQUEUX SOMLOIRE ST PAUL LA PLAINE",
+    "location": "SALLE POLYVALENTE SOMLOIRE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U9-M1",
+    "group": "D1A",
+    "isDomicile": false,
+    "time_start": "12:15",
+    "time_meetup": "11:30",
+    "opponent": "CHOLET JF - 2",
+    "location": "SALLE DARMAILLACQ N01",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U18-F1 CTC",
+    "group": "D2C",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "19:15",
+    "opponent": "FUILETAIS REMYGEOIS BASKET - 2",
+    "location": "SALLE ST REMY LE SOUCHAY",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U18-F2",
+    "group": "D4D",
+    "isDomicile": false,
+    "time_start": "15:00",
+    "time_meetup": "13:40",
+    "opponent": "CHALONNES SUR LOIRE BASKET - 2",
+    "location": "SALLE NICOLE ABAR- SAINT EXUPERY",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U13-F2",
+    "group": "D4G",
+    "isDomicile": false,
+    "time_start": "17:30",
+    "time_meetup": "16:35",
+    "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 2",
+    "location": "SALLE N 01 DE ST ANDRE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U11-F1",
+    "group": "D2C",
+    "isDomicile": false,
+    "time_start": "13:30",
+    "time_meetup": "12:45",
+    "opponent": "SAINT CHRISTOPHE DU BOIS",
+    "location": "SALLE A ST CHRISTOPHE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U11-F2",
+    "group": "D3B",
+    "isDomicile": false,
+    "time_start": "11:30",
+    "time_meetup": "10:30",
+    "opponent": "FUILETAIS REMYGEOIS BASKET - 2",
+    "location": "SALLE ST REMY LE SOUCHAY",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "29/11/2025",
+    "team": "U11-F3",
+    "group": "D4G",
+    "isDomicile": false,
+    "time_start": "12:30",
+    "time_meetup": "11:30",
+    "opponent": "MAULEVRIER - 2",
+    "location": "SALLE MAULEVRIER N1 - RUBIS",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "30/11/2025",
+    "team": "Séniors M3",
+    "group": "D",
+    "isDomicile": false,
+    "time_start": "13:30",
+    "time_meetup": "12:15",
+    "opponent": "JUB JALLAIS BASKET - 4",
+    "location": "SALLE DE JALLAIS N01",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "30/11/2025",
+    "team": "U18-M3 CTC",
+    "group": "D4A",
+    "isDomicile": false,
+    "time_start": "10:30",
+    "time_meetup": "9:25",
+    "opponent": "CHOLET BASKET - 6",
+    "location": "SALLE LAENNEC",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
