@@ -4733,5 +4733,39 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "20/12/2025",
+    "team": "Séniors M2",
+    "group": "Coupe de l'anjou",
+    "isDomicile": true,
+    "time_start": "20:30",
+    "time_meetup": "19:30",
+    "opponent": "AVENIR TREMENTINES BASKET - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "GABIN LAURAND",
+      "CLAIRE CHARPENTIER"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "21/12/2025",
+    "team": "Séniors F2",
+    "group": "Challenge de l'anjou",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "13:30",
+    "opponent": "LOIRE BASKET CLUB",
+    "location": "SALLE DE CORZE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
