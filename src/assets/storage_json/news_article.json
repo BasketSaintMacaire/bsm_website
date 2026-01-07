@@ -97,5 +97,32 @@
     "date": "2025-06-10",
     "image": "/gallery/news/championnes_u18.webp",
     "category": "Compétitions"
+  },
+  {
+    "id": 11,
+    "title": "Tournoi de Para Basket Adapté",
+    "excerpt": "Retour sur le tournoi de para basket adapté organisé par la Ligue des Pays de la Loire avec la participation des clubs de Cholet, Nantes et Laval",
+    "content": "TOURNOI DE PARA BASKET ADAPTÉ 🏀\n\nRetour en images sur le tournoi de para basket adapté organisé par la @liguesapdl.\n\nUn grand bravo à nos 3 clubs de Cholet, Nantes et Laval pour leurs prestations tout au long de cette belle journée placée sous le signe du sport et de l'inclusion 👏🏻\n\nUn immense merci également aux supporters et aux bénévoles présents, dont l'engagement et l'énergie ont permis de faire de cet événement une vraie réussite 💜\n\nCes moments de partage illustrent parfaitement les valeurs humaines et sportives que nous défendons au BSM.\n\nSportivement,",
+    "date": "2025-12-20",
+    "image": "/gallery/news/para_basket_adapte.webp",
+    "category": "Événements"
+  },
+  {
+    "id": 12,
+    "title": "Octobre Rose – Tous Unis pour la Lutte contre le Cancer du Sein",
+    "excerpt": "Le BSM se mobilise en octobre pour soutenir la lutte contre le cancer du sein et sensibiliser au dépistage",
+    "content": "OCTOBRE ROSE 🎀\n\nEn ce mois de sensibilisation, le BSM apporte son soutien à toutes les personnes touchées par le cancer du sein.\n\nLe dépistage est un acte essentiel : se faire dépister, c’est se protéger.\n\nÀ travers cette mobilisation, notre club souhaite rappeler l'importance de la prévention et de la solidarité.\n\nTOUS UNIS 💛\n\nTOUS CONCERNÉS 💜\n\nEnsemble, continuons à faire passer le message.",
+    "date": "2025-10-04",
+    "image": "/gallery/news/octobre_rose_2025.webp",
+    "category": "Club"
+  },
+  {
+    "id": 13,
+    "title": "Soirée des Sponsors – Une Ambiance Inoubliable",
+    "excerpt": "Une soirée exceptionnelle marquée par des victoires, du spectacle et une ambiance incroyable au BSM",
+    "content": "UN SAMEDI SOIR DE FOLIE ! 🔥\n\nNotre soirée des sponsors a été une immense réussite, rythmée par le soutien du public et de superbes performances sportives.\n\nMerci à tous ceux qui sont venus encourager nos équipes :\n- U15 M1 : victoire après prolongation 💪🏻\n- U18 M1 : victoire de 42 points\n- Séniors M1 : victoire de 32 points\n\nMention spéciale à nos U09 et U11 qui ont participé à cette magnifique soirée et mis une ambiance incroyable 📣\n\nUn grand bravo également à notre bureau des jeunes pour l'organisation exemplaire de l'événement 🫶🏻\n\n📸 @jrh.shots\n\n#laforcedesloups",
+    "date": "2025-11-17",
+    "image": "/gallery/news/soiree_sponsors.webp",
+    "category": "Club"
   }
 ]
