@@ -5063,5 +5063,462 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U9-F1",
+    "group": "D4A",
+    "isDomicile": true,
+    "time_start": "9:00",
+    "time_meetup": "8:30",
+    "opponent": "MOINE BASKET CLUB - 1 (1)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "ASTRID TAPON",
+      "CHANEL PENIGUEL"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U9-M1",
+    "group": "D1C",
+    "isDomicile": true,
+    "time_start": "10:30",
+    "time_meetup": "10:00",
+    "opponent": "CHOLET BASKET - 1 (1)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "GABRYEL CHOUTEAU",
+      "THEO LECOMTE"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U9-M3",
+    "group": "D4M",
+    "isDomicile": true,
+    "time_start": "12:00",
+    "time_meetup": "11:30",
+    "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 4 (1)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "LILIAN CHAUVRIERE",
+      "MARIO BREVET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U11-M4",
+    "group": "D4H",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "13:00",
+    "opponent": "BMB - BEGROLLES LE MAY BASKET - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "VICTOR BIOTTEAU",
+      "TYRON BONNET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U11-F1",
+    "group": "D1D",
+    "isDomicile": true,
+    "time_start": "15:00",
+    "time_meetup": "14:30",
+    "opponent": "JUB JALLAIS BASKET - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "SOLINE AUDEBERT",
+      "YAELLE BEAUFRETON"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U11-F2",
+    "group": "D4F",
+    "isDomicile": true,
+    "time_start": "16:30",
+    "time_meetup": "16:00",
+    "opponent": "JUMELLIERE - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "LOLA ADLI",
+      "MELINA GUILLET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U13-F1",
+    "group": "D2D",
+    "isDomicile": true,
+    "time_start": "18:00",
+    "time_meetup": "17:15",
+    "opponent": "CHOLET BASKET - 4",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "MAELIE DOUIN",
+      "CLARISSE AIRAUD"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U18-F1 CTC",
+    "group": "D1B",
+    "isDomicile": true,
+    "time_start": "19:30",
+    "time_meetup": "18:45",
+    "opponent": "AVRILLE BASKET - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "CLAIRE CHARPENTIER",
+      "THAIS BETOUX"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U13-M1",
+    "group": "D2E",
+    "isDomicile": true,
+    "time_start": "16:00",
+    "time_meetup": "15:15",
+    "opponent": "FUILETAIS REMYGEOIS BASKET",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "LILIAN AUGEREAU",
+      "LEO GODIER"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U18-M1",
+    "group": "D2A",
+    "isDomicile": true,
+    "time_start": "18:00",
+    "time_meetup": "17:15",
+    "opponent": "LAMBOISIERES-MARTIN BASKET - 3",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "ARTHUR BEDUNEAU",
+      "MARTIN BIOTTEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "U13-F2",
+    "group": "D4F",
+    "isDomicile": true,
+    "time_start": "9:30",
+    "time_meetup": "8:45",
+    "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "FLORIAN TEULE",
+      "LENNY THIMOUY"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "U13-M2",
+    "group": "D4H",
+    "isDomicile": true,
+    "time_start": "11:30",
+    "time_meetup": "10:45",
+    "opponent": "CHOLET JF - 3",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "MARTIN DIXNEUF",
+      "NOA GABORIT"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "Séniors M3",
+    "group": "D",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "12:30",
+    "opponent": "BMB - BEGROLLES LE MAY BASKET - 3 (4)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "FLAVIEN MAILET",
+      "LENA HAYAULT"
+    ],
+    "referees": [
+      "CLARISSE PICHERIT",
+      "EDOUARD BARRE"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "Séniors F1",
+    "group": "B",
+    "isDomicile": true,
+    "time_start": "15:30",
+    "time_meetup": "14:30",
+    "opponent": "BASKET SUD LOIRE - 1 (7)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "EMMA BAHUAUD",
+      "QUENTIN CHEVALIER"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "U18-F2",
+    "group": "D4E",
+    "isDomicile": true,
+    "time_start": "17:30",
+    "time_meetup": "16:45",
+    "opponent": "YZERNAY",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "AUDE CHARPENTIER",
+      "LOAN BOISIAUD"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "Séniors M1",
+    "group": "A",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "18:40",
+    "opponent": "SALLE ASTERION DE LA FREBAUDIERE",
+    "location": "ORVAULT SPORTS BASKET - 1 (8)",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U18-M2",
+    "group": "D2B",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "19:25",
+    "opponent": "SALLE DARMAILLACQ N01",
+    "location": "CHOLET JF - 1",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U18-M3 CTC",
+    "group": "D4D",
+    "isDomicile": false,
+    "time_start": "20:00",
+    "time_meetup": "19:15",
+    "opponent": "Exempt",
+    "location": null,
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U15-M1 CTC",
+    "group": "R2A",
+    "isDomicile": false,
+    "time_start": "16:00",
+    "time_meetup": "14:15",
+    "opponent": "GYMNASE DE LA CHANGETTERIE",
+    "location": "CTC WEST NANTAIS",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U11-M1",
+    "group": "D1B",
+    "isDomicile": false,
+    "time_start": "17:00",
+    "time_meetup": "15:55",
+    "opponent": "COMPLEXE FERDINAND SECHER",
+    "location": "NEUVY EN MAUGES",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U11-M2",
+    "group": "D2F",
+    "isDomicile": false,
+    "time_start": "16:00",
+    "time_meetup": "15:10",
+    "opponent": "SALLE DE SPORTS DES BLANDERIES",
+    "location": "CHAPELLE ROUSSELIN",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U11-M3",
+    "group": "D2E",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "14:50",
+    "opponent": "SALLE N 02 DE ST ANDRE",
+    "location": "SAINT ANDRE DE LA MARCHE BASKET - 1",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U9-M2",
+    "group": "D2D",
+    "isDomicile": false,
+    "time_start": "9:00",
+    "time_meetup": "7:55",
+    "opponent": "SALLE NICOLE ABAR- SAINT EXUPERY",
+    "location": "CHALONNES SUR LOIRE BASKET - 1 (1)",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "17/01/2026",
+    "team": "U11-F3",
+    "group": "D4G",
+    "isDomicile": false,
+    "time_start": "12:00",
+    "time_meetup": "11:15",
+    "opponent": "SALLE DES SPORTS ( VERTE )",
+    "location": "SAINT LEGER SOUS CHOLET",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "Séniors M2",
+    "group": "B",
+    "isDomicile": false,
+    "time_start": "13:15",
+    "time_meetup": "11:45",
+    "opponent": "COMPLEXE SPORTIF",
+    "location": "SAINT LAURENT DE LA PLAINE - 2 (5)",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "U15-M2",
+    "group": "D2A",
+    "isDomicile": false,
+    "time_start": "13:15",
+    "time_meetup": "12:10",
+    "opponent": "SALLE DU 8 MAI BEAUPREAU",
+    "location": "BEAUPREAU FIEF SAUVIN BASKET - 1",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "U15-M3",
+    "group": "D4D",
+    "isDomicile": false,
+    "time_start": "15:15",
+    "time_meetup": "13:55",
+    "opponent": "SALLE NICOLE ABAR- SAINT EXUPERY",
+    "location": "CHALONNES SUR LOIRE BASKET",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "Séniors F2",
+    "group": "C",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "14:10",
+    "opponent": "SALLE DU PLESSIS",
+    "location": "PUY SAINT BONNET BASKET - 1 (5)",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "18/01/2026",
+    "team": "U15-F",
+    "group": "D3C",
+    "isDomicile": false,
+    "time_start": "15:00",
+    "time_meetup": "13:25",
+    "opponent": "SALLE A - COMPLEXE DU MARIN",
+    "location": "BRISSAC AUBANCE BASKET",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
