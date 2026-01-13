@@ -129,6 +129,8 @@ const weekendRanges = computed(() => {
 -------------------------------------------------- */
 onMounted(() => {
   const today = new Date()
+  today.setHours(0, 0, 0, 0)
+
   const nextWeekendEntry = weekendRanges.value.find((entry) => {
     const firstDayStr = entry.saturdaysDateStr || entry.sundaysDateStr
     const firstDayDate = parseDate(firstDayStr)
