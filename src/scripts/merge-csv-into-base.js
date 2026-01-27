@@ -137,7 +137,15 @@ function convertRowToMatch(columns) {
  * Read the new CSV file and parse it into an array of Match objects.
  */
 function parseNewCSVFile(csvFile) {
-  const rawCSV = readFileSync(csvFile, 'utf8')
+  let rawCSV = readFileSync(csvFile, 'utf8')
+
+  // Remove line breaks inside quoted fields and replace with space
+  rawCSV = rawCSV.replace(/"([^"]*)"/g, (match) => {
+    return match.replace(/\r?\n\s*/g, ' ')
+  })
+
+  // Remove all remaining quotes
+  rawCSV = rawCSV.replace(/"/g, '')
 
   // parse
   const rows = parse(rawCSV, {
