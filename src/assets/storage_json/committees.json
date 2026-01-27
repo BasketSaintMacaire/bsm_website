@@ -22,7 +22,16 @@
     "description": "Organisation des événements et de la vie du club",
     "icon": "Beer",
     "email": "bar@bsmbasket.fr",
-    "members": ["Grégory DUPONT", "Mathieu VERGER", "Gaelle SAUNIER"]
+    "members": [
+      "Grégory DUPONT",
+      "Mathieu VERGER",
+      "Gaelle SAUNIER",
+      "Basile BOUMARD",
+      "Julien MORINIERE",
+      "Brigitte CLEMENCEAU",
+      "Nathanael CERQUEUS",
+      "Anthony HERVE"
+    ]
   },
   {
     "id": 3,
@@ -35,7 +44,6 @@
       "Jeanne MOREAU",
       "Ilona DANET",
       "Loris BLANCHARD",
-      "Simon GRASSET",
       "Claire CHARPENTIER",
       "Noa BREVET",
       "Camille BLANC"
@@ -87,6 +95,14 @@
     "description": "Organisation des tournois du club",
     "icon": "Flag",
     "email": "tournoi@bsmbasket.fr",
-    "members": ["Maxime LAURENDO", "Olivier MADY"]
+    "members": ["Maxime LAURENDEAU", "Olivier MADY"]
+  },
+  {
+    "id": 10,
+    "name": "Commission Bureau des Jeunes",
+    "description": "Organisation des activités pour et par les jeunes licenciés",
+    "icon": "Smile",
+    "email": "communication@bsmbasket.fr",
+    "members": ["Simon GRASSET", "Océane BEAUMIER"]
   }
 ]
