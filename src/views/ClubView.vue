@@ -123,6 +123,41 @@ const navigateTo = (route: string) => {
         </div>
       </div>
 
+      <!-- Règlement du Club Section -->
+      <div class="mb-16">
+        <div class="relative bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 opacity-10">
+            <Award class="w-full h-full" />
+          </div>
+
+          <div class="p-8">
+            <div class="flex items-center mb-4">
+              <Award class="w-10 h-10 text-white mr-3" />
+              <h3 class="text-2xl font-bold text-white">RÈGLEMENT INTÉRIEUR</h3>
+            </div>
+            <p class="text-white mb-6 max-w-2xl">
+              Consultez et téléchargez le règlement intérieur du BSM pour connaître les droits et
+              obligations de tous les membres du club.
+            </p>
+            <a
+              href="/files/reglement-interieur-bsm.pdf"
+              download
+              class="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                ></path>
+              </svg>
+              Télécharger le règlement
+            </a>
+          </div>
+        </div>
+      </div>
+
       <!-- Labels Section Title -->
       <div class="mb-12 text-center">
         <h2
