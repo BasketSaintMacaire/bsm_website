@@ -63,7 +63,7 @@
     "description": "Gestion des plannings et des feuilles de match",
     "icon": "Calendar",
     "email": "planning@bsmbasket.fr",
-    "members": ["Olivier BARON (planning)", "Nadia GEMAR (feuilles de match)"]
+    "members": ["Olivier BARON (planning)", "Nadia GMAR (feuilles de match)"]
   },
   {
     "id": 6,
@@ -79,7 +79,7 @@
     "description": "Gestion de la boutique et des stocks",
     "icon": "Store",
     "email": "boutique@bsmbasket.fr",
-    "members": ["Nadia GEMAR"]
+    "members": ["Nadia GMAR"]
   },
   {
     "id": 8,
@@ -102,7 +102,7 @@
     "name": "Commission Bureau des Jeunes",
     "description": "Organisation des activités pour et par les jeunes licenciés",
     "icon": "Smile",
-    "email": "communication@bsmbasket.fr",
+    "email": "contact@bsmbasket.fr",
     "members": ["Simon GRASSET", "Océane BEAUMIER"]
   }
 ]
