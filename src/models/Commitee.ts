@@ -3,5 +3,6 @@ export interface Committee {
   name: string
   description: string
   icon: string
+  email: string
   members: string[]
 }

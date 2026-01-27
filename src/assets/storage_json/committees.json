@@ -4,6 +4,7 @@
     "name": "Commission Technique",
     "description": "Gestion des équipes et de la politique sportive du club",
     "icon": "Trophy",
+    "email": "technique@bsmbasket.fr",
     "members": [
       "Thibault HUTEAU",
       "Maxime COTTENCEAU",
@@ -11,8 +12,6 @@
       "Jérémie JOREAU",
       "Antoine GALLARD",
       "Jérémy POILANE",
-      "Axel NAUD",
-      "Julien BEAUDOUIN",
       "Florent PAVAGEAU",
       "Jason BIOTTEAU"
     ]
@@ -22,13 +21,15 @@
     "name": "Commission Bar et Animation",
     "description": "Organisation des événements et de la vie du club",
     "icon": "Beer",
-    "members": ["Basile BOUMARD", "Nathanael CERQUEUS", "Anthony HERVE", "Julien MORINIERE"]
+    "email": "bar@bsmbasket.fr",
+    "members": ["Grégory DUPONT", "Mathieu VERGER", "Gaelle SAUNIER"]
   },
   {
     "id": 3,
     "name": "Commission Communication",
     "description": "Gestion de la communication interne et externe",
     "icon": "Megaphone",
+    "email": "communication@bsmbasket.fr",
     "members": [
       "Laureen HAYEE",
       "Jeanne MOREAU",
@@ -45,20 +46,23 @@
     "name": "Commission Sponsoring",
     "description": "Recherche et relation avec les partenaires",
     "icon": "PiggyBank",
-    "members": ["Martin BIOTTEAU", "Justin LANDREAU"]
+    "email": "sponsoring@bsmbasket.fr",
+    "members": ["Martin BIOTTEAU"]
   },
   {
     "id": 5,
     "name": "Commission Planning",
     "description": "Gestion des plannings et des feuilles de match",
     "icon": "Calendar",
-    "members": ["Olivier BARON", "Emmanuelle"]
+    "email": "planning@bsmbasket.fr",
+    "members": ["Olivier BARON (planning)", "Nadia GEMAR (feuilles de match)"]
   },
   {
     "id": 6,
     "name": "Commission Ressources Humaines",
     "description": "Gestion des recrutements",
     "icon": "UserPlus",
+    "email": "secretaire@bsmbasket.fr",
     "members": ["Martin BIOTTEAU", "Céline GRASSET", "Yasmine HUMEAU", "Valentin DEVANNE"]
   },
   {
@@ -66,6 +70,23 @@
     "name": "Commission Boutique",
     "description": "Gestion de la boutique et des stocks",
     "icon": "Store",
-    "members": ["Emmanuelle"]
+    "email": "boutique@bsmbasket.fr",
+    "members": ["Nadia GEMAR"]
+  },
+  {
+    "id": 8,
+    "name": "Commission Arbitrage",
+    "description": "Gestion des arbitres et de la formation",
+    "icon": "Scale",
+    "email": "technique@bsmbasket.fr",
+    "members": ["Jason BIOTTEAU"]
+  },
+  {
+    "id": 9,
+    "name": "Commission Tournois",
+    "description": "Organisation des tournois du club",
+    "icon": "Flag",
+    "email": "tournoi@bsmbasket.fr",
+    "members": ["Maxime LAURENDO", "Olivier MADY"]
   }
 ]

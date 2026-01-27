@@ -108,6 +108,16 @@ const committees = ref<Committee[]>(committeesDataJson as Committee[])
             {{ committee.description }}
           </p>
 
+          <!-- Email link -->
+          <div class="mb-4">
+            <a
+              :href="`mailto:${committee.email}`"
+              class="text-purple-500 dark:text-purple-400 hover:underline text-sm font-medium"
+            >
+              {{ committee.email }}
+            </a>
+          </div>
+
           <!-- Member badges -->
           <div class="flex flex-wrap gap-2">
             <span
