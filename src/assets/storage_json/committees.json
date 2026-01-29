@@ -30,7 +30,11 @@
       "Julien MORINIERE",
       "Brigitte CLEMENCEAU",
       "Nathanael CERQUEUS",
-      "Anthony HERVE"
+      "Anthony HERVE",
+      "Marie THOMAS",
+      "Leslie JUVIN",
+      "Louise GABORIEAU",
+      "Sandrine JOREAU"
     ]
   },
   {
@@ -38,7 +42,7 @@
     "name": "Commission Communication",
     "description": "Gestion de la communication interne et externe",
     "icon": "Megaphone",
-    "email": "communication@bsmbasket.fr",
+    "email": "contact@bsmbasket.fr",
     "members": [
       "Laureen HAYEE",
       "Jeanne MOREAU",
