@@ -6966,5 +6966,19 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "22/02/2026",
+    "team": "Séniors M3",
+    "group": "D",
+    "isDomicile": false,
+    "time_start": "15:00",
+    "time_meetup": "13:20",
+    "opponent": "ELAN DES MAUGES - 2",
+    "location": "SALLE DE LANDEMONT",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
