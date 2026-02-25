@@ -6865,7 +6865,10 @@
     "opponent": "ANGERS ACBB BASKET",
     "location": "Salle Georges Raymond",
     "board_official": [],
-    "referees": ["SAM CHALOPIN", "JEANNE ROLANDEAU"],
+    "referees": [
+      "SAM CHALOPIN",
+      "JEANNE ROLANDEAU"
+    ],
     "bar": null,
     "result": []
   },
@@ -6879,7 +6882,10 @@
     "opponent": "LAYON BASKET CLUB",
     "location": "Salle Georges Raymond",
     "board_official": [],
-    "referees": ["PIERRE LOUIS BOISIE", "FLAVIEN MAILLET"],
+    "referees": [
+      "PIERRE LOUIS BOISIE",
+      "FLAVIEN MAILLET"
+    ],
     "bar": null,
     "result": []
   },
@@ -6892,7 +6898,10 @@
     "time_meetup": "19:15",
     "opponent": "CARQUEFOU BASKET",
     "location": "Salle Georges Raymond",
-    "board_official": ["CLARA BARON", "AUDE CHARPENTIER"],
+    "board_official": [
+      "CLARA BARON",
+      "AUDE CHARPENTIER"
+    ],
     "referees": [],
     "bar": "Détente Gars",
     "result": []
@@ -6907,7 +6916,10 @@
     "opponent": "PONT DE CE BASKET",
     "location": "Salle Pierre de Coubertin",
     "board_official": [],
-    "referees": ["LILIAN AUGEREAU", "LORIS BLANCHARD"],
+    "referees": [
+      "LILIAN AUGEREAU",
+      "LORIS BLANCHARD"
+    ],
     "bar": null,
     "result": []
   },
@@ -6921,7 +6933,10 @@
     "opponent": "SAINT SYLVAIN D'ANJOU BASKET",
     "location": "Salle Pierre de Coubertin",
     "board_official": [],
-    "referees": ["JASON BIOTTEAU", "ENZO BARON"],
+    "referees": [
+      "JASON BIOTTEAU",
+      "ENZO BARON"
+    ],
     "bar": null,
     "result": []
   },
@@ -6976,6 +6991,88 @@
     "time_meetup": "13:20",
     "opponent": "ELAN DES MAUGES - 2",
     "location": "SALLE DE LANDEMONT",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "28/02/2026",
+    "team": "U18-F1 CTC",
+    "group": "D1B",
+    "isDomicile": true,
+    "time_start": "14:00",
+    "time_meetup": "13:15",
+    "opponent": "GREZ NEUVILLE - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "28/02/2026",
+    "team": "U15-M1 CTC",
+    "group": "Coupe des Pdl",
+    "isDomicile": true,
+    "time_start": "16:00",
+    "time_meetup": "15:15",
+    "opponent": "ETOILE ANGERS BASKET 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "01/03/2026",
+    "team": "Séniors M3",
+    "group": "D",
+    "isDomicile": true,
+    "time_start": "11:00",
+    "time_meetup": "10:00",
+    "opponent": "POITEVINIERE LE PIN 5",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "SAM CHALOPIN",
+      "LEILA GRIFFON"
+    ],
+    "referees": [
+      "PIERRE LOUIS BOISSIE",
+      "SIMON THIBAUDEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "28/02/2026",
+    "team": "U13-F1",
+    "group": "D2D",
+    "isDomicile": false,
+    "time_start": "14:00",
+    "time_meetup": "13:00",
+    "opponent": "ROUSSAY VILLEDIEU",
+    "location": "Salle polyvalente de Roussay",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "28/02/2026",
+    "team": "U15-M2",
+    "group": "D2A",
+    "isDomicile": false,
+    "time_start": "17:30",
+    "time_meetup": "16:30",
+    "opponent": "MOINE BASKET CLUB",
+    "location": "Salle N°1 Saint Germain",
     "board_official": [],
     "referees": [],
     "bar": null,
