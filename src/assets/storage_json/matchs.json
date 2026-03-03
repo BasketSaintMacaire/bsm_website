@@ -7077,5 +7077,451 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U9-M1",
+    "group": "D1C",
+    "isDomicile": true,
+    "time_start": "9:00",
+    "time_meetup": "8:30",
+    "opponent": "SAINT CHRISTOPHE DU BOIS - 1 (1)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "MANOE DOUILLARD",
+      "MARIO BREVET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U11-F2",
+    "group": "D4F",
+    "isDomicile": true,
+    "time_start": "10:30",
+    "time_meetup": "10:00",
+    "opponent": "LAMBOISIERES-MARTIN BASKET - 4",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "INES VERGER",
+      "CHANEL PENIGUEL"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U11-M4",
+    "group": "D4H",
+    "isDomicile": true,
+    "time_start": "12:00",
+    "time_meetup": "11:30",
+    "opponent": "MOINE BASKET CLUB - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "SACHA BOUCHET",
+      "TIMEO TERRIEN"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U9-F1",
+    "group": "D4A",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "13:00",
+    "opponent": "AVENIR TREMENTINES BASKET - 2 (1)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "NOE LORTEAU",
+      "TYRON BONNET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U11-F1",
+    "group": "D1D",
+    "isDomicile": true,
+    "time_start": "15:00",
+    "time_meetup": "14:30",
+    "opponent": "BMB - BEGROLLES LE MAY BASKET - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "NINO BOUYER",
+      "LANA BOISIAUD"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U9-M3",
+    "group": "D4M",
+    "isDomicile": true,
+    "time_start": "16:30",
+    "time_meetup": "16:00",
+    "opponent": "AVENIR TREMENTINES BASKET - 3 (1)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "VICTOR BIOTTEAU",
+      "CELESTINE HAMARD"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U18-M3 CTC",
+    "group": "D4D",
+    "isDomicile": true,
+    "time_start": "18:00",
+    "time_meetup": "17:15",
+    "opponent": "TESSOUALLE",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "TIMOTHEE SIMON",
+      "ANTOINE THIBAULT"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U18-M2",
+    "group": "D2B",
+    "isDomicile": true,
+    "time_start": "20:00",
+    "time_meetup": "19:15",
+    "opponent": "EVRE BASKET CLUB - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "ROBIN SAUTEJEAU",
+      "YORIS PAVAGEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U15-M2",
+    "group": "D2A",
+    "isDomicile": true,
+    "time_start": "16:15",
+    "time_meetup": "15:30",
+    "opponent": "EVRE BASKET CLUB - 1",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "MAXENCE GOURAUD",
+      "ARTHUR BENETEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U15-F",
+    "group": "D3C",
+    "isDomicile": true,
+    "time_start": "18:15",
+    "time_meetup": "17:30",
+    "opponent": "POMJEANNAIS BASKET CLUB",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "EMMA BAHUAUD",
+      "CLARISSE AIRAUD"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U18-F2",
+    "group": "D4E",
+    "isDomicile": true,
+    "time_start": "20:15",
+    "time_meetup": "19:30",
+    "opponent": "AVENIR TREMENTINES BASKET - 2",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "MELINE HAYAULT",
+      "ZIA CHAUVAT"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "08/03/2026",
+    "team": "U13-M1",
+    "group": "D2E",
+    "isDomicile": true,
+    "time_start": "9:45",
+    "time_meetup": "9:00",
+    "opponent": "SEGUINIERE (LA) ST LOUIS BASKET",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "PAUL ROLANDEAU",
+      "LILIAN AUGEREAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "08/03/2026",
+    "team": "Séniors M3",
+    "group": "D",
+    "isDomicile": true,
+    "time_start": "11:30",
+    "time_meetup": "10:30",
+    "opponent": "ROUSSAY VILLEDIEU - 2 (6)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "THEOTIME PAVAGEAU",
+      "MAELLE PACAUD"
+    ],
+    "referees": [
+      "LEILA GRIFFON",
+      "KEVIN BLOUT"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "08/03/2026",
+    "team": "Séniors F2",
+    "group": "C",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "12:30",
+    "opponent": "MOINE BASKET CLUB - 2 (9)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "LAURYN JOREAU",
+      "LAUREEN HAYEE"
+    ],
+    "referees": [
+      "CLARISSE PICHERIT",
+      "EDOUARD BARRE"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "08/03/2026",
+    "team": "Séniors F1",
+    "group": "B",
+    "isDomicile": true,
+    "time_start": "15:30",
+    "time_meetup": "14:30",
+    "opponent": "SALLERTAINE BASKET CLUB - 1 (9)",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "MANON GUEDON",
+      "HERMANCE CHEVRIER"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "Séniors M1",
+    "group": "A",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "18:15",
+    "opponent": "REZE BASKET 44 - 3 (13)",
+    "location": "SALLE LUCIEN CAVALIN",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U18-M1",
+    "group": "D2A",
+    "isDomicile": false,
+    "time_start": "18:00",
+    "time_meetup": "16:45",
+    "opponent": "CHEMILLE - 2",
+    "location": "SALLE BELLEVUE CHEMILLE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U15-M1 CTC",
+    "group": "R2A",
+    "isDomicile": false,
+    "time_start": "16:00",
+    "time_meetup": "13:45",
+    "opponent": "CTC SNBC ST NAZAIRE",
+    "location": "SALLE BERTAUDERIE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U15-M3",
+    "group": "D4D",
+    "isDomicile": false,
+    "time_start": "16:30",
+    "time_meetup": "15:20",
+    "opponent": "EVRE BASKET CLUB - 3",
+    "location": "SALLE DE L'EVRE MONTREVAULT",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U13-M2",
+    "group": "D4H",
+    "isDomicile": false,
+    "time_start": "18:15",
+    "time_meetup": "17:10",
+    "opponent": "SAINT CHRISTOPHE DU BOIS",
+    "location": "SALLE A - ST CHRISTOPHE DU BOIS",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U11-M1",
+    "group": "D1B",
+    "isDomicile": false,
+    "time_start": "12:30",
+    "time_meetup": "11:40",
+    "opponent": "AVENIR TREMENTINES BASKET - 1",
+    "location": "SALLE DU FARFADET",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U11-M2",
+    "group": "D2F",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "14:40",
+    "opponent": "SAINT CHRISTOPHE DU BOIS - 1",
+    "location": "SALLE A - ST CHRISTOPHE DU BOIS",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U11-M3",
+    "group": "D2E",
+    "isDomicile": false,
+    "time_start": "9:00",
+    "time_meetup": "8:00",
+    "opponent": "CHEMILLE - 2",
+    "location": "SALLE BELLEVUE CHEMILLE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U9-M2",
+    "group": "D2D",
+    "isDomicile": false,
+    "time_start": "11:00",
+    "time_meetup": "10:15",
+    "opponent": "JUB JALLAIS BASKET - 1 (1)",
+    "location": "SALLE DE LA JUBAUDIERE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U13-F1",
+    "group": "D2D",
+    "isDomicile": false,
+    "time_start": "15:00",
+    "time_meetup": "13:45",
+    "opponent": "CHEMILLE",
+    "location": "SALLE POLYVALENTE MELAY",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U13-F2",
+    "group": "D4F",
+    "isDomicile": false,
+    "time_start": "11:00",
+    "time_meetup": "10:00",
+    "opponent": "SEGUINIERE (LA) ST LOUIS BASKET - 2",
+    "location": "SALLE DE L'ARCEAU N 1",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "07/03/2026",
+    "team": "U11-F3",
+    "group": "D4G",
+    "isDomicile": false,
+    "time_start": "14:00",
+    "time_meetup": "13:20",
+    "opponent": "SAINT ANDRE DE LA MARCHE BASKET - 2",
+    "location": "SALLE N 02 DE ST ANDRE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "08/03/2026",
+    "team": "Séniors M2",
+    "group": "B",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "14:10",
+    "opponent": "PUY SAINT BONNET BASKET - 2 (4)",
+    "location": "SALLE DU PUY ST BONNET",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
