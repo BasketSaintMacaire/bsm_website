@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { X, Users, Trophy, Smile } from 'lucide-vue-next'
 import teamDataJson from '@/assets/storage_json/team.json'
 import type { Team } from '@/models/Team'
+import LazyImage from '@/components/LazyImage.vue'
 
 const teams = ref<Team[]>(teamDataJson as Team[])
 const selectedCategory = ref<'men' | 'women' | 'pleasure'>('men')
@@ -153,9 +154,11 @@ onUnmounted(() => {
           <div
             class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"
           ></div>
-          <img
+          <LazyImage
             :src="team.image"
             :alt="team.name"
+            width="100%"
+            height="320px"
             class="w-full h-80 object-cover transition-transform duration-500 md:group-hover:scale-110"
             @error="handleImageError"
           />
@@ -202,9 +205,11 @@ onUnmounted(() => {
           v-if="selectedTeam"
           class="mb-6 rounded-lg overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-800"
         >
-          <img
+          <LazyImage
             :src="selectedTeam.image"
             :alt="selectedTeam.name"
+            width="100%"
+            height="auto"
             class="w-full h-auto object-contain"
             @error="handleImageError"
           />

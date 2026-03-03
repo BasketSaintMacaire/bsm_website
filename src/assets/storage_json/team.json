@@ -1200,5 +1200,21 @@
       { "id": 10, "name": "?", "position": "Coach", "number": 0 },
       { "id": 10, "name": "?", "position": "Coach", "number": 0 }
     ]
+  },
+  {
+    "id": 72,
+    "name": "DETENTE F",
+    "season": "2025-2026",
+    "image": "/gallery/team_pleasure/2025-2026/DETENTEF.webp",
+    "category": "pleasure",
+    "players": []
+  },
+  {
+    "id": 73,
+    "name": "DETENTE M",
+    "season": "2025-2026",
+    "image": "/gallery/team_pleasure/2025-2026/DETENTEM.webp",
+    "category": "pleasure",
+    "players": []
   }
 ]
