@@ -7526,6 +7526,20 @@
   },
   {
     "date": "14/03/2026",
+    "team": "U13-M1",
+    "group": "D2E",
+    "isDomicile": false,
+    "time_start": "9:30",
+    "time_meetup": "8:15",
+    "opponent": "MAULEVRIER",
+    "location": "SALLE MAULEVRIER N1 - RUBIS",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "14/03/2026",
     "team": "U11-M2",
     "group": "D2F",
     "isDomicile": true,
@@ -7535,7 +7549,7 @@
     "location": "Salle Pierre de Coubertin",
     "board_official": [],
     "referees": [
-      "ROBIN BEGUE",
+      "MYLAN BONNEAU",
       "EVAN JOYER"
     ],
     "bar": null,
@@ -7552,7 +7566,7 @@
     "location": "Salle Pierre de Coubertin",
     "board_official": [],
     "referees": [
-      "TIMOTHE SAUTEJEAU",
+      "ALLESSANDRO CHIRON",
       "LORENZO LACROIX"
     ],
     "bar": null,
@@ -7569,7 +7583,7 @@
     "location": "Salle Pierre de Coubertin",
     "board_official": [],
     "referees": [
-      "NOLAN PIVETEAU",
+      "TIMOTHEE GIRAULT",
       "TOM BLANCHARD"
     ],
     "bar": null,
