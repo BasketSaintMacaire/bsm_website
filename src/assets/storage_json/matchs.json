@@ -8770,5 +8770,50 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "04/04/2026",
+    "team": "Séniors M1",
+    "group": "A",
+    "isDomicile": true,
+    "time_start": "20:30",
+    "time_meetup": "19:30",
+    "opponent": "LES SABLES VENDEE BASKET - 2",
+    "location": "Salle Georges Raymond",
+    "board_official": [
+      "CLARA BARON",
+      "THEOTIME PAVAGEAU"
+    ],
+    "referees": [],
+    "bar": "U15M2",
+    "result": []
+  },
+  {
+    "date": "04/04/2026",
+    "team": "U15F",
+    "group": "Challenge de l'Anjou",
+    "isDomicile": false,
+    "time_start": "13:30",
+    "time_meetup": "12:15",
+    "opponent": "VAL HYROME BASKET",
+    "location": "SALLE DE ST LAMBERT",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "05/04/2026",
+    "team": "Séniors F1",
+    "group": "B",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "13:45",
+    "opponent": "I.B.C. - Indre Basket Club - 1",
+    "location": "GRAND VOILE - COMPLEXE TABARLY",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
