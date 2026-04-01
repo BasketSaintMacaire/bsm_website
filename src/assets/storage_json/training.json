@@ -1,107 +1,135 @@
 [
   {
-    "name": "VACANCES FEVRIER",
+    "name": "VACANCES AVRIL",
     "days": [
       {
-        "date": "LUNDI 16",
+        "date": "LUNDI 13",
         "sessions": [
           {
             "time": "17H15-18H30",
-            "groups": ["U07 F&G", "TICKETS SPORT"],
+            "groups": ["U7"],
             "location": "Salle Georges Raymond"
           }
         ]
       },
       {
-        "date": "MERCREDI 18",
+        "date": "MERCREDI 15",
         "sessions": [
           {
             "time": "10H45-12H00",
-            "groups": ["U07 F&G", "TICKETS SPORT"],
+            "groups": ["U7"],
             "location": "Salle Georges Raymond"
           }
         ]
       },
       {
-        "date": "LUNDI 23",
+        "date": "LUNDI 20",
         "sessions": [
           {
-            "time": "10H00-16H00",
-            "groups": ["U13F&G", "U15F&G"],
+            "time": "13H00-14H30",
+            "groups": ["U13F CTC (BSM+SAM)"],
             "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin",
-            "notes": "Prévoir le pique-nique; sauf U15G1 CTC élargi U15G2"
+            "trainer": "Jérémy & Colin (BSM) & Mathis (SAM)"
+          },
+          {
+            "time": "14H30-16H00",
+            "groups": ["U13G CTC (BSM+SAM)"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Jérémy & Colin (BSM) & Mathis (SAM)"
           },
           {
             "time": "16H00-17H30",
-            "groups": ["U18F&G"],
+            "groups": ["U18F CTC (BSM+SAM)"],
             "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin"
+            "trainer": "Jérémy & Colin (BSM) & Mathis (SAM)"
           },
           {
             "time": "19H00-20H30",
             "groups": ["U15G1 CTC (élargi U15G2)"],
             "location": "Saint André",
-            "trainer": "Jérôme"
+            "trainer": "Mathis"
           }
         ]
       },
       {
-        "date": "MARDI 24",
+        "date": "MARDI 21",
         "sessions": [
           {
             "time": "10H00-16H00",
-            "groups": ["U09F&G", "U11F&G"],
+            "groups": ["U09 F&G", "U11 F&G"],
             "location": "Salle Georges Raymond",
             "trainer": "Jérémy & Colin",
             "notes": "Prévoir le pique-nique"
           },
           {
-            "time": "19H00-20H30",
+            "time": "16H00-17H30",
+            "groups": ["U18G", "U15G1 CTC"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Jérémy & Colin"
+          },
+          {
+            "time": "20H30-22H00",
             "groups": ["U21G CTC"],
             "location": "Saint André",
-            "trainer": "Florian et/ou Carole"
+            "trainer": "Florian"
           }
         ]
       },
       {
-        "date": "MERCREDI 25",
+        "date": "MERCREDI 22",
         "sessions": [
           {
-            "time": "10H00-16H00",
-            "groups": ["U13F&G", "U15F&G"],
+            "time": "10H00-12H00",
+            "groups": ["U13 F&G"],
             "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin",
-            "notes": "Prévoir le pique-nique; sauf U15G1 CTC"
+            "trainer": "Jérémy & Colin"
           },
           {
-            "time": "16H00-17H30",
-            "groups": ["U18F&G", "U15G1 CTC"],
+            "time": "14H00-16H00",
+            "groups": ["U15 F&G"],
             "location": "Salle Georges Raymond",
             "trainer": "Jérémy & Colin"
           }
         ]
       },
       {
-        "date": "JEUDI 26",
+        "date": "JEUDI 23",
         "sessions": [
           {
             "time": "10H00-16H00",
-            "groups": ["U09F&G", "U11F&G"],
+            "groups": ["U09 F&G", "U11 F&G"],
             "location": "Salle Georges Raymond",
             "trainer": "Jérémy & Colin",
             "notes": "Prévoir le pique-nique"
+          },
+          {
+            "time": "16H00-17H30",
+            "groups": ["U18 F&G"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Jérémy & Colin"
           }
         ]
       },
       {
-        "date": "VENDREDI 27",
+        "date": "VENDREDI 24",
         "sessions": [
           {
-            "time": "19H00-20H30",
+            "time": "10H00-12H00",
+            "groups": ["U13 F&G"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Jérémy & Colin"
+          },
+          {
+            "time": "14H00-16H00",
+            "groups": ["U15 F&G"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Jérémy & Colin"
+          },
+          {
+            "time": "19H30-21H00",
             "groups": ["U21G CTC"],
             "location": "Saint André",
-            "trainer": "Florian et/ou Carole"
+            "trainer": "Florian"
           }
         ]
       }
