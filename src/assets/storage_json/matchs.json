@@ -8815,5 +8815,236 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U11-M2",
+    "group": "D2F",
+    "isDomicile": true,
+    "time_start": "10:30",
+    "time_meetup": "10:00",
+    "opponent": "SAINT CHRISTOPHE DU BOIS - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "NINO BOUYER",
+      "SOFIANE ADLI"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "25/04/2026",
+    "team": "U9-M2",
+    "group": "D2D",
+    "isDomicile": true,
+    "time_start": "12:00",
+    "time_meetup": "11:30",
+    "opponent": "SAINT LAURENT DE LA PLAINE - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "ELIO CASSIN CESBRON",
+      "LUCAS GUEDON"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U13-F1",
+    "group": "D2D",
+    "isDomicile": true,
+    "time_start": "16:15",
+    "time_meetup": "15:30",
+    "opponent": "ROUSSAY VILLEDIEU",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "TIMOTHEE GIRAULT",
+      "MATHILDE COEURET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U15-M3",
+    "group": "D4D",
+    "isDomicile": true,
+    "time_start": "18:15",
+    "time_meetup": "17:30",
+    "opponent": "POMJEANNAIS BASKET CLUB",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "AMAURY FORT",
+      "YORIS PAVAGEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "12/04/2026",
+    "team": "U18-M1",
+    "group": "D2A",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "12:45",
+    "opponent": "VAL HYROME BASKET - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "OCEANE BEAUMIER",
+      "CHARLES MOREAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "12/04/2026",
+    "team": "Séniors F1",
+    "group": "B",
+    "isDomicile": true,
+    "time_start": "15:30",
+    "time_meetup": "14:30",
+    "opponent": "LA CHAPELLE ST AUBIN - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "MANON GUEDON",
+      "HERMANCE CHEVRIER"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "Séniors M1",
+    "group": "A",
+    "isDomicile": false,
+    "time_start": "20:30",
+    "time_meetup": "19:00",
+    "opponent": "ETOILE DE CLISSON BASKET - 1",
+    "location": "SALLE BRETAGNE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U18-M3 CTC",
+    "group": "D4D",
+    "isDomicile": false,
+    "time_start": "17:30",
+    "time_meetup": "16:15",
+    "opponent": "SEVRE BASKET A.S. - 2",
+    "location": "SALLE DE TORFOU",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U18-FCTC",
+    "group": "D1A",
+    "isDomicile": false,
+    "time_start": "18:00",
+    "time_meetup": "16:15",
+    "opponent": "STE GEMME D'ANDIGNE",
+    "location": "SALLE DE STE GEMME",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U18-F2",
+    "group": "D4E",
+    "isDomicile": false,
+    "time_start": "17:00",
+    "time_meetup": "15:45",
+    "opponent": "CHOLET JF",
+    "location": "SALLE DARMAILLACQ N01",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U18-M2",
+    "group": "D2B",
+    "isDomicile": false,
+    "time_start": "18:00",
+    "time_meetup": "16:00",
+    "opponent": "PONTS DE CE BASKET - 1",
+    "location": "SALLE SAINT MAURILLE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U15-M2",
+    "group": "D2A",
+    "isDomicile": false,
+    "time_start": "16:00",
+    "time_meetup": "15:00",
+    "opponent": "CHOLET BASKET - 4",
+    "location": "SALLE JOACHIM DU BELLAY",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U13-M2",
+    "group": "D4H",
+    "isDomicile": false,
+    "time_start": "14:00",
+    "time_meetup": "13:00",
+    "opponent": "MOINE BASKET CLUB - 2",
+    "location": "SALLE DE ST CRESPIN SUR MOINE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U15-F",
+    "group": "D3C",
+    "isDomicile": false,
+    "time_start": "13:00",
+    "time_meetup": "11:15",
+    "opponent": "GARENNES LOIRE BASKET CLUB 49 - GLBC 49.",
+    "location": "SALLE LA LIMOUSINE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "11/04/2026",
+    "team": "U13-F2",
+    "group": "D4F",
+    "isDomicile": false,
+    "time_start": "12:00",
+    "time_meetup": "11:00",
+    "opponent": "CHOLET BASKET - 3",
+    "location": "SALLE JOACHIM DU BELLAY",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
