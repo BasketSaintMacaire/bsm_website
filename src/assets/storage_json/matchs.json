@@ -9305,5 +9305,245 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U13-F1",
+    "group": "D2D",
+    "isDomicile": true,
+    "time_start": "10:30",
+    "time_meetup": "9:45",
+    "opponent": "CHEMILLE",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "THEO LECOMTE",
+      "ARTHUR BENETEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U13-F2",
+    "group": "D4F",
+    "isDomicile": true,
+    "time_start": "12:00",
+    "time_meetup": "11:15",
+    "opponent": "SEGUINIERE (LA) ST LOUIS BASKET - 2",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "ABEL LEMARIE LOVADINA",
+      "NOA GABORIT"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U15-M1",
+    "group": "R2A",
+    "isDomicile": true,
+    "time_start": "16:00",
+    "time_meetup": "15:15",
+    "opponent": "ST NAZAIRE",
+    "location": "Salle de st andré N°1",
+    "board_official": [],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U13-M2",
+    "group": "D4H",
+    "isDomicile": true,
+    "time_start": "16:15",
+    "time_meetup": "15:30",
+    "opponent": "SAINT CHRISTOPHE DU BOIS",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "AMAURY FORT",
+      "KEWEN MERA"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U18-M1",
+    "group": "D2A",
+    "isDomicile": true,
+    "time_start": "18:15",
+    "time_meetup": "17:30",
+    "opponent": "CHEMILLE - 2",
+    "location": "Salle Georges Raymond",
+    "board_official": [],
+    "referees": [
+      "MAXIME COTTENCEAU",
+      "MARTIN BIOTTEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "Séniors M1",
+    "group": "A",
+    "isDomicile": true,
+    "time_start": "20:30",
+    "time_meetup": "19:30",
+    "opponent": "ERDRE BASKET CLUB - 1",
+    "location": "Salle Georges Raymond",
+    "board_official": [
+      "TOM BEGUE",
+      "CLARA BARON"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "10/05/2026",
+    "team": "U15-M3",
+    "group": "D4D",
+    "isDomicile": true,
+    "time_start": "11:30",
+    "time_meetup": "10:45",
+    "opponent": "EVRE BASKET CLUB - 3",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "HUGO AURICHE",
+      "PAUL ROLANDEAU"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "10/05/2026",
+    "team": "Séniors M2",
+    "group": "B",
+    "isDomicile": true,
+    "time_start": "13:30",
+    "time_meetup": "12:30",
+    "opponent": "DOUE LA FONTAINE - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "LOUKA MARAIS",
+      "LEILA GRIFFON"
+    ],
+    "referees": [
+      "SIMON GRASSET",
+      "NOE GRASSET"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U18-FCTC",
+    "group": "D1A",
+    "isDomicile": false,
+    "time_start": "18:00",
+    "time_meetup": "16:55",
+    "opponent": "MOINE BASKET",
+    "location": "SALLE N°1 ST GERMAIN",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U18-F2",
+    "group": "D4E",
+    "isDomicile": false,
+    "time_start": "20:00",
+    "time_meetup": "18:55",
+    "opponent": "AVENIR TREMENTINES BASKET - 2",
+    "location": "SALLE AUDIGANE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U15-F",
+    "group": "D3C",
+    "isDomicile": false,
+    "time_start": "14:00",
+    "time_meetup": "12:30",
+    "opponent": "POMJEANNAIS BASKET CLUB",
+    "location": "SALLE DE MONTJEAN SUR LOIRE",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "09/05/2026",
+    "team": "U13-M1",
+    "group": "D2E",
+    "isDomicile": false,
+    "time_start": "13:30",
+    "time_meetup": "12:30",
+    "opponent": "SEGUINIERE (LA) ST LOUIS BASKET",
+    "location": "SALLE DE L'ARCEAU N 2",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "10/05/2026",
+    "team": "Séniors F1",
+    "group": "B",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "13:10",
+    "opponent": "LES SABLES VENDEE BASKET - 1",
+    "location": "SALLE BEAUSEJOUR",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "10/05/2026",
+    "team": "U18-M2",
+    "group": "D2B",
+    "isDomicile": false,
+    "time_start": "12:00",
+    "time_meetup": "10:50",
+    "opponent": "EVRE BASKET CLUB - 1",
+    "location": "SALLE DE ST PIERRE MONTLIMART",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "10/05/2026",
+    "team": "U15-M2",
+    "group": "D2A",
+    "isDomicile": false,
+    "time_start": "10:00",
+    "time_meetup": "8:50",
+    "opponent": "EVRE BASKET CLUB - 1",
+    "location": "SALLE DE ST PIERRE MONTLIMART",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
