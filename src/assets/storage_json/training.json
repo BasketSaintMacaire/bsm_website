@@ -1,135 +1,194 @@
 [
   {
-    "name": "VACANCES AVRIL",
+    "name": "FIN DE SAISON 2025/2026",
+    "period": "Du 18 Mai au 26 Juin 2026",
     "days": [
       {
-        "date": "LUNDI 13",
+        "date": "LUNDI",
         "sessions": [
           {
             "time": "17H15-18H30",
-            "groups": ["U7"],
-            "location": "Salle Georges Raymond"
-          }
-        ]
-      },
-      {
-        "date": "MERCREDI 15",
-        "sessions": [
-          {
-            "time": "10H45-12H00",
-            "groups": ["U7"],
-            "location": "Salle Georges Raymond"
-          }
-        ]
-      },
-      {
-        "date": "LUNDI 20",
-        "sessions": [
-          {
-            "time": "13H00-14H30",
-            "groups": ["U13F CTC (BSM+SAM)"],
+            "groups": ["2014&2015 G"],
             "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin (BSM) & Mathis (SAM)"
+            "trainer": "Jérémy"
           },
           {
-            "time": "14H30-16H00",
-            "groups": ["U13G CTC (BSM+SAM)"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin (BSM) & Mathis (SAM)"
+            "time": "17H00-18H15",
+            "groups": ["2018&2019&2020&2021 F&G"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Colin"
           },
           {
-            "time": "16H00-17H30",
-            "groups": ["U18F CTC (BSM+SAM)"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin (BSM) & Mathis (SAM)"
+            "time": "18H15-19H30",
+            "groups": ["2012&2013 G"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Jérémy & Colin"
+          },
+          {
+            "time": "18H30-20H00",
+            "groups": ["Projection CTC"],
+            "location": "Salle 1 - SAM",
+            "trainer": "Mathis & Jérémy",
+            "notes": "18/05 : Groupe étude CTC U13F | 25/05 : Groupe étude CTC U13G | 01/06 : Groupe étude CTC U18F | 08/06 : À définir si besoin"
           },
           {
             "time": "19H00-20H30",
-            "groups": ["U15G1 CTC (élargi U15G2)"],
-            "location": "Saint André",
-            "trainer": "Mathis"
+            "groups": ["CTC U15G Élargi"],
+            "location": "Salle 2 - SAM",
+            "trainer": "Jérôme",
+            "notes": "18/05 : Entraînement demi-finale | 25/05 : Maintenu si qualification finale | 01/06 : Maintenu si qualification finale | 08/06 : Maintenu si qualification finale"
+          },
+          {
+            "time": "19H30-21H00",
+            "groups": ["2009&2010&2011 G"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Jérémy & Colin"
+          },
+          {
+            "time": "21H00-23H00",
+            "groups": ["Détente F"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "-"
           }
         ]
       },
       {
-        "date": "MARDI 21",
+        "date": "MARDI",
         "sessions": [
           {
-            "time": "10H00-16H00",
-            "groups": ["U09 F&G", "U11 F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin",
-            "notes": "Prévoir le pique-nique"
+            "time": "17H15-18H30",
+            "groups": ["2014&2015 F"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Jérémy & Colin"
           },
           {
-            "time": "16H00-17H30",
-            "groups": ["U18G", "U15G1 CTC"],
-            "location": "Salle Georges Raymond",
+            "time": "18H30-19H45",
+            "groups": ["2009&2010&2011&2012&2013 F"],
+            "location": "Salle Pierre de Coubertin",
             "trainer": "Jérémy & Colin"
+          },
+          {
+            "time": "19H45-21H00",
+            "groups": ["Perf. Indiv. 2012 à S F&G"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Florent"
+          },
+          {
+            "time": "20H15-22H00",
+            "groups": ["SG1+G2 + 2007&2008"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Franck & Jérémy"
           },
           {
             "time": "20H30-22H00",
             "groups": ["U21G CTC"],
             "location": "Saint André",
-            "trainer": "Florian"
+            "trainer": "Florian et/ou Carole"
           }
         ]
       },
       {
-        "date": "MERCREDI 22",
+        "date": "MERCREDI",
         "sessions": [
           {
-            "time": "10H00-12H00",
-            "groups": ["U13 F&G"],
+            "time": "10H45-12H00",
+            "groups": ["2020&2021 F&G"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Julien"
+          },
+          {
+            "time": "13H00-14H30",
+            "groups": ["2018&2019 F&G"],
             "location": "Salle Georges Raymond",
             "trainer": "Jérémy & Colin"
           },
           {
-            "time": "14H00-16H00",
-            "groups": ["U15 F&G"],
+            "time": "14H30-16H00",
+            "groups": ["2016&2017 F&G"],
             "location": "Salle Georges Raymond",
             "trainer": "Jérémy & Colin"
-          }
-        ]
-      },
-      {
-        "date": "JEUDI 23",
-        "sessions": [
-          {
-            "time": "10H00-16H00",
-            "groups": ["U09 F&G", "U11 F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin",
-            "notes": "Prévoir le pique-nique"
           },
           {
             "time": "16H00-17H30",
-            "groups": ["U18 F&G"],
+            "groups": ["2014&2015 F"],
             "location": "Salle Georges Raymond",
             "trainer": "Jérémy & Colin"
+          },
+          {
+            "time": "18H00-19H30",
+            "groups": ["2014&2015 G"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Jérémy & Colin"
+          },
+          {
+            "time": "19H30-21H30",
+            "groups": ["SF1+F2 & 2008"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Antoine"
           }
         ]
       },
       {
-        "date": "VENDREDI 24",
+        "date": "JEUDI",
         "sessions": [
           {
-            "time": "10H00-12H00",
-            "groups": ["U13 F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin"
+            "time": "17H00-18H15",
+            "groups": ["2016&2017 F"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Jérémy"
           },
           {
-            "time": "14H00-16H00",
-            "groups": ["U15 F&G"],
-            "location": "Salle Georges Raymond",
-            "trainer": "Jérémy & Colin"
+            "time": "18H15-19H30",
+            "groups": ["2009&2010&2011&2012&2013 F"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Jérémy"
           },
           {
             "time": "19H30-21H00",
+            "groups": ["2009&2010&2011 G"],
+            "location": "Salle Pierre de Coubertin",
+            "trainer": "Jérémy"
+          },
+          {
+            "time": "21H00-23H00",
+            "groups": ["Détente G"],
+            "location": "Salle Georges Raymond",
+            "trainer": "-"
+          }
+        ]
+      },
+      {
+        "date": "VENDREDI",
+        "sessions": [
+          {
+            "time": "17H00-18H15",
+            "groups": ["2016&2017 G"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Jérémy"
+          },
+          {
+            "time": "18H15-19H30",
+            "groups": ["2012&2013 G"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Jérémy"
+          },
+          {
+            "time": "19H00-20H30",
             "groups": ["U21G CTC"],
             "location": "Saint André",
-            "trainer": "Florian"
+            "trainer": "Florian et/ou Carole"
+          },
+          {
+            "time": "19H30-21H00",
+            "groups": ["SF1+F2 & 2008"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Antoine & Julie & Flavien"
+          },
+          {
+            "time": "21H00-22H30",
+            "groups": ["SG1+G2+G3 & 2007&2008"],
+            "location": "Salle Georges Raymond",
+            "trainer": "Franck & Justin & Jérémy"
           }
         ]
       }
