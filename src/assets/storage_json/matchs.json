@@ -9579,5 +9579,84 @@
     "referees": [],
     "bar": null,
     "result": []
+  },
+  {
+    "date": "23/05/2026",
+    "team": "U15-M1 CTC",
+    "group": "1/2 Finales Région 2",
+    "isDomicile": true,
+    "time_start": "18:00",
+    "time_meetup": "17:15",
+    "opponent": "CTC Nantes Erdre Carquefou",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "23/05/2026",
+    "team": "Séniors M1",
+    "group": "A",
+    "isDomicile": true,
+    "time_start": "20:30",
+    "time_meetup": "19:30",
+    "opponent": "ORVAULT SPORTS BASKET - 1",
+    "location": "Salle Pierre de Coubertin",
+    "board_official": [
+      "TIMOTHEE SIMON",
+      "MAXIME COTTENCEAU"
+    ],
+    "referees": [
+      "OFF",
+      "OFF"
+    ],
+    "bar": "U13M3",
+    "result": []
+  },
+  {
+    "date": "23/05/2026",
+    "team": "U15 F",
+    "group": "Finale Challenge de l'Anjou",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "14:15",
+    "opponent": "CTC Terre de Layon",
+    "location": "Salle Bellevue Chemillé",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "24/05/2026",
+    "team": "Séniors M3",
+    "group": "Finale D5",
+    "isDomicile": false,
+    "time_start": "13:45",
+    "time_meetup": "12:00",
+    "opponent": "LONGUE 5",
+    "location": "Salle de ST Lambert",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
+  },
+  {
+    "date": "24/05/2026",
+    "team": "Séniors F1",
+    "group": "B",
+    "isDomicile": false,
+    "time_start": "15:30",
+    "time_meetup": "13:45",
+    "opponent": "BASKET SUD LOIRE - 1",
+    "location": "SALLE PRINCIPALE - SALLE SEVRIA",
+    "board_official": [],
+    "referees": [],
+    "bar": null,
+    "result": []
   }
 ]
