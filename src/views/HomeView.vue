@@ -2,6 +2,7 @@
 import ImageCarrousel from '@/components/ImageCarousel.vue'
 import type { SeasonEvent } from '@/models/SeasonEvent'
 import { computed, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import SeasonEventsDataJson from '@/assets/storage_json/season_events.json'
 
 // Example corrected scrollToTop function
@@ -53,7 +54,6 @@ const sortedEvents = computed(() => {
 <template>
   <!-- Main wrapper using theme tokens for background/text -->
   <main class="min-h-screen bg-page dark:bg-page-dark text-mainText dark:text-mainText-dark">
-    <!--<VideoPlayer video-src="@/assets/VideoHomeView.webm" video-type="video/quicktime"></VideoPlayer> -->
 
     <!-- Hero Section -->
     <section class="relative h-screen">
@@ -62,9 +62,31 @@ const sortedEvents = computed(() => {
         <source src="@/assets/VideoHomeView.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <!-- Overlay: keep black or use a token, your choice -->
-      <div class="absolute inset-0 bg-black bg-opacity-40">
-        <div class="container mx-auto px-6 h-full flex flex-col justify-end pb-24">
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col">
+
+        <!-- Registration Banner — top of hero -->
+        <RouterLink to="/inscription" class="block group focus:outline-none flex-shrink-0">
+          <div class="relative overflow-hidden bg-gradient-to-r from-purple-700/90 via-violet-600/90 to-indigo-600/90 backdrop-blur-sm py-3 px-4">
+            <div class="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+            <div class="relative flex items-center justify-center gap-3 text-white">
+              <span class="flex items-center gap-1.5 flex-shrink-0">
+                <span class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse" />
+                <span class="hidden sm:inline text-sm font-medium uppercase tracking-widest text-purple-200">Nouveau</span>
+              </span>
+              <span class="font-extrabold text-base sm:text-lg tracking-wide text-center">
+                🏀 INSCRIPTIONS 2026 / 2027 — C'EST OUVERT !
+              </span>
+              <span
+                class="flex-shrink-0 bg-white text-purple-700 text-sm font-bold px-3 py-1 rounded-full group-hover:bg-purple-100 transition-colors hidden sm:block"
+              >
+                S'inscrire →
+              </span>
+            </div>
+          </div>
+        </RouterLink>
+
+        <div class="container mx-auto px-6 flex-1 flex flex-col justify-end pb-24">
           <!-- Hero Text -->
           <h2
             class="text-5xl md:text-7xl font-extrabold max-w-2xl leading-tight bg-clip-text text-transparent bg-purple-600"
@@ -205,5 +227,16 @@ const sortedEvents = computed(() => {
 </template>
 
 <style scoped>
-/* Keep or add any specific overrides here if needed */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.8s ease-in-out infinite;
+}
 </style>
