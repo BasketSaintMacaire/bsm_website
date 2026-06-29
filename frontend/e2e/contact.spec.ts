@@ -35,7 +35,7 @@ test.describe('Contact form', () => {
 
     await page.getByRole('button', { name: 'Envoyer' }).click()
 
-    await expect(page.locator('#lastName')).toHaveValue('', { timeout: 10000 })
-    await expect(page.locator('#firstName')).toHaveValue('')
+    await expect(page.getByText('Message envoyé !')).toBeVisible({ timeout: 10000 })
+    await expect(page.locator('form')).not.toBeVisible()
   })
 })
