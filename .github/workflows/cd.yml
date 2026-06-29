@@ -1,5 +1,4 @@
-name: Deploy to bsm server
-description: Deploys the project to the bsm server via FTP on push to main branch
+name: Build and Deploy
 
 on:
   push:
@@ -7,29 +6,203 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  test:
     runs-on: ubuntu-latest
-
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: bsm
+          POSTGRES_PASSWORD: ci-test-pass
+          POSTGRES_DB: bsm_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+      maildev:
+        image: maildev/maildev
+        ports:
+          - 1025:1025
+    env:
+      DATABASE_URL: postgresql://bsm:ci-test-pass@localhost:5432/bsm_test
+      JWT_SECRET: ci-test-secret
+      ADMIN_USERNAME: admin
+      # bcrypt hash of "admin123", CI-only credential
+      ADMIN_PASSWORD_HASH: $2a$10$EG.0SdCIs4jzimHKPm5X8eKbgRNinDIxk3BXlKIM/21cmk2971cbe
+      SMTP_HOST: localhost
+      SMTP_PORT: 1025
+      SMTP_SECURE: "false"
+      SMTP_FROM: no-reply@basketsaintmacaire.fr
+      CORS_ORIGINS: http://localhost:5174
+      PORT: 3000
+      MINIO_ENDPOINT: localhost
+      MINIO_PORT: 9000
+      MINIO_USE_SSL: "false"
+      MINIO_ROOT_USER: ci-minio
+      MINIO_ROOT_PASSWORD: ci-minio-pass
+      MINIO_BUCKET: bsm-media-ci
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22.13
 
-      - name: Install dependencies
+      - name: Start MinIO
+        # Not a `services:` entry: that schema has no way to pass the
+        # required `server /data` command args, so minio/minio would just
+        # print usage and exit. Run it directly instead.
+        run: |
+          docker run -d --name minio --network host \
+            -e MINIO_ROOT_USER=ci-minio -e MINIO_ROOT_PASSWORD=ci-minio-pass \
+            minio/minio server /data
+
+      - name: Wait for MinIO health
+        run: timeout 30 bash -c 'until curl -sf http://localhost:9000/minio/health/live; do sleep 1; done'
+
+      - name: Create MinIO bucket
+        run: |
+          docker run --rm --network host --entrypoint /bin/sh minio/mc -c "
+            mc alias set local http://localhost:9000 ci-minio ci-minio-pass &&
+            (mc mb local/bsm-media-ci || true) &&
+            mc anonymous set download local/bsm-media-ci
+          "
+
+      - name: Install backend dependencies
+        working-directory: backend
         run: npm ci
 
-      - name: Build project
-        run: npm run build
+      - name: Apply backend migrations
+        working-directory: backend
+        run: npx prisma migrate deploy
 
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Run backend unit + integration tests (80% coverage gate)
+        working-directory: backend
+        run: npm run test:coverage
+
+      - name: Seed backend data for e2e
+        working-directory: backend
+        run: npx prisma db seed
+
+      - name: Build and start backend server
+        working-directory: backend
+        run: |
+          npm run build
+          nohup node dist/index.js > backend.log 2>&1 &
+
+      - name: Wait for backend health
+        run: timeout 30 bash -c 'until curl -sf http://localhost:3000/api/health; do sleep 1; done'
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Run frontend unit tests
+        working-directory: frontend
+        run: npm run test:unit
+
+      - name: Install Playwright browsers
+        working-directory: frontend
+        run: npx playwright install --with-deps chromium
+
+      - name: Run e2e tests
+        working-directory: frontend
+        env:
+          E2E_API_TARGET: http://localhost:3000
+          CI: "true"
+        run: npm run test:e2e
+
+      - name: Show backend log on failure
+        if: failure()
+        run: cat backend/backend.log || true
+
+      - name: Upload Playwright report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_TARGET_DIR }}
-          local-dir: ./dist/
+          name: playwright-report
+          path: frontend/playwright-report/
+          retention-days: 7
+
+  build-and-push:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Compute lowercase image names
+        id: vars
+        run: |
+          echo "repo=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          push: true
+          tags: |
+            ghcr.io/${{ steps.vars.outputs.repo }}/backend:${{ github.sha }}
+            ghcr.io/${{ steps.vars.outputs.repo }}/backend:latest
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          push: true
+          tags: |
+            ghcr.io/${{ steps.vars.outputs.repo }}/frontend:${{ github.sha }}
+            ghcr.io/${{ steps.vars.outputs.repo }}/frontend:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Copy docker-compose.yml to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          source: "docker-compose.yml"
+          target: "/var/www/basbasket"
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            cd /var/www/basbasket
+            REPO=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')
+            {
+              echo "BACKEND_IMAGE=ghcr.io/$REPO/backend:${{ github.sha }}"
+              echo "FRONTEND_IMAGE=ghcr.io/$REPO/frontend:${{ github.sha }}"
+            } > .env.deploy
+            docker compose --env-file .env --env-file .env.deploy pull
+            docker compose --env-file .env --env-file .env.deploy up -d
+            docker image prune -f
