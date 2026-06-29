@@ -22,20 +22,17 @@ jobs:
           --health-interval 5s
           --health-timeout 5s
           --health-retries 10
-      maildev:
-        image: maildev/maildev
-        ports:
-          - 1025:1025
     env:
       DATABASE_URL: postgresql://bsm:ci-test-pass@localhost:5432/bsm_test
       JWT_SECRET: ci-test-secret
       ADMIN_USERNAME: admin
       # bcrypt hash of "admin123", CI-only credential
       ADMIN_PASSWORD_HASH: $2a$10$EG.0SdCIs4jzimHKPm5X8eKbgRNinDIxk3BXlKIM/21cmk2971cbe
-      SMTP_HOST: localhost
-      SMTP_PORT: 1025
-      SMTP_SECURE: "false"
-      SMTP_FROM: no-reply@basketsaintmacaire.fr
+      EMAILJS_SERVICE_ID: ci-service
+      EMAILJS_PUBLIC_KEY: ci-public-key
+      EMAILJS_PRIVATE_KEY: ci-private-key
+      EMAILJS_TEMPLATE_ID_CONTACT: ci-template-contact
+      EMAILJS_TEMPLATE_ID_ORDER: ci-template-order
       CORS_ORIGINS: http://localhost:5174
       PORT: 3000
       MINIO_ENDPOINT: localhost
