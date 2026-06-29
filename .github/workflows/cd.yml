@@ -184,7 +184,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT || 22 }}
           source: "docker-compose.yml"
-          target: "/var/www/basbasket"
+          target: "/var/www/bsmbasket"
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.2.0
@@ -194,7 +194,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT || 22 }}
           script: |
-            cd /var/www/basbasket
+            cd /var/www/bsmbasket
             REPO=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')
             {
               echo "BACKEND_IMAGE=ghcr.io/$REPO/backend:${{ github.sha }}"
