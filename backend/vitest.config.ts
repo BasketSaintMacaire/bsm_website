@@ -19,7 +19,6 @@ export default defineConfig({
       EMAILJS_PUBLIC_KEY: 'test_public_key',
       EMAILJS_PRIVATE_KEY: 'test_private_key',
       EMAILJS_TEMPLATE_ID_CONTACT: 'template_contact_test',
-      EMAILJS_TEMPLATE_ID_ORDER: 'template_order_test',
       CORS_ORIGINS: '',
       PORT: '3000',
       MINIO_ENDPOINT: 'localhost',

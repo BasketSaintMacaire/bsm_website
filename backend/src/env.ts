@@ -16,7 +16,6 @@ export const env = {
   EMAILJS_PUBLIC_KEY: required('EMAILJS_PUBLIC_KEY'),
   EMAILJS_PRIVATE_KEY: required('EMAILJS_PRIVATE_KEY'),
   EMAILJS_TEMPLATE_ID_CONTACT: required('EMAILJS_TEMPLATE_ID_CONTACT'),
-  EMAILJS_TEMPLATE_ID_ORDER: required('EMAILJS_TEMPLATE_ID_ORDER'),
   CORS_ORIGINS: (process.env.CORS_ORIGINS ?? '')
     .split(',')
     .map((origin) => origin.trim())

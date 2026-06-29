@@ -32,7 +32,6 @@ jobs:
       EMAILJS_PUBLIC_KEY: ci-public-key
       EMAILJS_PRIVATE_KEY: ci-private-key
       EMAILJS_TEMPLATE_ID_CONTACT: ci-template-contact
-      EMAILJS_TEMPLATE_ID_ORDER: ci-template-order
       CORS_ORIGINS: http://localhost:5174
       PORT: 3000
       MINIO_ENDPOINT: localhost

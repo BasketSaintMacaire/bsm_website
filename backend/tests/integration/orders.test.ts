@@ -1,18 +1,8 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import request from 'supertest'
-
-vi.mock('../../src/mailer', () => ({
-  mailer: { sendMail: vi.fn().mockResolvedValue({ messageId: 'test' }) },
-}))
-
 import { app } from '../helpers'
-import { mailer } from '../../src/mailer'
 
 describe('POST /api/orders', () => {
-  beforeEach(() => {
-    vi.mocked(mailer.sendMail).mockClear()
-  })
-
   const validPayload = {
     items: [
       { name: 'T-shirt Nike', size: 'M', color: null, price: 20, quantity: 2 },
@@ -26,21 +16,14 @@ describe('POST /api/orders', () => {
     },
   }
 
-  it('sends a confirmation email and a boutique notification, returns 204', async () => {
+  it('accepts a valid order and returns 204', async () => {
     const res = await request(app).post('/api/orders').send(validPayload)
-
     expect(res.status).toBe(204)
-    expect(mailer.sendMail).toHaveBeenCalledTimes(2)
-
-    const calls = vi.mocked(mailer.sendMail).mock.calls.map((c) => c[0] as { to: string })
-    expect(calls.map((c) => c.to)).toContain('jean@example.com')
-    expect(calls.map((c) => c.to)).toContain('boutique@bsmbasket.fr')
   })
 
   it('rejects an empty cart', async () => {
     const res = await request(app).post('/api/orders').send({ ...validPayload, items: [] })
     expect(res.status).toBe(400)
-    expect(mailer.sendMail).not.toHaveBeenCalled()
   })
 
   it('rejects an invalid billing email', async () => {

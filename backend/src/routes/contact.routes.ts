@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { z } from 'zod'
-import { mailer } from '../mailer'
+import { sendContactMail } from '../mailer'
 import { asyncHandler } from '../middleware/asyncHandler'
 
 const router = Router()
@@ -29,13 +29,14 @@ router.post(
   '/',
   asyncHandler(async (req, res) => {
     const data = contactSchema.parse(req.body)
-    const recipient = `${data.about}@bsmbasket.fr`
 
-    await mailer.sendMail({
-      to: recipient,
-      replyTo: data.email,
-      subject: `[BSM Contact] ${data.about} — ${data.firstName} ${data.lastName}`,
-      text: `${data.message}\n\nDe: ${data.firstName} ${data.lastName} <${data.email}>`,
+    await sendContactMail({
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      about: data.about,
+      message: data.message,
+      recipientEmail: `${data.about}@bsmbasket.fr`,
     })
 
     res.status(204).end()
