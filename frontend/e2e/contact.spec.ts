@@ -22,6 +22,8 @@ test.describe('Contact form', () => {
   })
 
   test('submits successfully and resets the form', async ({ page }) => {
+    await page.route('**/api/contact', (route) => route.fulfill({ status: 204 }))
+
     await page.goto('/contact')
 
     await page.fill('#lastName', 'Dupont')
