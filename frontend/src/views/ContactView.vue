@@ -30,6 +30,8 @@ const formData = ref<FormData>({
 })
 
 const errors = ref<FormErrors>({})
+const submitted = ref(false)
+const submitError = ref(false)
 
 // NOTE: supprimez le doublon "planning" dans vos options
 const aboutOptions = [
@@ -93,6 +95,7 @@ const validateForm = (): boolean => {
 
 const handleSubmit = async () => {
   if (!validateForm()) return
+  submitError.value = false
   try {
     await api.post('/contact', {
       firstName: formData.value.firstName,
@@ -103,17 +106,12 @@ const handleSubmit = async () => {
       consent: formData.value.consent,
     })
 
-    formData.value = {
-      lastName: '',
-      firstName: '',
-      email: '',
-      about: '',
-      message: '',
-      consent: false,
-    }
+    formData.value = { lastName: '', firstName: '', email: '', about: '', message: '', consent: false }
     errors.value = {}
+    submitted.value = true
   } catch (error) {
     console.error('Error submitting form:', error)
+    submitError.value = true
   }
 }
 </script>
@@ -134,8 +132,31 @@ const handleSubmit = async () => {
           <h2 class="text-2xl font-bold text-mainText dark:text-mainText-dark">CONTACTEZ-NOUS !</h2>
         </div>
 
+        <!-- Success state -->
+        <div
+          v-if="submitted"
+          class="flex flex-col items-center gap-4 py-12 text-center"
+        >
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
+            <svg class="h-8 w-8 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-mainText dark:text-mainText-dark">Message envoyé !</h3>
+          <p class="text-mutedText dark:text-mutedText-dark">
+            Nous avons bien reçu votre message et reviendrons vers vous dans les plus brefs délais.
+          </p>
+          <button
+            type="button"
+            @click="submitted = false"
+            class="mt-2 px-6 py-2 text-sm font-medium text-purple-600 dark:text-purple-400 underline hover:no-underline"
+          >
+            Envoyer un autre message
+          </button>
+        </div>
+
         <!-- Form -->
-        <form @submit.prevent="handleSubmit" class="space-y-6">
+        <form v-else @submit.prevent="handleSubmit" class="space-y-6">
           <!-- Name Fields -->
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <!-- Last Name -->
@@ -288,6 +309,10 @@ const handleSubmit = async () => {
             </div>
             <p v-if="errors.consent" class="mt-1 text-sm text-red-500">{{ errors.consent }}</p>
           </div>
+
+          <p v-if="submitError" class="text-sm text-red-500">
+            Une erreur est survenue lors de l'envoi. Veuillez réessayer.
+          </p>
 
           <div class="flex justify-end">
             <button

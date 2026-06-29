@@ -125,13 +125,33 @@ describe('ContactView — handleSubmit', () => {
     })
   })
 
-  it('resets the form after a successful submission', async () => {
+  it('resets the form and shows the success message after a successful submission', async () => {
     vi.mocked(api.post).mockResolvedValue({})
     const wrapper = mount(ContactView)
     await fillForm(wrapper)
     await wrapper.find('form').trigger('submit')
     await flushPromises()
-    expect((wrapper.find('#lastName').element as HTMLInputElement).value).toBe('')
-    expect((wrapper.find('#message').element as HTMLTextAreaElement).value).toBe('')
+    expect(wrapper.text()).toContain('Message envoyé !')
+    expect(wrapper.find('form').exists()).toBe(false)
+  })
+
+  it('shows an error message when the API call fails', async () => {
+    vi.mocked(api.post).mockRejectedValue(new Error('network error'))
+    const wrapper = mount(ContactView)
+    await fillForm(wrapper)
+    await wrapper.find('form').trigger('submit')
+    await flushPromises()
+    expect(wrapper.text()).toContain('Une erreur est survenue')
+    expect(wrapper.find('form').exists()).toBe(true)
+  })
+
+  it('shows the form again when "Envoyer un autre message" is clicked', async () => {
+    vi.mocked(api.post).mockResolvedValue({})
+    const wrapper = mount(ContactView)
+    await fillForm(wrapper)
+    await wrapper.find('form').trigger('submit')
+    await flushPromises()
+    await wrapper.find('button').trigger('click')
+    expect(wrapper.find('form').exists()).toBe(true)
   })
 })
