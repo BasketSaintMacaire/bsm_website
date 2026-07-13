@@ -1,5 +1,5 @@
 # ---- deps ----
-FROM node:22-alpine AS deps
+FROM node:22-alpine3.20 AS deps
 RUN apk add --no-cache openssl
 WORKDIR /app
 COPY package*.json ./
@@ -7,7 +7,7 @@ COPY prisma ./prisma
 RUN npm ci
 
 # ---- build ----
-FROM node:22-alpine AS build
+FROM node:22-alpine3.20 AS build
 RUN apk add --no-cache openssl
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # ---- runtime ----
-FROM node:22-alpine AS runtime
+FROM node:22-alpine3.20 AS runtime
 RUN apk add --no-cache openssl
 WORKDIR /app
 ENV NODE_ENV=production
