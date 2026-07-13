@@ -68,7 +68,76 @@ const router = createRouter({
       name: 'basketfit',
       component: () => import('@/views/BasketFitView.vue'),
     },
+    // Admin
+    {
+      path: '/admin/login',
+      name: 'admin-login',
+      component: () => import('@/views/admin/AdminLoginView.vue'),
+    },
+    {
+      path: '/admin',
+      component: () => import('@/views/admin/AdminLayout.vue'),
+      meta: { requiresAdminAuth: true },
+      children: [
+        {
+          path: '',
+          name: 'admin-dashboard',
+          component: () => import('@/views/admin/AdminDashboard.vue'),
+        },
+        {
+          path: 'committees',
+          name: 'admin-committees',
+          component: () => import('@/views/admin/AdminCommitteesView.vue'),
+        },
+        {
+          path: 'key-roles',
+          name: 'admin-key-roles',
+          component: () => import('@/views/admin/AdminKeyRolesView.vue'),
+        },
+        {
+          path: 'history-events',
+          name: 'admin-history-events',
+          component: () => import('@/views/admin/AdminHistoryEventsView.vue'),
+        },
+        {
+          path: 'matches',
+          name: 'admin-matches',
+          component: () => import('@/views/admin/AdminMatchesView.vue'),
+        },
+        {
+          path: 'news',
+          name: 'admin-news',
+          component: () => import('@/views/admin/AdminNewsView.vue'),
+        },
+        {
+          path: 'products',
+          name: 'admin-products',
+          component: () => import('@/views/admin/AdminProductsView.vue'),
+        },
+        {
+          path: 'season-events',
+          name: 'admin-season-events',
+          component: () => import('@/views/admin/AdminSeasonEventsView.vue'),
+        },
+        {
+          path: 'teams',
+          name: 'admin-teams',
+          component: () => import('@/views/admin/AdminTeamsView.vue'),
+        },
+        {
+          path: 'training-schedules',
+          name: 'admin-training-schedules',
+          component: () => import('@/views/admin/AdminTrainingSchedulesView.vue'),
+        },
+      ],
+    },
   ],
+})
+
+router.beforeEach((to) => {
+  if (to.meta.requiresAdminAuth && !localStorage.getItem('bsm_admin_token')) {
+    return { name: 'admin-login' }
+  }
 })
 
 export default router
