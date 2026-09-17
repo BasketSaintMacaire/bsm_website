@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { api } from '@/lib/api'
 import { parseCSV, downloadCSVTemplate } from '@/lib/parseCSV'
+import { parsePlanningXlsx, type MatchImportPayload } from '@/lib/parsePlanningXlsx'
 
 interface Match {
   id: number
@@ -123,6 +124,19 @@ async function remove(id: number) {
   await load()
 }
 
+async function importPayloads(payloads: MatchImportPayload[]) {
+  importStatus.value = `Import de ${payloads.length} ligne(s)…`
+  let ok = 0
+  for (const payload of payloads) {
+    try {
+      await api.post('/matches', payload)
+      ok++
+    } catch { /* skip */ }
+  }
+  importStatus.value = `${ok}/${payloads.length} importé(s)`
+  await load()
+}
+
 function triggerImport() {
   const input = document.createElement('input')
   input.type = 'file'
@@ -131,31 +145,41 @@ function triggerImport() {
     const file = (e.target as HTMLInputElement).files?.[0]
     if (!file) return
     const rows = parseCSV(await file.text())
-    importStatus.value = `Import de ${rows.length} ligne(s)…`
-    let ok = 0
-    for (const row of rows) {
-      try {
-        await api.post('/matches', {
-          date: row.date,
-          team: row.team,
-          group: row.group,
-          isDomicile: row.isDomicile === 'true',
-          time_start: row.time_start,
-          time_meetup: row.time_meetup || null,
-          opponent: row.opponent || null,
-          location: row.location || null,
-          board_official: (row.board_official ?? '').split(';').map((s) => s.trim()).filter(Boolean),
-          referees: (row.referees ?? '').split(';').map((s) => s.trim()).filter(Boolean),
-          bar: row.bar || null,
-          result: row.result
-            ? row.result.split(';').map((s) => parseInt(s.trim(), 10)).filter((n) => !isNaN(n))
-            : [],
-        })
-        ok++
-      } catch { /* skip */ }
+    await importPayloads(
+      rows.map((row) => ({
+        date: row.date,
+        team: row.team,
+        group: row.group,
+        isDomicile: row.isDomicile === 'true',
+        time_start: row.time_start,
+        time_meetup: row.time_meetup || null,
+        opponent: row.opponent || null,
+        location: row.location || null,
+        board_official: (row.board_official ?? '').split(';').map((s) => s.trim()).filter(Boolean),
+        referees: (row.referees ?? '').split(';').map((s) => s.trim()).filter(Boolean),
+        bar: row.bar || null,
+        result: row.result
+          ? row.result.split(';').map((s) => parseInt(s.trim(), 10)).filter((n) => !isNaN(n))
+          : [],
+      })),
+    )
+  }
+  input.click()
+}
+
+function triggerPlanningImport() {
+  const input = document.createElement('input')
+  input.type = 'file'
+  input.accept = '.xlsx,.xls'
+  input.onchange = async (e) => {
+    const file = (e.target as HTMLInputElement).files?.[0]
+    if (!file) return
+    const payloads = await parsePlanningXlsx(await file.arrayBuffer())
+    if (payloads.length === 0) {
+      importStatus.value = "Aucun match trouvé dans le fichier. Vérifiez qu'il s'agit bien d'un export de planning."
+      return
     }
-    importStatus.value = `${ok}/${rows.length} importé(s)`
-    await load()
+    await importPayloads(payloads)
   }
   input.click()
 }
@@ -180,6 +204,7 @@ function formatDate(d: string) {
       <div class="flex gap-2">
         <button @click="downloadTemplate" class="text-sm px-3 py-1.5 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-600">Modèle CSV</button>
         <button @click="triggerImport" class="text-sm px-3 py-1.5 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-600">Import CSV</button>
+        <button @click="triggerPlanningImport" class="text-sm px-3 py-1.5 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-600">Import planning (Excel)</button>
         <button @click="openCreate" class="text-sm px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg">+ Ajouter</button>
       </div>
     </div>
