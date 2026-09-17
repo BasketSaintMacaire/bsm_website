@@ -53,17 +53,19 @@ jobs:
         # Not a `services:` entry: that schema has no way to pass the
         # required `server /data` command args, so minio/minio would just
         # print usage and exit. Run it directly instead.
+        # Pulled from quay.io, not Docker Hub: MinIO gated minio/minio and
+        # minio/mc on Docker Hub behind a paid SUBNET login; quay.io stays open.
         run: |
           docker run -d --name minio --network host \
             -e MINIO_ROOT_USER=ci-minio -e MINIO_ROOT_PASSWORD=ci-minio-pass \
-            minio/minio server /data
+            quay.io/minio/minio server /data
 
       - name: Wait for MinIO health
         run: timeout 30 bash -c 'until curl -sf http://localhost:9000/minio/health/live; do sleep 1; done'
 
       - name: Create MinIO bucket
         run: |
-          docker run --rm --network host --entrypoint /bin/sh minio/mc -c "
+          docker run --rm --network host --entrypoint /bin/sh quay.io/minio/mc -c "
             mc alias set local http://localhost:9000 ci-minio ci-minio-pass &&
             (mc mb local/bsm-media-ci || true) &&
             mc anonymous set download local/bsm-media-ci

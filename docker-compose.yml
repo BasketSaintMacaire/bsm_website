@@ -61,7 +61,8 @@ services:
       - '${FRONTEND_PORT:-8080}:80'
 
   minio:
-    image: minio/minio:latest
+    # quay.io, not Docker Hub: MinIO gated minio/minio there behind a paid login.
+    image: quay.io/minio/minio:latest
     restart: unless-stopped
     command: server /data --console-address ":9001"
     environment:
@@ -76,7 +77,7 @@ services:
       retries: 10
 
   minio-init:
-    image: minio/mc:latest
+    image: quay.io/minio/mc:latest
     depends_on:
       minio:
         condition: service_healthy
