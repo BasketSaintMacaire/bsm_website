@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior: (to, from, savedPosition) => savedPosition ?? { top: 0 },
   routes: [
     {
       path: '/',
@@ -67,6 +68,16 @@ const router = createRouter({
       path: '/basketfit',
       name: 'basketfit',
       component: () => import('@/views/BasketFitView.vue'),
+    },
+    {
+      path: '/ressources',
+      name: 'ressources',
+      component: () => import('@/views/ResourcesView.vue'),
+    },
+    {
+      path: '/ressources/e-marque',
+      name: 'ressources-e-marque',
+      component: () => import('@/views/EMarqueView.vue'),
     },
     // Admin
     {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { ChevronRight, Award, Activity, Check } from 'lucide-vue-next'
 
 const router = useRouter()
@@ -139,21 +139,30 @@ const navigateTo = (route: string) => {
               Consultez et téléchargez le règlement intérieur du BSM pour connaître les droits et
               obligations de tous les membres du club.
             </p>
-            <a
-              href="/files/reglement-interieur-bsm.pdf"
-              download
-              class="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
-            >
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                ></path>
-              </svg>
-              Télécharger le règlement
-            </a>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="/files/reglement-interieur-bsm.pdf"
+                download
+                class="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+              >
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+                Télécharger le règlement
+              </a>
+              <RouterLink
+                to="/ressources"
+                class="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors duration-300"
+              >
+                Tous les documents
+                <ChevronRight class="w-5 h-5 ml-2" />
+              </RouterLink>
+            </div>
           </div>
         </div>
       </div>

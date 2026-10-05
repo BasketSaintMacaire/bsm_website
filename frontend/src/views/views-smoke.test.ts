@@ -173,3 +173,47 @@ describe('PlanningView', () => {
     expect(wrapper.exists()).toBe(true)
   })
 })
+
+// ─── ResourcesView ────────────────────────────────────────────────────────────
+
+import ResourcesView from './ResourcesView.vue'
+
+describe('ResourcesView', () => {
+  it('mounts and links every club document', () => {
+    const wrapper = mount(ResourcesView)
+    const hrefs = wrapper.findAll('a[download]').map((a) => a.attributes('href'))
+    expect(hrefs).toContain('/files/reglement-interieur-bsm.pdf')
+    expect(hrefs).toHaveLength(3)
+  })
+})
+
+// ─── EMarqueView ──────────────────────────────────────────────────────────────
+
+import EMarqueView from './EMarqueView.vue'
+
+describe('EMarqueView', () => {
+  it('offers both age-category manuals', () => {
+    const wrapper = mount(EMarqueView)
+    const hrefs = wrapper.findAll('a[download]').map((a) => a.attributes('href'))
+    expect(hrefs).toEqual([
+      '/files/manuel-e-marque-mini-basket.pdf',
+      '/files/manuel-e-marque-v2-u13-seniors.pdf',
+    ])
+  })
+
+  it('does not contact YouTube before the viewer clicks play', async () => {
+    const wrapper = mount(EMarqueView)
+    expect(wrapper.find('iframe').exists()).toBe(false)
+
+    await wrapper.find('button[aria-label="Lancer le tutoriel vidéo e-Marque"]').trigger('click')
+
+    const src = wrapper.find('iframe').attributes('src')
+    expect(src).toContain('youtube-nocookie.com/embed/kzDXqszo7T0')
+    expect(src).not.toContain('start=')
+  })
+
+  it('shows the tutorial video only in the U13+ track', () => {
+    const wrapper = mount(EMarqueView)
+    expect(wrapper.findAll('[aria-label="Lancer le tutoriel vidéo e-Marque"]')).toHaveLength(1)
+  })
+})
