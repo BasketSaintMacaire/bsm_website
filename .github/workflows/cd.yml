@@ -60,16 +60,21 @@ jobs:
         # (AGPLv3) mirror of the pre-paywall community build that pulls and
         # runs with no license step; pinned to a version tag since :latest
         # can move.
+        # -u 0 (root): with no volume mounted, /data lives on the
+        # container's own ephemeral filesystem and is owned by root there;
+        # this image's default non-root user can't write to it and MinIO
+        # fails immediately with "Unable to initialize backend: file access
+        # denied". Confirmed via actual CI logs, not guessed — this exact
+        # permission class is what docker-compose.yml's `user: '0'` also
+        # works around, just on a real Linux runner instead of Docker
+        # Desktop for Windows, which is permissive enough to mask it.
         run: |
-          docker run -d --name minio --network host \
+          docker run -d --name minio --network host -u 0 \
             -e MINIO_ROOT_USER=ci-minio -e MINIO_ROOT_PASSWORD=ci-minio-pass \
             bitnamilegacy/minio:2025.7.23-debian-12-r5 server /data
 
       - name: Wait for MinIO health
-        # 90s, not 30s: this is a cold pull on every run (no layer cache
-        # between jobs), and Bitnami's startup wrapper has more overhead
-        # than the official image this timeout was originally tuned for.
-        run: timeout 90 bash -c 'until curl -sf http://localhost:9000/minio/health/live; do sleep 1; done'
+        run: timeout 30 bash -c 'until curl -sf http://localhost:9000/minio/health/live; do sleep 1; done'
 
       - name: Show MinIO container state on failure
         if: failure()
