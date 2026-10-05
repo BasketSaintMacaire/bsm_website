@@ -82,7 +82,7 @@ onMounted(() => {
     <div class="relative z-10 min-h-screen flex items-center justify-center py-12 px-4">
       <div class="w-full max-w-6xl mx-auto">
         <!-- Hero Section -->
-        <div class="text-center mb-16" :class="{ 'animate-fade-in-up': isVisible }">
+        <header class="text-center mb-16" :class="{ 'animate-fade-in-up': isVisible }">
           <div class="relative inline-block">
             <h1
               class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 mb-4 tracking-tight"
@@ -104,21 +104,21 @@ onMounted(() => {
           >
             Découvrez une nouvelle façon de faire du sport : dynamique, inclusive et passionnante !
           </p>
-        </div>
+        </header>
 
         <!-- Sessions Cards -->
-        <div
+        <ul
           class="grid md:grid-cols-2 gap-8 mb-16"
           :class="{ 'animate-fade-in-up animation-delay-300': isVisible }"
         >
-          <div v-for="(session, index) in sessions" :key="session.day" class="group relative">
+          <li v-for="(session, index) in sessions" :key="session.day" class="group relative">
             <div
               class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-50 dark:group-hover:opacity-75 transition duration-1000 group-hover:duration-200"
             ></div>
-            <div
+            <article
               class="relative bg-card dark:bg-card-dark backdrop-blur-lg rounded-2xl p-8 border border-borderColor dark:border-borderColor-dark hover:border-purple-300 dark:hover:border-white/40 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              <div class="flex items-center justify-between mb-6">
+              <header class="flex items-center justify-between mb-6">
                 <component
                   :is="session.icon"
                   class="w-12 h-12 text-purple-600 dark:text-purple-400"
@@ -129,19 +129,19 @@ onMounted(() => {
                   </div>
                   <div class="text-purple-600 dark:text-purple-300 text-lg">{{ session.time }}</div>
                 </div>
-              </div>
+              </header>
               <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-            </div>
-          </div>
-        </div>
+            </article>
+          </li>
+        </ul>
 
         <!-- Features Grid -->
-        <div class="mb-16" :class="{ 'animate-fade-in-up animation-delay-600': isVisible }">
+        <section class="mb-16" :class="{ 'animate-fade-in-up animation-delay-600': isVisible }">
           <h2 class="text-4xl font-bold text-center text-mainText dark:text-mainText-dark mb-12">
             L'expérience Basket'Fit
           </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div
+          <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <li
               v-for="(feature, index) in features"
               :key="index"
               class="group relative overflow-hidden"
@@ -168,12 +168,12 @@ onMounted(() => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </li>
+          </ul>
+        </section>
 
         <!-- Call to Action -->
-        <div class="text-center" :class="{ 'animate-fade-in-up animation-delay-900': isVisible }">
+        <footer class="text-center" :class="{ 'animate-fade-in-up animation-delay-900': isVisible }">
           <div class="relative inline-block">
             <div
               class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-50"
@@ -189,7 +189,7 @@ onMounted(() => {
             Venez découvrir le Basket'Fit lors de nos séances d'essai gratuites tous les mercredis
             et samedis de septembre !
           </p>
-        </div>
+        </footer>
       </div>
     </div>
   </div>

@@ -144,9 +144,10 @@ onUnmounted(() => {
     </main>
 
     <!-- Modal -->
-    <div
+    <dialog
       v-if="showModal"
-      class="fixed inset-0 z-50 overflow-y-auto"
+      open
+      class="fixed inset-0 z-50 overflow-y-auto m-0 max-w-none max-h-none w-full h-full p-0 bg-transparent"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
@@ -167,7 +168,7 @@ onUnmounted(() => {
           >&#8203;</span
         >
 
-        <div
+        <article
           class="inline-block align-bottom bg-card dark:bg-card-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full relative"
         >
           <!-- Close Button -->
@@ -185,46 +186,50 @@ onUnmounted(() => {
           <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4 max-h-[90vh] overflow-y-auto">
             <div class="sm:flex sm:items-start">
               <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
-                <h3
-                  class="text-3xl leading-6 font-bold text-mainText dark:text-mainText-dark mb-4"
-                  id="modal-title"
-                >
-                  {{ selectedArticle?.title }}
-                </h3>
+                <header>
+                  <h3
+                    class="text-3xl leading-6 font-bold text-mainText dark:text-mainText-dark mb-4"
+                    id="modal-title"
+                  >
+                    {{ selectedArticle?.title }}
+                  </h3>
 
-                <!-- Meta Info (Date, Author, Category) -->
-                <div
-                  class="flex items-center justify-between mb-6 text-sm text-mutedText dark:text-mutedText-dark"
-                >
-                  <div class="flex items-center">
-                    <Calendar class="w-4 h-4 mr-2" />
-                    <span>{{ formatDate(selectedArticle?.date || '') }}</span>
+                  <!-- Meta Info (Date, Author, Category) -->
+                  <div
+                    class="flex items-center justify-between mb-6 text-sm text-mutedText dark:text-mutedText-dark"
+                  >
+                    <div class="flex items-center">
+                      <Calendar class="w-4 h-4 mr-2" />
+                      <time :datetime="selectedArticle?.date">{{
+                        formatDate(selectedArticle?.date || '')
+                      }}</time>
+                    </div>
+                    <div class="flex items-center">
+                      <Tag class="w-4 h-4 mr-2" />
+                      <span>{{ selectedArticle?.category }}</span>
+                    </div>
                   </div>
-                  <div class="flex items-center">
-                    <Tag class="w-4 h-4 mr-2" />
-                    <span>{{ selectedArticle?.category }}</span>
-                  </div>
-                </div>
+                </header>
 
                 <!-- Image -->
-                <div class="relative overflow-hidden mb-6">
+                <figure class="relative overflow-hidden mb-6">
                   <img
                     :src="selectedArticle?.image"
                     :alt="selectedArticle?.title"
                     class="w-full h-auto object-cover"
                   />
-                </div>
+                </figure>
 
                 <!-- Content -->
-                <div class="text-base text-mutedText dark:text-mutedText-dark mb-8">
+                <p class="text-base text-mutedText dark:text-mutedText-dark mb-8">
                   {{ selectedArticle?.content }}
-                </div>
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
-    </div>
+    </dialog>
   </div>
 </template>
 

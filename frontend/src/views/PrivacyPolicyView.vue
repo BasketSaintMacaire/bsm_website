@@ -100,12 +100,12 @@ const sections = ref([
     title: 'Nous contacter',
     content: `
       <p>Si vous avez des questions concernant cette politique de confidentialité ou nos pratiques en matière de protection des données, veuillez nous contacter :</p>
-      <div class="bg-gray-800 p-4 rounded-lg mt-2 text-[#FFFFFF]">
+      <address class="bg-gray-800 p-4 rounded-lg mt-2 text-[#FFFFFF] not-italic">
         <p><strong>BSM : Basket Saint Macaire</strong><br>
         Stade Georges Raymond<br>
         49450 Saint-Macaire (France)<br>
         Email : contact@bsmbasket.fr</p>
-      </div>
+      </address>
     `,
     isOpen: false,
   },
@@ -127,8 +127,8 @@ const toggleSection = (index: number) => {
         Politique de Confidentialité
       </h1>
 
-      <div class="space-y-6">
-        <div
+      <ul class="space-y-6">
+        <li
           v-for="(section, index) in sections"
           :key="index"
           class="bg-card dark:bg-card-dark rounded-lg overflow-hidden shadow-lg transition-all duration-300 ease-in-out"
@@ -147,12 +147,12 @@ const toggleSection = (index: number) => {
           <div v-show="section.isOpen" class="px-6 pb-4 transition-all duration-300 ease-in-out">
             <div class="prose dark:prose-invert max-w-none" v-html="section.content"></div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
 
-      <div class="mt-12 text-center text-sm text-mutedText dark:text-mutedText-dark">
+      <footer class="mt-12 text-center text-sm text-mutedText dark:text-mutedText-dark">
         <p>Dernière mise à jour : <strong>05/02/2025</strong></p>
-      </div>
+      </footer>
     </div>
   </div>
 </template>

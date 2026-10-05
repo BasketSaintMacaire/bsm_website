@@ -199,7 +199,7 @@ function formatDate(d: string) {
 
 <template>
   <div class="p-8">
-    <div class="flex items-center justify-between mb-6">
+    <header class="flex items-center justify-between mb-6">
       <h1 class="text-2xl font-bold text-gray-800">Matchs</h1>
       <div class="flex gap-2">
         <button @click="downloadTemplate" class="text-sm px-3 py-1.5 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-600">Modèle CSV</button>
@@ -207,7 +207,7 @@ function formatDate(d: string) {
         <button @click="triggerPlanningImport" class="text-sm px-3 py-1.5 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-600">Import planning (Excel)</button>
         <button @click="openCreate" class="text-sm px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg">+ Ajouter</button>
       </div>
-    </div>
+    </header>
 
     <p v-if="importStatus" class="text-sm text-blue-600 mb-3">{{ importStatus }}</p>
 
@@ -249,9 +249,17 @@ function formatDate(d: string) {
     </div>
 
     <Teleport to="body">
-      <div v-if="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" @click.self="closeModal">
+      <dialog
+        v-if="showModal"
+        open
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="match-modal-title"
+        class="fixed inset-0 z-50 m-0 max-w-none max-h-none w-full h-full p-0 flex items-center justify-center bg-black/50"
+        @click.self="closeModal"
+      >
         <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6">
-          <h2 class="text-lg font-semibold text-gray-800 mb-4">
+          <h2 id="match-modal-title" class="text-lg font-semibold text-gray-800 mb-4">
             {{ editingId !== null ? 'Modifier le match' : 'Nouveau match' }}
           </h2>
           <form @submit.prevent="save" class="space-y-3">
@@ -313,7 +321,7 @@ function formatDate(d: string) {
             </div>
           </form>
         </div>
-      </div>
+      </dialog>
     </Teleport>
   </div>
 </template>

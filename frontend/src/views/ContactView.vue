@@ -125,15 +125,15 @@ const handleSubmit = async () => {
     <div class="w-full max-w-4xl bg-card dark:bg-card-dark rounded-lg shadow-2xl">
       <div class="p-8">
         <!-- Form header -->
-        <div class="text-center mb-8">
+        <header class="text-center mb-8">
           <h1 class="text-3xl font-bold text-mainText dark:text-mainText-dark mb-2">
             VOUS AVEZ UNE DEMANDE ?
           </h1>
           <h2 class="text-2xl font-bold text-mainText dark:text-mainText-dark">CONTACTEZ-NOUS !</h2>
-        </div>
+        </header>
 
         <!-- Success state -->
-        <div
+        <section
           v-if="submitted"
           class="flex flex-col items-center gap-4 py-12 text-center"
         >
@@ -153,12 +153,13 @@ const handleSubmit = async () => {
           >
             Envoyer un autre message
           </button>
-        </div>
+        </section>
 
         <!-- Form -->
         <form v-else @submit.prevent="handleSubmit" class="space-y-6">
           <!-- Name Fields -->
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <fieldset class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <legend class="sr-only">Nom complet</legend>
             <!-- Last Name -->
             <div>
               <label
@@ -194,7 +195,7 @@ const handleSubmit = async () => {
                 {{ errors.firstName }}
               </p>
             </div>
-          </div>
+          </fieldset>
 
           <!-- Email & About -->
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -238,7 +239,7 @@ const handleSubmit = async () => {
           </div>
 
           <!-- ————— Encart affiché uniquement pour “Inscription” -->
-          <div
+          <aside
             v-if="isRegistration"
             class="mt-4 rounded-md border border-yellow-300 bg-yellow-50 dark:bg-yellow-900/30 p-4 text-yellow-900 dark:text-yellow-100"
           >
@@ -269,7 +270,7 @@ const handleSubmit = async () => {
                 >.
               </p>
             </div>
-          </div>
+          </aside>
 
           <!-- Message -->
           <div>

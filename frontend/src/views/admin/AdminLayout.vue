@@ -28,9 +28,9 @@ const navItems = [
   <div class="flex min-h-screen bg-gray-100">
     <!-- Sidebar -->
     <aside class="w-60 bg-gray-900 flex flex-col shrink-0">
-      <div class="px-5 py-4 border-b border-gray-700">
+      <header class="px-5 py-4 border-b border-gray-700">
         <span class="text-white font-bold text-lg">BSM Admin</span>
-      </div>
+      </header>
       <nav class="flex-1 overflow-y-auto py-2">
         <RouterLink
           v-for="item in navItems"
@@ -42,14 +42,14 @@ const navItems = [
           {{ item.name }}
         </RouterLink>
       </nav>
-      <div class="px-5 py-4 border-t border-gray-700">
+      <footer class="px-5 py-4 border-t border-gray-700">
         <button
           @click="handleLogout"
           class="w-full text-left text-sm text-gray-400 hover:text-white transition-colors"
         >
           Déconnexion
         </button>
-      </div>
+      </footer>
     </aside>
 
     <!-- Main -->

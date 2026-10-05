@@ -115,8 +115,8 @@ onBeforeUnmount(() => {
     class="carousel-container overflow-x-scroll relative flex items-center cursor-grab hide-scrollbar"
     ref="container"
   >
-    <div class="carousel flex gap-4 transition-transform ease-in-out duration-500">
-      <div
+    <ul class="carousel flex gap-4 transition-transform ease-in-out duration-500">
+      <li
         v-for="(image, index) in images"
         :key="index"
         class="carousel-item flex-shrink-0 flex items-center justify-center"
@@ -134,8 +134,8 @@ onBeforeUnmount(() => {
           @error="handleImageError(index, $event)"
           draggable="false"
         />
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
 

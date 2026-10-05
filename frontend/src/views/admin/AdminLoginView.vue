@@ -28,8 +28,10 @@ async function handleLogin() {
 <template>
   <div class="min-h-screen bg-gray-100 flex items-center justify-center">
     <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm">
-      <h1 class="text-2xl font-bold text-gray-800 mb-1">Administration BSM</h1>
-      <p class="text-sm text-gray-500 mb-6">Connectez-vous pour accéder au backoffice</p>
+      <header>
+        <h1 class="text-2xl font-bold text-gray-800 mb-1">Administration BSM</h1>
+        <p class="text-sm text-gray-500 mb-6">Connectez-vous pour accéder au backoffice</p>
+      </header>
 
       <form @submit.prevent="handleLogin" class="space-y-4">
         <div>

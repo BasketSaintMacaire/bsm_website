@@ -192,14 +192,14 @@ const closeBillingModal = () => {
       <div v-else-if="error" class="text-center py-8">
         <p class="text-xl text-red-500">{{ error }}</p>
       </div>
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-        <div
+      <ul v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+        <li
           v-for="product in products"
           :key="product.id"
           class="rounded-lg overflow-hidden shadow-lg transition-transform md:hover:scale-105 bg-card dark:bg-card-dark"
         >
           <!-- Image Carousel -->
-          <div class="relative">
+          <figure class="relative">
             <img
               v-if="productImages[product.id] && productImages[product.id].length > 0"
               :src="productImages[product.id][currentImageIndex[product.id]]"
@@ -228,7 +228,7 @@ const closeBillingModal = () => {
             >
               <ChevronRight class="w-6 h-6" />
             </button>
-          </div>
+          </figure>
 
           <!-- Product Info -->
           <div class="p-4">
@@ -271,14 +271,18 @@ const closeBillingModal = () => {
               </button>
             </div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </main>
 
     <!-- Shopping Cart Sidebar -->
-    <div
+    <dialog
       v-if="showCart"
-      class="fixed inset-0 bg-black bg-opacity-50 dark:bg-white dark:bg-opacity-20 z-50"
+      open
+      class="fixed inset-0 z-50 m-0 max-w-none max-h-none w-full h-full p-0 bg-black bg-opacity-50 dark:bg-white dark:bg-opacity-20"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Panier"
       @click="showCart = false"
     >
       <div
@@ -286,7 +290,7 @@ const closeBillingModal = () => {
         @click.stop
       >
         <!-- Cart Header -->
-        <div class="p-6 border-b border-borderColor dark:border-borderColor-dark">
+        <header class="p-6 border-b border-borderColor dark:border-borderColor-dark">
           <div class="flex justify-between items-center">
             <h2 class="text-xl font-bold">Panier</h2>
             <button
@@ -296,19 +300,19 @@ const closeBillingModal = () => {
               <X class="w-6 h-6" />
             </button>
           </div>
-        </div>
+        </header>
 
         <!-- Cart Items (Scrollable) -->
         <div class="flex-grow overflow-y-auto p-6">
-          <div
+          <p
             v-if="cart.length === 0"
             class="text-center text-mutedText dark:text-mutedText-dark py-8"
           >
             Votre panier est vide
-          </div>
+          </p>
 
-          <div v-else class="space-y-4">
-            <div
+          <ul v-else class="space-y-4">
+            <li
               v-for="item in cart"
               :key="`${item.product.id}-${item.variant.color || ''}-${item.variant.size || ''}`"
               class="flex items-center gap-4 p-4 rounded-lg bg-gray-200 dark:bg-gray-700"
@@ -345,12 +349,12 @@ const closeBillingModal = () => {
               <div class="text-right">
                 <p class="font-semibold">{{ (item.variant.price * item.quantity).toFixed(2) }}€</p>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
 
         <!-- Cart Footer -->
-        <div
+        <footer
           class="p-6 border-t border-borderColor dark:border-borderColor-dark bg-card dark:bg-card-dark"
         >
           <div class="flex justify-between text-lg font-bold mb-4">
@@ -363,17 +367,23 @@ const closeBillingModal = () => {
           >
             Passer la commande
           </button>
-        </div>
+        </footer>
       </div>
-    </div>
+    </dialog>
 
     <!-- Billing Modal -->
-    <div
+    <dialog
       v-if="showBillingModal"
-      class="fixed inset-0 bg-black bg-opacity-75 dark:bg-white dark:bg-opacity-10 flex items-center justify-center z-50"
+      open
+      class="fixed inset-0 z-50 m-0 max-w-none max-h-none w-full h-full p-0 bg-black bg-opacity-75 dark:bg-white dark:bg-opacity-10 flex items-center justify-center"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="billing-modal-title"
     >
       <div class="bg-card dark:bg-card-dark p-8 rounded-lg max-w-md w-full">
-        <h2 class="text-2xl font-bold mb-4">Informations de facturation</h2>
+        <h2 id="billing-modal-title" class="text-2xl font-bold mb-4">
+          Informations de facturation
+        </h2>
         <form @submit.prevent="handleOrder" class="space-y-4">
           <!-- Name -->
           <div>
@@ -441,10 +451,10 @@ const closeBillingModal = () => {
           </div>
 
           <!-- Order Summary -->
-          <div class="mt-6">
+          <section class="mt-6">
             <h3 class="text-lg font-semibold mb-2">Résumé de la commande</h3>
-            <div class="space-y-2">
-              <div
+            <ul class="space-y-2">
+              <li
                 v-for="item in cart"
                 :key="`${item.product.id}-${item.variant.color || ''}-${item.variant.size || ''}`"
                 class="flex justify-between"
@@ -455,15 +465,15 @@ const closeBillingModal = () => {
                   {{ item.quantity }}
                 </span>
                 <span>{{ (item.variant.price * item.quantity).toFixed(2) }}€</span>
-              </div>
-              <div
-                class="flex justify-between border-t border-borderColor dark:border-borderColor-dark pt-2 font-bold"
-              >
-                <span>Total</span>
-                <span>{{ cartTotal.toFixed(2) }}€</span>
-              </div>
-            </div>
-          </div>
+              </li>
+            </ul>
+            <footer
+              class="flex justify-between border-t border-borderColor dark:border-borderColor-dark mt-2 pt-2 font-bold"
+            >
+              <span>Total</span>
+              <span>{{ cartTotal.toFixed(2) }}€</span>
+            </footer>
+          </section>
 
           <!-- Buttons -->
           <div class="flex justify-end space-x-4 mt-6">
@@ -483,7 +493,7 @@ const closeBillingModal = () => {
           </div>
         </form>
       </div>
-    </div>
+    </dialog>
   </div>
 </template>
 

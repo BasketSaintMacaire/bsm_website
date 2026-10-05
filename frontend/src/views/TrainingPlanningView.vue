@@ -47,25 +47,25 @@ const selectedWeekPeriod = computed(() => weekSchedule.value[selectedWeekIndex.v
       </div>
 
       <!-- Days grid for selected week -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        <div
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <li
           v-for="day in selectedWeek"
           :key="day.date"
           class="bg-card dark:bg-card-dark rounded-xl shadow-lg overflow-hidden flex flex-col"
         >
-          <div
+          <header
             class="bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white p-3 text-center font-semibold text-lg tracking-wide"
           >
             {{ day.date }}
-          </div>
+          </header>
           <div class="p-4 flex-1 flex flex-col gap-4">
-            <div
+            <p
               v-if="day.sessions.length === 0"
               class="text-mutedText dark:text-mutedText-dark text-center italic"
             >
               Pas d'entraînement
-            </div>
-            <div
+            </p>
+            <article
               v-for="(session, index) in day.sessions"
               :key="index"
               class="border-b border-borderColor dark:border-borderColor-dark pb-3 last:border-b-0 last:pb-0"
@@ -77,15 +77,15 @@ const selectedWeekPeriod = computed(() => weekSchedule.value[selectedWeekIndex.v
                   {{ session.time }}
                 </span>
               </div>
-              <div class="flex flex-wrap gap-1 mb-1">
-                <span
+              <ul class="flex flex-wrap gap-1 mb-1">
+                <li
                   v-for="group in session.groups"
                   :key="group"
                   class="inline-block bg-fuchsia-100 dark:bg-fuchsia-900 text-fuchsia-700 dark:text-fuchsia-200 px-2 py-0.5 rounded text-xs"
                 >
                   {{ group }}
-                </span>
-              </div>
+                </li>
+              </ul>
               <div class="flex items-center gap-2 text-sm text-mutedText dark:text-mutedText-dark">
                 <svg
                   class="w-4 h-4 text-purple-400"
@@ -139,10 +139,10 @@ const selectedWeekPeriod = computed(() => weekSchedule.value[selectedWeekIndex.v
                 </svg>
                 <span>{{ session.notes }}</span>
               </div>
-            </div>
+            </article>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>

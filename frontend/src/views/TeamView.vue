@@ -155,8 +155,8 @@ onUnmounted(() => {
       </div>
 
       <!-- Teams Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <li
           v-for="team in filteredTeams"
           :key="team.id"
           class="team-card group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
@@ -173,14 +173,14 @@ onUnmounted(() => {
             class="w-full h-80 object-cover transition-transform duration-500 md:group-hover:scale-110"
             @error="handleImageError"
           />
-          <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+          <header class="absolute bottom-0 left-0 right-0 p-6 z-20">
             <h2 class="text-3xl font-bold text-white mb-2">{{ team.name }}</h2>
             <p class="text-mutedText dark:text-mutedText-dark text-lg">
               {{ team.players.length }} joueurs
             </p>
-          </div>
-        </div>
-      </div>
+          </header>
+        </li>
+      </ul>
     </div>
 
     <!-- Modal Overlay -->
@@ -190,29 +190,35 @@ onUnmounted(() => {
     ></div>
 
     <!-- Sliding Right Panel -->
-    <div
+    <dialog
       v-if="isPanelOpen"
-      class="sliding-panel fixed inset-y-0 right-0 w-full sm:w-2/3 lg:w-1/2 bg-card dark:bg-card-dark shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
+      open
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="team-panel-title"
+      class="sliding-panel fixed inset-y-0 right-0 w-full sm:w-2/3 lg:w-1/2 m-0 max-w-none max-h-none bg-card dark:bg-card-dark shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
       :class="isPanelOpen ? 'translate-x-0' : 'translate-x-full'"
     >
       <div class="h-full p-6">
         <!-- Panel Header -->
-        <div class="flex justify-between items-center mb-6">
-          <h2 class="text-3xl font-bold text-purple-400">{{ selectedTeam?.name }}</h2>
+        <header class="flex justify-between items-center mb-6">
+          <h2 id="team-panel-title" class="text-3xl font-bold text-purple-400">
+            {{ selectedTeam?.name }}
+          </h2>
           <button
             @click.stop="closePanel"
             class="text-mutedText dark:text-mutedText-dark hover:text-mainText dark:hover:text-mainText-dark"
           >
             <X class="w-6 h-6" />
           </button>
-        </div>
+        </header>
 
-        <div class="mb-4 text-lg text-mutedText dark:text-mutedText-dark">
+        <p class="mb-4 text-lg text-mutedText dark:text-mutedText-dark">
           Saison : {{ selectedTeam?.season || 'N/A' }}
-        </div>
+        </p>
 
         <!-- Team Image -->
-        <div
+        <figure
           v-if="selectedTeam"
           class="mb-6 rounded-lg overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-800"
         >
@@ -224,30 +230,30 @@ onUnmounted(() => {
             class="w-full h-auto object-contain"
             @error="handleImageError"
           />
-        </div>
+        </figure>
 
         <!-- Players List -->
-        <div v-if="selectedTeam" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div
+        <ul v-if="selectedTeam" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <li
             v-for="player in selectedTeam.players"
             :key="player.id"
             class="player-card bg-gray-200 dark:bg-gray-700 rounded-lg p-4 shadow transform transition duration-300 md:hover:scale-105 md:hover:bg-purple-700"
           >
-            <div class="flex items-center justify-between mb-2">
+            <header class="flex items-center justify-between mb-2">
               <span class="text-3xl font-bold text-purple-400">{{ player.number }}</span>
               <span
                 class="text-sm font-semibold bg-gray-300 dark:bg-gray-600 text-mainText dark:text-mainText-dark px-2 py-1 rounded"
               >
                 {{ player.position }}
               </span>
-            </div>
+            </header>
             <h3 class="text-lg font-semibold text-mainText dark:text-mainText-dark">
               {{ player.name }}
             </h3>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-    </div>
+    </dialog>
   </div>
 </template>
 

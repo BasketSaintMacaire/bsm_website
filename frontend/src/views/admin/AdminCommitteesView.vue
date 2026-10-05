@@ -128,7 +128,7 @@ function downloadTemplate() {
 
 <template>
   <div class="p-8">
-    <div class="flex items-center justify-between mb-6">
+    <header class="flex items-center justify-between mb-6">
       <h1 class="text-2xl font-bold text-gray-800">Comités</h1>
       <div class="flex gap-2">
         <button
@@ -150,7 +150,7 @@ function downloadTemplate() {
           + Ajouter
         </button>
       </div>
-    </div>
+    </header>
 
     <p v-if="importStatus" class="text-sm text-blue-600 mb-3">{{ importStatus }}</p>
 
@@ -193,13 +193,17 @@ function downloadTemplate() {
 
     <!-- Modal -->
     <Teleport to="body">
-      <div
+      <dialog
         v-if="showModal"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+        open
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="committee-modal-title"
+        class="fixed inset-0 z-50 m-0 max-w-none max-h-none w-full h-full p-0 flex items-center justify-center bg-black/50"
         @click.self="closeModal"
       >
         <div class="bg-white rounded-xl shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto p-6">
-          <h2 class="text-lg font-semibold text-gray-800 mb-4">
+          <h2 id="committee-modal-title" class="text-lg font-semibold text-gray-800 mb-4">
             {{ editingId !== null ? 'Modifier le comité' : 'Nouveau comité' }}
           </h2>
           <form @submit.prevent="save" class="space-y-3">
@@ -231,7 +235,7 @@ function downloadTemplate() {
             </div>
           </form>
         </div>
-      </div>
+      </dialog>
     </Teleport>
   </div>
 </template>

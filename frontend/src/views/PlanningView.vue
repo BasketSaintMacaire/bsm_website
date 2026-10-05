@@ -260,7 +260,7 @@ const badgesByEvent = computed(() => {
     <div class="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
         <!-- Hero Section -->
-        <div class="text-center mb-12" :class="{ 'animate-fade-in-up': isVisible }">
+        <header class="text-center mb-12" :class="{ 'animate-fade-in-up': isVisible }">
           <h1
             class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-purple-600 mb-6 tracking-tight"
           >
@@ -269,7 +269,7 @@ const badgesByEvent = computed(() => {
 
           <!-- Important Notice -->
           <div class="max-w-4xl mx-auto mb-8">
-            <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 shadow-lg">
+            <aside class="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 shadow-lg">
               <div class="flex items-start space-x-3">
                 <Target class="w-6 h-6 text-white flex-shrink-0 mt-1" />
                 <p class="text-white font-medium leading-relaxed">
@@ -278,13 +278,13 @@ const badgesByEvent = computed(() => {
                   l'arbitrage, la table ou le bar.
                 </p>
               </div>
-            </div>
+            </aside>
           </div>
-        </div>
+        </header>
 
         <!-- Filters Section -->
         <div class="mb-12" :class="{ 'animate-fade-in-up animation-delay-300': isVisible }">
-          <div
+          <section
             class="bg-card dark:bg-card-dark rounded-2xl shadow-xl border border-borderColor dark:border-borderColor-dark p-8"
           >
             <h2 class="text-2xl font-bold text-mainText dark:text-mainText-dark mb-6 text-center">
@@ -371,15 +371,15 @@ const badgesByEvent = computed(() => {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
 
         <!-- Events Grid -->
-        <div
+        <ul
           class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
           :class="{ 'animate-fade-in-up animation-delay-600': isVisible }"
         >
-          <div
+          <li
             v-for="(event, index) in filteredEvents"
             :key="`${event.date}-${event.time_start}-${event.team}`"
             class="group relative"
@@ -391,11 +391,11 @@ const badgesByEvent = computed(() => {
             ></div>
 
             <!-- Card -->
-            <div
+            <article
               class="relative bg-card dark:bg-card-dark rounded-2xl shadow-xl border border-borderColor dark:border-borderColor-dark overflow-hidden transform transition-all duration-300 hover:scale-105"
             >
               <!-- Header -->
-              <div
+              <header
                 class="bg-gradient-to-r from-purple-600 to-blue-600 p-6 text-white relative overflow-hidden"
               >
                 <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
@@ -405,11 +405,11 @@ const badgesByEvent = computed(() => {
                   <div class="flex items-center justify-between mb-2">
                     <div class="flex items-center space-x-2">
                       <Calendar class="w-5 h-5" />
-                      <span class="font-semibold">{{ event.date }}</span>
+                      <time class="font-semibold">{{ event.date }}</time>
                     </div>
                     <div class="flex items-center space-x-2">
                       <Clock class="w-5 h-5" />
-                      <span class="font-semibold">{{ event.time_start }}</span>
+                      <time class="font-semibold">{{ event.time_start }}</time>
                     </div>
                   </div>
 
@@ -422,7 +422,7 @@ const badgesByEvent = computed(() => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </header>
 
               <!-- Content -->
               <div class="p-6 space-y-4">
@@ -458,93 +458,93 @@ const badgesByEvent = computed(() => {
                 </div>
 
                 <!-- Details -->
-                <div class="space-y-3">
+                <dl class="space-y-3">
                   <div v-if="event.opponent" class="flex items-start space-x-3">
                     <Users class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
-                        >Adversaire</span
-                      >
-                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                      <dt class="text-sm font-medium text-mutedText dark:text-mutedText-dark">
+                        Adversaire
+                      </dt>
+                      <dd class="text-mainText dark:text-mainText-dark font-semibold">
                         {{ event.opponent }}
-                      </p>
+                      </dd>
                     </div>
                   </div>
 
                   <div v-if="event.location" class="flex items-start space-x-3">
                     <MapPin class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
-                        >Lieu</span
-                      >
-                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                      <dt class="text-sm font-medium text-mutedText dark:text-mutedText-dark">
+                        Lieu
+                      </dt>
+                      <dd class="text-mainText dark:text-mainText-dark font-semibold">
                         {{ event.location }}
-                      </p>
+                      </dd>
                     </div>
                   </div>
 
                   <div v-if="event.time_meetup" class="flex items-start space-x-3">
                     <Clock class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
-                        >RDV</span
-                      >
-                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                      <dt class="text-sm font-medium text-mutedText dark:text-mutedText-dark">
+                        RDV
+                      </dt>
+                      <dd class="text-mainText dark:text-mainText-dark font-semibold">
                         {{ event.time_meetup }}
-                      </p>
+                      </dd>
                     </div>
                   </div>
 
                   <div v-if="event.referees.length" class="flex items-start space-x-3">
                     <Megaphone class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
-                        >Arbitres</span
-                      >
-                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                      <dt class="text-sm font-medium text-mutedText dark:text-mutedText-dark">
+                        Arbitres
+                      </dt>
+                      <dd class="text-mainText dark:text-mainText-dark font-semibold">
                         {{ event.referees.join(', ') }}
-                      </p>
+                      </dd>
                     </div>
                   </div>
 
                   <div v-if="event.board_official.length" class="flex items-start space-x-3">
                     <User class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
-                        >Tables</span
-                      >
-                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                      <dt class="text-sm font-medium text-mutedText dark:text-mutedText-dark">
+                        Tables
+                      </dt>
+                      <dd class="text-mainText dark:text-mainText-dark font-semibold">
                         {{ event.board_official.join(', ') }}
-                      </p>
+                      </dd>
                     </div>
                   </div>
 
                   <div v-if="event.bar" class="flex items-start space-x-3">
                     <Coffee class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <span class="text-sm font-medium text-mutedText dark:text-mutedText-dark"
-                        >Bar</span
-                      >
-                      <p class="text-mainText dark:text-mainText-dark font-semibold">
+                      <dt class="text-sm font-medium text-mutedText dark:text-mutedText-dark">
+                        Bar
+                      </dt>
+                      <dd class="text-mainText dark:text-mainText-dark font-semibold">
                         {{ event.bar }}
-                      </p>
+                      </dd>
                     </div>
                   </div>
-                </div>
+                </dl>
 
                 <!-- Result -->
-                <div
+                <footer
                   v-if="event.result.length === 2"
                   class="mt-6 p-4 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl text-center"
                 >
                   <p class="text-white font-bold text-lg">
                     Résultat : {{ event.result[0] }} - {{ event.result[1] }}
                   </p>
-                </div>
+                </footer>
               </div>
-            </div>
-          </div>
-        </div>
+            </article>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

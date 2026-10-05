@@ -18,7 +18,7 @@ const { data: committees } = useApiList<Committee>('/committees')
   >
     <div class="max-w-7xl mx-auto">
       <!-- Header Section -->
-      <div class="text-center mb-16">
+      <header class="text-center mb-16">
         <!-- Replace text-white with text-mainText so it adapts to dark mode -->
         <h1 class="text-4xl font-bold text-mainText dark:text-mainText-dark mb-6">Le Bureau</h1>
 
@@ -36,10 +36,10 @@ const { data: committees } = useApiList<Committee>('/committees')
           }}
           bénévoles qui œuvrent ensemble pour faire grandir le BSM.
         </p>
-      </div>
+      </header>
 
       <!-- Main Image Section with gradient overlay -->
-      <div class="relative rounded-xl overflow-hidden mb-16 group">
+      <figure class="relative rounded-xl overflow-hidden mb-16 group">
         <img
           src="@/assets/committeesHeaderImg.webp"
           alt="Réunion du bureau"
@@ -50,24 +50,24 @@ const { data: committees } = useApiList<Committee>('/committees')
           class="absolute inset-0 bg-gradient-to-t from-black dark:from-page-dark to-transparent"
         ></div>
 
-        <div class="absolute bottom-0 left-0 p-8">
+        <figcaption class="absolute bottom-0 left-0 p-8">
           <!-- For body text, use mainText or mutedText as you prefer -->
           <p class="text-mutedText dark:text-mainText-dark text-lg max-w-2xl">
             Le bureau, composé d'une vingtaine de membres, se réunit environ une fois par mois et
             plus souvent à l'approche des manifestations programmées.
           </p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
       <!-- Key Roles Section -->
-      <div class="mb-16">
+      <section class="mb-16">
         <h2 class="text-3xl font-bold text-mainText dark:text-mainText-dark mb-8 text-center">
           Membres Clés du Bureau
         </h2>
 
         <!-- Key roles: keep gradient if you like the accent -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <li
             v-for="role in keyRoles"
             :key="role.title"
             class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-6 text-center transform md:hover:scale-105 transition-all duration-300 shadow-lg"
@@ -80,51 +80,51 @@ const { data: committees } = useApiList<Committee>('/committees')
             <p class="text-xl text-gray-200">
               {{ role.name }}
             </p>
-          </div>
-        </div>
-      </div>
+          </li>
+        </ul>
+      </section>
 
       <!-- Committees Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <li
           v-for="committee in committees"
           :key="committee.id"
           class="rounded-xl p-6 transform md:hover:-translate-y-2 transition-all duration-300 bg-card dark:bg-card-dark"
         >
-          <div class="flex items-center mb-4">
+          <header class="flex items-center mb-4">
             <!-- Keep icon color or switch to theme token -->
             <component :is="iconsMap[committee.icon]" class="w-8 h-8 text-purple-500 mr-3" />
             <h3 class="text-xl font-semibold text-mainText dark:text-mainText-dark">
               {{ committee.name }}
             </h3>
-          </div>
+          </header>
 
           <p class="text-mutedText dark:text-mutedText-dark mb-4">
             {{ committee.description }}
           </p>
 
           <!-- Email link -->
-          <div class="mb-4">
+          <address class="mb-4 not-italic">
             <a
               :href="`mailto:${committee.email}`"
               class="text-purple-500 dark:text-purple-400 hover:underline text-sm font-medium"
             >
               {{ committee.email }}
             </a>
-          </div>
+          </address>
 
           <!-- Member badges -->
-          <div class="flex flex-wrap gap-2">
-            <span
+          <ul class="flex flex-wrap gap-2">
+            <li
               v-for="member in committee.members"
               :key="member"
               class="px-3 py-1 text-sm rounded-full bg-gray-200 dark:bg-gray-700 text-mutedText dark:text-mutedText-dark transition-colors duration-300"
             >
               {{ member }}
-            </span>
-          </div>
-        </div>
-      </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </template>

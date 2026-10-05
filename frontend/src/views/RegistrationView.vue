@@ -27,7 +27,7 @@ onMounted(() => {
     class="min-h-screen bg-page dark:bg-page-dark text-mainText dark:text-mainText-dark overflow-x-hidden"
   >
     <!-- Hero Banner -->
-    <div
+    <header
       class="relative bg-gradient-to-br from-purple-700 via-indigo-600 to-violet-800 py-20 px-4 overflow-hidden"
     >
       <!-- Blob animations -->
@@ -65,14 +65,14 @@ onMounted(() => {
           <span>Tous niveaux · Tous âges</span>
         </div>
       </div>
-    </div>
+    </header>
 
     <div class="max-w-4xl mx-auto px-4 py-14">
       <!-- Steps -->
       <h2 class="text-2xl font-bold text-center mb-10">Comment s'inscrire&nbsp;?</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
-        <div
+      <ol class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+        <li
           class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-lg border-t-4 border-purple-500 hover:-translate-y-2 transition-transform duration-300"
         >
           <div
@@ -84,9 +84,9 @@ onMounted(() => {
           <p class="text-sm text-mutedText dark:text-mutedText-dark">
             Récupérez les modalités et le bulletin d'inscription ci-dessous.
           </p>
-        </div>
+        </li>
 
-        <div
+        <li
           class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-lg border-t-4 border-indigo-500 hover:-translate-y-2 transition-transform duration-300 md:mt-6"
         >
           <div
@@ -98,9 +98,9 @@ onMounted(() => {
           <p class="text-sm text-mutedText dark:text-mutedText-dark">
             Complétez le formulaire et préparez vos pièces justificatives.
           </p>
-        </div>
+        </li>
 
-        <div
+        <li
           class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-lg border-t-4 border-violet-500 hover:-translate-y-2 transition-transform duration-300"
         >
           <div
@@ -112,20 +112,20 @@ onMounted(() => {
           <p class="text-sm text-mutedText dark:text-mutedText-dark">
             Rendez-vous à la Salle Georges Raymond aux permanences prévues.
           </p>
-        </div>
-      </div>
+        </li>
+      </ol>
 
       <!-- Downloads -->
       <h2 class="text-2xl font-bold text-center mb-8">Documents à télécharger</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
         <!-- Modalités -->
-        <div
+        <li
           class="group bg-card dark:bg-card-dark rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
         >
           <div class="bg-gradient-to-r from-purple-600 to-indigo-600 h-1.5" />
           <div class="p-6">
-            <div class="flex items-center gap-4 mb-4">
+            <header class="flex items-center gap-4 mb-4">
               <div
                 class="w-14 h-14 bg-purple-100 dark:bg-purple-900/50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
               >
@@ -135,7 +135,7 @@ onMounted(() => {
                 <h3 class="font-bold text-lg">Modalités d'inscription</h3>
                 <p class="text-xs text-mutedText dark:text-mutedText-dark">Saison 2026 / 2027</p>
               </div>
-            </div>
+            </header>
             <p class="text-sm text-mutedText dark:text-mutedText-dark mb-5">
               Tarifs, conditions et toute la procédure d'inscription détaillée.
             </p>
@@ -152,15 +152,15 @@ onMounted(() => {
               Télécharger
             </button>
           </div>
-        </div>
+        </li>
 
         <!-- Bulletin -->
-        <div
+        <li
           class="group bg-card dark:bg-card-dark rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
         >
           <div class="bg-gradient-to-r from-indigo-600 to-violet-600 h-1.5" />
           <div class="p-6">
-            <div class="flex items-center gap-4 mb-4">
+            <header class="flex items-center gap-4 mb-4">
               <div
                 class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
               >
@@ -170,7 +170,7 @@ onMounted(() => {
                 <h3 class="font-bold text-lg">Bulletin d'inscription</h3>
                 <p class="text-xs text-mutedText dark:text-mutedText-dark">Saison 2026 / 2027</p>
               </div>
-            </div>
+            </header>
             <p class="text-sm text-mutedText dark:text-mutedText-dark mb-5">
               Le formulaire à compléter et à remettre lors d'une permanence au club.
             </p>
@@ -184,17 +184,17 @@ onMounted(() => {
               Télécharger
             </button>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
 
       <!-- Permanences -->
-      <div class="mb-6">
+      <section class="mb-6">
         <h2 class="text-2xl font-bold text-center mb-6">Permanences</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <li
             class="bg-card dark:bg-card-dark rounded-xl p-5 shadow-md border-l-4 border-purple-500 hover:-translate-y-1 transition-transform duration-300"
           >
-            <div class="flex items-center gap-3 mb-3">
+            <header class="flex items-center gap-3 mb-3">
               <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center flex-shrink-0">
                 <Calendar class="w-5 h-5 text-purple-600 dark:text-purple-400" />
               </div>
@@ -202,17 +202,17 @@ onMounted(() => {
                 <p class="font-bold text-base">Samedi 6 juin</p>
                 <p class="text-sm text-purple-600 dark:text-purple-400 font-semibold">10h – 12h</p>
               </div>
-            </div>
+            </header>
             <div class="flex items-center gap-2 text-sm text-mutedText dark:text-mutedText-dark">
               <MapPin class="w-4 h-4 flex-shrink-0" />
               <span>Salle Georges Raymond</span>
             </div>
-          </div>
+          </li>
 
-          <div
+          <li
             class="bg-card dark:bg-card-dark rounded-xl p-5 shadow-md border-l-4 border-indigo-500 hover:-translate-y-1 transition-transform duration-300"
           >
-            <div class="flex items-center gap-3 mb-3">
+            <header class="flex items-center gap-3 mb-3">
               <div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/50 rounded-full flex items-center justify-center flex-shrink-0">
                 <Calendar class="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
               </div>
@@ -220,17 +220,17 @@ onMounted(() => {
                 <p class="font-bold text-base">Mercredi 10 juin</p>
                 <p class="text-sm text-indigo-600 dark:text-indigo-400 font-semibold">18h – 19h30</p>
               </div>
-            </div>
+            </header>
             <div class="flex items-center gap-2 text-sm text-mutedText dark:text-mutedText-dark">
               <MapPin class="w-4 h-4 flex-shrink-0" />
               <span>Salle Pierre de Coubertin</span>
             </div>
-          </div>
-        </div>
-      </div>
+          </li>
+        </ul>
+      </section>
 
       <!-- Info FFBB -->
-      <div
+      <aside
         class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-md flex gap-4 mb-6 border-l-4 border-blue-500"
       >
         <div class="flex-shrink-0">
@@ -252,10 +252,10 @@ onMounted(() => {
             N'hésitez pas à contacter le secrétariat si vous ne le recevez pas !
           </p>
         </div>
-      </div>
+      </aside>
 
       <!-- Contact CTA -->
-      <div
+      <section
         class="text-center bg-gradient-to-r from-purple-600/10 to-indigo-600/10 border border-purple-200 dark:border-purple-800 rounded-2xl p-10 mt-8"
       >
         <h3 class="font-bold text-2xl mb-2">Une question ?</h3>
@@ -269,7 +269,7 @@ onMounted(() => {
           <Mail class="w-5 h-5" />
           secretaire@bsmbasket.fr
         </a>
-      </div>
+      </section>
     </div>
   </div>
 </template>

@@ -7,13 +7,13 @@ const sections = ref([
     title: 'Éditeur du Site',
     content: `
       <p class="mb-4">Le présent site est édité par l'association <strong>BSM : Basket Saint Macaire</strong>, association loi 1901, dont le siège social est situé à :</p>
-      <div class="bg-gray-800 p-4 rounded-lg mb-4 text-[#FFFFFF]">
+      <address class="bg-gray-800 p-4 rounded-lg mb-4 text-[#FFFFFF] not-italic">
         <p><strong>BSM : Basket Saint Macaire</strong><br>
         Stade Georges Raymond<br>
         49450 Saint-Macaire (France)<br>
         Tél : 06 84 41 53 02<br>
         Email : contact@bsmbasket.fr</p>
-      </div>
+      </address>
       <p>N° SIRET : <strong>425 000 700 00038</strong></p>
     `,
     isOpen: true,
@@ -29,11 +29,11 @@ const sections = ref([
     title: 'Hébergement du site',
     content: `
       <p>Le site <strong>bsmbasket.fr</strong> est hébergé par :</p>
-      <div class="bg-gray-800 p-4 rounded-lg mt-2 text-[#FFFFFF]">
+      <address class="bg-gray-800 p-4 rounded-lg mt-2 text-[#FFFFFF] not-italic">
         <p><strong>o2switch</strong><br>
         Chem. des Pardiaux, 63000 Clermont-Ferrand<br>
         Tél : 04 44 44 60 40</p>
-      </div>
+      </address>
     `,
     isOpen: false,
   },
@@ -100,8 +100,8 @@ const toggleSection = (index: number) => {
         Mentions Légales
       </h1>
 
-      <div class="space-y-6">
-        <div
+      <ul class="space-y-6">
+        <li
           v-for="(section, index) in sections"
           :key="index"
           class="bg-card dark:bg-card-dark rounded-lg overflow-hidden shadow-lg transition-all duration-300 ease-in-out"
@@ -120,12 +120,12 @@ const toggleSection = (index: number) => {
           <div v-show="section.isOpen" class="px-6 pb-4 transition-all duration-300 ease-in-out">
             <div class="prose dark:prose-invert max-w-none" v-html="section.content"></div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
 
-      <div class="mt-12 text-center text-sm text-mutedText dark:text-mutedText-dark">
+      <footer class="mt-12 text-center text-sm text-mutedText dark:text-mutedText-dark">
         <p>Dernière mise à jour : <strong>05/02/2025</strong></p>
-      </div>
+      </footer>
     </div>
   </div>
 </template>

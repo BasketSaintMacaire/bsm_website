@@ -348,23 +348,27 @@ function toggleTheme() {
           </div>
 
           <!-- Contact Info -->
-          <div>
+          <section>
             <h2 class="text-lg font-semibold mb-4">Contact</h2>
-            <ul class="space-y-2 text-sm text-mutedText dark:text-mutedText-dark">
-              <li>Stade Georges Raymond</li>
-              <li>contact@bsmbasket.fr</li>
-            </ul>
+            <address class="space-y-2 text-sm text-mutedText dark:text-mutedText-dark not-italic">
+              <p>Stade Georges Raymond</p>
+              <p>contact@bsmbasket.fr</p>
+            </address>
             <RouterLink
               to="/contact"
               class="inline-block mt-4 text-sm font-semibold text-purple-500 hover:text-purple-400 transition-colors"
             >
               Nous écrire →
             </RouterLink>
-          </div>
+          </section>
 
           <!-- Sitemap mirroring the header groups -->
           <div class="sm:col-span-2 grid grid-cols-2 gap-8">
-            <div v-for="group in navGroups.filter((g) => g.children)" :key="group.id">
+            <nav
+              v-for="group in navGroups.filter((g) => g.children)"
+              :key="group.id"
+              :aria-label="group.text"
+            >
               <h2 class="text-lg font-semibold mb-4">{{ group.text }}</h2>
               <ul class="space-y-2 text-sm">
                 <li v-for="child in group.children" :key="child.to">
@@ -376,11 +380,11 @@ function toggleTheme() {
                   </RouterLink>
                 </li>
               </ul>
-            </div>
+            </nav>
 
-            <div>
+            <section>
               <h2 class="text-lg font-semibold mb-4">Suivez-nous</h2>
-              <div class="flex space-x-4">
+              <nav aria-label="Réseaux sociaux" class="flex space-x-4">
                 <a
                   href="https://www.instagram.com/basket_st_macaire/"
                   target="_blank"
@@ -407,7 +411,7 @@ function toggleTheme() {
                     />
                   </svg>
                 </a>
-              </div>
+              </nav>
 
               <RouterLink
                 to="/inscription"
@@ -415,7 +419,7 @@ function toggleTheme() {
               >
                 S'inscrire
               </RouterLink>
-            </div>
+            </section>
           </div>
         </div>
 
@@ -424,7 +428,7 @@ function toggleTheme() {
           class="mt-12 pt-8 border-t border-borderColor dark:border-borderColor-dark flex flex-col sm:flex-row justify-between items-center text-sm text-mutedText dark:text-mutedText-dark"
         >
           <p>&copy; {{ currentYear }} BASKET SAINT MACAIRE. Tous droits réservés.</p>
-          <div class="mt-4 sm:mt-0">
+          <nav aria-label="Liens légaux" class="mt-4 sm:mt-0">
             <RouterLink
               to="/mentions-legales"
               class="hover:text-purple-400 transition-colors text-mainText dark:text-mainText-dark"
@@ -438,7 +442,7 @@ function toggleTheme() {
             >
               Politique de confidentialité
             </RouterLink>
-          </div>
+          </nav>
         </div>
       </div>
     </footer>

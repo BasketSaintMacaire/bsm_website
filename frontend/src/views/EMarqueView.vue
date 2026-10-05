@@ -86,11 +86,11 @@ const steps = [
           :key="cat.id"
           class="flex flex-col rounded-2xl bg-card dark:bg-card-dark border border-borderColor dark:border-borderColor-dark overflow-hidden"
         >
-          <div :class="['bg-gradient-to-r p-6', cat.gradient]">
+          <header :class="['bg-gradient-to-r p-6', cat.gradient]">
             <component :is="cat.icon" class="w-9 h-9 text-white mb-3" />
             <h2 class="text-2xl font-bold text-white">{{ cat.label }}</h2>
             <p class="text-white/80 text-sm mt-1">{{ cat.ages }}</p>
-          </div>
+          </header>
 
           <div class="flex flex-col flex-1 p-6 gap-6">
             <p class="text-mutedText dark:text-mutedText-dark">{{ cat.description }}</p>
@@ -105,47 +105,49 @@ const steps = [
             </a>
 
             <!-- Video, U13+ only -->
-            <div v-if="cat.hasVideo" class="mt-auto">
+            <section v-if="cat.hasVideo" class="mt-auto">
               <h3 class="flex items-center gap-2 font-bold mb-3">
                 <CirclePlay class="w-5 h-5 text-purple-600 dark:text-purple-400" />
                 Tutoriel vidéo
               </h3>
-              <div
-                class="relative aspect-video rounded-lg overflow-hidden bg-black border border-borderColor dark:border-borderColor-dark"
-              >
-                <iframe
-                  v-if="isVideoLoaded"
-                  class="absolute inset-0 w-full h-full"
-                  :src="`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0`"
-                  title="Tutoriel vidéo e-Marque U13 et plus"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                />
-                <button
-                  v-else
-                  type="button"
-                  class="group absolute inset-0 w-full h-full"
-                  aria-label="Lancer le tutoriel vidéo e-Marque"
-                  @click="isVideoLoaded = true"
+              <figure>
+                <div
+                  class="relative aspect-video rounded-lg overflow-hidden bg-black border border-borderColor dark:border-borderColor-dark"
                 >
-                  <img
-                    :src="`https://i.ytimg.com/vi/${VIDEO_ID}/hqdefault.jpg`"
-                    alt=""
-                    class="w-full h-full object-cover opacity-70 transition-opacity group-hover:opacity-50"
+                  <iframe
+                    v-if="isVideoLoaded"
+                    class="absolute inset-0 w-full h-full"
+                    :src="`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0`"
+                    title="Tutoriel vidéo e-Marque U13 et plus"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
                   />
-                  <span
-                    class="absolute inset-0 flex flex-col items-center justify-center gap-2 text-white"
+                  <button
+                    v-else
+                    type="button"
+                    class="group absolute inset-0 w-full h-full"
+                    aria-label="Lancer le tutoriel vidéo e-Marque"
+                    @click="isVideoLoaded = true"
                   >
-                    <CirclePlay class="w-16 h-16 drop-shadow-lg transition-transform group-hover:scale-110" />
-                    <span class="text-sm font-semibold">Voir le tutoriel</span>
-                  </span>
-                </button>
-              </div>
-              <p class="mt-2 text-xs text-mutedText dark:text-mutedText-dark">
-                La vidéo n'est chargée qu'après un clic — aucune donnée n'est envoyée à YouTube
-                avant.
-              </p>
-            </div>
+                    <img
+                      :src="`https://i.ytimg.com/vi/${VIDEO_ID}/hqdefault.jpg`"
+                      alt=""
+                      class="w-full h-full object-cover opacity-70 transition-opacity group-hover:opacity-50"
+                    />
+                    <span
+                      class="absolute inset-0 flex flex-col items-center justify-center gap-2 text-white"
+                    >
+                      <CirclePlay class="w-16 h-16 drop-shadow-lg transition-transform group-hover:scale-110" />
+                      <span class="text-sm font-semibold">Voir le tutoriel</span>
+                    </span>
+                  </button>
+                </div>
+                <figcaption class="mt-2 text-xs text-mutedText dark:text-mutedText-dark">
+                  La vidéo n'est chargée qu'après un clic — aucune donnée n'est envoyée à YouTube
+                  avant.
+                </figcaption>
+              </figure>
+            </section>
           </div>
         </section>
       </div>

@@ -86,7 +86,7 @@ const sortedEvents = computed(() => {
           </div>
         </RouterLink>
 
-        <div class="container mx-auto px-6 flex-1 flex flex-col justify-end pb-24">
+        <header class="container mx-auto px-6 flex-1 flex flex-col justify-end pb-24">
           <!-- Hero Text -->
           <h2
             class="text-5xl md:text-7xl font-extrabold max-w-2xl leading-tight bg-clip-text text-transparent bg-purple-600"
@@ -96,7 +96,7 @@ const sortedEvents = computed(() => {
           </h2>
 
           <!-- Social Icons -->
-          <div class="flex gap-4 mt-6">
+          <nav aria-label="Réseaux sociaux" class="flex gap-4 mt-6">
             <a
               href="https://www.instagram.com/basket_st_macaire/"
               class="text-mainText-dark md:hover:text-purple-500"
@@ -145,8 +145,8 @@ const sortedEvents = computed(() => {
                 />
               </svg>
             </a>
-          </div>
-        </div>
+          </nav>
+        </header>
       </div>
     </section>
 
@@ -184,28 +184,28 @@ const sortedEvents = computed(() => {
         >
           NOS ÉVÉNEMENTS DE LA SAISON
         </h2>
-        <div
+        <ul
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 justify-items-center"
         >
-          <div v-for="event in sortedEvents" :key="event.day" class="w-full max-w-xs">
+          <li v-for="event in sortedEvents" :key="event.day" class="w-full max-w-xs">
             <!-- Replace bg-gray-800 with a token-based background for dark mode -->
-            <div
+            <article
               class="bg-card dark:bg-card-dark rounded-lg overflow-hidden shadow-lg transition-transform duration-300 md:hover:scale-105"
             >
               <!-- Purple accent for top bar -->
-              <div class="bg-purple-600 p-4 text-center">
+              <header class="bg-purple-600 p-4 text-center">
                 <div class="text-4xl font-bold text-white">{{ event.day }}</div>
                 <div class="text-xl text-purple-200">{{ event.month }}</div>
-              </div>
+              </header>
               <div class="p-4">
-                <div class="text-lg font-semibold text-mainText dark:text-mainText-dark mb-2">
+                <h3 class="text-lg font-semibold text-mainText dark:text-mainText-dark mb-2">
                   {{ event.name }}
-                </div>
+                </h3>
                 <div class="text-purple-300">{{ event.year }}</div>
               </div>
-            </div>
-          </div>
-        </div>
+            </article>
+          </li>
+        </ul>
       </div>
     </section>
 

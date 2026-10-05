@@ -15,15 +15,15 @@ const cards = [
 <template>
   <div class="p-8">
     <h1 class="text-2xl font-bold text-gray-800 mb-6">Tableau de bord</h1>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <RouterLink
-        v-for="card in cards"
-        :key="card.label"
-        :to="{ name: card.to }"
-        class="bg-white rounded-lg shadow-sm p-5 hover:shadow-md hover:border-purple-500 border border-transparent transition-all"
-      >
-        <span class="text-gray-700 font-medium">{{ card.label }}</span>
-      </RouterLink>
-    </div>
+    <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <li v-for="card in cards" :key="card.label">
+        <RouterLink
+          :to="{ name: card.to }"
+          class="block bg-white rounded-lg shadow-sm p-5 hover:shadow-md hover:border-purple-500 border border-transparent transition-all"
+        >
+          <span class="text-gray-700 font-medium">{{ card.label }}</span>
+        </RouterLink>
+      </li>
+    </ul>
   </div>
 </template>
