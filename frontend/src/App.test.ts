@@ -67,3 +67,53 @@ describe('App — theme toggle', () => {
     expect(wrapper.html()).toContain(String(new Date().getFullYear()))
   })
 })
+
+describe('App — grouped navigation', () => {
+  it('exposes the top-level groups, contact, and the boutique link', () => {
+    const wrapper = mount(App)
+    const text = wrapper.text()
+    for (const group of ['LE CLUB', 'PLANNINGS', 'ACTUALITÉS', 'RESSOURCES', 'CONTACT', 'Boutique']) {
+      expect(text).toContain(group)
+    }
+  })
+
+  it('makes Contact a direct top-level link, not nested in the Ressources dropdown', () => {
+    const wrapper = mount(App)
+    const contactLinks = wrapper.findAll('a').filter((a) => a.attributes('to') === '/contact')
+    // Header (desktop + mobile accordion) and the footer "Nous écrire" link.
+    expect(contactLinks.length).toBeGreaterThanOrEqual(2)
+
+    const ressourcesMenu = wrapper.find('#menu-ressources')
+    expect(ressourcesMenu.text()).not.toContain('Contact')
+  })
+
+  it('keeps every page reachable from the header', () => {
+    const wrapper = mount(App)
+    // The RouterLink stub declares no props, so `to` falls through to the <a>.
+    const targets = wrapper.findAll('a').map((a) => a.attributes('to'))
+
+    for (const route of [
+      '/leclub',
+      '/histoire',
+      '/equipes',
+      '/bureau',
+      '/basketfit',
+      '/planning',
+      '/planning-entrainement',
+      '/actualites',
+      '/ressources',
+      '/ressources/e-marque',
+      '/contact',
+      '/inscription',
+    ]) {
+      expect(targets).toContain(route)
+    }
+  })
+
+  it('promotes inscription to a header call-to-action', () => {
+    const wrapper = mount(App)
+    const cta = wrapper.findAll('a').filter((a) => a.attributes('to') === '/inscription')
+    expect(cta.length).toBeGreaterThan(0)
+    expect(cta.some((a) => a.classes().includes('bg-purple-600'))).toBe(true)
+  })
+})
