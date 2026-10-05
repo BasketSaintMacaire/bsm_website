@@ -66,7 +66,16 @@ jobs:
             bitnamilegacy/minio:2025.7.23-debian-12-r5 server /data
 
       - name: Wait for MinIO health
-        run: timeout 30 bash -c 'until curl -sf http://localhost:9000/minio/health/live; do sleep 1; done'
+        # 90s, not 30s: this is a cold pull on every run (no layer cache
+        # between jobs), and Bitnami's startup wrapper has more overhead
+        # than the official image this timeout was originally tuned for.
+        run: timeout 90 bash -c 'until curl -sf http://localhost:9000/minio/health/live; do sleep 1; done'
+
+      - name: Show MinIO container state on failure
+        if: failure()
+        run: |
+          docker ps -a
+          docker logs minio || true
 
       - name: Create MinIO bucket
         run: |
