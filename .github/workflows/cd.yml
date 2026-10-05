@@ -209,3 +209,21 @@ jobs:
             docker compose --env-file .env --env-file .env.deploy pull
             docker compose --env-file .env --env-file .env.deploy up -d
             docker image prune -f
+
+            # Mirror any static files baked into the frontend image (e.g.
+            # frontend/public/files/*.pdf) into MinIO's bucket. nginx's
+            # /files/ location always proxies to MinIO, so a file that only
+            # exists in the frontend image's own filesystem is never
+            # actually servable from the live site.
+            set -a; . ./.env; set +a
+            BUCKET="${MINIO_BUCKET:-bsm-media}"
+            rm -rf /tmp/bsm-seed-files
+            if docker compose cp frontend:/usr/share/nginx/html/files /tmp/bsm-seed-files 2>/dev/null; then
+              docker compose exec -T --user root minio mc alias set local http://localhost:9000 "$MINIO_ROOT_USER" "$MINIO_ROOT_PASSWORD"
+              docker compose cp /tmp/bsm-seed-files minio:/tmp/bsm-seed-files
+              docker compose exec -T --user root minio mc mirror --overwrite /tmp/bsm-seed-files/ "local/$BUCKET/files"
+              docker compose exec -T --user root minio rm -rf /tmp/bsm-seed-files
+              rm -rf /tmp/bsm-seed-files
+            else
+              echo "No frontend/public/files baked into the image — skipping media seed."
+            fi
