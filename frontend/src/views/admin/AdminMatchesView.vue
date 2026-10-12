@@ -2,7 +2,6 @@
 import { ref, onMounted } from 'vue'
 import { api } from '@/lib/api'
 import { parseCSV, downloadCSVTemplate } from '@/lib/parseCSV'
-import { parsePlanningXlsx, type MatchImportPayload } from '@/lib/parsePlanningXlsx'
 
 interface Match {
   id: number
@@ -20,12 +19,24 @@ interface Match {
   result: number[]
 }
 
+type MatchPayload = Omit<Match, 'id'>
+
+interface PlanningImportResult {
+  total: number
+  imported: number
+  created: number
+  updated: number
+  formatErrors: { row: number; label: string; reason: string }[]
+  systemErrors: { row: number; label: string; error: string }[]
+}
+
 const items = ref<Match[]>([])
 const loading = ref(true)
 const showModal = ref(false)
 const editingId = ref<number | null>(null)
 const saving = ref(false)
 const importStatus = ref('')
+const importIssues = ref<string[]>([])
 
 const emptyForm = () => ({
   date: '',
@@ -124,8 +135,9 @@ async function remove(id: number) {
   await load()
 }
 
-async function importPayloads(payloads: MatchImportPayload[]) {
+async function importPayloads(payloads: MatchPayload[]) {
   importStatus.value = `Import de ${payloads.length} ligne(s)…`
+  importIssues.value = []
   let ok = 0
   for (const payload of payloads) {
     try {
@@ -167,19 +179,52 @@ function triggerImport() {
   input.click()
 }
 
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(String(reader.result).split(',')[1] ?? '')
+    reader.onerror = () => reject(reader.error)
+    reader.readAsDataURL(file)
+  })
+}
+
+/** A 422 means the file itself was rejected; its message is meant for the user. */
+function planningImportError(err: unknown): string {
+  const text = err instanceof Error ? err.message : String(err)
+  const body = text.match(/^API error 422: (.*)$/s)?.[1]
+  if (body) {
+    try {
+      return JSON.parse(body).error
+    } catch { /* fall through */ }
+  }
+  return `Échec de l'import : ${text}`
+}
+
+// Same endpoint as the Make e-mail automation: the server parses the file and
+// updates matches already present for the same date and team.
 function triggerPlanningImport() {
   const input = document.createElement('input')
   input.type = 'file'
-  input.accept = '.xlsx,.xls'
+  input.accept = '.xlsx'
   input.onchange = async (e) => {
     const file = (e.target as HTMLInputElement).files?.[0]
     if (!file) return
-    const payloads = await parsePlanningXlsx(await file.arrayBuffer())
-    if (payloads.length === 0) {
-      importStatus.value = "Aucun match trouvé dans le fichier. Vérifiez qu'il s'agit bien d'un export de planning."
-      return
+    importStatus.value = 'Import du planning…'
+    importIssues.value = []
+    try {
+      const result = await api.post<PlanningImportResult>('/matches/import', {
+        filename: file.name,
+        contentBase64: await fileToBase64(file),
+      })
+      importStatus.value = `${result.imported}/${result.total} importé(s) (${result.created} ajouté(s), ${result.updated} mis à jour)`
+      importIssues.value = [
+        ...result.formatErrors.map((i) => `Ligne ${i.row} – ${i.label} : ${i.reason}`),
+        ...result.systemErrors.map((i) => `Ligne ${i.row} – ${i.label} : erreur technique (${i.error})`),
+      ]
+    } catch (err) {
+      importStatus.value = planningImportError(err)
     }
-    await importPayloads(payloads)
+    await load()
   }
   input.click()
 }
@@ -210,6 +255,9 @@ function formatDate(d: string) {
     </header>
 
     <p v-if="importStatus" class="text-sm text-blue-600 mb-3">{{ importStatus }}</p>
+    <ul v-if="importIssues.length" class="text-sm text-red-600 mb-3 list-disc pl-5">
+      <li v-for="issue in importIssues" :key="issue">{{ issue }}</li>
+    </ul>
 
     <div class="bg-white rounded-lg shadow-sm overflow-x-auto">
       <table v-if="!loading" class="w-full text-sm whitespace-nowrap">

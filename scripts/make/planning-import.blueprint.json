@@ -1,0 +1,510 @@
+{
+  "name": "BSM – Import automatique du planning (Gmail → site)",
+  "flow": [
+    {
+      "id": 1,
+      "module": "google-email:TriggerNewEmail",
+      "version": 2,
+      "parameters": {
+        "folder": "INBOX",
+        "criteria": "ALL",
+        "searchType": "simple",
+        "from": "planning@bsmbasket.fr",
+        "subject": "planning",
+        "markSeen": false,
+        "maxResults": 5
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "mapper": null,
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 3,
+              "module": "google-email:ActionSendEmail",
+              "version": 2,
+              "parameters": {},
+              "mapper": {
+                "to": [
+                  "planning@bsmbasket.fr"
+                ],
+                "subject": "Re: {{1.subject}}",
+                "html": "<p>Bonjour,</p><p>0 match n'a été mis sur le site BSM : aucun fichier Excel (.xlsx) n'était joint à votre e-mail.</p><p>Merci de renvoyer l'e-mail avec le fichier du planning en pièce jointe (les anciens fichiers .xls doivent être réenregistrés en .xlsx).</p><p>— Import automatique du site BSM</p>",
+                "attachments": [],
+                "cc": [],
+                "bcc": []
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": -300
+                }
+              },
+              "filter": {
+                "name": "Planning sans pièce jointe .xlsx",
+                "conditions": [
+                  [
+                    {
+                      "a": "{{1.subject}}",
+                      "o": "text:contain:ci",
+                      "b": "planning"
+                    },
+                    {
+                      "a": "{{lower(join(map(1.attachments; \"fileName\"); \",\"))}}",
+                      "o": "text:notcontain",
+                      "b": ".xlsx"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 4,
+              "module": "http:ActionSendData",
+              "version": 3,
+              "parameters": {
+                "handleErrors": false,
+                "useNewZLibDeCompress": true
+              },
+              "mapper": {
+                "url": "https://bsmbasket.fr/api/auth/login",
+                "method": "post",
+                "headers": [],
+                "qs": [],
+                "bodyType": "raw",
+                "contentType": "application/json",
+                "data": "{\"username\": \"REMPLACER_PAR_ADMIN_USERNAME\", \"password\": \"REMPLACER_PAR_ADMIN_PASSWORD\"}",
+                "parseResponse": true,
+                "timeout": "60",
+                "authUser": "",
+                "authPass": "",
+                "serializeUrl": false,
+                "shareCookies": false,
+                "followRedirect": true,
+                "followAllRedirects": false,
+                "useQuerystring": false,
+                "gzip": true,
+                "useMtls": false,
+                "rejectUnauthorized": true,
+                "ca": ""
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": 0
+                }
+              },
+              "filter": {
+                "name": "Planning avec pièce jointe .xlsx",
+                "conditions": [
+                  [
+                    {
+                      "a": "{{1.subject}}",
+                      "o": "text:contain:ci",
+                      "b": "planning"
+                    },
+                    {
+                      "a": "{{lower(join(map(1.attachments; \"fileName\"); \",\"))}}",
+                      "o": "text:contain",
+                      "b": ".xlsx"
+                    }
+                  ]
+                ]
+              },
+              "onerror": [
+                {
+                  "id": 20,
+                  "module": "google-email:ActionSendEmail",
+                  "version": 2,
+                  "parameters": {},
+                  "mapper": {
+                    "to": [
+                      "website@bsmbasket.fr"
+                    ],
+                    "subject": "[BSM import planning] Erreur système – connexion (get token)",
+                    "html": "<p>L'import automatique du planning a échoué à l'étape <b>connexion (get token)</b>.</p><p>E-mail d'origine : « {{1.subject}} ».</p><p>Pas de réponse de https://bsmbasket.fr/api/auth/login : {{4.error.message}}</p><p>Le planning n'a pas été importé ; planning@ n'a reçu aucune réponse.</p>",
+                    "attachments": [],
+                    "cc": [],
+                    "bcc": []
+                  },
+                  "metadata": {
+                    "designer": {
+                      "x": 600,
+                      "y": 300
+                    }
+                  }
+                },
+                {
+                  "id": 21,
+                  "module": "builtin:Ignore",
+                  "version": 1,
+                  "metadata": {
+                    "designer": {
+                      "x": 900,
+                      "y": 300
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "module": "builtin:BasicRouter",
+              "version": 1,
+              "mapper": null,
+              "metadata": {
+                "designer": {
+                  "x": 900,
+                  "y": 0
+                }
+              },
+              "routes": [
+                {
+                  "flow": [
+                    {
+                      "id": 6,
+                      "module": "google-email:ActionSendEmail",
+                      "version": 2,
+                      "parameters": {},
+                      "mapper": {
+                        "to": [
+                          "website@bsmbasket.fr"
+                        ],
+                        "subject": "[BSM import planning] Erreur système – token refusé",
+                        "html": "<p>L'appel <code>POST /api/auth/login</code> a répondu <b>{{4.statusCode}}</b> : <code>{{toString(4.data)}}</code></p><p>Vérifiez l'identifiant / mot de passe admin dans le module HTTP « login » du scénario Make.</p><p>E-mail d'origine : « {{1.subject}} ». Le planning n'a pas été importé.</p>",
+                        "attachments": [],
+                        "cc": [],
+                        "bcc": []
+                      },
+                      "metadata": {
+                        "designer": {
+                          "x": 1200,
+                          "y": -300
+                        }
+                      },
+                      "filter": {
+                        "name": "Token refusé",
+                        "conditions": [
+                          [
+                            {
+                              "a": "{{4.statusCode}}",
+                              "o": "number:notequal",
+                              "b": "200"
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "flow": [
+                    {
+                      "id": 7,
+                      "module": "builtin:BasicFeeder",
+                      "version": 1,
+                      "mapper": {
+                        "array": "{{1.attachments}}"
+                      },
+                      "filter": {
+                        "name": "Token obtenu",
+                        "conditions": [
+                          [
+                            {
+                              "a": "{{4.statusCode}}",
+                              "o": "number:equal",
+                              "b": "200"
+                            }
+                          ]
+                        ]
+                      },
+                      "metadata": {
+                        "designer": {
+                          "x": 1200,
+                          "y": 0
+                        }
+                      }
+                    },
+                    {
+                      "id": 8,
+                      "module": "http:ActionSendData",
+                      "version": 3,
+                      "parameters": {
+                        "handleErrors": false,
+                        "useNewZLibDeCompress": true
+                      },
+                      "mapper": {
+                        "url": "https://bsmbasket.fr/api/matches/import",
+                        "method": "post",
+                        "headers": [
+                          {
+                            "name": "Authorization",
+                            "value": "Bearer {{4.data.token}}"
+                          }
+                        ],
+                        "qs": [],
+                        "bodyType": "raw",
+                        "contentType": "application/json",
+                        "data": "{\"filename\": \"{{7.fileName}}\", \"contentBase64\": \"{{base64(7.data)}}\"}",
+                        "parseResponse": true,
+                        "timeout": "60",
+                        "authUser": "",
+                        "authPass": "",
+                        "serializeUrl": false,
+                        "shareCookies": false,
+                        "followRedirect": true,
+                        "followAllRedirects": false,
+                        "useQuerystring": false,
+                        "gzip": true,
+                        "useMtls": false,
+                        "rejectUnauthorized": true,
+                        "ca": ""
+                      },
+                      "metadata": {
+                        "designer": {
+                          "x": 1500,
+                          "y": 0
+                        }
+                      },
+                      "filter": {
+                        "name": "Fichier .xlsx",
+                        "conditions": [
+                          [
+                            {
+                              "a": "{{lower(7.fileName)}}",
+                              "o": "text:contain",
+                              "b": ".xlsx"
+                            }
+                          ]
+                        ]
+                      },
+                      "onerror": [
+                        {
+                          "id": 22,
+                          "module": "google-email:ActionSendEmail",
+                          "version": 2,
+                          "parameters": {},
+                          "mapper": {
+                            "to": [
+                              "website@bsmbasket.fr"
+                            ],
+                            "subject": "[BSM import planning] Erreur système – import du fichier",
+                            "html": "<p>L'import automatique du planning a échoué à l'étape <b>import du fichier</b>.</p><p>E-mail d'origine : « {{1.subject}} ».</p><p>Pas de réponse de https://bsmbasket.fr/api/matches/import pour « {{7.fileName}} » : {{8.error.message}}</p><p>Le planning n'a pas été importé ; planning@ n'a reçu aucune réponse.</p>",
+                            "attachments": [],
+                            "cc": [],
+                            "bcc": []
+                          },
+                          "metadata": {
+                            "designer": {
+                              "x": 1500,
+                              "y": 300
+                            }
+                          }
+                        },
+                        {
+                          "id": 23,
+                          "module": "builtin:Ignore",
+                          "version": 1,
+                          "metadata": {
+                            "designer": {
+                              "x": 1800,
+                              "y": 300
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": 9,
+                      "module": "builtin:BasicRouter",
+                      "version": 1,
+                      "mapper": null,
+                      "metadata": {
+                        "designer": {
+                          "x": 1800,
+                          "y": 0
+                        }
+                      },
+                      "routes": [
+                        {
+                          "flow": [
+                            {
+                              "id": 10,
+                              "module": "google-email:ActionSendEmail",
+                              "version": 2,
+                              "parameters": {},
+                              "mapper": {
+                                "to": [
+                                  "planning@bsmbasket.fr"
+                                ],
+                                "subject": "Re: {{1.subject}}",
+                                "html": "{{8.data.reportHtml}}",
+                                "attachments": [],
+                                "cc": [],
+                                "bcc": []
+                              },
+                              "metadata": {
+                                "designer": {
+                                  "x": 2100,
+                                  "y": -300
+                                }
+                              },
+                              "filter": {
+                                "name": "Rapport pour planning@ (200 ou 422)",
+                                "conditions": [
+                                  [
+                                    {
+                                      "a": "{{8.statusCode}}",
+                                      "o": "number:equal",
+                                      "b": "200"
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "a": "{{8.statusCode}}",
+                                      "o": "number:equal",
+                                      "b": "422"
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "flow": [
+                            {
+                              "id": 11,
+                              "module": "google-email:ActionSendEmail",
+                              "version": 2,
+                              "parameters": {},
+                              "mapper": {
+                                "to": [
+                                  "website@bsmbasket.fr"
+                                ],
+                                "subject": "[BSM import planning] Erreur système – matchs non enregistrés",
+                                "html": "{{8.data.systemReportHtml}}",
+                                "attachments": [],
+                                "cc": [],
+                                "bcc": []
+                              },
+                              "metadata": {
+                                "designer": {
+                                  "x": 2100,
+                                  "y": 0
+                                }
+                              },
+                              "filter": {
+                                "name": "Erreurs base de données sur certains matchs",
+                                "conditions": [
+                                  [
+                                    {
+                                      "a": "{{8.statusCode}}",
+                                      "o": "number:equal",
+                                      "b": "200"
+                                    },
+                                    {
+                                      "a": "{{8.data.hasSystemErrors}}",
+                                      "o": "boolean:equal",
+                                      "b": "true"
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "flow": [
+                            {
+                              "id": 12,
+                              "module": "google-email:ActionSendEmail",
+                              "version": 2,
+                              "parameters": {},
+                              "mapper": {
+                                "to": [
+                                  "website@bsmbasket.fr"
+                                ],
+                                "subject": "[BSM import planning] Erreur système – import refusé ({{8.statusCode}})",
+                                "html": "<p>L'appel <code>POST /api/matches/import</code> pour « {{7.fileName}} » a répondu <b>{{8.statusCode}}</b> : <code>{{toString(8.data)}}</code></p><p>E-mail d'origine : « {{1.subject}} ». Le planning n'a pas été importé ; planning@ n'a reçu aucune réponse.</p>",
+                                "attachments": [],
+                                "cc": [],
+                                "bcc": []
+                              },
+                              "metadata": {
+                                "designer": {
+                                  "x": 2100,
+                                  "y": 300
+                                }
+                              },
+                              "filter": {
+                                "name": "Autre statut (erreur système)",
+                                "conditions": [
+                                  [
+                                    {
+                                      "a": "{{8.statusCode}}",
+                                      "o": "number:notequal",
+                                      "b": "200"
+                                    },
+                                    {
+                                      "a": "{{8.statusCode}}",
+                                      "o": "number:notequal",
+                                      "b": "422"
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": true,
+      "confidential": true,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": {
+      "orphans": []
+    }
+  }
+}

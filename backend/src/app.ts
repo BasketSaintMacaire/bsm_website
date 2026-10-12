@@ -24,6 +24,9 @@ export function createApp() {
       origin: env.CORS_ORIGINS.length > 0 ? env.CORS_ORIGINS : false,
     }),
   )
+  // Planning imports carry a base64 .xlsx; registered first so the global
+  // 100kb parser below skips the already-parsed body.
+  app.use('/api/matches/import', express.json({ limit: '15mb' }))
   app.use(express.json())
 
   app.get('/api/health', (_req, res) => res.json({ status: 'ok' }))
