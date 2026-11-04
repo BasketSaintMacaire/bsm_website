@@ -155,6 +155,22 @@ async function remove(id: number) {
   await load()
 }
 
+// Turns an api error ("API error 400: {...}") into a short French reason
+function importErrorMessage(err: unknown): string {
+  const message = err instanceof Error ? err.message : String(err)
+  const match = message.match(/^API error (\d+): (.*)$/s)
+  if (!match) return message
+  const [, status, body] = match
+  if (status === '401') return 'session expirée, reconnectez-vous'
+  try {
+    const parsed = JSON.parse(body)
+    const fields = parsed.details?.fieldErrors ? Object.keys(parsed.details.fieldErrors) : []
+    return fields.length ? `champs invalides : ${fields.join(', ')}` : (parsed.error ?? `erreur ${status}`)
+  } catch {
+    return `erreur ${status}`
+  }
+}
+
 function triggerImport() {
   const input = document.createElement('input')
   input.type = 'file'
@@ -162,35 +178,42 @@ function triggerImport() {
   input.onchange = async (e) => {
     const file = (e.target as HTMLInputElement).files?.[0]
     if (!file) return
+    let data: unknown
     try {
-      const data = JSON.parse(await file.text())
-      const rows: WeekSchedule[] = Array.isArray(data) ? data : [data]
-      importStatus.value = `Import de ${rows.length} planning(s)…`
-      let ok = 0
-      for (const row of rows) {
-        try {
-          await api.post('/training-schedules', {
-            name: row.name,
-            period: row.period ?? null,
-            days: (row.days ?? []).map((d: DaySchedule) => ({
-              date: d.date,
-              sessions: (d.sessions ?? []).map((s: TrainingSession) => ({
-                time: s.time,
-                groups: s.groups ?? [],
-                location: s.location,
-                trainer: s.trainer,
-                notes: s.notes ?? null,
-              })),
-            })),
-          })
-          ok++
-        } catch { /* skip */ }
-      }
-      importStatus.value = `${ok}/${rows.length} importé(s)`
-      await load()
-    } catch {
-      importStatus.value = 'Erreur: JSON invalide'
+      data = JSON.parse(await file.text())
+    } catch (err) {
+      importStatus.value = `Erreur: JSON invalide (${(err as Error).message})`
+      return
     }
+    const rows: WeekSchedule[] = Array.isArray(data) ? data : [data as WeekSchedule]
+    importStatus.value = `Import de ${rows.length} planning(s)…`
+    let ok = 0
+    const errors: string[] = []
+    for (const row of rows) {
+      try {
+        await api.post('/training-schedules', {
+          name: row.name,
+          period: row.period ?? null,
+          days: (row.days ?? []).map((d: DaySchedule) => ({
+            date: d.date,
+            sessions: (d.sessions ?? []).map((s: TrainingSession) => ({
+              time: s.time,
+              groups: s.groups ?? [],
+              location: s.location,
+              trainer: s.trainer,
+              notes: s.notes ?? null,
+            })),
+          })),
+        })
+        ok++
+      } catch (err) {
+        errors.push(`« ${row.name ?? 'sans nom'} » : ${importErrorMessage(err)}`)
+      }
+    }
+    importStatus.value = errors.length
+      ? `${ok}/${rows.length} importé(s). Échec ${errors.join(' ; ')}`
+      : `${ok}/${rows.length} importé(s)`
+    await load()
   }
   input.click()
 }
